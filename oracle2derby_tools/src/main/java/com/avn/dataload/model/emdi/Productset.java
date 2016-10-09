@@ -56,7 +56,8 @@ public class Productset {
      *
      * @mbggenerated Sun Oct 09 16:35:15 CST 2016
      */
-    private String static;
+    //TODO change field name
+    private String theStatic;
 
     /**
      *
@@ -204,8 +205,8 @@ public class Productset {
      *
      * @mbggenerated Sun Oct 09 16:35:15 CST 2016
      */
-    public String getStatic() {
-        return static;
+    public String getTheStatic() {
+        return theStatic;
     }
 
     /**
@@ -216,8 +217,8 @@ public class Productset {
      *
      * @mbggenerated Sun Oct 09 16:35:15 CST 2016
      */
-    public void setStatic(String static) {
-        this.static = static == null ? null : static.trim();
+    public void setTheStatic(String theStatic) {
+        this.theStatic = theStatic == null ? null : theStatic.trim();
     }
 
     /**
