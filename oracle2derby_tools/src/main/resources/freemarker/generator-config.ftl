@@ -5,18 +5,18 @@
     <context id="context1">
         <jdbcConnection connectionURL="jdbc:oracle:thin:@//172.25.73.172:1521/avdsh" driverClass="oracle.jdbc.driver.OracleDriver" userId="emdi" password="Avnet001" />
         
-        <javaModelGenerator targetPackage="com.dataload.model" targetProject="dataload" >
+        <javaModelGenerator targetPackage="com.dataload.model" targetProject="${project_name}" >
           <property name="enableSubPackages" value="true"/>
           <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         
-        <sqlMapGenerator targetPackage="com.dataload.mapper" targetProject="dataload" >
+        <!-- <sqlMapGenerator targetPackage="com.dataload.mapper" targetProject="${project_name}" >
           <property name="enableSubPackages" value="true"/>
-        </sqlMapGenerator>
+        </sqlMapGenerator> -->
         
-        <javaClientGenerator targetPackage="com.dataload.mapper" targetProject="dataload" type="XMLMAPPER" >
+        <!-- <javaClientGenerator targetPackage="com.dataload.mapper" targetProject="${project_name}" type="XMLMAPPER" >
           <property name="enableSubPackages" value="true"/>
-        </javaClientGenerator>
+        </javaClientGenerator> -->
         
         <#list tables as table_info>
             ${table_info}
