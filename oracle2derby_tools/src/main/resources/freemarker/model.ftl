@@ -1,0 +1,22 @@
+package com.avn.dataload.model;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class ${table_name} {
+    
+<#list columns as col>
+
+    private ${col.type} ${col.name};
+    
+    public void set${col.name}(${col.type} ${col.name}) {
+        this.${col.name} = ${col.name};
+    }
+    
+    public ${col.type} get${col.name}() {
+        return this.${col.name};
+    }
+      
+</#list>
+    
+}

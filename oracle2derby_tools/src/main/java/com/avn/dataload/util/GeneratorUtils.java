@@ -7,6 +7,7 @@ import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +20,8 @@ import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+import com.avn.dataload.core.ColumnEntity;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -52,6 +55,7 @@ public class GeneratorUtils {
         }
     }
     
+    //Step2 generate RowMappers
     public static void generateRowMappers() {
     	Configuration cfg = new Configuration();
         try {
@@ -119,36 +123,118 @@ public class GeneratorUtils {
     private static Map<String, List<String>> createRowMapperEntries() {
     	String regex = "([a-z])([A-Z]+)";
         String replacement = "$1_$2";
-    	File dir = new File("./src/main/java/com/avn/dataload/model/emdi");
+    	File dir = new File("./src/main/java/com/avn/dataload/model");
     	File clsFiles[] = dir.listFiles();
     	Map<String, List<String>> result = new HashMap<String, List<String>>();
     	List<String> setMethods = null;
     	for (File clsFile : clsFiles) {
-    		String clsName = clsFile.getName().replace(".java", "");
-    		try {
-    			Class cls = Class.forName("com.avn.dataload.model.emdi." + clsName);
-    			Object obj = cls.newInstance();
-    			Method methods[] = obj.getClass().getDeclaredMethods();
-    			setMethods = new ArrayList<String>();
-    			for (Method m : methods) {
-    				if(m.getName().startsWith("set")) {
-    					String colName = m.getName().replace("set", "").replaceAll(regex, replacement).toUpperCase();
-    					String tmp = "obj." + m.getName() + "(rs.get" + m.getParameterTypes()[0].getSimpleName() + "(\"" + colName + "\"))";
-    					setMethods.add(tmp);
-    				}
-    			}
-    		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e ) {
-    			e.printStackTrace();
-    		}
-    		result.put(clsName, setMethods);
+    	    if(clsFile.isFile()) {
+    	        String clsName = clsFile.getName().replace(".java", "");
+                try {
+                    Class cls = Class.forName("com.avn.dataload.model." + clsName);
+                    Object obj = cls.newInstance();
+                    Method methods[] = obj.getClass().getDeclaredMethods();
+                    setMethods = new ArrayList<String>();
+                    for (Method m : methods) {
+                        if(m.getName().startsWith("set")) {
+                            String colName = m.getName().replace("set", "").replaceAll(regex, replacement).toUpperCase();
+                            String tmp = "obj." + m.getName() + "(rs.get" + m.getParameterTypes()[0].getSimpleName() + "(\"" + colName + "\"))";
+                            //exceptions
+                            if ("TIMESTAMP".equals(m.getParameterTypes()[0].getSimpleName())) {
+                                tmp = "obj." + m.getName() + "(rs.getTimestamp(\"" + colName + "\"))";
+                            }
+                            if ("byte[]".equals(m.getParameterTypes()[0].getSimpleName())) {
+                                tmp = "obj." + m.getName() + "(rs.getBytes(\"" + colName + "\"))";
+                            }
+                            if ("CLOB".equals(m.getParameterTypes()[0].getSimpleName())) {
+                                tmp = "obj." + m.getName() + "(rs.getClob(\"" + colName + "\"))";
+                            }
+                            if ("BLOB".equals(m.getParameterTypes()[0].getSimpleName())) {
+                                tmp = "obj." + m.getName() + "(rs.getBlob(\"" + colName + "\"))";
+                            }
+                            setMethods.add(tmp);
+                        }
+                    }
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e ) {
+                    e.printStackTrace();
+                }
+                result.put(clsName, setMethods);
+    	    }
     	}
     	return result;
+    }
+    
+    private static void createModels() {
+        List<String> tableNames = readTableInfo();
+        
+        ctx = new ClassPathXmlApplicationContext("classpath:oracle-ds-config.xml");
+        DriverManagerDataSource ds = (DriverManagerDataSource) ctx.getBean("oracleDS");
+        Connection conn = null;
+        try {
+            conn = ds.getConnection();
+            
+            Map props = new HashMap();
+            for(String tableName : tableNames) {
+                PreparedStatement ps = conn.prepareStatement("SELECT * FROM " + tableName + " WHERE ROWNUM < 1");
+                ResultSetMetaData metaData = ps.getMetaData();
+                log.info(tableName);
+                List<ColumnEntity> columns = new ArrayList<ColumnEntity>();
+                ColumnEntity colEntity;
+                for (int i=0; i < metaData.getColumnCount(); i++) {
+                    colEntity = new ColumnEntity();
+                    colEntity.setName(metaData.getColumnName(i + 1));
+                    colEntity.setType(metaData.getColumnClassName(i + 1));
+                    //exceptions
+                    if("oracle.sql.TIMESTAMP".equals(metaData.getColumnClassName(i + 1))) {
+                        colEntity.setType("java.sql.Timestamp");
+                    }
+                    if("oracle.sql.CLOB".equals(metaData.getColumnClassName(i + 1))) {
+                        colEntity.setType("java.sql.Clob");
+                    }
+                    if("oracle.sql.BLOB".equals(metaData.getColumnClassName(i + 1))) {
+                        colEntity.setType("java.sql.Blob");
+                    }
+                    columns.add(colEntity);
+                    log.info("column name: " + metaData.getColumnName(i + 1) + " column type: " + metaData.getColumnClassName(i+1));
+                    
+                }
+                props.put("table_name", tableName);
+                props.put("columns", columns);
+                generateFileByTemplate("model.ftl", "./src/main/java/com/avn/dataload/model/" + tableName + ".java", props);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            if(conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    
+    private static void generateFileByTemplate(String templateName, String targetFile,Map props) {
+        Configuration cfg = new Configuration();
+        try {
+            cfg.setDirectoryForTemplateLoading(new File(FTL_DIR));
+            Template template = cfg.getTemplate(templateName);
+            File generatedFile = new File(targetFile);
+            Writer cfgWriter = new FileWriter(generatedFile);
+            template.process(props, cfgWriter);
+            cfgWriter.flush();
+            cfgWriter.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     
 
     public static void main(String[] args) {
 //        buildGeneratorConfig();
-    	generateRowMappers();
+//        createModels();
+        generateRowMappers();
     }
 
 }

@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.avn.dataload.model.emdi.${table_name};
+import com.avn.dataload.model.${table_name};
 
 public class ${table_name}RowMapper<T> implements RowMapper<${table_name}> {
 
