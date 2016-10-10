@@ -1,22 +1,18 @@
 package com.avn.dataload.core;
 
+import java.util.List;
+
 public class StepEntity {
     
-    private String dataSource;
+    private String inDataSource;
+    
+    private String outDataSource;
     
     private String tableName;
     
-    private String columnList;
+    private List<String> columnList;
     
     private String sortKey;
-
-    public String getDataSource() {
-        return dataSource;
-    }
-
-    public void setDataSource(String dataSource) {
-        this.dataSource = dataSource;
-    }
 
     public String getTableName() {
         return tableName;
@@ -26,11 +22,11 @@ public class StepEntity {
         this.tableName = tableName;
     }
 
-    public String getColumnList() {
+    public List<String> getColumnList() {
         return columnList;
     }
 
-    public void setColumnList(String columnList) {
+    public void setColumnList(List<String> columnList) {
         this.columnList = columnList;
     }
 
@@ -40,6 +36,22 @@ public class StepEntity {
 
     public void setSortKey(String sortKey) {
         this.sortKey = sortKey;
+    }
+
+    public String getInDataSource() {
+        return inDataSource;
+    }
+
+    public void setInDataSource(String inDataSource) {
+        this.inDataSource = inDataSource;
+    }
+
+    public String getOutDataSource() {
+        return outDataSource;
+    }
+
+    public void setOutDataSource(String outDataSource) {
+        this.outDataSource = outDataSource;
     }
     
 }

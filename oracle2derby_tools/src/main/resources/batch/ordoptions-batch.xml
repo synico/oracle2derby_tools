@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    
+    <context:annotation-config/>
+    
+    <bean id="jdbcPagingItemReader4ORDOPTIONS" class="org.springframework.batch.item.database.JdbcPagingItemReader" scope="step">
+    	<property name="dataSource" ref="oracleDS" />
+    	<property name="rowMapper">
+			<bean class="com.avn.dataload.model.rowmapper.ORDOPTIONSRowMapper" />
+		</property>
+		<property name="queryProvider">
+			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
+				<property name="dataSource" ref="oracleDS" />
+				<property name="selectClause" value="SELECT ORDERS_ID,NOTIFYMERCHANT,NOTIFYSHOPPER,OPTCOUNTER" />
+		    	<property name="fromClause" value="FROM EMDI.ORDOPTIONS" />
+		    	<property name="sortKeys">
+		    		<map>
+		    			<entry key="ORDERS_ID" value="DESCENDING" />
+		    		</map>
+		    	</property>
+			</bean>
+		</property>
+    	<property name="pageSize" value="1000"/>
+    </bean>
+    
+    <bean id="jdbcBatchItemWriter4ORDOPTIONS" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+    	<property name="dataSource" ref="derbyDS" />
+    	<property name="itemSqlParameterSourceProvider">
+    		<bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+    	</property>
+    	<property name="sql">
+    		<value>
+    			<![CDATA[
+    				INSERT INTO ORDOPTIONS(ORDERS_ID,NOTIFYMERCHANT,NOTIFYSHOPPER,OPTCOUNTER)
+    				values (:ORDERS_ID,:NOTIFYMERCHANT,:NOTIFYSHOPPER,:OPTCOUNTER) 
+    			]]>
+    		</value>
+    	</property>
+    </bean>    
+    
+</beans>

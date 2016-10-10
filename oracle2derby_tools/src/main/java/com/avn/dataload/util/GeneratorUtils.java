@@ -3,6 +3,7 @@ package com.avn.dataload.util;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.Writer;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,10 +12,10 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
@@ -22,6 +23,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import com.avn.dataload.core.ColumnEntity;
+import com.avn.dataload.core.StepEntity;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -230,11 +232,44 @@ public class GeneratorUtils {
         }
     }
     
+    public static void genItemReaderAndWriters() {
+        File dir = new File("./src/main/java/com/avn/dataload/model");
+        File clsFiles[] = dir.listFiles();
+        Map props = new HashMap();
+        for (File clsFile : clsFiles) {
+            if(clsFile.isFile()) {
+                StepEntity entity = new StepEntity();
+                String clsName = clsFile.getName().replace(".java", "");
+                Class cls;
+                List<String> cols = new LinkedList<String>();
+                try {
+                    cls = Class.forName("com.avn.dataload.model." + clsName);
+                    Object obj = cls.newInstance();
+                    Field[] fields = obj.getClass().getDeclaredFields();
+                    for(Field field : fields) {
+                        cols.add(field.getName());
+                    }
+                    entity.setColumnList(cols);
+                    entity.setInDataSource("oracleDS");
+                    entity.setOutDataSource("derbyDS");
+                    entity.setTableName(clsName);
+                    entity.setSortKey(fields[0].getName());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                
+                props.put("step", entity);
+                generateFileByTemplate("step.ftl", "./src/main/resources/batch/" + clsName.toLowerCase() + "-batch.xml", props);
+            }
+        }
+    }
+    
 
     public static void main(String[] args) {
 //        buildGeneratorConfig();
 //        createModels();
-        generateRowMappers();
+//        generateRowMappers();
+        genItemReaderAndWriters();
     }
 
 }

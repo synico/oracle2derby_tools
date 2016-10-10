@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    
+    <context:annotation-config/>
+    
+    <bean id="jdbcPagingItemReader4TERMCOND" class="org.springframework.batch.item.database.JdbcPagingItemReader" scope="step">
+    	<property name="dataSource" ref="oracleDS" />
+    	<property name="rowMapper">
+			<bean class="com.avn.dataload.model.rowmapper.TERMCONDRowMapper" />
+		</property>
+		<property name="queryProvider">
+			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
+				<property name="dataSource" ref="oracleDS" />
+				<property name="selectClause" value="SELECT TERMCOND_ID,TCSUBTYPE_ID,TRADING_ID,MANDATORY,CHANGEABLE,TIMECREATED,TIMEUPDATED,STRINGFIELD1,STRINGFIELD2,STRINGFIELD3,INTEGERFIELD1,INTEGERFIELD2,INTEGERFIELD3,BIGINTFIELD1,BIGINTFIELD2,BIGINTFIELD3,FLOATFIELD1,FLOATFIELD2,FLOATFIELD3,TIMEFIELD1,TIMEFIELD2,DECIMALFIELD1,DECIMALFIELD2,TIMEFIELD3,DECIMALFIELD3,SEQUENCE,OPTCOUNTER" />
+		    	<property name="fromClause" value="FROM EMDI.TERMCOND" />
+		    	<property name="sortKeys">
+		    		<map>
+		    			<entry key="TERMCOND_ID" value="DESCENDING" />
+		    		</map>
+		    	</property>
+			</bean>
+		</property>
+    	<property name="pageSize" value="1000"/>
+    </bean>
+    
+    <bean id="jdbcBatchItemWriter4TERMCOND" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+    	<property name="dataSource" ref="derbyDS" />
+    	<property name="itemSqlParameterSourceProvider">
+    		<bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+    	</property>
+    	<property name="sql">
+    		<value>
+    			<![CDATA[
+    				INSERT INTO TERMCOND(TERMCOND_ID,TCSUBTYPE_ID,TRADING_ID,MANDATORY,CHANGEABLE,TIMECREATED,TIMEUPDATED,STRINGFIELD1,STRINGFIELD2,STRINGFIELD3,INTEGERFIELD1,INTEGERFIELD2,INTEGERFIELD3,BIGINTFIELD1,BIGINTFIELD2,BIGINTFIELD3,FLOATFIELD1,FLOATFIELD2,FLOATFIELD3,TIMEFIELD1,TIMEFIELD2,DECIMALFIELD1,DECIMALFIELD2,TIMEFIELD3,DECIMALFIELD3,SEQUENCE,OPTCOUNTER)
+    				values (:TERMCOND_ID,:TCSUBTYPE_ID,:TRADING_ID,:MANDATORY,:CHANGEABLE,:TIMECREATED,:TIMEUPDATED,:STRINGFIELD1,:STRINGFIELD2,:STRINGFIELD3,:INTEGERFIELD1,:INTEGERFIELD2,:INTEGERFIELD3,:BIGINTFIELD1,:BIGINTFIELD2,:BIGINTFIELD3,:FLOATFIELD1,:FLOATFIELD2,:FLOATFIELD3,:TIMEFIELD1,:TIMEFIELD2,:DECIMALFIELD1,:DECIMALFIELD2,:TIMEFIELD3,:DECIMALFIELD3,:SEQUENCE,:OPTCOUNTER) 
+    			]]>
+    		</value>
+    	</property>
+    </bean>    
+    
+</beans>

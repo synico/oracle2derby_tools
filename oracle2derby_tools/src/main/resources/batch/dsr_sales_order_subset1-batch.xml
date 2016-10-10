@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    
+    <context:annotation-config/>
+    
+    <bean id="jdbcPagingItemReader4DSR_SALES_ORDER_SUBSET1" class="org.springframework.batch.item.database.JdbcPagingItemReader" scope="step">
+    	<property name="dataSource" ref="oracleDS" />
+    	<property name="rowMapper">
+			<bean class="com.avn.dataload.model.rowmapper.DSR_SALES_ORDER_SUBSET1RowMapper" />
+		</property>
+		<property name="queryProvider">
+			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
+				<property name="dataSource" ref="oracleDS" />
+				<property name="selectClause" value="SELECT SCN,LINE_ITEM_NBR,CREATE_DT,UPDATE_DT,LAST_UPDATE_ACTION,BUYER_NAME,CONDITION_CD,CUST_PART_NBR,CUST_PO_ID,MFG_CD,ORDER_DT,PART_NBR,RELEASE_ID,REQD_DELV_DT,SHIPPER_PROG_NBR,SHIPTO_CUST_NBR,STATUS_CD,SUPPLIER_ID,SUPPLIER_PART_NBR,SUPPLIER_SHORT_NM,STATUS_TX,AVNET_ERP_NM,PROMISED_DELV_DT,WCS_ORDER_ID" />
+		    	<property name="fromClause" value="FROM EMDI.DSR_SALES_ORDER_SUBSET1" />
+		    	<property name="sortKeys">
+		    		<map>
+		    			<entry key="SCN" value="DESCENDING" />
+		    		</map>
+		    	</property>
+			</bean>
+		</property>
+    	<property name="pageSize" value="1000"/>
+    </bean>
+    
+    <bean id="jdbcBatchItemWriter4DSR_SALES_ORDER_SUBSET1" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+    	<property name="dataSource" ref="derbyDS" />
+    	<property name="itemSqlParameterSourceProvider">
+    		<bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+    	</property>
+    	<property name="sql">
+    		<value>
+    			<![CDATA[
+    				INSERT INTO DSR_SALES_ORDER_SUBSET1(SCN,LINE_ITEM_NBR,CREATE_DT,UPDATE_DT,LAST_UPDATE_ACTION,BUYER_NAME,CONDITION_CD,CUST_PART_NBR,CUST_PO_ID,MFG_CD,ORDER_DT,PART_NBR,RELEASE_ID,REQD_DELV_DT,SHIPPER_PROG_NBR,SHIPTO_CUST_NBR,STATUS_CD,SUPPLIER_ID,SUPPLIER_PART_NBR,SUPPLIER_SHORT_NM,STATUS_TX,AVNET_ERP_NM,PROMISED_DELV_DT,WCS_ORDER_ID)
+    				values (:SCN,:LINE_ITEM_NBR,:CREATE_DT,:UPDATE_DT,:LAST_UPDATE_ACTION,:BUYER_NAME,:CONDITION_CD,:CUST_PART_NBR,:CUST_PO_ID,:MFG_CD,:ORDER_DT,:PART_NBR,:RELEASE_ID,:REQD_DELV_DT,:SHIPPER_PROG_NBR,:SHIPTO_CUST_NBR,:STATUS_CD,:SUPPLIER_ID,:SUPPLIER_PART_NBR,:SUPPLIER_SHORT_NM,:STATUS_TX,:AVNET_ERP_NM,:PROMISED_DELV_DT,:WCS_ORDER_ID) 
+    			]]>
+    		</value>
+    	</property>
+    </bean>    
+    
+</beans>

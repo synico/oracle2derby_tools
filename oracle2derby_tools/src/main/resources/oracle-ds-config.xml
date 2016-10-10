@@ -10,7 +10,7 @@
     <context:property-placeholder location="classpath:jdbc.properties"/>
     
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="oracleDataSource"/>
+        <property name="dataSource" ref="oracleDS"/>
     </bean>
     
     <bean id="oracleDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">

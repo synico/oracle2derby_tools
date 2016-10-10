@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    
+    <context:annotation-config/>
+    
+    <bean id="jdbcPagingItemReader4CFPRODUCTSET_TMP" class="org.springframework.batch.item.database.JdbcPagingItemReader" scope="step">
+    	<property name="dataSource" ref="oracleDS" />
+    	<property name="rowMapper">
+			<bean class="com.avn.dataload.model.rowmapper.CFPRODUCTSET_TMPRowMapper" />
+		</property>
+		<property name="queryProvider">
+			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
+				<property name="dataSource" ref="oracleDS" />
+				<property name="selectClause" value="SELECT CFPRODUCTSET_ID,CATFILTER_ID,PRODUCTSET_ID,TYPE,OPTCOUNTER" />
+		    	<property name="fromClause" value="FROM EMDI.CFPRODUCTSET_TMP" />
+		    	<property name="sortKeys">
+		    		<map>
+		    			<entry key="CFPRODUCTSET_ID" value="DESCENDING" />
+		    		</map>
+		    	</property>
+			</bean>
+		</property>
+    	<property name="pageSize" value="1000"/>
+    </bean>
+    
+    <bean id="jdbcBatchItemWriter4CFPRODUCTSET_TMP" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+    	<property name="dataSource" ref="derbyDS" />
+    	<property name="itemSqlParameterSourceProvider">
+    		<bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+    	</property>
+    	<property name="sql">
+    		<value>
+    			<![CDATA[
+    				INSERT INTO CFPRODUCTSET_TMP(CFPRODUCTSET_ID,CATFILTER_ID,PRODUCTSET_ID,TYPE,OPTCOUNTER)
+    				values (:CFPRODUCTSET_ID,:CATFILTER_ID,:PRODUCTSET_ID,:TYPE,:OPTCOUNTER) 
+    			]]>
+    		</value>
+    	</property>
+    </bean>    
+    
+</beans>

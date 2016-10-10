@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    
+    <context:annotation-config/>
+    
+    <bean id="jdbcPagingItemReader4DSR_INVOICE_ADDRESS" class="org.springframework.batch.item.database.JdbcPagingItemReader" scope="step">
+    	<property name="dataSource" ref="oracleDS" />
+    	<property name="rowMapper">
+			<bean class="com.avn.dataload.model.rowmapper.DSR_INVOICE_ADDRESSRowMapper" />
+		</property>
+		<property name="queryProvider">
+			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
+				<property name="dataSource" ref="oracleDS" />
+				<property name="selectClause" value="SELECT INVOICE_NBR,CREATE_DT,UPDATE_DT,DELETE_DT,UPDATE_ID,LAST_UPDATE_ACTION,AUDIT_LOG_KEY,SYSTEM_ID,SEG_RCVD_DT,DIVISION_ID,INVOICE_COMPANY,INVOICE_SEQ_NBR,BILLTO_CUST_NAME,BILLTO_ATTN_NAME,BILLTO_ADDR1,BILLTO_ADDR2,BILLTO_ADDR3,BILLTO_CITY,BILLTO_STATE,BILLTO_POST_ZIP,BILLTO_CNTRY,SHIPTO_CUST_NAME,SHIPTO_ATTN_NAME,SHIPTO_ADDR1,SHIPTO_ADDR2,SHIPTO_ADDR3,SHIPTO_CITY,SHIPTO_STATE,SHIPTO_POST_ZIP,SHIPTO_CNTRY" />
+		    	<property name="fromClause" value="FROM EMDI.DSR_INVOICE_ADDRESS" />
+		    	<property name="sortKeys">
+		    		<map>
+		    			<entry key="INVOICE_NBR" value="DESCENDING" />
+		    		</map>
+		    	</property>
+			</bean>
+		</property>
+    	<property name="pageSize" value="1000"/>
+    </bean>
+    
+    <bean id="jdbcBatchItemWriter4DSR_INVOICE_ADDRESS" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+    	<property name="dataSource" ref="derbyDS" />
+    	<property name="itemSqlParameterSourceProvider">
+    		<bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+    	</property>
+    	<property name="sql">
+    		<value>
+    			<![CDATA[
+    				INSERT INTO DSR_INVOICE_ADDRESS(INVOICE_NBR,CREATE_DT,UPDATE_DT,DELETE_DT,UPDATE_ID,LAST_UPDATE_ACTION,AUDIT_LOG_KEY,SYSTEM_ID,SEG_RCVD_DT,DIVISION_ID,INVOICE_COMPANY,INVOICE_SEQ_NBR,BILLTO_CUST_NAME,BILLTO_ATTN_NAME,BILLTO_ADDR1,BILLTO_ADDR2,BILLTO_ADDR3,BILLTO_CITY,BILLTO_STATE,BILLTO_POST_ZIP,BILLTO_CNTRY,SHIPTO_CUST_NAME,SHIPTO_ATTN_NAME,SHIPTO_ADDR1,SHIPTO_ADDR2,SHIPTO_ADDR3,SHIPTO_CITY,SHIPTO_STATE,SHIPTO_POST_ZIP,SHIPTO_CNTRY)
+    				values (:INVOICE_NBR,:CREATE_DT,:UPDATE_DT,:DELETE_DT,:UPDATE_ID,:LAST_UPDATE_ACTION,:AUDIT_LOG_KEY,:SYSTEM_ID,:SEG_RCVD_DT,:DIVISION_ID,:INVOICE_COMPANY,:INVOICE_SEQ_NBR,:BILLTO_CUST_NAME,:BILLTO_ATTN_NAME,:BILLTO_ADDR1,:BILLTO_ADDR2,:BILLTO_ADDR3,:BILLTO_CITY,:BILLTO_STATE,:BILLTO_POST_ZIP,:BILLTO_CNTRY,:SHIPTO_CUST_NAME,:SHIPTO_ATTN_NAME,:SHIPTO_ADDR1,:SHIPTO_ADDR2,:SHIPTO_ADDR3,:SHIPTO_CITY,:SHIPTO_STATE,:SHIPTO_POST_ZIP,:SHIPTO_CNTRY) 
+    			]]>
+    		</value>
+    	</property>
+    </bean>    
+    
+</beans>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    
+    <context:annotation-config/>
+    
+    <bean id="jdbcPagingItemReader4STAGLOG" class="org.springframework.batch.item.database.JdbcPagingItemReader" scope="step">
+    	<property name="dataSource" ref="oracleDS" />
+    	<property name="rowMapper">
+			<bean class="com.avn.dataload.model.rowmapper.STAGLOGRowMapper" />
+		</property>
+		<property name="queryProvider">
+			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
+				<property name="dataSource" ref="oracleDS" />
+				<property name="selectClause" value="SELECT STGRFNBR,STGSTMP,STGTABLE,STGOP,STGMENBRNAME,STGMENBR,STGPKEYNAME,STGPKEY,STGKEY1NAME,STGKEY2NAME,STGKEY3NAME,STGKEY4NAME,STGKEY5NAME,STGOKEY1,STGOKEY2,STGOKEY3,STGOKEY4,STGOKEY5,STGNKEY1,STGNKEY2,STGNKEY3,STGNKEY4,STGNKEY5,STGPROCESSED,STGRESERVED1,STGLDPTH,STGLDCOLS,OPTCOUNTER,STGFILTER" />
+		    	<property name="fromClause" value="FROM EMDI.STAGLOG" />
+		    	<property name="sortKeys">
+		    		<map>
+		    			<entry key="STGRFNBR" value="DESCENDING" />
+		    		</map>
+		    	</property>
+			</bean>
+		</property>
+    	<property name="pageSize" value="1000"/>
+    </bean>
+    
+    <bean id="jdbcBatchItemWriter4STAGLOG" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+    	<property name="dataSource" ref="derbyDS" />
+    	<property name="itemSqlParameterSourceProvider">
+    		<bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+    	</property>
+    	<property name="sql">
+    		<value>
+    			<![CDATA[
+    				INSERT INTO STAGLOG(STGRFNBR,STGSTMP,STGTABLE,STGOP,STGMENBRNAME,STGMENBR,STGPKEYNAME,STGPKEY,STGKEY1NAME,STGKEY2NAME,STGKEY3NAME,STGKEY4NAME,STGKEY5NAME,STGOKEY1,STGOKEY2,STGOKEY3,STGOKEY4,STGOKEY5,STGNKEY1,STGNKEY2,STGNKEY3,STGNKEY4,STGNKEY5,STGPROCESSED,STGRESERVED1,STGLDPTH,STGLDCOLS,OPTCOUNTER,STGFILTER)
+    				values (:STGRFNBR,:STGSTMP,:STGTABLE,:STGOP,:STGMENBRNAME,:STGMENBR,:STGPKEYNAME,:STGPKEY,:STGKEY1NAME,:STGKEY2NAME,:STGKEY3NAME,:STGKEY4NAME,:STGKEY5NAME,:STGOKEY1,:STGOKEY2,:STGOKEY3,:STGOKEY4,:STGOKEY5,:STGNKEY1,:STGNKEY2,:STGNKEY3,:STGNKEY4,:STGNKEY5,:STGPROCESSED,:STGRESERVED1,:STGLDPTH,:STGLDCOLS,:OPTCOUNTER,:STGFILTER) 
+    			]]>
+    		</value>
+    	</property>
+    </bean>    
+    
+</beans>

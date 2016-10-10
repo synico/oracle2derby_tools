@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    
+    <context:annotation-config/>
+    
+    <bean id="jdbcPagingItemReader4PATTRVALUE" class="org.springframework.batch.item.database.JdbcPagingItemReader" scope="step">
+    	<property name="dataSource" ref="oracleDS" />
+    	<property name="rowMapper">
+			<bean class="com.avn.dataload.model.rowmapper.PATTRVALUERowMapper" />
+		</property>
+		<property name="queryProvider">
+			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
+				<property name="dataSource" ref="oracleDS" />
+				<property name="selectClause" value="SELECT PATTRVALUE_ID,PATTRIBUTE_ID,ATTRTYPE_ID,OPERATOR_ID,TERMCOND_ID,QTYUNIT_ID,INTEGERVALUE,FLOATVALUE,STRINGVALUE,DATEVALUE,BIGINTVALUE,SEQUENCE,ENCRYPTFLAG,ORDERITEMS_ID,MANDATORY,ATTACHMENT_ID,CHANGEABLE,RFQPROD_ID,RFQRSPPROD_ID,CORRELATIONGROUP,OPTCOUNTER" />
+		    	<property name="fromClause" value="FROM EMDI.PATTRVALUE" />
+		    	<property name="sortKeys">
+		    		<map>
+		    			<entry key="PATTRVALUE_ID" value="DESCENDING" />
+		    		</map>
+		    	</property>
+			</bean>
+		</property>
+    	<property name="pageSize" value="1000"/>
+    </bean>
+    
+    <bean id="jdbcBatchItemWriter4PATTRVALUE" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+    	<property name="dataSource" ref="derbyDS" />
+    	<property name="itemSqlParameterSourceProvider">
+    		<bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+    	</property>
+    	<property name="sql">
+    		<value>
+    			<![CDATA[
+    				INSERT INTO PATTRVALUE(PATTRVALUE_ID,PATTRIBUTE_ID,ATTRTYPE_ID,OPERATOR_ID,TERMCOND_ID,QTYUNIT_ID,INTEGERVALUE,FLOATVALUE,STRINGVALUE,DATEVALUE,BIGINTVALUE,SEQUENCE,ENCRYPTFLAG,ORDERITEMS_ID,MANDATORY,ATTACHMENT_ID,CHANGEABLE,RFQPROD_ID,RFQRSPPROD_ID,CORRELATIONGROUP,OPTCOUNTER)
+    				values (:PATTRVALUE_ID,:PATTRIBUTE_ID,:ATTRTYPE_ID,:OPERATOR_ID,:TERMCOND_ID,:QTYUNIT_ID,:INTEGERVALUE,:FLOATVALUE,:STRINGVALUE,:DATEVALUE,:BIGINTVALUE,:SEQUENCE,:ENCRYPTFLAG,:ORDERITEMS_ID,:MANDATORY,:ATTACHMENT_ID,:CHANGEABLE,:RFQPROD_ID,:RFQRSPPROD_ID,:CORRELATIONGROUP,:OPTCOUNTER) 
+    			]]>
+    		</value>
+    	</property>
+    </bean>    
+    
+</beans>
