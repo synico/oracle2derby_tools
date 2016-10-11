@@ -10,15 +10,15 @@
     <context:property-placeholder location="classpath:jdbc.properties"/>
     
     <!-- <bean id="derbyDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
-    <bean id="derbyDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-        <property name="driverClass" value="org.apache.derby.jdbc.EmbeddedDataSource"/>
+    <bean id="derbyDS" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="org.apache.derby.jdbc.ClientDriver"/>
         <property name="jdbcUrl" value="${jdbc.derby.url}"/>
         <property name="user" value="${jdbc.derby.username}"/>
         <property name="password" value="${jdbc.derby.password}"/>
         <property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
     </bean>
     
-    <bean id="derbyDS" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <bean id="derbyDS_disable" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.apache.derby.jdbc.EmbeddedDataSource"/>
         <property name="url" value="${jdbc.derby.url}"/>
         <property name="username" value="${jdbc.derby.username}"/>
