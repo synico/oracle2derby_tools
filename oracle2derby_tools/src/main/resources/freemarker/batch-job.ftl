@@ -16,13 +16,13 @@
     
     <job id="loadData">
         <#list tables as table>
-        <step id="load${table.current}">
+        <step id="load-${table.current}">
             <tasklet>
                 <chunk reader="jdbcPagingItemReader4${table.current}" writer="jdbcBatchItemWriter4${table.current}" commit-interval="100"/>
             </tasklet>
             <#if table.next?exists>
-            <next on ="*" to="load${table.next}"/>
-            <next on="FAILED" to="load${table.next}"/>
+            <next on ="*" to="load-${table.next}"/>
+            <next on="FAILED" to="load-${table.next}"/>
             </#if>
         </step>
         </#list>
