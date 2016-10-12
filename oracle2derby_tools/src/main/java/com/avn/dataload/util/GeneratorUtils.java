@@ -22,6 +22,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+import com.avn.dataload.core.BatchStepEntity;
 import com.avn.dataload.core.ColumnEntity;
 import com.avn.dataload.core.StepEntity;
 
@@ -34,6 +35,8 @@ public class GeneratorUtils {
     private static final Logger log = Logger.getLogger(GeneratorUtils.class);
     
     private static final String SQL = "select table_name, num_rows from all_tables where tablespace_name='USERS' and table_name not like 'TI%' and num_rows>0 order by num_rows desc";
+    
+    private static final String SELECTED_TABLE_SQL = "select table_name, num_rows from all_tables where tablespace_name='USERS' and table_name not like 'TI%' and num_rows>0 and num_rows<100000 order by num_rows desc";
     
     private static final String FTL_DIR = "E:\\scm\\git\\oracle2derby_tools\\oracle2derby_tools\\src\\main\\resources\\freemarker\\";
 
@@ -84,7 +87,7 @@ public class GeneratorUtils {
     
     private static Map<String, List<String>> createConfigEntries() {
     	Map<String, List<String>> result = new HashMap<String, List<String>>();
-    	List<String> tableNames = readTableInfo();
+    	List<String> tableNames = readTableInfo(SQL);
     	List<String> configEntries = new ArrayList<String>(tableNames.size());
     	for (String tableName : tableNames) {
     		String temp = "<table schema=\"EMDI\" tableName=\""+ tableName + "\" enableSelectByExample=\"false\" enableUpdateByPrimaryKey=\"false\" enableDeleteByPrimaryKey=\"false\" enableDeleteByExample=\"false\" enableCountByExample=\"false\"   enableUpdateByExample=\"false\" selectByPrimaryKeyQueryId=\"false\" selectByExampleQueryId=\"false\" />";
@@ -94,15 +97,15 @@ public class GeneratorUtils {
     	return result;
     }
     
-    private static List<String> readTableInfo() {
-        List<String> tableNames = new ArrayList<String>();
+    private static List<String> readTableInfo(String sql) {
+        List<String> tableNames = new LinkedList<String>();
         //Oracle
         ctx = new ClassPathXmlApplicationContext("classpath:oracle-ds-config.xml");
         DriverManagerDataSource ds = (DriverManagerDataSource) ctx.getBean("oracleDS");
         Connection conn = null;
         try {
             conn = ds.getConnection();
-            PreparedStatement ps = conn.prepareStatement(SQL);
+            PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
                 tableNames.add(rs.getString("TABLE_NAME"));
@@ -167,7 +170,7 @@ public class GeneratorUtils {
     }
     
     private static void createModels() {
-        List<String> tableNames = readTableInfo();
+        List<String> tableNames = readTableInfo(SQL);
         
         ctx = new ClassPathXmlApplicationContext("classpath:oracle-ds-config.xml");
         DriverManagerDataSource ds = (DriverManagerDataSource) ctx.getBean("oracleDS");
@@ -217,7 +220,7 @@ public class GeneratorUtils {
         }
     }
     
-    private static void generateFileByTemplate(String templateName, String targetFile,Map props) {
+    private static void generateFileByTemplate(String templateName, String targetFile, Map props) {
         Configuration cfg = new Configuration();
         try {
             cfg.setDirectoryForTemplateLoading(new File(FTL_DIR));
@@ -264,12 +267,29 @@ public class GeneratorUtils {
         }
     }
     
+    public static void buildBatchJobConfig() {
+        List<String> tableNames = readTableInfo(SELECTED_TABLE_SQL);
+        tableNames.add(null);
+        BatchStepEntity entity = null;
+        List<BatchStepEntity> steps = new LinkedList<BatchStepEntity>();
+        for(int i=0; i < (tableNames.size() - 1); i++) {
+            entity = new BatchStepEntity();
+            entity.setCurrent(tableNames.get(i));
+            entity.setNext(tableNames.get(i+1));
+            steps.add(entity);
+        }
+        Map<String, List<BatchStepEntity>> props = new HashMap<String, List<BatchStepEntity>>();
+        props.put("tables", steps);
+        generateFileByTemplate("batch-job.ftl", "./src/main/resources/oracle2derby.xml", props);
+    }
+    
 
     public static void main(String[] args) {
 //        buildGeneratorConfig();
 //        createModels();
 //        generateRowMappers();
-        genItemReaderAndWriters();
+//        genItemReaderAndWriters();
+        buildBatchJobConfig();
     }
 
 }

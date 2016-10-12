@@ -15,19 +15,17 @@
     <beans:import resource="batch/*.xml"/>
     
     <job id="loadData">
-        <step id="loadCONTRACT" next="loadXCATENTRY">
-            <tasklet><chunk reader="jdbcPagingItemReader4CONTRACT" writer="jdbcBatchItemWriter4CONTRACT" commit-interval="100"/></tasklet>
-        </step>
-        <step id="loadXCATENTRY">
+        <#list tables as table>
+        <step id="load${table.current}">
             <tasklet>
-                <chunk reader="jdbcPagingItemReader4XCATENTRY" writer="jdbcBatchItemWriter4XCATENTRY" commit-interval="100"/>
+                <chunk reader="jdbcPagingItemReader4${table.current}" writer="jdbcBatchItemWriter4${table.current}" commit-interval="100"/>
             </tasklet>
-            <next on ="*" to="loadCatentry"/>
-            <next on="FAILED" to="loadCatentry"/>
+            <#if table.next?exists>
+            <next on ="*" to="load${table.next}"/>
+            <next on="FAILED" to="load${table.next}"/>
+            </#if>
         </step>
-        <step id="loadCatentry">
-            <tasklet><chunk reader="jdbcPagingItemReader4CATENTRY" writer="jdbcBatchItemWriter4CATENTRY" commit-interval="100"/></tasklet>
-        </step>
+        </#list>
     </job>
     
     <beans:bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
