@@ -3358,7 +3358,11 @@
         <beans:property name="jobRepository" ref="jobRepository" />
     </beans:bean>
     
-    <beans:bean id="jobRepository" class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean"/>
+    <!-- <beans:bean id="jobRepository" class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean"/> -->
+    <job-repository
+    	data-source="derbyDS"
+    	table-prefix="BATCH_"
+    />
     
     <beans:bean id="taskExecutor" class="org.springframework.core.task.SimpleAsyncTaskExecutor"/>
     
