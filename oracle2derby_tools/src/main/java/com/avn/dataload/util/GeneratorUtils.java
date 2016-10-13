@@ -200,7 +200,7 @@ public class GeneratorUtils {
                         colEntity.setType("java.sql.Blob");
                     }
                     columns.add(colEntity);
-                    log.info("column name: " + metaData.getColumnName(i + 1) + " column type: " + metaData.getColumnClassName(i+1));
+                    log.info("column name: " + metaData.getColumnName(i + 1) + ", column type: " + metaData.getColumnClassName(i+1) + ", maxLength: " + metaData.getPrecision(i+1) + ", scale: " + metaData.getScale(i+1));
                     
                 }
                 props.put("table_name", tableName);
@@ -286,10 +286,10 @@ public class GeneratorUtils {
 
     public static void main(String[] args) {
 //        buildGeneratorConfig();
-//        createModels();
+        createModels();
 //        generateRowMappers();
 //        genItemReaderAndWriters();
-        buildBatchJobConfig();
+//        buildBatchJobConfig();
     }
 
 }
