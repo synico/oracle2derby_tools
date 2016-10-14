@@ -39,6 +39,10 @@ public class GeneratorUtils {
     private static final String SELECTED_TABLE_SQL = "select table_name, num_rows from all_tables where tablespace_name='USERS' and table_name not like 'TI%' and num_rows>0 and num_rows<1000000 order by num_rows desc";
     
     private static final String FTL_DIR = "E:\\scm\\git\\oracle2derby_tools\\oracle2derby_tools\\src\\main\\resources\\freemarker\\";
+    
+    private static final String SCHEMA_ORACLE_SQL = "select table_name from all_tables where tablespace_name='EMDI_DATA' and num_rows>1 and table_name not like 'TI_%' and table_name not like '%_TMP' and table_name not like '%_BACKUP' order by table_name asc";
+    
+    private static final String SCHEMA_DERBY_SQL = "select tablename from sys.systables where tabletype='T' order by tablename asc";
 
     private static ApplicationContext ctx;
     
@@ -283,13 +287,75 @@ public class GeneratorUtils {
         generateFileByTemplate("batch-job.ftl", "./src/main/resources/oracle2derby.xml", props);
     }
     
+    public static void compareSchemas() {
+        List<String> oracleTables = new LinkedList<String>();
+        //Oracle
+        ctx = new ClassPathXmlApplicationContext("classpath:oracle-ds-config.xml");
+        DriverManagerDataSource ds = (DriverManagerDataSource) ctx.getBean("oracleDS");
+        Connection conn = null;
+        try {
+            conn = ds.getConnection();
+            PreparedStatement ps = conn.prepareStatement(SCHEMA_ORACLE_SQL);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                oracleTables.add(rs.getString("TABLE_NAME"));
+            }
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            if(conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        
+        List<String> derbyTables = new LinkedList<String>();
+        //Derby
+        ApplicationContext ctx1 = new ClassPathXmlApplicationContext("classpath:derby-ds-config.xml");
+        DriverManagerDataSource ds1 = (DriverManagerDataSource) ctx1.getBean("derbyDS");
+        Connection conn1 = null;
+        try {
+            conn1 = ds1.getConnection();
+            PreparedStatement ps1 = conn1.prepareStatement(SCHEMA_DERBY_SQL);
+            ResultSet rs1 = ps1.executeQuery();
+            while(rs1.next()) {
+                derbyTables.add(rs1.getString("TABLENAME"));
+            }
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            if(conn1 != null) {
+                try {
+                    conn1.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        
+        for(String derbyTable : derbyTables) {
+            oracleTables.remove(derbyTable);
+        }
+        
+        for(String table : oracleTables) {
+            log.info("table name: " + table);
+        }
+        log.info("xxx" + oracleTables.size());
+    }
+    
 
     public static void main(String[] args) {
 //        buildGeneratorConfig();
-        createModels();
+//        createModels();
 //        generateRowMappers();
 //        genItemReaderAndWriters();
 //        buildBatchJobConfig();
+        compareSchemas();
     }
 
 }
