@@ -16,7 +16,7 @@
     
     <job id="loadData">
         <#list tables as table>
-        <step id="${table.current}">
+        <step id="load-${table.current}">
             <tasklet>
                 <chunk reader="jdbcPagingItemReader4${table.current}" writer="jdbcBatchItemWriter4${table.current}" commit-interval="100"/>
             </tasklet>
