@@ -284,7 +284,7 @@ public class GeneratorUtils {
         }
         Map<String, List<BatchStepEntity>> props = new HashMap<String, List<BatchStepEntity>>();
         props.put("tables", steps);
-        generateFileByTemplate("batch-job.ftl", "./src/main/resources/oracle2derby.xml", props);
+        generateFileByTemplate("batch-job.ftl", "./src/main/resources/oracle2derby-job.xml", props);
     }
     
     public static void compareSchemas() {

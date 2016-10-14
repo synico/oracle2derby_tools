@@ -16,7 +16,7 @@
     
     <job id="loadData">
         <#list tables as table>
-        <step id="load-${table.current}">
+        <step id="${table.current}">
             <tasklet>
                 <chunk reader="jdbcPagingItemReader4${table.current}" writer="jdbcBatchItemWriter4${table.current}" commit-interval="100"/>
             </tasklet>
@@ -32,7 +32,11 @@
         <beans:property name="jobRepository" ref="jobRepository" />
     </beans:bean>
     
-    <beans:bean id="jobRepository" class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean"/>
+    <!-- <beans:bean id="jobRepository" class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean"/> -->
+    <job-repository
+    	data-source="derbyDS"
+    	table-prefix="BATCH_"
+    />
     
     <beans:bean id="taskExecutor" class="org.springframework.core.task.SimpleAsyncTaskExecutor"/>
     
