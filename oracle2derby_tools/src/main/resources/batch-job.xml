@@ -12,11 +12,11 @@
     <beans:import resource="oracle-ds-config.xml" />
     <beans:import resource="derby-ds-config.xml" />
     
-    <beans:import resource="batch/MBRGRPCOND-batch.xml"/>
+    <beans:import resource="batch/FOLDERITEM-batch.xml"/>
     
     <job id="loadData">
-        <step id="loadMBRGRPCOND">
-            <tasklet><chunk reader="jdbcPagingItemReader4MBRGRPCOND" writer="jdbcBatchItemWriter4MBRGRPCOND" commit-interval="100"/></tasklet>
+        <step id="loadSingleJob">
+            <tasklet><chunk reader="jdbcPagingItemReader4FOLDERITEM" writer="jdbcBatchItemWriter4FOLDERITEM" commit-interval="100"/></tasklet>
         </step>
     </job>
     
