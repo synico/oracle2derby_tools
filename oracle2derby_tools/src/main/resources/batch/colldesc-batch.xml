@@ -26,7 +26,7 @@
 		    	</property>
 			</bean>
 		</property>
-    	<property name="pageSize" value="1000"/>
+    	<property name="pageSize" value="100"/>
     </bean>
     
     <bean id="jdbcBatchItemWriter4COLLDESC" class="org.springframework.batch.item.database.JdbcBatchItemWriter">

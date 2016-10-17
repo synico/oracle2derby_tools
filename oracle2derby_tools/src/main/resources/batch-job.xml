@@ -12,11 +12,13 @@
     <beans:import resource="oracle-ds-config.xml" />
     <beans:import resource="derby-ds-config.xml" />
     
-    <beans:import resource="batch/MBRGRPCOND-batch.xml"/>
+    <beans:import resource="batch/CATENTRYATTR-batch.xml"/>
     
     <job id="loadData">
-        <step id="loadMBRGRPCOND">
-            <tasklet><chunk reader="jdbcPagingItemReader4MBRGRPCOND" writer="jdbcBatchItemWriter4MBRGRPCOND" commit-interval="100"/></tasklet>
+        <step id="loadX">
+            <tasklet>
+                <chunk reader="jdbcPagingItemReader4CATENTRYATTR" writer="jdbcBatchItemWriter4CATENTRYATTR" commit-interval="100"/>
+            </tasklet>
         </step>
     </job>
     
