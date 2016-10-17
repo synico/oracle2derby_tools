@@ -12,11 +12,11 @@
     <beans:import resource="oracle-ds-config.xml" />
     <beans:import resource="derby-ds-config.xml" />
     
-    <beans:import resource="batch/BUSAUDIT-batch.xml"/>
+    <beans:import resource="batch/X_SAP_SALESDOC_ITEM-batch.xml"/>
     
     <job id="loadData">
-        <step id="loadBUSAUDIT">
-            <tasklet><chunk reader="jdbcPagingItemReader4BUSAUDIT" writer="jdbcBatchItemWriter4BUSAUDIT" commit-interval="10"/></tasklet>
+        <step id="loadX">
+            <tasklet><chunk reader="jdbcPagingItemReader4X_SAP_SALESDOC_ITEM" writer="jdbcBatchItemWriter4X_SAP_SALESDOC_ITEM" commit-interval="10"/></tasklet>
         </step>
     </job>
     
