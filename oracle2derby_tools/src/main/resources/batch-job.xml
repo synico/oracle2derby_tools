@@ -12,11 +12,11 @@
     <beans:import resource="oracle-ds-config.xml" />
     <beans:import resource="derby-ds-config.xml" />
     
-    <beans:import resource="batch/FOLDERITEM-batch.xml"/>
+    <beans:import resource="batch/BUSAUDIT-batch.xml"/>
     
     <job id="loadData">
-        <step id="loadSingleJob">
-            <tasklet><chunk reader="jdbcPagingItemReader4FOLDERITEM" writer="jdbcBatchItemWriter4FOLDERITEM" commit-interval="100"/></tasklet>
+        <step id="loadBUSAUDIT">
+            <tasklet><chunk reader="jdbcPagingItemReader4BUSAUDIT" writer="jdbcBatchItemWriter4BUSAUDIT" commit-interval="10"/></tasklet>
         </step>
     </job>
     
