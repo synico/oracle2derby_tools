@@ -36,11 +36,13 @@ public class GeneratorUtils {
     
     private static final String SQL = "select table_name, num_rows from all_tables where tablespace_name='USERS' and table_name not like 'TI%' and num_rows>0 order by num_rows desc";
     
-    private static final String SELECTED_TABLE_SQL = "select table_name, num_rows from all_tables where tablespace_name='USERS' and table_name not like 'TI%' and table_name not like '%_TMP' and table_name not like '%_BACKUP' and num_rows>0 and num_rows<1000000 order by num_rows desc";
+    private static final String TABLE_MORETHAN_1M_SQL = "select table_name, num_rows from all_tables where tablespace_name='USERS' and table_name not like 'TI%' and table_name not like '%_TMP' and table_name not like '%_BACKUP' and num_rows>=1000000 order by num_rows desc";
+    
+    private static final String TABLE_LESSTHAN_1M_SQL = "select table_name, num_rows from all_tables where tablespace_name='USERS' and table_name not like 'TI%' and table_name not like '%_TMP' and table_name not like '%_BACKUP' and num_rows>0 and num_rows<1000000 order by num_rows desc";
     
     private static final String FTL_DIR = "E:\\scm\\git\\oracle2derby_tools\\oracle2derby_tools\\src\\main\\resources\\freemarker\\";
     
-    private static final String SCHEMA_ORACLE_SQL = "select table_name from all_tables where tablespace_name='EMDI_DATA' and num_rows>1 and table_name not like 'TI_%' and table_name not like '%_TMP' and table_name not like '%_BACKUP' and num_rows>0 and num_rows<1000000 order by table_name asc";
+    private static final String SCHEMA_ORACLE_SQL = "select table_name from all_tables where tablespace_name='EMDI_DATA' and num_rows>1 and table_name not like 'TI_%' and table_name not like '%_TMP' and table_name not like '%_BACKUP' and num_rows>0 order by num_rows desc";
     
     private static final String SCHEMA_DERBY_SQL = "select tablename from sys.systables where tabletype='T' order by tablename asc";
 
@@ -272,7 +274,7 @@ public class GeneratorUtils {
     }
     
     public static void buildBatchJobConfig() {
-        List<String> tableNames = readTableInfo(SELECTED_TABLE_SQL);
+        List<String> tableNames = readTableInfo(SCHEMA_ORACLE_SQL);
         tableNames.add(null);
         BatchStepEntity entity = null;
         List<BatchStepEntity> steps = new LinkedList<BatchStepEntity>();
