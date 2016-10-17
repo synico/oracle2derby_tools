@@ -18,7 +18,7 @@
 			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
 				<property name="dataSource" ref="oracleDS" />
 				<property name="selectClause" value="SELECT CATENTRY_ID,ATTR_ID,ATTRVAL_ID,USAGE,SEQUENCE,FIELD1,FIELD2,FIELD3,OPTCOUNTER" />
-		    	<property name="fromClause" value="FROM EMDI.CATENTRYATTR" />
+		    	<property name="fromClause" value="FROM EMDI.DERBY_CATENTRYATTR" />
 		    	<property name="sortKeys">
 		    		<map>
 		    			<entry key="CATENTRY_ID" value="DESCENDING" />
@@ -26,7 +26,7 @@
 		    	</property>
 			</bean>
 		</property>
-    	<property name="pageSize" value="1000"/>
+    	<property name="pageSize" value="100"/>
     </bean>
     
     <bean id="jdbcBatchItemWriter4CATENTRYATTR" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
