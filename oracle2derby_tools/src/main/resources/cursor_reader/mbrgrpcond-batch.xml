@@ -15,7 +15,7 @@
     	<property name="rowMapper">
 			<bean class="com.avn.dataload.model.rowmapper.MBRGRPCONDRowMapper" />
 		</property>
-		<property name="fetchSize" value="1000"/>
+		<property name="fetchSize" value="100"/>
     </bean>
     
     <bean id="jdbcBatchItemWriter4MBRGRPCOND" class="org.springframework.batch.item.database.JdbcBatchItemWriter">

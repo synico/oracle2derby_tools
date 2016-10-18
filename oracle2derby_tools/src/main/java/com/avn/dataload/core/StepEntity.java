@@ -15,6 +15,8 @@ public class StepEntity {
     private List<String> columnList;
     
     private String sortKey;
+    
+    private String fetchSize;
 
     public String getTableName() {
         return tableName;
@@ -62,6 +64,14 @@ public class StepEntity {
 
     public void setTableNickName(String tableNickName) {
         this.tableNickName = tableNickName;
+    }
+
+    public String getFetchSize() {
+        return fetchSize;
+    }
+
+    public void setFetchSize(String fetchSize) {
+        this.fetchSize = fetchSize;
     }
     
 }

@@ -11,8 +11,7 @@
     
     <bean id="jdbcCursorItemReader4SEOURLKEYWORD" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
     	<property name="dataSource" ref="oracleDS" />
-    	<property name="sql" value="SELECT SEOURLKEYWORD_ID,SEOURL_ID,LANGUAGE_ID,STOREENT_ID,URLKEYWORD,MOBILEURLKEYWORD,STATUS,OPTCOUNTER FROM EMDI.SEOURLKEYWORD 
-    	WHERE SEOURLKEYWORD_ID = 10501" />
+    	<property name="sql" value="SELECT SEOURLKEYWORD_ID,SEOURL_ID,LANGUAGE_ID,STOREENT_ID,URLKEYWORD,MOBILEURLKEYWORD,STATUS,OPTCOUNTER FROM EMDI.SEOURLKEYWORD" />
     	<property name="rowMapper">
 			<bean class="com.avn.dataload.model.rowmapper.SEOURLKEYWORDRowMapper" />
 		</property>

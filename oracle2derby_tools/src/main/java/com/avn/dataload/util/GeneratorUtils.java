@@ -301,8 +301,12 @@ public class GeneratorUtils {
                     cls = Class.forName("com.avn.dataload.model." + clsName);
                     Object obj = cls.newInstance();
                     Field[] fields = obj.getClass().getDeclaredFields();
+                    entity.setFetchSize("1000");
                     for(Field field : fields) {
                         cols.add(field.getName());
+                        if(field.getType().getSimpleName().contains("lob")) {
+                            entity.setFetchSize("100");
+                        }
                     }
                     entity.setColumnList(cols);
                     entity.setInDataSource("oracleDS");
@@ -426,8 +430,8 @@ public class GeneratorUtils {
 //        createModels();
 //        generateRowMappers();
 //        genPagingItemReaderAndWriters();
-//        genCursorItemReaderAndWriters();
-        buildBatchJobConfig("cursor");
+        genCursorItemReaderAndWriters();
+//        buildBatchJobConfig("cursor");
 //        compareSchemas();
     }
 

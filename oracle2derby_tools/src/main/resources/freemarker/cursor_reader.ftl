@@ -16,7 +16,7 @@
     	<property name="rowMapper">
 			<bean class="com.avn.dataload.model.rowmapper.${step.tableName}RowMapper" />
 		</property>
-		<property name="fetchSize" value="1000"/>
+		<property name="fetchSize" value="${step.fetchSize}"/>
     </bean>
     
     <bean id="jdbcBatchItemWriter4${step.tableName}" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
