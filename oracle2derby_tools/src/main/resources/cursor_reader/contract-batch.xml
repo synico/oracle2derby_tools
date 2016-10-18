@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    
+    <context:annotation-config/>
+    
+    <bean id="jdbcCursorItemReader4CONTRACT" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
+    	<property name="dataSource" ref="oracleDS" />
+    	<property name="sql" value="SELECT CONTRACT_ID,MAJORVERSION,MINORVERSION,NAME,MEMBER_ID,ORIGIN,STATE,USAGE,MARKFORDELETE,COMMENTS,TIMECREATED,TIMEUPDATED,TIMEAPPROVED,TIMEACTIVATED,TIMEDEPLOYED,FAMILY_ID,OPTCOUNTER FROM EMDI.CONTRACT" />
+    	<property name="rowMapper">
+			<bean class="com.avn.dataload.model.rowmapper.CONTRACTRowMapper" />
+		</property>
+		<property name="fetchSize" value="1000"/>
+    </bean>
+    
+    <bean id="jdbcBatchItemWriter4CONTRACT" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+    	<property name="dataSource" ref="derbyDS" />
+    	<property name="itemSqlParameterSourceProvider">
+    		<bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+    	</property>
+    	<property name="sql">
+    		<value>
+    			<![CDATA[
+    				INSERT INTO CONTRACT(CONTRACT_ID,MAJORVERSION,MINORVERSION,NAME,MEMBER_ID,ORIGIN,STATE,USAGE,MARKFORDELETE,COMMENTS,TIMECREATED,TIMEUPDATED,TIMEAPPROVED,TIMEACTIVATED,TIMEDEPLOYED,FAMILY_ID,OPTCOUNTER)
+    				values (:CONTRACT_ID,:MAJORVERSION,:MINORVERSION,:NAME,:MEMBER_ID,:ORIGIN,:STATE,:USAGE,:MARKFORDELETE,:COMMENTS,:TIMECREATED,:TIMEUPDATED,:TIMEAPPROVED,:TIMEACTIVATED,:TIMEDEPLOYED,:FAMILY_ID,:OPTCOUNTER) 
+    			]]>
+    		</value>
+    	</property>
+    </bean>    
+    
+</beans>

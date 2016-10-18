@@ -12,12 +12,12 @@
     <beans:import resource="oracle-ds-config.xml" />
     <beans:import resource="derby-ds-config.xml" />
     
-    <beans:import resource="batch/OFFER-batch.xml"/>
+    <beans:import resource="batch/CATGPENREL-batch.xml"/>
     
     <job id="loadData">
         <step id="loadX">
             <tasklet>
-                <chunk reader="jdbcPagingItemReader4OFFER" writer="jdbcBatchItemWriter4OFFER" commit-interval="100"/>
+                <chunk reader="jdbcPagingItemReader4CATGPENREL" writer="jdbcBatchItemWriter4CATGPENREL" commit-interval="100"/>
             </tasklet>
         </step>
     </job>

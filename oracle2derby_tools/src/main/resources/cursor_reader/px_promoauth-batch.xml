@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    
+    <context:annotation-config/>
+    
+    <bean id="jdbcCursorItemReader4PX_PROMOAUTH" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
+    	<property name="dataSource" ref="oracleDS" />
+    	<property name="sql" value="SELECT PX_PROMOTION_ID,COMMENTS,PROMOTIONTYPE,DAILYSTARTTIME,DAILYENDTIME,WEEKDAY_SUN,WEEKDAY_MON,WEEKDAY_TUE,WEEKDAY_WED,WEEKDAY_THU,WEEKDAY_FRI,WEEKDAY_SAT,CTLPARAM,OPTCOUNTER,ADMINSTVENAME FROM EMDI.PX_PROMOAUTH" />
+    	<property name="rowMapper">
+			<bean class="com.avn.dataload.model.rowmapper.PX_PROMOAUTHRowMapper" />
+		</property>
+		<property name="fetchSize" value="1000"/>
+    </bean>
+    
+    <bean id="jdbcBatchItemWriter4PX_PROMOAUTH" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+    	<property name="dataSource" ref="derbyDS" />
+    	<property name="itemSqlParameterSourceProvider">
+    		<bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+    	</property>
+    	<property name="sql">
+    		<value>
+    			<![CDATA[
+    				INSERT INTO PX_PROMOAUTH(PX_PROMOTION_ID,COMMENTS,PROMOTIONTYPE,DAILYSTARTTIME,DAILYENDTIME,WEEKDAY_SUN,WEEKDAY_MON,WEEKDAY_TUE,WEEKDAY_WED,WEEKDAY_THU,WEEKDAY_FRI,WEEKDAY_SAT,CTLPARAM,OPTCOUNTER,ADMINSTVENAME)
+    				values (:PX_PROMOTION_ID,:COMMENTS,:PROMOTIONTYPE,:DAILYSTARTTIME,:DAILYENDTIME,:WEEKDAY_SUN,:WEEKDAY_MON,:WEEKDAY_TUE,:WEEKDAY_WED,:WEEKDAY_THU,:WEEKDAY_FRI,:WEEKDAY_SAT,:CTLPARAM,:OPTCOUNTER,:ADMINSTVENAME) 
+    			]]>
+    		</value>
+    	</property>
+    </bean>    
+    
+</beans>

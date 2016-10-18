@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    
+    <context:annotation-config/>
+    
+    <bean id="jdbcCursorItemReader4XFORM_RESALE_ADDRESS" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
+    	<property name="dataSource" ref="oracleDS" />
+    	<property name="sql" value="SELECT FORM_ID,FORM_VERSION_ID,STORE_ID,FORM_QUESTION_ID,FORM_RESALE_ADDRESS_ID,FORM_RESPONSE_ID,RESALE_ADDRESS_TX_01,RESALE_ADDRESS_TX_02,RESALE_ADDRESS_TX_03,RESALE_CITY_NM,RESALE_COMPANY_NM,RESALE_COUNTRY_NM,RESALE_STATE_NM,RESALE_POSTAL_CD FROM EMDI.XFORM_RESALE_ADDRESS" />
+    	<property name="rowMapper">
+			<bean class="com.avn.dataload.model.rowmapper.XFORM_RESALE_ADDRESSRowMapper" />
+		</property>
+		<property name="fetchSize" value="1000"/>
+    </bean>
+    
+    <bean id="jdbcBatchItemWriter4XFORM_RESALE_ADDRESS" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+    	<property name="dataSource" ref="derbyDS" />
+    	<property name="itemSqlParameterSourceProvider">
+    		<bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+    	</property>
+    	<property name="sql">
+    		<value>
+    			<![CDATA[
+    				INSERT INTO XFORM_RESALE_ADDRESS(FORM_ID,FORM_VERSION_ID,STORE_ID,FORM_QUESTION_ID,FORM_RESALE_ADDRESS_ID,FORM_RESPONSE_ID,RESALE_ADDRESS_TX_01,RESALE_ADDRESS_TX_02,RESALE_ADDRESS_TX_03,RESALE_CITY_NM,RESALE_COMPANY_NM,RESALE_COUNTRY_NM,RESALE_STATE_NM,RESALE_POSTAL_CD)
+    				values (:FORM_ID,:FORM_VERSION_ID,:STORE_ID,:FORM_QUESTION_ID,:FORM_RESALE_ADDRESS_ID,:FORM_RESPONSE_ID,:RESALE_ADDRESS_TX_01,:RESALE_ADDRESS_TX_02,:RESALE_ADDRESS_TX_03,:RESALE_CITY_NM,:RESALE_COMPANY_NM,:RESALE_COUNTRY_NM,:RESALE_STATE_NM,:RESALE_POSTAL_CD) 
+    			]]>
+    		</value>
+    	</property>
+    </bean>    
+    
+</beans>

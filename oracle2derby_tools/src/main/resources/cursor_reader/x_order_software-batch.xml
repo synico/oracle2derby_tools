@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    
+    <context:annotation-config/>
+    
+    <bean id="jdbcCursorItemReader4X_ORDER_SOFTWARE" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
+    	<property name="dataSource" ref="oracleDS" />
+    	<property name="sql" value="SELECT ORDERS_ID,EMAIL_ADDRESS_TX,FIRST_NM,LAST_NM,SOFTWARE_PROCESS_CD,SOFTWARE_VOUCHER_NO,APPL_CREATE_DT,APPL_UPDATE_DT,SOFTWARE_AUTHORIZER_CD FROM EMDI.X_ORDER_SOFTWARE" />
+    	<property name="rowMapper">
+			<bean class="com.avn.dataload.model.rowmapper.X_ORDER_SOFTWARERowMapper" />
+		</property>
+		<property name="fetchSize" value="1000"/>
+    </bean>
+    
+    <bean id="jdbcBatchItemWriter4X_ORDER_SOFTWARE" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+    	<property name="dataSource" ref="derbyDS" />
+    	<property name="itemSqlParameterSourceProvider">
+    		<bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+    	</property>
+    	<property name="sql">
+    		<value>
+    			<![CDATA[
+    				INSERT INTO X_ORDER_SOFTWARE(ORDERS_ID,EMAIL_ADDRESS_TX,FIRST_NM,LAST_NM,SOFTWARE_PROCESS_CD,SOFTWARE_VOUCHER_NO,APPL_CREATE_DT,APPL_UPDATE_DT,SOFTWARE_AUTHORIZER_CD)
+    				values (:ORDERS_ID,:EMAIL_ADDRESS_TX,:FIRST_NM,:LAST_NM,:SOFTWARE_PROCESS_CD,:SOFTWARE_VOUCHER_NO,:APPL_CREATE_DT,:APPL_UPDATE_DT,:SOFTWARE_AUTHORIZER_CD) 
+    			]]>
+    		</value>
+    	</property>
+    </bean>    
+    
+</beans>

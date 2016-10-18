@@ -12,13 +12,13 @@
     <beans:import resource="oracle-ds-config.xml" />
     <beans:import resource="derby-ds-config.xml" />
     
-    <beans:import resource="batch/*.xml"/>
+    <beans:import resource="${type}_reader/*.xml"/>
     
     <job id="loadData">
         <#list tables as table>
         <step id="load-${table.current}">
             <tasklet>
-                <chunk reader="jdbcPagingItemReader4${table.current}" writer="jdbcBatchItemWriter4${table.current}" commit-interval="100"/>
+                <chunk reader="jdbc${table.readerType}ItemReader4${table.current}" writer="jdbcBatchItemWriter4${table.current}" commit-interval="100"/>
             </tasklet>
             <#if table.next?exists>
             <next on ="*" to="load-${table.next}"/>

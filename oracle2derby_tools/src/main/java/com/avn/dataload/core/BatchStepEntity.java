@@ -5,6 +5,8 @@ public class BatchStepEntity {
     private String current;
     
     private String next;
+    
+    private String readerType;
 
     public String getCurrent() {
         return current;
@@ -20,6 +22,14 @@ public class BatchStepEntity {
 
     public void setNext(String next) {
         this.next = next;
+    }
+
+    public String getReaderType() {
+        return readerType;
+    }
+
+    public void setReaderType(String readerType) {
+        this.readerType = readerType;
     }
     
 }

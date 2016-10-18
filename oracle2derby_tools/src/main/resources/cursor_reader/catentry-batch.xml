@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    
+    <context:annotation-config/>
+    
+    <bean id="jdbcCursorItemReader4CATENTRY" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
+    	<property name="dataSource" ref="oracleDS" />
+    	<property name="sql" value="SELECT CATENTRY_ID,MEMBER_ID,ITEMSPC_ID,CATENTTYPE_ID,PARTNUMBER,MFPARTNUMBER,MFNAME,MARKFORDELETE,URL,FIELD1,FIELD2,LASTUPDATE,FIELD3,ONSPECIAL,ONAUCTION,FIELD4,FIELD5,BUYABLE,OID,BASEITEM_ID,STATE,STARTDATE,ENDDATE,RANK,OPTCOUNTER,AVAILABILITYDATE,LASTORDERDATE,ENDOFSERVICEDATE,DISCONTINUEDATE FROM EMDI.CATENTRY" />
+    	<property name="rowMapper">
+			<bean class="com.avn.dataload.model.rowmapper.CATENTRYRowMapper" />
+		</property>
+		<property name="fetchSize" value="1000"/>
+    </bean>
+    
+    <bean id="jdbcBatchItemWriter4CATENTRY" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+    	<property name="dataSource" ref="derbyDS" />
+    	<property name="itemSqlParameterSourceProvider">
+    		<bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+    	</property>
+    	<property name="sql">
+    		<value>
+    			<![CDATA[
+    				INSERT INTO CATENTRY(CATENTRY_ID,MEMBER_ID,ITEMSPC_ID,CATENTTYPE_ID,PARTNUMBER,MFPARTNUMBER,MFNAME,MARKFORDELETE,URL,FIELD1,FIELD2,LASTUPDATE,FIELD3,ONSPECIAL,ONAUCTION,FIELD4,FIELD5,BUYABLE,OID,BASEITEM_ID,STATE,STARTDATE,ENDDATE,RANK,OPTCOUNTER,AVAILABILITYDATE,LASTORDERDATE,ENDOFSERVICEDATE,DISCONTINUEDATE)
+    				values (:CATENTRY_ID,:MEMBER_ID,:ITEMSPC_ID,:CATENTTYPE_ID,:PARTNUMBER,:MFPARTNUMBER,:MFNAME,:MARKFORDELETE,:URL,:FIELD1,:FIELD2,:LASTUPDATE,:FIELD3,:ONSPECIAL,:ONAUCTION,:FIELD4,:FIELD5,:BUYABLE,:OID,:BASEITEM_ID,:STATE,:STARTDATE,:ENDDATE,:RANK,:OPTCOUNTER,:AVAILABILITYDATE,:LASTORDERDATE,:ENDOFSERVICEDATE,:DISCONTINUEDATE) 
+    			]]>
+    		</value>
+    	</property>
+    </bean>    
+    
+</beans>

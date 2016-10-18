@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    
+    <context:annotation-config/>
+    
+    <bean id="jdbcCursorItemReader4XUSERSUBSCRIPTION" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
+    	<property name="dataSource" ref="oracleDS" />
+    	<property name="sql" value="SELECT LOGON_ID,SUBSCRIPTION_ID,SUBSCRIBED,SYNCSTATUS,TIME_CREATED,TIME_SUBSCRIBED,TIME_UNSUBSCRIBED,STORE_ID,LASTUPDATED,FIELD1,FIELD2,FIELD3,FIELD4,OPTCOUNTER FROM EMDI.XUSERSUBSCRIPTION" />
+    	<property name="rowMapper">
+			<bean class="com.avn.dataload.model.rowmapper.XUSERSUBSCRIPTIONRowMapper" />
+		</property>
+		<property name="fetchSize" value="1000"/>
+    </bean>
+    
+    <bean id="jdbcBatchItemWriter4XUSERSUBSCRIPTION" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+    	<property name="dataSource" ref="derbyDS" />
+    	<property name="itemSqlParameterSourceProvider">
+    		<bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+    	</property>
+    	<property name="sql">
+    		<value>
+    			<![CDATA[
+    				INSERT INTO XUSERSUBSCRIPTION(LOGON_ID,SUBSCRIPTION_ID,SUBSCRIBED,SYNCSTATUS,TIME_CREATED,TIME_SUBSCRIBED,TIME_UNSUBSCRIBED,STORE_ID,LASTUPDATED,FIELD1,FIELD2,FIELD3,FIELD4,OPTCOUNTER)
+    				values (:LOGON_ID,:SUBSCRIPTION_ID,:SUBSCRIBED,:SYNCSTATUS,:TIME_CREATED,:TIME_SUBSCRIBED,:TIME_UNSUBSCRIBED,:STORE_ID,:LASTUPDATED,:FIELD1,:FIELD2,:FIELD3,:FIELD4,:OPTCOUNTER) 
+    			]]>
+    		</value>
+    	</property>
+    </bean>    
+    
+</beans>

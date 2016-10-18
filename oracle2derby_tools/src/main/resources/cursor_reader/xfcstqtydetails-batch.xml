@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    
+    <context:annotation-config/>
+    
+    <bean id="jdbcCursorItemReader4XFCSTQTYDETAILS" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
+    	<property name="dataSource" ref="oracleDS" />
+    	<property name="sql" value="SELECT FORECAST_ID,FCST_PARTY,CUST_MAT,MATERIAL_NBR,WEEK_NBR,FCST_RAW,FCST_AMENDED,ZSB_ORDERS,ZFC_ORDERS,CAL_W_INV,AVNET_COMMIT,CUST_TOT_NEED,INTERMEDIATE_CALC_VALUE,EXCESS_SHORTAGE,RUNNING_TOTAL,COVERED_FLAG,CONSTRAINED_FLAG,NO_FCST_QTY_FLAG,FORECAST_RCV_DATE,AVL_FAC_PO,UPDATED_ON,INV_POSITION,PLANT_INV,ZKB1_ORDERS,ZOR_ORDERS,ZKA1_ORDERS,ZKE1_ORDERS,CONSIGN_INV FROM EMDI.XFCSTQTYDETAILS" />
+    	<property name="rowMapper">
+			<bean class="com.avn.dataload.model.rowmapper.XFCSTQTYDETAILSRowMapper" />
+		</property>
+		<property name="fetchSize" value="1000"/>
+    </bean>
+    
+    <bean id="jdbcBatchItemWriter4XFCSTQTYDETAILS" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+    	<property name="dataSource" ref="derbyDS" />
+    	<property name="itemSqlParameterSourceProvider">
+    		<bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+    	</property>
+    	<property name="sql">
+    		<value>
+    			<![CDATA[
+    				INSERT INTO XFCSTQTYDETAILS(FORECAST_ID,FCST_PARTY,CUST_MAT,MATERIAL_NBR,WEEK_NBR,FCST_RAW,FCST_AMENDED,ZSB_ORDERS,ZFC_ORDERS,CAL_W_INV,AVNET_COMMIT,CUST_TOT_NEED,INTERMEDIATE_CALC_VALUE,EXCESS_SHORTAGE,RUNNING_TOTAL,COVERED_FLAG,CONSTRAINED_FLAG,NO_FCST_QTY_FLAG,FORECAST_RCV_DATE,AVL_FAC_PO,UPDATED_ON,INV_POSITION,PLANT_INV,ZKB1_ORDERS,ZOR_ORDERS,ZKA1_ORDERS,ZKE1_ORDERS,CONSIGN_INV)
+    				values (:FORECAST_ID,:FCST_PARTY,:CUST_MAT,:MATERIAL_NBR,:WEEK_NBR,:FCST_RAW,:FCST_AMENDED,:ZSB_ORDERS,:ZFC_ORDERS,:CAL_W_INV,:AVNET_COMMIT,:CUST_TOT_NEED,:INTERMEDIATE_CALC_VALUE,:EXCESS_SHORTAGE,:RUNNING_TOTAL,:COVERED_FLAG,:CONSTRAINED_FLAG,:NO_FCST_QTY_FLAG,:FORECAST_RCV_DATE,:AVL_FAC_PO,:UPDATED_ON,:INV_POSITION,:PLANT_INV,:ZKB1_ORDERS,:ZOR_ORDERS,:ZKA1_ORDERS,:ZKE1_ORDERS,:CONSIGN_INV) 
+    			]]>
+    		</value>
+    	</property>
+    </bean>    
+    
+</beans>

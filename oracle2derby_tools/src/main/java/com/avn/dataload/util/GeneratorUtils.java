@@ -42,7 +42,7 @@ public class GeneratorUtils {
     
     private static final String FTL_DIR = "E:\\scm\\git\\oracle2derby_tools\\oracle2derby_tools\\src\\main\\resources\\freemarker\\";
     
-    private static final String SCHEMA_ORACLE_SQL = "select table_name from all_tables where tablespace_name='EMDI_DATA' and num_rows>1 and table_name not like 'TI_%' and table_name not like '%_TMP' and table_name not like '%_BACKUP' and num_rows>0 order by num_rows desc";
+    private static final String SCHEMA_ORACLE_SQL = "select table_name from all_tables where tablespace_name='USERS' and num_rows>1 and table_name not like 'TI_%' and table_name not like '%_TMP' and table_name not like '%_BACKUP' and num_rows>0 order by num_rows desc";
     
     private static final String SCHEMA_DERBY_SQL = "select tablename from sys.systables where tabletype='T' order by tablename asc";
 
@@ -248,7 +248,7 @@ public class GeneratorUtils {
         }
     }
     
-    public static void genItemReaderAndWriters() {
+    public static void genPagingItemReaderAndWriters() {
         File dir = new File("./src/main/java/com/avn/dataload/model");
         File clsFiles[] = dir.listFiles();
         List bigTables = readTableInfo(TABLE_MORETHAN_1M_SQL);
@@ -281,12 +281,50 @@ public class GeneratorUtils {
                 }
                 
                 props.put("step", entity);
-                generateFileByTemplate("step.ftl", "./src/main/resources/batch/" + clsName.toLowerCase() + "-batch.xml", props);
+                generateFileByTemplate("paging_reader.ftl", "./src/main/resources/paging_reader/" + clsName.toLowerCase() + "-batch.xml", props);
             }
         }
     }
     
-    public static void buildBatchJobConfig() {
+    public static void genCursorItemReaderAndWriters() {
+        File dir = new File("./src/main/java/com/avn/dataload/model");
+        File clsFiles[] = dir.listFiles();
+        List bigTables = readTableInfo(TABLE_MORETHAN_1M_SQL);
+        Map props = new HashMap();
+        for (File clsFile : clsFiles) {
+            if(clsFile.isFile()) {
+                StepEntity entity = new StepEntity();
+                String clsName = clsFile.getName().replace(".java", "");
+                Class cls;
+                List<String> cols = new LinkedList<String>();
+                try {
+                    cls = Class.forName("com.avn.dataload.model." + clsName);
+                    Object obj = cls.newInstance();
+                    Field[] fields = obj.getClass().getDeclaredFields();
+                    for(Field field : fields) {
+                        cols.add(field.getName());
+                    }
+                    entity.setColumnList(cols);
+                    entity.setInDataSource("oracleDS");
+                    entity.setOutDataSource("derbyDS");
+                    entity.setTableName(clsName);
+                    entity.setSortKey(fields[0].getName());
+                    if(bigTables.contains(clsName)) {
+                        entity.setTableNickName("DERBY_" + clsName);
+                    } else {
+                        entity.setTableNickName(clsName);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                
+                props.put("step", entity);
+                generateFileByTemplate("cursor_reader.ftl", "./src/main/resources/cursor_reader/" + clsName.toLowerCase() + "-batch.xml", props);
+            }
+        }
+    }
+    
+    public static void buildBatchJobConfig(String type) {
         List<String> tableNames = readTableInfo(SCHEMA_ORACLE_SQL);
         tableNames.add(null);
         BatchStepEntity entity = null;
@@ -295,11 +333,17 @@ public class GeneratorUtils {
             entity = new BatchStepEntity();
             entity.setCurrent(tableNames.get(i));
             entity.setNext(tableNames.get(i+1));
+            if("paging".equalsIgnoreCase(type)) {
+                entity.setReaderType("Paging");
+            } else {
+                entity.setReaderType("Cursor");
+            }
             steps.add(entity);
         }
-        Map<String, List<BatchStepEntity>> props = new HashMap<String, List<BatchStepEntity>>();
+        Map props = new HashMap();
         props.put("tables", steps);
-        generateFileByTemplate("batch-job.ftl", "./src/main/resources/oracle2derby-job.xml", props);
+        props.put("type", type);
+        generateFileByTemplate("batch-job.ftl", "./src/main/resources/" + type + "-job.xml", props);
     }
     
     public static void compareSchemas() {
@@ -368,9 +412,10 @@ public class GeneratorUtils {
 //        buildGeneratorConfig();
 //        createModels();
 //        generateRowMappers();
-//        genItemReaderAndWriters();
-//        buildBatchJobConfig();
-        compareSchemas();
+//        genPagingItemReaderAndWriters();
+//        genCursorItemReaderAndWriters();
+        buildBatchJobConfig("cursor");
+//        compareSchemas();
     }
 
 }

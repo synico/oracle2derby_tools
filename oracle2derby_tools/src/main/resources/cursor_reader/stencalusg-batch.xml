@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    
+    <context:annotation-config/>
+    
+    <bean id="jdbcCursorItemReader4STENCALUSG" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
+    	<property name="dataSource" ref="oracleDS" />
+    	<property name="sql" value="SELECT STOREENT_ID,CALUSAGE_ID,ACTCC_CALMETHOD_ID,ACTRC_CALMETHOD_ID,CALCODE_ID,CALMETHOD_ID_APP,CALMETHOD_ID_SUM,CALMETHOD_ID_FIN,USAGEFLAGS,CALMETHOD_ID_INI,SEQUENCE,OPTCOUNTER FROM EMDI.STENCALUSG" />
+    	<property name="rowMapper">
+			<bean class="com.avn.dataload.model.rowmapper.STENCALUSGRowMapper" />
+		</property>
+		<property name="fetchSize" value="1000"/>
+    </bean>
+    
+    <bean id="jdbcBatchItemWriter4STENCALUSG" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+    	<property name="dataSource" ref="derbyDS" />
+    	<property name="itemSqlParameterSourceProvider">
+    		<bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+    	</property>
+    	<property name="sql">
+    		<value>
+    			<![CDATA[
+    				INSERT INTO STENCALUSG(STOREENT_ID,CALUSAGE_ID,ACTCC_CALMETHOD_ID,ACTRC_CALMETHOD_ID,CALCODE_ID,CALMETHOD_ID_APP,CALMETHOD_ID_SUM,CALMETHOD_ID_FIN,USAGEFLAGS,CALMETHOD_ID_INI,SEQUENCE,OPTCOUNTER)
+    				values (:STOREENT_ID,:CALUSAGE_ID,:ACTCC_CALMETHOD_ID,:ACTRC_CALMETHOD_ID,:CALCODE_ID,:CALMETHOD_ID_APP,:CALMETHOD_ID_SUM,:CALMETHOD_ID_FIN,:USAGEFLAGS,:CALMETHOD_ID_INI,:SEQUENCE,:OPTCOUNTER) 
+    			]]>
+    		</value>
+    	</property>
+    </bean>    
+    
+</beans>
