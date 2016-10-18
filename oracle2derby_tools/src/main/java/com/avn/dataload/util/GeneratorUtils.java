@@ -414,7 +414,7 @@ public class GeneratorUtils {
 //        generateRowMappers();
 //        genPagingItemReaderAndWriters();
 //        genCursorItemReaderAndWriters();
-        buildBatchJobConfig("cursor");
+        buildBatchJobConfig("paging");
 //        compareSchemas();
     }
 
