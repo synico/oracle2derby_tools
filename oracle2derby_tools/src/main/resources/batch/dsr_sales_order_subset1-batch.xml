@@ -18,7 +18,7 @@
 			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
 				<property name="dataSource" ref="oracleDS" />
 				<property name="selectClause" value="SELECT SCN,LINE_ITEM_NBR,CREATE_DT,UPDATE_DT,LAST_UPDATE_ACTION,BUYER_NAME,CONDITION_CD,CUST_PART_NBR,CUST_PO_ID,MFG_CD,ORDER_DT,PART_NBR,RELEASE_ID,REQD_DELV_DT,SHIPPER_PROG_NBR,SHIPTO_CUST_NBR,STATUS_CD,SUPPLIER_ID,SUPPLIER_PART_NBR,SUPPLIER_SHORT_NM,STATUS_TX,AVNET_ERP_NM,PROMISED_DELV_DT,WCS_ORDER_ID" />
-		    	<property name="fromClause" value="FROM EMDI.DSR_SALES_ORDER_SUBSET1" />
+		    	<property name="fromClause" value="FROM EMDI.DERBY_DSR_SALES_ORDER_SUBSET1" />
 		    	<property name="sortKeys">
 		    		<map>
 		    			<entry key="SCN" value="DESCENDING" />

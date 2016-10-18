@@ -18,7 +18,7 @@
 			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
 				<property name="dataSource" ref="oracleDS" />
 				<property name="selectClause" value="SELECT CATGROUP_ID,CATALOG_ID,CATENTRY_ID,RULE,SEQUENCE,LASTUPDATE,OPTCOUNTER" />
-		    	<property name="fromClause" value="FROM EMDI.CATGPENREL" />
+		    	<property name="fromClause" value="FROM EMDI.DERBY_CATGPENREL" />
 		    	<property name="sortKeys">
 		    		<map>
 		    			<entry key="CATGROUP_ID" value="DESCENDING" />

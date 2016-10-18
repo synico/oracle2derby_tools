@@ -18,7 +18,7 @@
 			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
 				<property name="dataSource" ref="oracleDS" />
 				<property name="selectClause" value="SELECT FORECAST_ID,FCST_PARTY,CUST_MAT,NET_OF_BACKLOG,CONSIGNMENT,RESERVING,MATERIAL_NBR,W_INV,INVENTORY,LEAD_TIME,FORECAST_RCV_DATE,WEEK_NBR,FCST_RAW,FCST_AMENDED,ZSB_ORDERS,ZFC_ORDERS,CAL_W_INV,AVNET_COMMIT,CUST_TOT_NEED,INTERMEDIATE_CALC_VALUE,EXCESS_SHORTAGE,RUNNING_TOTAL,COVERED_FLAG,CONSTRAINED_FLAG,NO_FCST_QTY_FLAG,AVL_FAC_PO,UPDATED_ON,INV_POSITION,ZKB1_ORDERS,ZOR_ORDERS,VMI,PLANT_INVENTORY,ZKA1_ORDERS,ZKE1_ORDERS,CONSIGN_INV" />
-		    	<property name="fromClause" value="FROM EMDI.X_FCST_QTY_CALC" />
+		    	<property name="fromClause" value="FROM EMDI.DERBY_X_FCST_QTY_CALC" />
 		    	<property name="sortKeys">
 		    		<map>
 		    			<entry key="FORECAST_ID" value="DESCENDING" />

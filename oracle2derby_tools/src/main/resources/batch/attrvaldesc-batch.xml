@@ -18,7 +18,7 @@
 			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
 				<property name="dataSource" ref="oracleDS" />
 				<property name="selectClause" value="SELECT ATTRVAL_ID,LANGUAGE_ID,ATTR_ID,VALUE,VALUSAGE,SEQUENCE,STRINGVALUE,INTEGERVALUE,FLOATVALUE,QTYUNIT_ID,IMAGE1,IMAGE2,FIELD1,FIELD2,FIELD3,OPTCOUNTER" />
-		    	<property name="fromClause" value="FROM EMDI.ATTRVALDESC" />
+		    	<property name="fromClause" value="FROM EMDI.DERBY_ATTRVALDESC" />
 		    	<property name="sortKeys">
 		    		<map>
 		    			<entry key="ATTRVAL_ID" value="DESCENDING" />

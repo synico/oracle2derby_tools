@@ -18,7 +18,7 @@
 			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
 				<property name="dataSource" ref="oracleDS" />
 				<property name="selectClause" value="SELECT SEOREDIRECT_ID,SEOURLKWD_ID_NEW,SEOURLKWD_ID_ORIG,OPTCOUNTER" />
-		    	<property name="fromClause" value="FROM EMDI.SEOREDIRECT" />
+		    	<property name="fromClause" value="FROM EMDI.DERBY_SEOREDIRECT" />
 		    	<property name="sortKeys">
 		    		<map>
 		    			<entry key="SEOREDIRECT_ID" value="DESCENDING" />

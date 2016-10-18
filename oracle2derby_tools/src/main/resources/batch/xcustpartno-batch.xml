@@ -18,7 +18,7 @@
 			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
 				<property name="dataSource" ref="oracleDS" />
 				<property name="selectClause" value="SELECT XCUSTPARTNO_ID,CATENTRY_ID,ORGENTITY_ID,CUSTPARTNO,FIELD1,FIELD2,FIELD3,OPTCOUNTER" />
-		    	<property name="fromClause" value="FROM EMDI.XCUSTPARTNO" />
+		    	<property name="fromClause" value="FROM EMDI.DERBY_XCUSTPARTNO" />
 		    	<property name="sortKeys">
 		    		<map>
 		    			<entry key="XCUSTPARTNO_ID" value="DESCENDING" />

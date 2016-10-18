@@ -34,7 +34,7 @@ public class GeneratorUtils {
     
     private static final Logger log = Logger.getLogger(GeneratorUtils.class);
     
-    private static final String SQL = "select table_name, num_rows from all_tables where tablespace_name='USERS' and table_name not like 'TI%' and num_rows>0 order by num_rows desc";
+    private static final String CREATE_MODELS_SQL = "select table_name, num_rows from all_tables where tablespace_name='USERS' and table_name not like 'TI%' and table_name not like '%_TMP' and table_name not like '%_BACKUP' and num_rows>0 order by num_rows desc";
     
     private static final String TABLE_MORETHAN_1M_SQL = "select table_name, num_rows from all_tables where tablespace_name='USERS' and table_name not like 'TI%' and table_name not like '%_TMP' and table_name not like '%_BACKUP' and num_rows>=1000000 order by num_rows desc";
     
@@ -49,6 +49,9 @@ public class GeneratorUtils {
     private static ApplicationContext ctx;
     
     //Step1 generate mybatis generator configuration files
+    /**
+     * @deprecated
+     */
     public static void buildGeneratorConfig() {
         Configuration cfg = new Configuration();
         try {
@@ -91,9 +94,13 @@ public class GeneratorUtils {
         }
     }
     
+    /**
+     * @deprecated
+     * @return
+     */
     private static Map<String, List<String>> createConfigEntries() {
     	Map<String, List<String>> result = new HashMap<String, List<String>>();
-    	List<String> tableNames = readTableInfo(SQL);
+    	List<String> tableNames = readTableInfo(CREATE_MODELS_SQL);
     	List<String> configEntries = new ArrayList<String>(tableNames.size());
     	for (String tableName : tableNames) {
     		String temp = "<table schema=\"EMDI\" tableName=\""+ tableName + "\" enableSelectByExample=\"false\" enableUpdateByPrimaryKey=\"false\" enableDeleteByPrimaryKey=\"false\" enableDeleteByExample=\"false\" enableCountByExample=\"false\"   enableUpdateByExample=\"false\" selectByPrimaryKeyQueryId=\"false\" selectByExampleQueryId=\"false\" />";
@@ -176,7 +183,7 @@ public class GeneratorUtils {
     }
     
     private static void createModels() {
-        List<String> tableNames = readTableInfo(SQL);
+        List<String> tableNames = readTableInfo(CREATE_MODELS_SQL);
         
         ctx = new ClassPathXmlApplicationContext("classpath:oracle-ds-config.xml");
         DriverManagerDataSource ds = (DriverManagerDataSource) ctx.getBean("oracleDS");
@@ -244,6 +251,7 @@ public class GeneratorUtils {
     public static void genItemReaderAndWriters() {
         File dir = new File("./src/main/java/com/avn/dataload/model");
         File clsFiles[] = dir.listFiles();
+        List bigTables = readTableInfo(TABLE_MORETHAN_1M_SQL);
         Map props = new HashMap();
         for (File clsFile : clsFiles) {
             if(clsFile.isFile()) {
@@ -263,6 +271,11 @@ public class GeneratorUtils {
                     entity.setOutDataSource("derbyDS");
                     entity.setTableName(clsName);
                     entity.setSortKey(fields[0].getName());
+                    if(bigTables.contains(clsName)) {
+                        entity.setTableNickName("DERBY_" + clsName);
+                    } else {
+                        entity.setTableNickName(clsName);
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -356,8 +369,8 @@ public class GeneratorUtils {
 //        createModels();
 //        generateRowMappers();
 //        genItemReaderAndWriters();
-        buildBatchJobConfig();
-//        compareSchemas();
+//        buildBatchJobConfig();
+        compareSchemas();
     }
 
 }

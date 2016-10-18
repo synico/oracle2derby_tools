@@ -18,7 +18,7 @@
 			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
 				<property name="dataSource" ref="oracleDS" />
 				<property name="selectClause" value="SELECT STOREENT_ID,CATENTRY_ID,OPTCOUNTER" />
-		    	<property name="fromClause" value="FROM EMDI.STORECENT" />
+		    	<property name="fromClause" value="FROM EMDI.DERBY_STORECENT" />
 		    	<property name="sortKeys">
 		    		<map>
 		    			<entry key="STOREENT_ID" value="DESCENDING" />

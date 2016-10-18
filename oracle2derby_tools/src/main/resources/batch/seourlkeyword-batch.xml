@@ -18,7 +18,7 @@
 			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
 				<property name="dataSource" ref="oracleDS" />
 				<property name="selectClause" value="SELECT SEOURLKEYWORD_ID,SEOURL_ID,LANGUAGE_ID,STOREENT_ID,URLKEYWORD,MOBILEURLKEYWORD,STATUS,OPTCOUNTER" />
-		    	<property name="fromClause" value="FROM EMDI.SEOURLKEYWORD" />
+		    	<property name="fromClause" value="FROM EMDI.DERBY_SEOURLKEYWORD" />
 		    	<property name="sortKeys">
 		    		<map>
 		    			<entry key="SEOURLKEYWORD_ID" value="DESCENDING" />

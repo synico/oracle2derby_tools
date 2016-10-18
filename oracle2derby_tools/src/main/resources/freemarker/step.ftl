@@ -19,7 +19,7 @@
 				<property name="dataSource" ref="${step.inDataSource}" />
 				<#assign columnList><#list step.columnList as column>${column},</#list></#assign>
 				<property name="selectClause" value="SELECT ${columnList?substring(0, (columnList?length-1))}" />
-		    	<property name="fromClause" value="FROM EMDI.${step.tableName}" />
+		    	<property name="fromClause" value="FROM EMDI.${step.tableNickName}" />
 		    	<property name="sortKeys">
 		    		<map>
 		    			<entry key="${step.sortKey}" value="DESCENDING" />

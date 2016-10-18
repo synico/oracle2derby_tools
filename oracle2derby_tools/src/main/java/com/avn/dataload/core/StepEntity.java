@@ -10,6 +10,8 @@ public class StepEntity {
     
     private String tableName;
     
+    private String tableNickName;
+    
     private List<String> columnList;
     
     private String sortKey;
@@ -52,6 +54,14 @@ public class StepEntity {
 
     public void setOutDataSource(String outDataSource) {
         this.outDataSource = outDataSource;
+    }
+
+    public String getTableNickName() {
+        return tableNickName;
+    }
+
+    public void setTableNickName(String tableNickName) {
+        this.tableNickName = tableNickName;
     }
     
 }

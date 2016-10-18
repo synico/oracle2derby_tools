@@ -18,7 +18,7 @@
 			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
 				<property name="dataSource" ref="oracleDS" />
 				<property name="selectClause" value="SELECT OFFER_ID,STARTDATE,TRADEPOSCN_ID,CATENTRY_ID,ENDDATE,PRECEDENCE,PUBLISHED,LASTUPDATE,MINIMUMQUANTITY,QTYUNIT_ID,MAXIMUMQUANTITY,FIELD1,FIELD2,FLAGS,IDENTIFIER,OID,OPTCOUNTER" />
-		    	<property name="fromClause" value="EMDI.DERBY_OFFER" />
+		    	<property name="fromClause" value="FROM EMDI.DERBY_OFFER" />
 		    	<property name="sortKeys">
 		    		<map>
 		    			<entry key="OFFER_ID" value="DESCENDING" />
@@ -26,7 +26,7 @@
 		    	</property>
 			</bean>
 		</property>
-    	<property name="pageSize" value="100"/>
+    	<property name="pageSize" value="1000"/>
     </bean>
     
     <bean id="jdbcBatchItemWriter4OFFER" class="org.springframework.batch.item.database.JdbcBatchItemWriter">

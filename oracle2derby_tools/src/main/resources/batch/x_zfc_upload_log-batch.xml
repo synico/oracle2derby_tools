@@ -18,7 +18,7 @@
 			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
 				<property name="dataSource" ref="oracleDS" />
 				<property name="selectClause" value="SELECT MANDT,ZZFPA,VKORG,VTWEG,ZZCMA,MATNR,FCASTWEEK,FCASTRECVDDATE,FCASTRAW,FCASTAMENDED,UPDATED_FLAG" />
-		    	<property name="fromClause" value="FROM EMDI.X_ZFC_UPLOAD_LOG" />
+		    	<property name="fromClause" value="FROM EMDI.DERBY_X_ZFC_UPLOAD_LOG" />
 		    	<property name="sortKeys">
 		    		<map>
 		    			<entry key="MANDT" value="DESCENDING" />

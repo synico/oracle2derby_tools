@@ -18,7 +18,7 @@
 			<bean class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
 				<property name="dataSource" ref="oracleDS" />
 				<property name="selectClause" value="SELECT TEMPLATE,DATAID,INSERTTIME,OPTCOUNTER" />
-		    	<property name="fromClause" value="FROM EMDI.CACHEIVL" />
+		    	<property name="fromClause" value="FROM EMDI.DERBY_CACHEIVL" />
 		    	<property name="sortKeys">
 		    		<map>
 		    			<entry key="TEMPLATE" value="DESCENDING" />
