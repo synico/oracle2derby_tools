@@ -326,6 +326,19 @@ public class GeneratorUtils {
     
     public static void buildBatchJobConfig(String type) {
         List<String> tableNames = readTableInfo(SCHEMA_ORACLE_SQL);
+        List<String> unselectedTables = new ArrayList<String>();
+        unselectedTables.add("SEOURLKEYWORD");
+        unselectedTables.add("SEOURL");
+        unselectedTables.add("CACHEIVL");
+        unselectedTables.add("SEOREDIRECT");
+        unselectedTables.add("X_FCST_QTY_CALC");
+        unselectedTables.add("XFCSTQTYDETAILS");
+        unselectedTables.add("X_SAP_SALESDOC_SCHED_LN");
+        unselectedTables.add("X_ZFC_UPLOAD_LOG");
+        unselectedTables.add("X_SAP_SALESDOC_ITEM");
+        unselectedTables.add("DSR_SALES_ORDER_SUBSET1");
+        tableNames.removeAll(unselectedTables);
+        
         tableNames.add(null);
         BatchStepEntity entity = null;
         List<BatchStepEntity> steps = new LinkedList<BatchStepEntity>();
@@ -414,7 +427,7 @@ public class GeneratorUtils {
 //        generateRowMappers();
 //        genPagingItemReaderAndWriters();
 //        genCursorItemReaderAndWriters();
-        buildBatchJobConfig("paging");
+        buildBatchJobConfig("cursor");
 //        compareSchemas();
     }
 

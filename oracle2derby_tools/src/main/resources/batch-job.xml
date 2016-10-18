@@ -12,14 +12,35 @@
     <beans:import resource="oracle-ds-config.xml" />
     <beans:import resource="derby-ds-config.xml" />
     
-    <beans:import resource="batch/CATGPENREL-batch.xml"/>
+    <beans:import resource="cursor_reader/*-batch.xml"/>
     
     <job id="loadData">
-        <step id="loadX">
+        <step id="loadCATENTDESC">
             <tasklet>
-                <chunk reader="jdbcPagingItemReader4CATGPENREL" writer="jdbcBatchItemWriter4CATGPENREL" commit-interval="100"/>
+                <chunk reader="jdbcCursorItemReader4CATENTDESC" writer="jdbcBatchItemWriter4CATENTDESC" commit-interval="200"/>
             </tasklet>
+            <!-- <next on ="*" to="loadCATENTDESC"/>
+            <next on="FAILED" to="loadCATENTDESC"/> -->
         </step>
+        <!-- <step id="loadCATENTDESC">
+            <tasklet>
+                <chunk reader="jdbcCursorItemReader4CATENTDESC" writer="jdbcBatchItemWriter4CATENTDESC" commit-interval="100"/>
+            </tasklet>
+            <next on ="*" to="loadSTORECENT"/>
+            <next on="FAILED" to="loadSTORECENT"/>
+        </step>
+        <step id="loadSTORECENT">
+            <tasklet>
+                <chunk reader="jdbcCursorItemReader4STORECENT" writer="jdbcBatchItemWriter4STORECENT" commit-interval="100"/>
+            </tasklet>
+            <next on ="*" to="loadCATENTRY"/>
+            <next on="FAILED" to="loadCATENTRY"/>
+        </step>
+        <step id="loadCATENTRY">
+            <tasklet>
+                <chunk reader="jdbcCursorItemReader4CATENTRY" writer="jdbcBatchItemWriter4CATENTRY" commit-interval="100"/>
+            </tasklet>
+        </step> -->
     </job>
     
     <beans:bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">

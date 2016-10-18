@@ -11,7 +11,8 @@
     
     <bean id="jdbcCursorItemReader4XCUSTPARTNO" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
     	<property name="dataSource" ref="oracleDS" />
-    	<property name="sql" value="SELECT XCUSTPARTNO_ID,CATENTRY_ID,ORGENTITY_ID,CUSTPARTNO,FIELD1,FIELD2,FIELD3,OPTCOUNTER FROM EMDI.XCUSTPARTNO" />
+    	<property name="sql" value="SELECT XCUSTPARTNO_ID,CATENTRY_ID,ORGENTITY_ID,CUSTPARTNO,FIELD1,FIELD2,FIELD3,OPTCOUNTER FROM EMDI.XCUSTPARTNO 
+    	WHERE CATENTRY_ID IN (SELECT SELECTED_ID FROM TMP_CATENTRYIDS)" />
     	<property name="rowMapper">
 			<bean class="com.avn.dataload.model.rowmapper.XCUSTPARTNORowMapper" />
 		</property>

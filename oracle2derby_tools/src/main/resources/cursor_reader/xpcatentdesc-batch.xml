@@ -11,7 +11,8 @@
     
     <bean id="jdbcCursorItemReader4XPCATENTDESC" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
     	<property name="dataSource" ref="oracleDS" />
-    	<property name="sql" value="SELECT CATENTRY_ID,LANGUAGE_ID,PRODUCTAPPLICATIONS,KITINCLUDE,FIELD1,FIELD2,OPTCOUNTER FROM EMDI.XPCATENTDESC" />
+    	<property name="sql" value="SELECT CATENTRY_ID,LANGUAGE_ID,PRODUCTAPPLICATIONS,KITINCLUDE,FIELD1,FIELD2,OPTCOUNTER FROM EMDI.XPCATENTDESC 
+    	WHERE CATENTRY_ID IN (SELECT SELECTED_ID FROM TMP_CATENTRYIDS)" />
     	<property name="rowMapper">
 			<bean class="com.avn.dataload.model.rowmapper.XPCATENTDESCRowMapper" />
 		</property>

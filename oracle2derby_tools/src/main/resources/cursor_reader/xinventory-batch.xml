@@ -11,7 +11,8 @@
     
     <bean id="jdbcCursorItemReader4XINVENTORY" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
     	<property name="dataSource" ref="oracleDS" />
-    	<property name="sql" value="SELECT CATENTRY_ID,FFMCENTER_ID,STORE_ID,FACTORY_LEADTIME,LEADTIME_UOM,TIME_STAMP_UTC,FACTORYQOH,FIELD1,FIELD2,FIELD3,FIELD4,FIELD5,FIELD6,OPTCOUNTER FROM EMDI.XINVENTORY" />
+    	<property name="sql" value="SELECT CATENTRY_ID,FFMCENTER_ID,STORE_ID,FACTORY_LEADTIME,LEADTIME_UOM,TIME_STAMP_UTC,FACTORYQOH,FIELD1,FIELD2,FIELD3,FIELD4,FIELD5,FIELD6,OPTCOUNTER FROM EMDI.XINVENTORY 
+    	WHERE CATENTRY_ID IN (SELECT SELECTED_ID FROM TMP_CATENTRYIDS)" />
     	<property name="rowMapper">
 			<bean class="com.avn.dataload.model.rowmapper.XINVENTORYRowMapper" />
 		</property>

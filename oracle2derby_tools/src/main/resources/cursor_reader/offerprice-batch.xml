@@ -11,7 +11,8 @@
     
     <bean id="jdbcCursorItemReader4OFFERPRICE" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
     	<property name="dataSource" ref="oracleDS" />
-    	<property name="sql" value="SELECT OFFER_ID,CURRENCY,PRICE,COMPAREPRICE,OPTCOUNTER FROM EMDI.OFFERPRICE" />
+    	<property name="sql" value="SELECT OFFER_ID,CURRENCY,PRICE,COMPAREPRICE,OPTCOUNTER FROM EMDI.OFFERPRICE 
+    	WHERE OFFER_ID IN (SELECT OFFER_ID FROM EMDI.OFFER WHERE PUBLISHED=1 AND CATENTRY_ID IN (SELECT CATENTRY_ID FROM EMDI.CATGPENREL WHERE CATGROUP_ID IN (SELECT CATGROUP_ID_CHILD FROM EMDI.CATGRPREL WHERE CATGROUP_ID_PARENT IN (SELECT CATGROUP_ID FROM CATGRPDESC WHERE NAME IN ('Amplifiers','Kits and Tools')))))" />
     	<property name="rowMapper">
 			<bean class="com.avn.dataload.model.rowmapper.OFFERPRICERowMapper" />
 		</property>
