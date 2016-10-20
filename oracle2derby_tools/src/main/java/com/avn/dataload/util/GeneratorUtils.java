@@ -343,6 +343,7 @@ public class GeneratorUtils {
         unselectedTables.add("DSR_SALES_ORDER_SUBSET1");
         unselectedTables.add("ATCHREL");
         unselectedTables.add("ATCHRELDSC");
+        unselectedTables.add("TMP_CATENTRYIDS");
         tableNames.removeAll(unselectedTables);
         
         tableNames.add(null);

@@ -208,13 +208,6 @@
             <tasklet>
                 <chunk reader="jdbcCursorItemReader4ADDRESS" writer="jdbcBatchItemWriter4ADDRESS" commit-interval="100"/>
             </tasklet>
-            <next on ="*" to="load-TMP_CATENTRYIDS"/>
-            <next on="FAILED" to="load-TMP_CATENTRYIDS"/>
-        </step>
-        <step id="load-TMP_CATENTRYIDS">
-            <tasklet>
-                <chunk reader="jdbcCursorItemReader4TMP_CATENTRYIDS" writer="jdbcBatchItemWriter4TMP_CATENTRYIDS" commit-interval="100"/>
-            </tasklet>
             <next on ="*" to="load-TERMCOND"/>
             <next on="FAILED" to="load-TERMCOND"/>
         </step>
@@ -866,19 +859,19 @@
             <tasklet>
                 <chunk reader="jdbcCursorItemReader4SRCHATTR" writer="jdbcBatchItemWriter4SRCHATTR" commit-interval="100"/>
             </tasklet>
-            <next on ="*" to="load-QTYUNITDSC"/>
-            <next on="FAILED" to="load-QTYUNITDSC"/>
-        </step>
-        <step id="load-QTYUNITDSC">
-            <tasklet>
-                <chunk reader="jdbcCursorItemReader4QTYUNITDSC" writer="jdbcBatchItemWriter4QTYUNITDSC" commit-interval="100"/>
-            </tasklet>
             <next on ="*" to="load-QTYFMTDESC"/>
             <next on="FAILED" to="load-QTYFMTDESC"/>
         </step>
         <step id="load-QTYFMTDESC">
             <tasklet>
                 <chunk reader="jdbcCursorItemReader4QTYFMTDESC" writer="jdbcBatchItemWriter4QTYFMTDESC" commit-interval="100"/>
+            </tasklet>
+            <next on ="*" to="load-QTYUNITDSC"/>
+            <next on="FAILED" to="load-QTYUNITDSC"/>
+        </step>
+        <step id="load-QTYUNITDSC">
+            <tasklet>
+                <chunk reader="jdbcCursorItemReader4QTYUNITDSC" writer="jdbcBatchItemWriter4QTYUNITDSC" commit-interval="100"/>
             </tasklet>
             <next on ="*" to="load-XFORM_ANSWER"/>
             <next on="FAILED" to="load-XFORM_ANSWER"/>
@@ -1209,20 +1202,6 @@
             <tasklet>
                 <chunk reader="jdbcCursorItemReader4SEOPAGEDEFDESC" writer="jdbcBatchItemWriter4SEOPAGEDEFDESC" commit-interval="100"/>
             </tasklet>
-            <next on ="*" to="load-CALRANGE"/>
-            <next on="FAILED" to="load-CALRANGE"/>
-        </step>
-        <step id="load-CALRANGE">
-            <tasklet>
-                <chunk reader="jdbcCursorItemReader4CALRANGE" writer="jdbcBatchItemWriter4CALRANGE" commit-interval="100"/>
-            </tasklet>
-            <next on ="*" to="load-CALRLOOKUP"/>
-            <next on="FAILED" to="load-CALRLOOKUP"/>
-        </step>
-        <step id="load-CALRLOOKUP">
-            <tasklet>
-                <chunk reader="jdbcCursorItemReader4CALRLOOKUP" writer="jdbcBatchItemWriter4CALRLOOKUP" commit-interval="100"/>
-            </tasklet>
             <next on ="*" to="load-CALSCALE"/>
             <next on="FAILED" to="load-CALSCALE"/>
         </step>
@@ -1230,12 +1209,26 @@
             <tasklet>
                 <chunk reader="jdbcCursorItemReader4CALSCALE" writer="jdbcBatchItemWriter4CALSCALE" commit-interval="100"/>
             </tasklet>
+            <next on ="*" to="load-CALRANGE"/>
+            <next on="FAILED" to="load-CALRANGE"/>
+        </step>
+        <step id="load-CALRANGE">
+            <tasklet>
+                <chunk reader="jdbcCursorItemReader4CALRANGE" writer="jdbcBatchItemWriter4CALRANGE" commit-interval="100"/>
+            </tasklet>
             <next on ="*" to="load-XBOOKMARKS"/>
             <next on="FAILED" to="load-XBOOKMARKS"/>
         </step>
         <step id="load-XBOOKMARKS">
             <tasklet>
                 <chunk reader="jdbcCursorItemReader4XBOOKMARKS" writer="jdbcBatchItemWriter4XBOOKMARKS" commit-interval="100"/>
+            </tasklet>
+            <next on ="*" to="load-CALRLOOKUP"/>
+            <next on="FAILED" to="load-CALRLOOKUP"/>
+        </step>
+        <step id="load-CALRLOOKUP">
+            <tasklet>
+                <chunk reader="jdbcCursorItemReader4CALRLOOKUP" writer="jdbcBatchItemWriter4CALRLOOKUP" commit-interval="100"/>
             </tasklet>
             <next on ="*" to="load-TCSUBTYPDS"/>
             <next on="FAILED" to="load-TCSUBTYPDS"/>
@@ -1258,19 +1251,19 @@
             <tasklet>
                 <chunk reader="jdbcCursorItemReader4ORDRELEASE" writer="jdbcBatchItemWriter4ORDRELEASE" commit-interval="100"/>
             </tasklet>
-            <next on ="*" to="load-MANIFEST"/>
-            <next on="FAILED" to="load-MANIFEST"/>
-        </step>
-        <step id="load-MANIFEST">
-            <tasklet>
-                <chunk reader="jdbcCursorItemReader4MANIFEST" writer="jdbcBatchItemWriter4MANIFEST" commit-interval="100"/>
-            </tasklet>
             <next on ="*" to="load-KEYS"/>
             <next on="FAILED" to="load-KEYS"/>
         </step>
         <step id="load-KEYS">
             <tasklet>
                 <chunk reader="jdbcCursorItemReader4KEYS" writer="jdbcBatchItemWriter4KEYS" commit-interval="100"/>
+            </tasklet>
+            <next on ="*" to="load-MANIFEST"/>
+            <next on="FAILED" to="load-MANIFEST"/>
+        </step>
+        <step id="load-MANIFEST">
+            <tasklet>
+                <chunk reader="jdbcCursorItemReader4MANIFEST" writer="jdbcBatchItemWriter4MANIFEST" commit-interval="100"/>
             </tasklet>
             <next on ="*" to="load-PLPAGE"/>
             <next on="FAILED" to="load-PLPAGE"/>
@@ -1321,6 +1314,13 @@
             <tasklet>
                 <chunk reader="jdbcCursorItemReader4POLICYCMD" writer="jdbcBatchItemWriter4POLICYCMD" commit-interval="100"/>
             </tasklet>
+            <next on ="*" to="load-RFQ"/>
+            <next on="FAILED" to="load-RFQ"/>
+        </step>
+        <step id="load-RFQ">
+            <tasklet>
+                <chunk reader="jdbcCursorItemReader4RFQ" writer="jdbcBatchItemWriter4RFQ" commit-interval="100"/>
+            </tasklet>
             <next on ="*" to="load-RFQRSPPROD"/>
             <next on="FAILED" to="load-RFQRSPPROD"/>
         </step>
@@ -1334,13 +1334,6 @@
         <step id="load-RFQRSP">
             <tasklet>
                 <chunk reader="jdbcCursorItemReader4RFQRSP" writer="jdbcBatchItemWriter4RFQRSP" commit-interval="100"/>
-            </tasklet>
-            <next on ="*" to="load-RFQ"/>
-            <next on="FAILED" to="load-RFQ"/>
-        </step>
-        <step id="load-RFQ">
-            <tasklet>
-                <chunk reader="jdbcCursorItemReader4RFQ" writer="jdbcBatchItemWriter4RFQ" commit-interval="100"/>
             </tasklet>
             <next on ="*" to="load-RFQPROD"/>
             <next on="FAILED" to="load-RFQPROD"/>
@@ -1615,13 +1608,6 @@
             <tasklet>
                 <chunk reader="jdbcCursorItemReader4STATECODE" writer="jdbcBatchItemWriter4STATECODE" commit-interval="100"/>
             </tasklet>
-            <next on ="*" to="load-STGSITETAB"/>
-            <next on="FAILED" to="load-STGSITETAB"/>
-        </step>
-        <step id="load-STGSITETAB">
-            <tasklet>
-                <chunk reader="jdbcCursorItemReader4STGSITETAB" writer="jdbcBatchItemWriter4STGSITETAB" commit-interval="100"/>
-            </tasklet>
             <next on ="*" to="load-PRODUCTSET"/>
             <next on="FAILED" to="load-PRODUCTSET"/>
         </step>
@@ -1629,12 +1615,33 @@
             <tasklet>
                 <chunk reader="jdbcCursorItemReader4PRODUCTSET" writer="jdbcBatchItemWriter4PRODUCTSET" commit-interval="100"/>
             </tasklet>
+            <next on ="*" to="load-STGSITETAB"/>
+            <next on="FAILED" to="load-STGSITETAB"/>
+        </step>
+        <step id="load-STGSITETAB">
+            <tasklet>
+                <chunk reader="jdbcCursorItemReader4STGSITETAB" writer="jdbcBatchItemWriter4STGSITETAB" commit-interval="100"/>
+            </tasklet>
+            <next on ="*" to="load-TRDTYPEDSC"/>
+            <next on="FAILED" to="load-TRDTYPEDSC"/>
+        </step>
+        <step id="load-TRDTYPEDSC">
+            <tasklet>
+                <chunk reader="jdbcCursorItemReader4TRDTYPEDSC" writer="jdbcBatchItemWriter4TRDTYPEDSC" commit-interval="100"/>
+            </tasklet>
             <next on ="*" to="load-ORDCHGRSNDS"/>
             <next on="FAILED" to="load-ORDCHGRSNDS"/>
         </step>
         <step id="load-ORDCHGRSNDS">
             <tasklet>
                 <chunk reader="jdbcCursorItemReader4ORDCHGRSNDS" writer="jdbcBatchItemWriter4ORDCHGRSNDS" commit-interval="100"/>
+            </tasklet>
+            <next on ="*" to="load-POLICY"/>
+            <next on="FAILED" to="load-POLICY"/>
+        </step>
+        <step id="load-POLICY">
+            <tasklet>
+                <chunk reader="jdbcCursorItemReader4POLICY" writer="jdbcBatchItemWriter4POLICY" commit-interval="100"/>
             </tasklet>
             <next on ="*" to="load-SRCHTERMASSOC"/>
             <next on="FAILED" to="load-SRCHTERMASSOC"/>
@@ -1650,19 +1657,12 @@
             <tasklet>
                 <chunk reader="jdbcCursorItemReader4SHPMODEDSC" writer="jdbcBatchItemWriter4SHPMODEDSC" commit-interval="100"/>
             </tasklet>
-            <next on ="*" to="load-POLICY"/>
-            <next on="FAILED" to="load-POLICY"/>
+            <next on ="*" to="load-CURCONVERT"/>
+            <next on="FAILED" to="load-CURCONVERT"/>
         </step>
-        <step id="load-POLICY">
+        <step id="load-CURCONVERT">
             <tasklet>
-                <chunk reader="jdbcCursorItemReader4POLICY" writer="jdbcBatchItemWriter4POLICY" commit-interval="100"/>
-            </tasklet>
-            <next on ="*" to="load-TRDTYPEDSC"/>
-            <next on="FAILED" to="load-TRDTYPEDSC"/>
-        </step>
-        <step id="load-TRDTYPEDSC">
-            <tasklet>
-                <chunk reader="jdbcCursorItemReader4TRDTYPEDSC" writer="jdbcBatchItemWriter4TRDTYPEDSC" commit-interval="100"/>
+                <chunk reader="jdbcCursorItemReader4CURCONVERT" writer="jdbcBatchItemWriter4CURCONVERT" commit-interval="100"/>
             </tasklet>
             <next on ="*" to="load-INVADJDESC"/>
             <next on="FAILED" to="load-INVADJDESC"/>
@@ -1670,13 +1670,6 @@
         <step id="load-INVADJDESC">
             <tasklet>
                 <chunk reader="jdbcCursorItemReader4INVADJDESC" writer="jdbcBatchItemWriter4INVADJDESC" commit-interval="100"/>
-            </tasklet>
-            <next on ="*" to="load-CURCONVERT"/>
-            <next on="FAILED" to="load-CURCONVERT"/>
-        </step>
-        <step id="load-CURCONVERT">
-            <tasklet>
-                <chunk reader="jdbcCursorItemReader4CURCONVERT" writer="jdbcBatchItemWriter4CURCONVERT" commit-interval="100"/>
             </tasklet>
             <next on ="*" to="load-MSGTYPES"/>
             <next on="FAILED" to="load-MSGTYPES"/>
