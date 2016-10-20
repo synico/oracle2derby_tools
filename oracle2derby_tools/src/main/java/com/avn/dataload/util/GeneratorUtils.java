@@ -341,6 +341,8 @@ public class GeneratorUtils {
         unselectedTables.add("X_ZFC_UPLOAD_LOG");
         unselectedTables.add("X_SAP_SALESDOC_ITEM");
         unselectedTables.add("DSR_SALES_ORDER_SUBSET1");
+        unselectedTables.add("ATCHREL");
+        unselectedTables.add("ATCHRELDSC");
         tableNames.removeAll(unselectedTables);
         
         tableNames.add(null);
@@ -430,8 +432,8 @@ public class GeneratorUtils {
 //        createModels();
 //        generateRowMappers();
 //        genPagingItemReaderAndWriters();
-        genCursorItemReaderAndWriters();
-//        buildBatchJobConfig("cursor");
+//        genCursorItemReaderAndWriters();
+        buildBatchJobConfig("cursor");
 //        compareSchemas();
     }
 
