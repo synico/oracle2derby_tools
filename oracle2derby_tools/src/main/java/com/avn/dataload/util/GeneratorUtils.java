@@ -344,6 +344,11 @@ public class GeneratorUtils {
         unselectedTables.add("ATCHREL");
         unselectedTables.add("ATCHRELDSC");
         unselectedTables.add("TMP_CATENTRYIDS");
+        unselectedTables.add("X_SAP_SALESDOC_HDR");
+        unselectedTables.add("BUSEVENT");
+        unselectedTables.add("PPCEXTDATA");
+        unselectedTables.add("SCHSTATUS");
+        unselectedTables.add("XOFFERLOG");
         tableNames.removeAll(unselectedTables);
         
         tableNames.add(null);
