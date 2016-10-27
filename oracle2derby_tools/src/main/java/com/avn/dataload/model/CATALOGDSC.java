@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CATALOGDSC {
-    
+
 
     private java.math.BigDecimal CATALOG_ID;
     
@@ -93,5 +90,18 @@ public class CATALOGDSC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATALOG_ID: " + getCATALOG_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("SHORTDESCRIPTION: " + getSHORTDESCRIPTION() + "||");
+        result.append("LONGDESCRIPTION: " + getLONGDESCRIPTION() + "||");
+        result.append("THUMBNAIL: " + getTHUMBNAIL() + "||");
+        result.append("FULLIMAGE: " + getFULLIMAGE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

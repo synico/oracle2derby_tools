@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ATTRDESC {
-    
+
 
     private java.math.BigDecimal ATTR_ID;
     
@@ -126,5 +123,21 @@ public class ATTRDESC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ATTR_ID: " + getATTR_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("ATTRTYPE_ID: " + getATTRTYPE_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("DESCRIPTION2: " + getDESCRIPTION2() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("GROUPNAME: " + getGROUPNAME() + "||");
+        result.append("QTYUNIT_ID: " + getQTYUNIT_ID() + "||");
+        result.append("NOTEINFO: " + getNOTEINFO() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

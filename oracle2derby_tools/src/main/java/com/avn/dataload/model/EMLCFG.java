@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class EMLCFG {
-    
+
 
     private java.math.BigDecimal EMLCFG_ID;
     
@@ -148,5 +145,23 @@ public class EMLCFG {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("EMLCFG_ID: " + getEMLCFG_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("TYPE: " + getTYPE() + "||");
+        result.append("HOST: " + getHOST() + "||");
+        result.append("TIME: " + getTIME() + "||");
+        result.append("EMLSERVER: " + getEMLSERVER() + "||");
+        result.append("ACCOUNT: " + getACCOUNT() + "||");
+        result.append("PORT: " + getPORT() + "||");
+        result.append("PASSWORD: " + getPASSWORD() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("ADDRESS: " + getADDRESS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

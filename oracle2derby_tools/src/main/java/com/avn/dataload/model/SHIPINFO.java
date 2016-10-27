@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SHIPINFO {
-    
+
 
     private java.math.BigDecimal SHIPINFO_ID;
     
@@ -93,5 +90,18 @@ public class SHIPINFO {
         return this.INSTRUCTIONS;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SHIPINFO_ID: " + getSHIPINFO_ID() + "||");
+        result.append("ORDERS_ID: " + getORDERS_ID() + "||");
+        result.append("ADDRESS_ID: " + getADDRESS_ID() + "||");
+        result.append("POLICY_ID: " + getPOLICY_ID() + "||");
+        result.append("SHIPMODE_ID: " + getSHIPMODE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("CARRIERACCNTNUM: " + getCARRIERACCNTNUM() + "||");
+        result.append("INSTRUCTIONS: " + getINSTRUCTIONS() + "||");
+        return result.toString();
+    }
     
 }

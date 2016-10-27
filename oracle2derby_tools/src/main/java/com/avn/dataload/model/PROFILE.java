@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PROFILE {
-    
+
 
     private java.math.BigDecimal PROFILE_ID;
     
@@ -115,5 +112,20 @@ public class PROFILE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PROFILE_ID: " + getPROFILE_ID() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("DEVICEFMT_ID: " + getDEVICEFMT_ID() + "||");
+        result.append("TRANSPORT_ID: " + getTRANSPORT_ID() + "||");
+        result.append("MSGTYPE_ID: " + getMSGTYPE_ID() + "||");
+        result.append("USERSVIEW: " + getUSERSVIEW() + "||");
+        result.append("LOWPRIORITY: " + getLOWPRIORITY() + "||");
+        result.append("HIGHPRIORITY: " + getHIGHPRIORITY() + "||");
+        result.append("ARCHIVEMSG: " + getARCHIVEMSG() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

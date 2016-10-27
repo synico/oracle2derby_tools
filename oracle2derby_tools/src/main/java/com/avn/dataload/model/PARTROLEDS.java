@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PARTROLEDS {
-    
+
 
     private java.math.BigDecimal PARTROLE_ID;
     
@@ -49,5 +46,14 @@ public class PARTROLEDS {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PARTROLE_ID: " + getPARTROLE_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

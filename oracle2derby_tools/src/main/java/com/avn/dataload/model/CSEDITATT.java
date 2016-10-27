@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CSEDITATT {
-    
+
 
     private java.math.BigDecimal CSEDITATT_ID;
     
@@ -104,5 +101,19 @@ public class CSEDITATT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CSEDITATT_ID: " + getCSEDITATT_ID() + "||");
+        result.append("TRANSPORT_ID: " + getTRANSPORT_ID() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("PROFILE_ID: " + getPROFILE_ID() + "||");
+        result.append("INSTANCE_NUM: " + getINSTANCE_NUM() + "||");
+        result.append("CUSTOMIZABLE: " + getCUSTOMIZABLE() + "||");
+        result.append("CONNSPECATTNAME: " + getCONNSPECATTNAME() + "||");
+        result.append("CONNSPECATTVALUE: " + getCONNSPECATTVALUE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

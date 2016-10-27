@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DMELEMENT {
-    
+
 
     private java.math.BigDecimal DMELEMENT_ID;
     
@@ -148,5 +145,23 @@ public class DMELEMENT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("DMELEMENT_ID: " + getDMELEMENT_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("DMELETEMPLATE_ID: " + getDMELETEMPLATE_ID() + "||");
+        result.append("DMACTIVITY_ID: " + getDMACTIVITY_ID() + "||");
+        result.append("RELATED_ID: " + getRELATED_ID() + "||");
+        result.append("PRIORITY: " + getPRIORITY() + "||");
+        result.append("PARENT: " + getPARENT() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("FIELD4: " + getFIELD4() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

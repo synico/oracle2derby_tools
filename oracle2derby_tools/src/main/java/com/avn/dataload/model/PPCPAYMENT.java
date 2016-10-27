@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PPCPAYMENT {
-    
+
 
     private java.math.BigDecimal PPCPAYMENT_ID;
     
@@ -225,5 +222,30 @@ public class PPCPAYMENT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PPCPAYMENT_ID: " + getPPCPAYMENT_ID() + "||");
+        result.append("PPCPAYINST_ID: " + getPPCPAYINST_ID() + "||");
+        result.append("PPCPAYTRAN_ID: " + getPPCPAYTRAN_ID() + "||");
+        result.append("AVSCOMMONCODE: " + getAVSCOMMONCODE() + "||");
+        result.append("EXPECTEDAMOUNT: " + getEXPECTEDAMOUNT() + "||");
+        result.append("APPROVINGAMOUNT: " + getAPPROVINGAMOUNT() + "||");
+        result.append("APPROVEDAMOUNT: " + getAPPROVEDAMOUNT() + "||");
+        result.append("DEPOSITINGAMOUNT: " + getDEPOSITINGAMOUNT() + "||");
+        result.append("DEPOSITEDAMOUNT: " + getDEPOSITEDAMOUNT() + "||");
+        result.append("CREDITINGAMOUNT: " + getCREDITINGAMOUNT() + "||");
+        result.append("CREDITEDAMOUNT: " + getCREDITEDAMOUNT() + "||");
+        result.append("RVRSNGAPRVEDAMNT: " + getRVRSNGAPRVEDAMNT() + "||");
+        result.append("RVRSNGDPSTEDAMNT: " + getRVRSNGDPSTEDAMNT() + "||");
+        result.append("RVRSNGCRDTEDAMNT: " + getRVRSNGCRDTEDAMNT() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("TIMEEXPIRED: " + getTIMEEXPIRED() + "||");
+        result.append("TIMECREATED: " + getTIMECREATED() + "||");
+        result.append("TIMEUPDATED: " + getTIMEUPDATED() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

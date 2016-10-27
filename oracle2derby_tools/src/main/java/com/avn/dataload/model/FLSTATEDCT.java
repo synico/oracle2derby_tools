@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class FLSTATEDCT {
-    
+
 
     private java.math.BigDecimal FLSTATEDCT_ID;
     
@@ -93,5 +90,18 @@ public class FLSTATEDCT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("FLSTATEDCT_ID: " + getFLSTATEDCT_ID() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("STATENAME: " + getSTATENAME() + "||");
+        result.append("FLOWTYPE_ID: " + getFLOWTYPE_ID() + "||");
+        result.append("FLSTATEGP_ID: " + getFLSTATEGP_ID() + "||");
+        result.append("APPROVERMBRGRPNAME: " + getAPPROVERMBRGRPNAME() + "||");
+        result.append("STATETYPE: " + getSTATETYPE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

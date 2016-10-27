@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class RTNDNYDESC {
-    
+
 
     private java.math.BigDecimal RTNDNYRSN_ID;
     
@@ -49,5 +46,14 @@ public class RTNDNYDESC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("RTNDNYRSN_ID: " + getRTNDNYRSN_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

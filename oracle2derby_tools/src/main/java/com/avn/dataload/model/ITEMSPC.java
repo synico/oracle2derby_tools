@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ITEMSPC {
-    
+
 
     private java.math.BigDecimal ITEMSPC_ID;
     
@@ -93,5 +90,18 @@ public class ITEMSPC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ITEMSPC_ID: " + getITEMSPC_ID() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("BASEITEM_ID: " + getBASEITEM_ID() + "||");
+        result.append("DISCONTINUED: " + getDISCONTINUED() + "||");
+        result.append("PARTNUMBER: " + getPARTNUMBER() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

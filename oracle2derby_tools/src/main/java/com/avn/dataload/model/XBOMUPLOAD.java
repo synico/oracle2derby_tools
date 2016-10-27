@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XBOMUPLOAD {
-    
+
 
     private java.math.BigDecimal XBOMUPLOADID;
     
@@ -104,5 +101,19 @@ public class XBOMUPLOAD {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("XBOMUPLOADID: " + getXBOMUPLOADID() + "||");
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("REQUISITIONLISTID: " + getREQUISITIONLISTID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("CREATEDDATE: " + getCREATEDDATE() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("ROWCOUNTER: " + getROWCOUNTER() + "||");
+        result.append("UPLOADSTATUS: " + getUPLOADSTATUS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

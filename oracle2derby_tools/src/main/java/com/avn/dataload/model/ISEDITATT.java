@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ISEDITATT {
-    
+
 
     private java.math.BigDecimal ISEDITATT_ID;
     
@@ -71,5 +68,16 @@ public class ISEDITATT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ISEDITATT_ID: " + getISEDITATT_ID() + "||");
+        result.append("PROFILE_ID: " + getPROFILE_ID() + "||");
+        result.append("CUSTOMIZABLE: " + getCUSTOMIZABLE() + "||");
+        result.append("INTERSPECATTNAME: " + getINTERSPECATTNAME() + "||");
+        result.append("INTERSPECATTVALUE: " + getINTERSPECATTVALUE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

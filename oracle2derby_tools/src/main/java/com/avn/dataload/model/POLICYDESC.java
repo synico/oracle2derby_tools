@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class POLICYDESC {
-    
+
 
     private java.math.BigDecimal POLICY_ID;
     
@@ -82,5 +79,17 @@ public class POLICYDESC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("POLICY_ID: " + getPOLICY_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("LONGDESCRIPTION: " + getLONGDESCRIPTION() + "||");
+        result.append("TIMECREATED: " + getTIMECREATED() + "||");
+        result.append("TIMEUPDATED: " + getTIMEUPDATED() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

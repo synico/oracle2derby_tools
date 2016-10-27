@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class RFQ {
-    
+
 
     private java.math.BigDecimal MEMBER_ID;
     
@@ -423,5 +420,48 @@ public class RFQ {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("RFQ_ID: " + getRFQ_ID() + "||");
+        result.append("ACCESSTYPE: " + getACCESSTYPE() + "||");
+        result.append("TFTRADENG_ID: " + getTFTRADENG_ID() + "||");
+        result.append("STARTTIME: " + getSTARTTIME() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("ENDTIME: " + getENDTIME() + "||");
+        result.append("DURATION: " + getDURATION() + "||");
+        result.append("NUMRESPONSES: " + getNUMRESPONSES() + "||");
+        result.append("CREATETIME: " + getCREATETIME() + "||");
+        result.append("UPDATETIME: " + getUPDATETIME() + "||");
+        result.append("CANCELTIME: " + getCANCELTIME() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("PREVOFFID: " + getPREVOFFID() + "||");
+        result.append("PREVOFFTYPE: " + getPREVOFFTYPE() + "||");
+        result.append("NEXTOFFID: " + getNEXTOFFID() + "||");
+        result.append("NEXTOFFTYPE: " + getNEXTOFFTYPE() + "||");
+        result.append("ROUND: " + getROUND() + "||");
+        result.append("STAGE: " + getSTAGE() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("MAJORVERSION: " + getMAJORVERSION() + "||");
+        result.append("MINORVERSION: " + getMINORVERSION() + "||");
+        result.append("ENDRESULT: " + getENDRESULT() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("ACTIVATETIME: " + getACTIVATETIME() + "||");
+        result.append("CLOSETIME: " + getCLOSETIME() + "||");
+        result.append("COMPLETETIME: " + getCOMPLETETIME() + "||");
+        result.append("RULETYPE: " + getRULETYPE() + "||");
+        result.append("TRACKNUMBER: " + getTRACKNUMBER() + "||");
+        result.append("VERSIONFLAGS: " + getVERSIONFLAGS() + "||");
+        result.append("EXTRFQNUM: " + getEXTRFQNUM() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("FIELD4: " + getFIELD4() + "||");
+        result.append("FIELD5: " + getFIELD5() + "||");
+        result.append("FIELD6: " + getFIELD6() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PX_GROUP {
-    
+
 
     private java.math.BigDecimal PX_GROUP_ID;
     
@@ -71,5 +68,16 @@ public class PX_GROUP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PX_GROUP_ID: " + getPX_GROUP_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("GRPNAME: " + getGRPNAME() + "||");
+        result.append("XMLPARAM: " + getXMLPARAM() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

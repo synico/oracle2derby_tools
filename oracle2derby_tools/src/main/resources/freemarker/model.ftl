@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ${table_name} {
-    
+
 <#list columns as col>
 
     private ${col.type} ${col.name};
@@ -18,5 +15,13 @@ public class ${table_name} {
     }
       
 </#list>
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+    <#list columns as col>
+        result.append("${col.name}: " + get${col.name}() + "||");
+    </#list>
+        return result.toString();
+    }
     
 }

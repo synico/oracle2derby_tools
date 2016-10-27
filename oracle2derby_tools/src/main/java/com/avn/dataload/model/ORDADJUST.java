@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ORDADJUST {
-    
+
 
     private java.math.BigDecimal ORDADJUST_ID;
     
@@ -82,5 +79,17 @@ public class ORDADJUST {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ORDADJUST_ID: " + getORDADJUST_ID() + "||");
+        result.append("ORDERS_ID: " + getORDERS_ID() + "||");
+        result.append("CALCODE_ID: " + getCALCODE_ID() + "||");
+        result.append("CALUSAGE_ID: " + getCALUSAGE_ID() + "||");
+        result.append("AMOUNT: " + getAMOUNT() + "||");
+        result.append("DISPLAYLEVEL: " + getDISPLAYLEVEL() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

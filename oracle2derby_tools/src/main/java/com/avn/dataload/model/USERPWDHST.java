@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class USERPWDHST {
-    
+
 
     private java.math.BigDecimal USERPWDHST_ID;
     
@@ -71,5 +68,16 @@ public class USERPWDHST {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("USERPWDHST_ID: " + getUSERPWDHST_ID() + "||");
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("PREVLOGONPASSWORD: " + getPREVLOGONPASSWORD() + "||");
+        result.append("SALT: " + getSALT() + "||");
+        result.append("PASSWORDCREATION: " + getPASSWORDCREATION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

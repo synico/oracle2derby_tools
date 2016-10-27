@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CNTRSTORE {
-    
+
 
     private java.math.BigDecimal CONTRACT_ID;
     
@@ -38,5 +35,13 @@ public class CNTRSTORE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CONTRACT_ID: " + getCONTRACT_ID() + "||");
+        result.append("STOREXML: " + getSTOREXML() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

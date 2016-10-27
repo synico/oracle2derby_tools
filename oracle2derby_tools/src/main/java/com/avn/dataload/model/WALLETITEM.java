@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class WALLETITEM {
-    
+
 
     private java.math.BigDecimal WALLETITEM_ID;
     
@@ -159,5 +156,24 @@ public class WALLETITEM {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("WALLETITEM_ID: " + getWALLETITEM_ID() + "||");
+        result.append("WALLET_ID: " + getWALLET_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("TYPE: " + getTYPE() + "||");
+        result.append("UNREAD: " + getUNREAD() + "||");
+        result.append("DELETABLE: " + getDELETABLE() + "||");
+        result.append("MOVABLE: " + getMOVABLE() + "||");
+        result.append("RENAMABLE: " + getRENAMABLE() + "||");
+        result.append("CREATIONDATE: " + getCREATIONDATE() + "||");
+        result.append("CONTENT: " + getCONTENT() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

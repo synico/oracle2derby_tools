@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PX_PROMOAUDIT {
-    
+
 
     private java.math.BigDecimal PX_PROMOTION_ID;
     
@@ -60,5 +57,15 @@ public class PX_PROMOAUDIT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PX_PROMOTION_ID: " + getPX_PROMOTION_ID() + "||");
+        result.append("VERSION: " + getVERSION() + "||");
+        result.append("REVISION: " + getREVISION() + "||");
+        result.append("XMLPARAM: " + getXMLPARAM() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

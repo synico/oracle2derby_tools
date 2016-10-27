@@ -436,10 +436,10 @@ public class GeneratorUtils {
     public static void main(String[] args) {
 //        buildGeneratorConfig();
 //        createModels();
-//        generateRowMappers();
+        generateRowMappers();
 //        genPagingItemReaderAndWriters();
 //        genCursorItemReaderAndWriters();
-        buildBatchJobConfig("cursor");
+//        buildBatchJobConfig("cursor");
 //        compareSchemas();
     }
 

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PLWIDGETREL {
-    
+
 
     private java.math.BigDecimal PLWIDGET_ID_PARENT;
     
@@ -49,5 +46,14 @@ public class PLWIDGETREL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PLWIDGET_ID_PARENT: " + getPLWIDGET_ID_PARENT() + "||");
+        result.append("PLWIDGET_ID_CHILD: " + getPLWIDGET_ID_CHILD() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CALCODEDSC {
-    
+
 
     private java.math.BigDecimal CALCODE_ID;
     
@@ -60,5 +57,15 @@ public class CALCODEDSC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CALCODE_ID: " + getCALCODE_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("LONGDESCRIPTION: " + getLONGDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

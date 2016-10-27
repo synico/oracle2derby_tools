@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SEOTOKENUSGTYPE {
-    
+
 
     private java.math.BigDecimal TOKENUSGTYPE_ID;
     
@@ -71,5 +68,16 @@ public class SEOTOKENUSGTYPE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("TOKENUSGTYPE_ID: " + getTOKENUSGTYPE_ID() + "||");
+        result.append("TOKENUSGTYPE: " + getTOKENUSGTYPE() + "||");
+        result.append("PRIMARYTOKEN: " + getPRIMARYTOKEN() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("ISSTATIC: " + getISSTATIC() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

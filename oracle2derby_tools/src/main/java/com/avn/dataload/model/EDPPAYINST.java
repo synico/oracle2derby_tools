@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class EDPPAYINST {
-    
+
 
     private java.math.BigDecimal EDPPAYINST_ID;
     
@@ -269,5 +266,34 @@ public class EDPPAYINST {
         return this.FIELD3;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("EDPPAYINST_ID: " + getEDPPAYINST_ID() + "||");
+        result.append("EDPORDER_ID: " + getEDPORDER_ID() + "||");
+        result.append("AMOUNT: " + getAMOUNT() + "||");
+        result.append("SEQUENCENUMBER: " + getSEQUENCENUMBER() + "||");
+        result.append("PRIORITY: " + getPRIORITY() + "||");
+        result.append("HUMANEDITABLE: " + getHUMANEDITABLE() + "||");
+        result.append("SYSTEMEDITABLE: " + getSYSTEMEDITABLE() + "||");
+        result.append("MAXAMOUNT: " + getMAXAMOUNT() + "||");
+        result.append("MINAMOUNT: " + getMINAMOUNT() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("DEPRECATED: " + getDEPRECATED() + "||");
+        result.append("DIRTY: " + getDIRTY() + "||");
+        result.append("REFUNDALLOWED: " + getREFUNDALLOWED() + "||");
+        result.append("PENDING: " + getPENDING() + "||");
+        result.append("PAYMENTRULE: " + getPAYMENTRULE() + "||");
+        result.append("PAYMENTMETHOD: " + getPAYMENTMETHOD() + "||");
+        result.append("PAYMENTSYSTEM: " + getPAYMENTSYSTEM() + "||");
+        result.append("BACKENDPIID: " + getBACKENDPIID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("PAYCONFIGGROUP: " + getPAYCONFIGGROUP() + "||");
+        result.append("POLICY_ID: " + getPOLICY_ID() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        return result.toString();
+    }
     
 }

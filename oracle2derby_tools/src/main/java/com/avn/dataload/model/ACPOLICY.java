@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ACPOLICY {
-    
+
 
     private java.math.BigDecimal ACPOLICY_ID;
     
@@ -126,5 +123,21 @@ public class ACPOLICY {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ACPOLICY_ID: " + getACPOLICY_ID() + "||");
+        result.append("POLICYNAME: " + getPOLICYNAME() + "||");
+        result.append("ACRELGRP_ID: " + getACRELGRP_ID() + "||");
+        result.append("ACACTGRP_ID: " + getACACTGRP_ID() + "||");
+        result.append("ACRESGRP_ID: " + getACRESGRP_ID() + "||");
+        result.append("ACRELATION_ID: " + getACRELATION_ID() + "||");
+        result.append("POLICYTYPE: " + getPOLICYTYPE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("MBRGRP_ID: " + getMBRGRP_ID() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

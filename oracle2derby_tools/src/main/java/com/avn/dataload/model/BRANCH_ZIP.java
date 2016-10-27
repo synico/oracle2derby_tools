@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class BRANCH_ZIP {
-    
+
 
     private java.math.BigDecimal BRANCH_ZIP_ID;
     
@@ -93,5 +90,18 @@ public class BRANCH_ZIP {
         return this.SALES_OFFICE;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("BRANCH_ZIP_ID: " + getBRANCH_ZIP_ID() + "||");
+        result.append("BRANCH_ID: " + getBRANCH_ID() + "||");
+        result.append("COUNTRY_CD: " + getCOUNTRY_CD() + "||");
+        result.append("LOW_POSTAL_CD: " + getLOW_POSTAL_CD() + "||");
+        result.append("HIGH_POSTAL_CD: " + getHIGH_POSTAL_CD() + "||");
+        result.append("DISPLAY_FL: " + getDISPLAY_FL() + "||");
+        result.append("SALES_ORG: " + getSALES_ORG() + "||");
+        result.append("SALES_OFFICE: " + getSALES_OFFICE() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ROLEASNPRM {
-    
+
 
     private java.math.BigDecimal ROLEASNPRM_ID;
     
@@ -60,5 +57,15 @@ public class ROLEASNPRM {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ROLEASNPRM_ID: " + getROLEASNPRM_ID() + "||");
+        result.append("ASSIGNING_ROLE_ID: " + getASSIGNING_ROLE_ID() + "||");
+        result.append("ORGENTITY_ID: " + getORGENTITY_ID() + "||");
+        result.append("ASSIGNABLE_ROLE_ID: " + getASSIGNABLE_ROLE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

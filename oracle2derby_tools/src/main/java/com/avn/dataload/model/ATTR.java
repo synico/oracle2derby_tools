@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ATTR {
-    
+
 
     private java.math.BigDecimal ATTR_ID;
     
@@ -192,5 +189,27 @@ public class ATTR {
         return this.MERCHANDISABLE;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ATTR_ID: " + getATTR_ID() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("ATTRTYPE_ID: " + getATTRTYPE_ID() + "||");
+        result.append("ATTRDICT_ID: " + getATTRDICT_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("DISPLAYABLE: " + getDISPLAYABLE() + "||");
+        result.append("SEARCHABLE: " + getSEARCHABLE() + "||");
+        result.append("COMPARABLE: " + getCOMPARABLE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("ATTRUSAGE: " + getATTRUSAGE() + "||");
+        result.append("STOREDISPLAY: " + getSTOREDISPLAY() + "||");
+        result.append("FACETABLE: " + getFACETABLE() + "||");
+        result.append("MERCHANDISABLE: " + getMERCHANDISABLE() + "||");
+        return result.toString();
+    }
     
 }

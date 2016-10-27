@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class MBRGRPTYPE {
-    
+
 
     private java.math.BigDecimal MBRGRPTYPE_ID;
     
@@ -60,5 +57,15 @@ public class MBRGRPTYPE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MBRGRPTYPE_ID: " + getMBRGRPTYPE_ID() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("PROPERTIES: " + getPROPERTIES() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

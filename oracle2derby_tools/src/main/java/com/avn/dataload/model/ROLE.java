@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ROLE {
-    
+
 
     private java.math.BigDecimal ROLE_ID;
     
@@ -49,5 +46,14 @@ public class ROLE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ROLE_ID: " + getROLE_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class X_FCST_QTY_CALC {
-    
+
 
     private java.math.BigDecimal FORECAST_ID;
     
@@ -390,5 +387,45 @@ public class X_FCST_QTY_CALC {
         return this.CONSIGN_INV;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("FORECAST_ID: " + getFORECAST_ID() + "||");
+        result.append("FCST_PARTY: " + getFCST_PARTY() + "||");
+        result.append("CUST_MAT: " + getCUST_MAT() + "||");
+        result.append("NET_OF_BACKLOG: " + getNET_OF_BACKLOG() + "||");
+        result.append("CONSIGNMENT: " + getCONSIGNMENT() + "||");
+        result.append("RESERVING: " + getRESERVING() + "||");
+        result.append("MATERIAL_NBR: " + getMATERIAL_NBR() + "||");
+        result.append("W_INV: " + getW_INV() + "||");
+        result.append("INVENTORY: " + getINVENTORY() + "||");
+        result.append("LEAD_TIME: " + getLEAD_TIME() + "||");
+        result.append("FORECAST_RCV_DATE: " + getFORECAST_RCV_DATE() + "||");
+        result.append("WEEK_NBR: " + getWEEK_NBR() + "||");
+        result.append("FCST_RAW: " + getFCST_RAW() + "||");
+        result.append("FCST_AMENDED: " + getFCST_AMENDED() + "||");
+        result.append("ZSB_ORDERS: " + getZSB_ORDERS() + "||");
+        result.append("ZFC_ORDERS: " + getZFC_ORDERS() + "||");
+        result.append("CAL_W_INV: " + getCAL_W_INV() + "||");
+        result.append("AVNET_COMMIT: " + getAVNET_COMMIT() + "||");
+        result.append("CUST_TOT_NEED: " + getCUST_TOT_NEED() + "||");
+        result.append("INTERMEDIATE_CALC_VALUE: " + getINTERMEDIATE_CALC_VALUE() + "||");
+        result.append("EXCESS_SHORTAGE: " + getEXCESS_SHORTAGE() + "||");
+        result.append("RUNNING_TOTAL: " + getRUNNING_TOTAL() + "||");
+        result.append("COVERED_FLAG: " + getCOVERED_FLAG() + "||");
+        result.append("CONSTRAINED_FLAG: " + getCONSTRAINED_FLAG() + "||");
+        result.append("NO_FCST_QTY_FLAG: " + getNO_FCST_QTY_FLAG() + "||");
+        result.append("AVL_FAC_PO: " + getAVL_FAC_PO() + "||");
+        result.append("UPDATED_ON: " + getUPDATED_ON() + "||");
+        result.append("INV_POSITION: " + getINV_POSITION() + "||");
+        result.append("ZKB1_ORDERS: " + getZKB1_ORDERS() + "||");
+        result.append("ZOR_ORDERS: " + getZOR_ORDERS() + "||");
+        result.append("VMI: " + getVMI() + "||");
+        result.append("PLANT_INVENTORY: " + getPLANT_INVENTORY() + "||");
+        result.append("ZKA1_ORDERS: " + getZKA1_ORDERS() + "||");
+        result.append("ZKE1_ORDERS: " + getZKE1_ORDERS() + "||");
+        result.append("CONSIGN_INV: " + getCONSIGN_INV() + "||");
+        return result.toString();
+    }
     
 }

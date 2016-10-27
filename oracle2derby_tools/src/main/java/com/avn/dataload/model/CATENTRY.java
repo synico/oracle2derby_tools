@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CATENTRY {
-    
+
 
     private java.math.BigDecimal CATENTRY_ID;
     
@@ -324,5 +321,39 @@ public class CATENTRY {
         return this.DISCONTINUEDATE;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATENTRY_ID: " + getCATENTRY_ID() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("ITEMSPC_ID: " + getITEMSPC_ID() + "||");
+        result.append("CATENTTYPE_ID: " + getCATENTTYPE_ID() + "||");
+        result.append("PARTNUMBER: " + getPARTNUMBER() + "||");
+        result.append("MFPARTNUMBER: " + getMFPARTNUMBER() + "||");
+        result.append("MFNAME: " + getMFNAME() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("URL: " + getURL() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("ONSPECIAL: " + getONSPECIAL() + "||");
+        result.append("ONAUCTION: " + getONAUCTION() + "||");
+        result.append("FIELD4: " + getFIELD4() + "||");
+        result.append("FIELD5: " + getFIELD5() + "||");
+        result.append("BUYABLE: " + getBUYABLE() + "||");
+        result.append("OID: " + getOID() + "||");
+        result.append("BASEITEM_ID: " + getBASEITEM_ID() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("STARTDATE: " + getSTARTDATE() + "||");
+        result.append("ENDDATE: " + getENDDATE() + "||");
+        result.append("RANK: " + getRANK() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("AVAILABILITYDATE: " + getAVAILABILITYDATE() + "||");
+        result.append("LASTORDERDATE: " + getLASTORDERDATE() + "||");
+        result.append("ENDOFSERVICEDATE: " + getENDOFSERVICEDATE() + "||");
+        result.append("DISCONTINUEDATE: " + getDISCONTINUEDATE() + "||");
+        return result.toString();
+    }
     
 }

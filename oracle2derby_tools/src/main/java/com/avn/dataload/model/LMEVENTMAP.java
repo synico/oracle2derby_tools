@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class LMEVENTMAP {
-    
+
 
     private java.math.BigDecimal LMEVENTMAP_ID;
     
@@ -82,5 +79,17 @@ public class LMEVENTMAP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("LMEVENTMAP_ID: " + getLMEVENTMAP_ID() + "||");
+        result.append("LMSETNAME: " + getLMSETNAME() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("EXTEVENTNAME: " + getEXTEVENTNAME() + "||");
+        result.append("EXTEVENTDESC: " + getEXTEVENTDESC() + "||");
+        result.append("LMTXTYPEID: " + getLMTXTYPEID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

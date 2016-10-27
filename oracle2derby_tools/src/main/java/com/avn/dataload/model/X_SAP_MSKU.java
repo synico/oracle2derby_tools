@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class X_SAP_MSKU {
-    
+
 
     private java.lang.String MSKU_WERKS;
     
@@ -60,5 +57,15 @@ public class X_SAP_MSKU {
         return this.UPDATED_FLAG;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MSKU_WERKS: " + getMSKU_WERKS() + "||");
+        result.append("MSKU_MATNR: " + getMSKU_MATNR() + "||");
+        result.append("MSKU_KUNNR: " + getMSKU_KUNNR() + "||");
+        result.append("MSKU_LABST: " + getMSKU_LABST() + "||");
+        result.append("UPDATED_FLAG: " + getUPDATED_FLAG() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ESMAPTYP {
-    
+
 
     private java.math.BigDecimal ESMAPTYP_ID;
     
@@ -49,5 +46,14 @@ public class ESMAPTYP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ESMAPTYP_ID: " + getESMAPTYP_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

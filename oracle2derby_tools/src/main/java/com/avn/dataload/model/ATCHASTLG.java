@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ATCHASTLG {
-    
+
 
     private java.math.BigDecimal ATCHASTLG_ID;
     
@@ -49,5 +46,14 @@ public class ATCHASTLG {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ATCHASTLG_ID: " + getATCHASTLG_ID() + "||");
+        result.append("ATCHAST_ID: " + getATCHAST_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XPCATENTDESC {
-    
+
 
     private java.math.BigDecimal CATENTRY_ID;
     
@@ -82,5 +79,17 @@ public class XPCATENTDESC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATENTRY_ID: " + getCATENTRY_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("PRODUCTAPPLICATIONS: " + getPRODUCTAPPLICATIONS() + "||");
+        result.append("KITINCLUDE: " + getKITINCLUDE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

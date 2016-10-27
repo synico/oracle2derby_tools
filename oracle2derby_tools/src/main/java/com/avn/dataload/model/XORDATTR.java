@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XORDATTR {
-    
+
 
     private java.math.BigDecimal ORDERS_ID;
     
@@ -60,5 +57,15 @@ public class XORDATTR {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ORDERS_ID: " + getORDERS_ID() + "||");
+        result.append("ORDATTR_ID: " + getORDATTR_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("VALUE: " + getVALUE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

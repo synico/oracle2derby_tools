@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class STORE {
-    
+
 
     private java.math.BigDecimal STORE_ID;
     
@@ -379,5 +376,44 @@ public class STORE {
         return this.INVENTORYSYSTEM;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("STOREGRP_ID: " + getSTOREGRP_ID() + "||");
+        result.append("STORECGRY_ID: " + getSTORECGRY_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("FFMCENTER_ID: " + getFFMCENTER_ID() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("STORELEVEL: " + getSTORELEVEL() + "||");
+        result.append("DIRECTORY: " + getDIRECTORY() + "||");
+        result.append("OID: " + getOID() + "||");
+        result.append("QUOTEGOODFOR: " + getQUOTEGOODFOR() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("ALLOCATIONGOODFOR: " + getALLOCATIONGOODFOR() + "||");
+        result.append("MAXBOOFFSET: " + getMAXBOOFFSET() + "||");
+        result.append("REJECTEDORDEXPIRY: " + getREJECTEDORDEXPIRY() + "||");
+        result.append("FFMCSELECTIONFLAGS: " + getFFMCSELECTIONFLAGS() + "||");
+        result.append("BOPMPADFACTOR: " + getBOPMPADFACTOR() + "||");
+        result.append("RTNFFMCTR_ID: " + getRTNFFMCTR_ID() + "||");
+        result.append("DEFAULTBOOFFSET: " + getDEFAULTBOOFFSET() + "||");
+        result.append("PRICEREFFLAGS: " + getPRICEREFFLAGS() + "||");
+        result.append("STORETYPE: " + getSTORETYPE() + "||");
+        result.append("RMAGOODFOR: " + getRMAGOODFOR() + "||");
+        result.append("AVSACCEPTCODES: " + getAVSACCEPTCODES() + "||");
+        result.append("CRTDBYCNTR_ID: " + getCRTDBYCNTR_ID() + "||");
+        result.append("LASTUPDATESTATUS: " + getLASTUPDATESTATUS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("ALLOCATIONOFFSET: " + getALLOCATIONOFFSET() + "||");
+        result.append("MAXFOOFFSET: " + getMAXFOOFFSET() + "||");
+        result.append("INVENTORYOPFLAG: " + getINVENTORYOPFLAG() + "||");
+        result.append("BLOCKINGACTIVE: " + getBLOCKINGACTIVE() + "||");
+        result.append("BLKEXTASYNCH: " + getBLKEXTASYNCH() + "||");
+        result.append("PERSISTENTSESSION: " + getPERSISTENTSESSION() + "||");
+        result.append("ORDERHISTACTIVE: " + getORDERHISTACTIVE() + "||");
+        result.append("INVENTORYSYSTEM: " + getINVENTORYSYSTEM() + "||");
+        return result.toString();
+    }
     
 }

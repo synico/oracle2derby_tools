@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DMACTIVITY {
-    
+
 
     private java.math.BigDecimal DMACTIVITY_ID;
     
@@ -302,5 +299,37 @@ public class DMACTIVITY {
         return this.MANAGINGTOOL;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("DMACTIVITY_ID: " + getDMACTIVITY_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("VERSION: " + getVERSION() + "||");
+        result.append("PUBLISHED: " + getPUBLISHED() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("STARTDATE: " + getSTARTDATE() + "||");
+        result.append("ENDDATE: " + getENDDATE() + "||");
+        result.append("PRIORITY: " + getPRIORITY() + "||");
+        result.append("DMCAMPAIGN_ID: " + getDMCAMPAIGN_ID() + "||");
+        result.append("DMACTTYPE_ID: " + getDMACTTYPE_ID() + "||");
+        result.append("DMTEMPLATETYPE_ID: " + getDMTEMPLATETYPE_ID() + "||");
+        result.append("DMEXPTYPE_ID: " + getDMEXPTYPE_ID() + "||");
+        result.append("REPEATABLE: " + getREPEATABLE() + "||");
+        result.append("CREATED: " + getCREATED() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("LASTUPDATEDBY: " + getLASTUPDATEDBY() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("FLOWXML: " + getFLOWXML() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("FIELD4: " + getFIELD4() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("BEHAVIOR: " + getBEHAVIOR() + "||");
+        result.append("UIDISPLAYABLE: " + getUIDISPLAYABLE() + "||");
+        result.append("MANAGINGTOOL: " + getMANAGINGTOOL() + "||");
+        return result.toString();
+    }
     
 }

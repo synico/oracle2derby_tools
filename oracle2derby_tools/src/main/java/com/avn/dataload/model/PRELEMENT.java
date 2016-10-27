@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PRELEMENT {
-    
+
 
     private java.math.BigDecimal PRELEMENT_ID;
     
@@ -126,5 +123,21 @@ public class PRELEMENT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PRELEMENT_ID: " + getPRELEMENT_ID() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("PRELETEMPLATE_ID: " + getPRELETEMPLATE_ID() + "||");
+        result.append("PRICERULE_ID: " + getPRICERULE_ID() + "||");
+        result.append("PARENT: " + getPARENT() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

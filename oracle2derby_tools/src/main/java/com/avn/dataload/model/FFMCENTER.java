@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class FFMCENTER {
-    
+
 
     private java.math.BigDecimal FFMCENTER_ID;
     
@@ -126,5 +123,21 @@ public class FFMCENTER {
         return this.DROPSHIP;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("FFMCENTER_ID: " + getFFMCENTER_ID() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("DEFAULTSHIPOFFSET: " + getDEFAULTSHIPOFFSET() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("EXTFFMSTORENUM: " + getEXTFFMSTORENUM() + "||");
+        result.append("INVENTORYOPFLAGS: " + getINVENTORYOPFLAGS() + "||");
+        result.append("MAXNUMPICK: " + getMAXNUMPICK() + "||");
+        result.append("PICKDELAYINMIN: " + getPICKDELAYINMIN() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("DROPSHIP: " + getDROPSHIP() + "||");
+        return result.toString();
+    }
     
 }

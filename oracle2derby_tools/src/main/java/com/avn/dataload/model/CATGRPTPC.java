@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CATGRPTPC {
-    
+
 
     private java.math.BigDecimal CATALOG_ID;
     
@@ -60,5 +57,15 @@ public class CATGRPTPC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATALOG_ID: " + getCATALOG_ID() + "||");
+        result.append("CATGROUP_ID: " + getCATGROUP_ID() + "||");
+        result.append("TRADEPOSCN_ID: " + getTRADEPOSCN_ID() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CALUSAGE {
-    
+
 
     private java.math.BigDecimal CALUSAGE_ID;
     
@@ -60,5 +57,15 @@ public class CALUSAGE {
         return this.STRELTYPNAMERT;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CALUSAGE_ID: " + getCALUSAGE_ID() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("STRELTYPNAMECFG: " + getSTRELTYPNAMECFG() + "||");
+        result.append("STRELTYPNAMERT: " + getSTRELTYPNAMERT() + "||");
+        return result.toString();
+    }
     
 }

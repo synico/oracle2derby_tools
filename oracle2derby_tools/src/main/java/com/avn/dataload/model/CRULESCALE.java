@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CRULESCALE {
-    
+
 
     private java.math.BigDecimal CALSCALE_ID;
     
@@ -38,5 +35,13 @@ public class CRULESCALE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CALSCALE_ID: " + getCALSCALE_ID() + "||");
+        result.append("CALRULE_ID: " + getCALRULE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

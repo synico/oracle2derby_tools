@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CFPRODUCTSET {
-    
+
 
     private java.math.BigDecimal CFPRODUCTSET_ID;
     
@@ -60,5 +57,15 @@ public class CFPRODUCTSET {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CFPRODUCTSET_ID: " + getCFPRODUCTSET_ID() + "||");
+        result.append("CATFILTER_ID: " + getCATFILTER_ID() + "||");
+        result.append("PRODUCTSET_ID: " + getPRODUCTSET_ID() + "||");
+        result.append("TYPE: " + getTYPE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

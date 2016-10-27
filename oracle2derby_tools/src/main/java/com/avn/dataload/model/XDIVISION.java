@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XDIVISION {
-    
+
 
     private java.lang.String DIVISIONCODE;
     
@@ -126,5 +123,21 @@ public class XDIVISION {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("DIVISIONCODE: " + getDIVISIONCODE() + "||");
+        result.append("ERPNAME: " + getERPNAME() + "||");
+        result.append("REGIONNAME: " + getREGIONNAME() + "||");
+        result.append("FFMCENTER_ID: " + getFFMCENTER_ID() + "||");
+        result.append("CARTTYPE: " + getCARTTYPE() + "||");
+        result.append("CARTTYPE_DESC: " + getCARTTYPE_DESC() + "||");
+        result.append("DEFAULT_CURRENCY: " + getDEFAULT_CURRENCY() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

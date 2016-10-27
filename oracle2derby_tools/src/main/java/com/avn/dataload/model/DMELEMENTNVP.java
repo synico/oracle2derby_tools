@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DMELEMENTNVP {
-    
+
 
     private java.math.BigDecimal DMELEMENT_ID;
     
@@ -82,5 +79,17 @@ public class DMELEMENTNVP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("DMELEMENT_ID: " + getDMELEMENT_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("VALUE: " + getVALUE() + "||");
+        result.append("TRIGGERMATCH: " + getTRIGGERMATCH() + "||");
+        result.append("PROPERTIES: " + getPROPERTIES() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

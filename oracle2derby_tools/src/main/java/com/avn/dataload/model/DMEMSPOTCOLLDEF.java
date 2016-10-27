@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DMEMSPOTCOLLDEF {
-    
+
 
     private java.math.BigDecimal DMEMSPOTCOLLDEF_ID;
     
@@ -71,5 +68,16 @@ public class DMEMSPOTCOLLDEF {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("DMEMSPOTCOLLDEF_ID: " + getDMEMSPOTCOLLDEF_ID() + "||");
+        result.append("EMSPOT_ID: " + getEMSPOT_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("COLLATERAL_ID: " + getCOLLATERAL_ID() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

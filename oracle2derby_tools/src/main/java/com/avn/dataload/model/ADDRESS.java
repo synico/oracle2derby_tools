@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ADDRESS {
-    
+
 
     private java.math.BigDecimal ADDRESS_ID;
     
@@ -511,5 +508,56 @@ public class ADDRESS {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ADDRESS_ID: " + getADDRESS_ID() + "||");
+        result.append("ADDRESSTYPE: " + getADDRESSTYPE() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("ADDRBOOK_ID: " + getADDRBOOK_ID() + "||");
+        result.append("ORGUNITNAME: " + getORGUNITNAME() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("BILLINGCODE: " + getBILLINGCODE() + "||");
+        result.append("BILLINGCODETYPE: " + getBILLINGCODETYPE() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("ORGNAME: " + getORGNAME() + "||");
+        result.append("ISPRIMARY: " + getISPRIMARY() + "||");
+        result.append("LASTNAME: " + getLASTNAME() + "||");
+        result.append("PERSONTITLE: " + getPERSONTITLE() + "||");
+        result.append("FIRSTNAME: " + getFIRSTNAME() + "||");
+        result.append("MIDDLENAME: " + getMIDDLENAME() + "||");
+        result.append("BUSINESSTITLE: " + getBUSINESSTITLE() + "||");
+        result.append("PHONE1: " + getPHONE1() + "||");
+        result.append("FAX1: " + getFAX1() + "||");
+        result.append("PHONE2: " + getPHONE2() + "||");
+        result.append("ADDRESS1: " + getADDRESS1() + "||");
+        result.append("FAX2: " + getFAX2() + "||");
+        result.append("NICKNAME: " + getNICKNAME() + "||");
+        result.append("ADDRESS2: " + getADDRESS2() + "||");
+        result.append("ADDRESS3: " + getADDRESS3() + "||");
+        result.append("CITY: " + getCITY() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("COUNTRY: " + getCOUNTRY() + "||");
+        result.append("ZIPCODE: " + getZIPCODE() + "||");
+        result.append("EMAIL1: " + getEMAIL1() + "||");
+        result.append("EMAIL2: " + getEMAIL2() + "||");
+        result.append("PHONE1TYPE: " + getPHONE1TYPE() + "||");
+        result.append("PHONE2TYPE: " + getPHONE2TYPE() + "||");
+        result.append("PUBLISHPHONE1: " + getPUBLISHPHONE1() + "||");
+        result.append("PUBLISHPHONE2: " + getPUBLISHPHONE2() + "||");
+        result.append("BESTCALLINGTIME: " + getBESTCALLINGTIME() + "||");
+        result.append("PACKAGESUPPRESSION: " + getPACKAGESUPPRESSION() + "||");
+        result.append("LASTCREATE: " + getLASTCREATE() + "||");
+        result.append("OFFICEADDRESS: " + getOFFICEADDRESS() + "||");
+        result.append("SELFADDRESS: " + getSELFADDRESS() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("TAXGEOCODE: " + getTAXGEOCODE() + "||");
+        result.append("SHIPPINGGEOCODE: " + getSHIPPINGGEOCODE() + "||");
+        result.append("MOBILEPHONE1: " + getMOBILEPHONE1() + "||");
+        result.append("MOBILEPHONE1CNTRY: " + getMOBILEPHONE1CNTRY() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

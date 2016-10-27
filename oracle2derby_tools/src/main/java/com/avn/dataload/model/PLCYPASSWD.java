@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PLCYPASSWD {
-    
+
 
     private java.math.BigDecimal PLCYPASSWD_ID;
     
@@ -115,5 +112,20 @@ public class PLCYPASSWD {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PLCYPASSWD_ID: " + getPLCYPASSWD_ID() + "||");
+        result.append("MINPASSWDLENGTH: " + getMINPASSWDLENGTH() + "||");
+        result.append("MINALPHABETIC: " + getMINALPHABETIC() + "||");
+        result.append("MINNUMERIC: " + getMINNUMERIC() + "||");
+        result.append("MAXINSTANCES: " + getMAXINSTANCES() + "||");
+        result.append("MAXCONSECUTIVETYPE: " + getMAXCONSECUTIVETYPE() + "||");
+        result.append("MAXLIFETIME: " + getMAXLIFETIME() + "||");
+        result.append("MATCHUSERID: " + getMATCHUSERID() + "||");
+        result.append("REUSEPASSWORD: " + getREUSEPASSWORD() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

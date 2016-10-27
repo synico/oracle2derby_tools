@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class X_ZFC_CUSTMATSPLIT {
-    
+
 
     private java.lang.String MANDT;
     
@@ -126,5 +123,21 @@ public class X_ZFC_CUSTMATSPLIT {
         return this.UPDATED_FLAG;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MANDT: " + getMANDT() + "||");
+        result.append("ZZFPA: " + getZZFPA() + "||");
+        result.append("VKORG: " + getVKORG() + "||");
+        result.append("VTWEG: " + getVTWEG() + "||");
+        result.append("ZZCMA: " + getZZCMA() + "||");
+        result.append("MATNR: " + getMATNR() + "||");
+        result.append("WERKS: " + getWERKS() + "||");
+        result.append("MFRPN: " + getMFRPN() + "||");
+        result.append("ERZEIT: " + getERZEIT() + "||");
+        result.append("MFRNR: " + getMFRNR() + "||");
+        result.append("UPDATED_FLAG: " + getUPDATED_FLAG() + "||");
+        return result.toString();
+    }
     
 }

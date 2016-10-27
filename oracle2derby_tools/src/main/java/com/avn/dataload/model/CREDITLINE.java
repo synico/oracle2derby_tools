@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CREDITLINE {
-    
+
 
     private java.math.BigDecimal CREDITLINE_ID;
     
@@ -115,5 +112,20 @@ public class CREDITLINE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CREDITLINE_ID: " + getCREDITLINE_ID() + "||");
+        result.append("SETCCURR: " + getSETCCURR() + "||");
+        result.append("ACCOUNT_ID: " + getACCOUNT_ID() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("TIMECREATED: " + getTIMECREATED() + "||");
+        result.append("TIMEUPDATED: " + getTIMEUPDATED() + "||");
+        result.append("CREDITLIMIT: " + getCREDITLIMIT() + "||");
+        result.append("DECIMALFIELD1: " + getDECIMALFIELD1() + "||");
+        result.append("DECIMALFIELD2: " + getDECIMALFIELD2() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

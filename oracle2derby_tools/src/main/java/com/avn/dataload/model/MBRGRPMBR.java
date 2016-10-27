@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class MBRGRPMBR {
-    
+
 
     private java.math.BigDecimal MEMBER_ID;
     
@@ -71,5 +68,16 @@ public class MBRGRPMBR {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("MBRGRP_ID: " + getMBRGRP_ID() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("CUSTOMERID: " + getCUSTOMERID() + "||");
+        result.append("EXCLUDE: " + getEXCLUDE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

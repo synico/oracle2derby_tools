@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class EDPORDER {
-    
+
 
     private java.math.BigDecimal EDPORDER_ID;
     
@@ -148,5 +145,23 @@ public class EDPORDER {
         return this.FIELD3;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("EDPORDER_ID: " + getEDPORDER_ID() + "||");
+        result.append("ORDER_ID: " + getORDER_ID() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("INITIALAMOUNT: " + getINITIALAMOUNT() + "||");
+        result.append("TOTALAMOUNT: " + getTOTALAMOUNT() + "||");
+        result.append("CURRENCY: " + getCURRENCY() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("BLOCKED: " + getBLOCKED() + "||");
+        result.append("BGJOBSTATUS: " + getBGJOBSTATUS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        return result.toString();
+    }
     
 }

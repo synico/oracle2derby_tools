@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class MBRATTR {
-    
+
 
     private java.math.BigDecimal MBRATTR_ID;
     
@@ -60,5 +57,15 @@ public class MBRATTR {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MBRATTR_ID: " + getMBRATTR_ID() + "||");
+        result.append("ATTRTYPE_ID: " + getATTRTYPE_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

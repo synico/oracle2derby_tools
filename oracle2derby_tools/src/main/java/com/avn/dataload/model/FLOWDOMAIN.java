@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class FLOWDOMAIN {
-    
+
 
     private java.math.BigDecimal FLOWDOMAIN_ID;
     
@@ -49,5 +46,14 @@ public class FLOWDOMAIN {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("FLOWDOMAIN_ID: " + getFLOWDOMAIN_ID() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("PRIORITY: " + getPRIORITY() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class STAGLOG {
-    
+
 
     private java.math.BigDecimal STGRFNBR;
     
@@ -324,5 +321,39 @@ public class STAGLOG {
         return this.STGFILTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("STGRFNBR: " + getSTGRFNBR() + "||");
+        result.append("STGSTMP: " + getSTGSTMP() + "||");
+        result.append("STGTABLE: " + getSTGTABLE() + "||");
+        result.append("STGOP: " + getSTGOP() + "||");
+        result.append("STGMENBRNAME: " + getSTGMENBRNAME() + "||");
+        result.append("STGMENBR: " + getSTGMENBR() + "||");
+        result.append("STGPKEYNAME: " + getSTGPKEYNAME() + "||");
+        result.append("STGPKEY: " + getSTGPKEY() + "||");
+        result.append("STGKEY1NAME: " + getSTGKEY1NAME() + "||");
+        result.append("STGKEY2NAME: " + getSTGKEY2NAME() + "||");
+        result.append("STGKEY3NAME: " + getSTGKEY3NAME() + "||");
+        result.append("STGKEY4NAME: " + getSTGKEY4NAME() + "||");
+        result.append("STGKEY5NAME: " + getSTGKEY5NAME() + "||");
+        result.append("STGOKEY1: " + getSTGOKEY1() + "||");
+        result.append("STGOKEY2: " + getSTGOKEY2() + "||");
+        result.append("STGOKEY3: " + getSTGOKEY3() + "||");
+        result.append("STGOKEY4: " + getSTGOKEY4() + "||");
+        result.append("STGOKEY5: " + getSTGOKEY5() + "||");
+        result.append("STGNKEY1: " + getSTGNKEY1() + "||");
+        result.append("STGNKEY2: " + getSTGNKEY2() + "||");
+        result.append("STGNKEY3: " + getSTGNKEY3() + "||");
+        result.append("STGNKEY4: " + getSTGNKEY4() + "||");
+        result.append("STGNKEY5: " + getSTGNKEY5() + "||");
+        result.append("STGPROCESSED: " + getSTGPROCESSED() + "||");
+        result.append("STGRESERVED1: " + getSTGRESERVED1() + "||");
+        result.append("STGLDPTH: " + getSTGLDPTH() + "||");
+        result.append("STGLDCOLS: " + getSTGLDCOLS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("STGFILTER: " + getSTGFILTER() + "||");
+        return result.toString();
+    }
     
 }

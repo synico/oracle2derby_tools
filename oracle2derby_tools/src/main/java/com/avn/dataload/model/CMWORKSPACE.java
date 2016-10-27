@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CMWORKSPACE {
-    
+
 
     private java.lang.String WORKSPACE;
     
@@ -38,5 +35,13 @@ public class CMWORKSPACE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("WORKSPACE: " + getWORKSPACE() + "||");
+        result.append("LOCKING_POLICY: " + getLOCKING_POLICY() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

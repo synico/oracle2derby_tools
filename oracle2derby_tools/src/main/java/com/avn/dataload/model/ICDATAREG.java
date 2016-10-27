@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ICDATAREG {
-    
+
 
     private java.math.BigDecimal REFID;
     
@@ -82,5 +79,17 @@ public class ICDATAREG {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("REFID: " + getREFID() + "||");
+        result.append("CLASSNAME: " + getCLASSNAME() + "||");
+        result.append("BASETYPE: " + getBASETYPE() + "||");
+        result.append("DISPLAYNAME: " + getDISPLAYNAME() + "||");
+        result.append("DEFAULTTYPE: " + getDEFAULTTYPE() + "||");
+        result.append("ORDERSEQ: " + getORDERSEQ() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

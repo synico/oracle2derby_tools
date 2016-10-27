@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class KEYS {
-    
+
 
     private java.math.BigDecimal KEYS_ID;
     
@@ -93,5 +90,18 @@ public class KEYS {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("KEYS_ID: " + getKEYS_ID() + "||");
+        result.append("TABLENAME: " + getTABLENAME() + "||");
+        result.append("COLUMNNAME: " + getCOLUMNNAME() + "||");
+        result.append("COUNTER: " + getCOUNTER() + "||");
+        result.append("PREFETCHSIZE: " + getPREFETCHSIZE() + "||");
+        result.append("LOWERBOUND: " + getLOWERBOUND() + "||");
+        result.append("UPPERBOUND: " + getUPPERBOUND() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

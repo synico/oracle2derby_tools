@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CATALOG {
-    
+
 
     private java.math.BigDecimal CATALOG_ID;
     
@@ -71,5 +68,16 @@ public class CATALOG {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATALOG_ID: " + getCATALOG_ID() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("TPCLEVEL: " + getTPCLEVEL() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

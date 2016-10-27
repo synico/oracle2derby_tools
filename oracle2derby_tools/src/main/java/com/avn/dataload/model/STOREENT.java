@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class STOREENT {
-    
+
 
     private java.math.BigDecimal STOREENT_ID;
     
@@ -82,5 +79,17 @@ public class STOREENT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("TYPE: " + getTYPE() + "||");
+        result.append("SETCCURR: " + getSETCCURR() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

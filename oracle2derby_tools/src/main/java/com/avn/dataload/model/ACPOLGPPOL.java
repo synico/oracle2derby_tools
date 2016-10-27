@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ACPOLGPPOL {
-    
+
 
     private java.math.BigDecimal ACPOLICY_ID;
     
@@ -38,5 +35,13 @@ public class ACPOLGPPOL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ACPOLICY_ID: " + getACPOLICY_ID() + "||");
+        result.append("ACPOLGRP_ID: " + getACPOLGRP_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

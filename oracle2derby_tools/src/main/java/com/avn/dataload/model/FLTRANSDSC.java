@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class FLTRANSDSC {
-    
+
 
     private java.math.BigDecimal FLTRANSITN_ID;
     
@@ -60,5 +57,15 @@ public class FLTRANSDSC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("FLTRANSITN_ID: " + getFLTRANSITN_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("TRANSITIONDESC: " + getTRANSITIONDESC() + "||");
+        result.append("EVENTDESC: " + getEVENTDESC() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

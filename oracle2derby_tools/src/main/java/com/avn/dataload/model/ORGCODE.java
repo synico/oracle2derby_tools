@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ORGCODE {
-    
+
 
     private java.math.BigDecimal ORGCODE_ID;
     
@@ -60,5 +57,15 @@ public class ORGCODE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ORGCODE_ID: " + getORGCODE_ID() + "||");
+        result.append("ORGENTITY_ID: " + getORGENTITY_ID() + "||");
+        result.append("CODETYPE: " + getCODETYPE() + "||");
+        result.append("CODE: " + getCODE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

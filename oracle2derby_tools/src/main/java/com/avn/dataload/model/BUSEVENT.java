@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class BUSEVENT {
-    
+
 
     private java.math.BigDecimal BUSEVENT_ID;
     
@@ -82,5 +79,17 @@ public class BUSEVENT {
         return this.EVENT_SEARCHKEY;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("BUSEVENT_ID: " + getBUSEVENT_ID() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("CREATETSTMP: " + getCREATETSTMP() + "||");
+        result.append("EVENTDATA: " + getEVENTDATA() + "||");
+        result.append("CHECKED: " + getCHECKED() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("EVENT_SEARCHKEY: " + getEVENT_SEARCHKEY() + "||");
+        return result.toString();
+    }
     
 }

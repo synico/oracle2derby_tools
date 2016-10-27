@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XINVENTORY {
-    
+
 
     private java.math.BigDecimal CATENTRY_ID;
     
@@ -159,5 +156,24 @@ public class XINVENTORY {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATENTRY_ID: " + getCATENTRY_ID() + "||");
+        result.append("FFMCENTER_ID: " + getFFMCENTER_ID() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("FACTORY_LEADTIME: " + getFACTORY_LEADTIME() + "||");
+        result.append("LEADTIME_UOM: " + getLEADTIME_UOM() + "||");
+        result.append("TIME_STAMP_UTC: " + getTIME_STAMP_UTC() + "||");
+        result.append("FACTORYQOH: " + getFACTORYQOH() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("FIELD4: " + getFIELD4() + "||");
+        result.append("FIELD5: " + getFIELD5() + "||");
+        result.append("FIELD6: " + getFIELD6() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

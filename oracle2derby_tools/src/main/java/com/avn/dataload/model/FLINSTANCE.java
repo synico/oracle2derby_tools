@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class FLINSTANCE {
-    
+
 
     private java.math.BigDecimal FLOW_ID;
     
@@ -104,5 +101,19 @@ public class FLINSTANCE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("FLOW_ID: " + getFLOW_ID() + "||");
+        result.append("FLOWTYPE_ID: " + getFLOWTYPE_ID() + "||");
+        result.append("ENTITY_ID: " + getENTITY_ID() + "||");
+        result.append("CURSTATEIDENTIFIER: " + getCURSTATEIDENTIFIER() + "||");
+        result.append("FLOWSTAGES: " + getFLOWSTAGES() + "||");
+        result.append("CURRSTAGEINDEX: " + getCURRSTAGEINDEX() + "||");
+        result.append("LASTUPDATETIME: " + getLASTUPDATETIME() + "||");
+        result.append("FLOWCONTEXT: " + getFLOWCONTEXT() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

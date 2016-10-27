@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class QTYUNIT {
-    
+
 
     private java.lang.String QTYUNIT_ID;
     
@@ -38,5 +35,13 @@ public class QTYUNIT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("QTYUNIT_ID: " + getQTYUNIT_ID() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

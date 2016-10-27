@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class QTYFMTDESC {
-    
+
 
     private java.math.BigDecimal STOREENT_ID;
     
@@ -181,5 +178,26 @@ public class QTYFMTDESC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("NUMBRUSG_ID: " + getNUMBRUSG_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("QTYUNIT_ID: " + getQTYUNIT_ID() + "||");
+        result.append("UNITSYMBOL: " + getUNITSYMBOL() + "||");
+        result.append("UNITPREFIXPOS: " + getUNITPREFIXPOS() + "||");
+        result.append("UNITSUFFIXPOS: " + getUNITSUFFIXPOS() + "||");
+        result.append("DISPLAYLOCALE: " + getDISPLAYLOCALE() + "||");
+        result.append("CUSTOMIZEDQTYSTR: " + getCUSTOMIZEDQTYSTR() + "||");
+        result.append("UNITPREFIXNEG: " + getUNITPREFIXNEG() + "||");
+        result.append("UNITSUFFIXNEG: " + getUNITSUFFIXNEG() + "||");
+        result.append("RADIXPOINT: " + getRADIXPOINT() + "||");
+        result.append("GROUPINGCHAR: " + getGROUPINGCHAR() + "||");
+        result.append("NUMBERPATTERN: " + getNUMBERPATTERN() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

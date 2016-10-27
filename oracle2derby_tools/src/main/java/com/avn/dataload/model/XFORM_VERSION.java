@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XFORM_VERSION {
-    
+
 
     private java.math.BigDecimal FORM_ID;
     
@@ -49,5 +46,14 @@ public class XFORM_VERSION {
         return this.FORM_VERSION_DS;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("FORM_ID: " + getFORM_ID() + "||");
+        result.append("FORM_VERSION_ID: " + getFORM_VERSION_ID() + "||");
+        result.append("CREATE_DT: " + getCREATE_DT() + "||");
+        result.append("FORM_VERSION_DS: " + getFORM_VERSION_DS() + "||");
+        return result.toString();
+    }
     
 }

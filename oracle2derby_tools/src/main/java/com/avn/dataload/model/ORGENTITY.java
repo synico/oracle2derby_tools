@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ORGENTITY {
-    
+
 
     private java.math.BigDecimal ORGENTITY_ID;
     
@@ -192,5 +189,27 @@ public class ORGENTITY {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ORGENTITY_ID: " + getORGENTITY_ID() + "||");
+        result.append("LEGALID: " + getLEGALID() + "||");
+        result.append("ORGENTITYTYPE: " + getORGENTITYTYPE() + "||");
+        result.append("ORGENTITYNAME: " + getORGENTITYNAME() + "||");
+        result.append("BUSINESSCATEGORY: " + getBUSINESSCATEGORY() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("ADMINFIRSTNAME: " + getADMINFIRSTNAME() + "||");
+        result.append("ADMINLASTNAME: " + getADMINLASTNAME() + "||");
+        result.append("ADMINMIDDLENAME: " + getADMINMIDDLENAME() + "||");
+        result.append("PREFERREDDELIVERY: " + getPREFERREDDELIVERY() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("TAXPAYERID: " + getTAXPAYERID() + "||");
+        result.append("DN: " + getDN() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

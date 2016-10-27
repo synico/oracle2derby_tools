@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XACCOUNTPREFERENCE {
-    
+
 
     private java.math.BigDecimal USERS_ID;
     
@@ -49,5 +46,14 @@ public class XACCOUNTPREFERENCE {
         return this.PREFERENCE_ID;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("ORGENTITY_ID: " + getORGENTITY_ID() + "||");
+        result.append("PREFERENCETYPE: " + getPREFERENCETYPE() + "||");
+        result.append("PREFERENCE_ID: " + getPREFERENCE_ID() + "||");
+        return result.toString();
+    }
     
 }

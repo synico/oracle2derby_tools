@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CMFWKSPC {
-    
+
 
     private java.math.BigDecimal CMFWKSPC_ID;
     
@@ -93,5 +90,18 @@ public class CMFWKSPC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CMFWKSPC_ID: " + getCMFWKSPC_ID() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("PERSISTENTYPE: " + getPERSISTENTYPE() + "||");
+        result.append("LOCKINGPOLICY: " + getLOCKINGPOLICY() + "||");
+        result.append("PROMOTIONPOLICY: " + getPROMOTIONPOLICY() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

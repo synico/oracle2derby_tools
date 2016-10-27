@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XSOURCE {
-    
+
 
     private java.math.BigDecimal SOURCE_ID;
     
@@ -38,5 +35,13 @@ public class XSOURCE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SOURCE_ID: " + getSOURCE_ID() + "||");
+        result.append("SOURCE_NAME: " + getSOURCE_NAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

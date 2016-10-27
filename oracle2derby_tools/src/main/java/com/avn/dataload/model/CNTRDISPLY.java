@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CNTRDISPLY {
-    
+
 
     private java.math.BigDecimal DEVICEFMT_ID;
     
@@ -71,5 +68,16 @@ public class CNTRDISPLY {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("DEVICEFMT_ID: " + getDEVICEFMT_ID() + "||");
+        result.append("CNTRDISPLY_ID: " + getCNTRDISPLY_ID() + "||");
+        result.append("CONTRACT_ID: " + getCONTRACT_ID() + "||");
+        result.append("PARTROLE_ID: " + getPARTROLE_ID() + "||");
+        result.append("DISPLAYPAGENAME: " + getDISPLAYPAGENAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PAGELAYOUT {
-    
+
 
     private java.math.BigDecimal PAGELAYOUT_ID;
     
@@ -258,5 +255,33 @@ public class PAGELAYOUT {
         return this.PRIORITY;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PAGELAYOUT_ID: " + getPAGELAYOUT_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("VIEWNAME: " + getVIEWNAME() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("PAGELAYOUTTYPE_ID: " + getPAGELAYOUTTYPE_ID() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("THUMBNAIL: " + getTHUMBNAIL() + "||");
+        result.append("FULLIMAGE: " + getFULLIMAGE() + "||");
+        result.append("MASTERCSS: " + getMASTERCSS() + "||");
+        result.append("DEVICETYPE: " + getDEVICETYPE() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("ISTEMPLATE: " + getISTEMPLATE() + "||");
+        result.append("CREATEDATE: " + getCREATEDATE() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("ISDEFAULT: " + getISDEFAULT() + "||");
+        result.append("STARTDATE: " + getSTARTDATE() + "||");
+        result.append("ENDDATE: " + getENDDATE() + "||");
+        result.append("PRIORITY: " + getPRIORITY() + "||");
+        return result.toString();
+    }
     
 }

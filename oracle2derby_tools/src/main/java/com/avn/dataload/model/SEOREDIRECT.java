@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SEOREDIRECT {
-    
+
 
     private java.math.BigDecimal SEOREDIRECT_ID;
     
@@ -49,5 +46,14 @@ public class SEOREDIRECT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SEOREDIRECT_ID: " + getSEOREDIRECT_ID() + "||");
+        result.append("SEOURLKWD_ID_NEW: " + getSEOURLKWD_ID_NEW() + "||");
+        result.append("SEOURLKWD_ID_ORIG: " + getSEOURLKWD_ID_ORIG() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

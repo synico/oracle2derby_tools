@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SHPARRANGE {
-    
+
 
     private java.math.BigDecimal SHPARRANGE_ID;
     
@@ -137,5 +134,22 @@ public class SHPARRANGE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SHPARRANGE_ID: " + getSHPARRANGE_ID() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("FFMCENTER_ID: " + getFFMCENTER_ID() + "||");
+        result.append("SHIPMODE_ID: " + getSHIPMODE_ID() + "||");
+        result.append("STARTDATE: " + getSTARTDATE() + "||");
+        result.append("ENDDATE: " + getENDDATE() + "||");
+        result.append("TRACKINGNUMBER: " + getTRACKINGNUMBER() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("PRECEDENCE: " + getPRECEDENCE() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FLAGS: " + getFLAGS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

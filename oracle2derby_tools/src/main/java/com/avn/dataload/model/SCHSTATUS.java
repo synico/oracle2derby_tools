@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SCHSTATUS {
-    
+
 
     private java.math.BigDecimal SCSINSTREFNUM;
     
@@ -137,5 +134,22 @@ public class SCHSTATUS {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SCSINSTREFNUM: " + getSCSINSTREFNUM() + "||");
+        result.append("SCSJOBNBR: " + getSCSJOBNBR() + "||");
+        result.append("SCSSTATE: " + getSCSSTATE() + "||");
+        result.append("SCSPREFSTART: " + getSCSPREFSTART() + "||");
+        result.append("SCSACTLSTART: " + getSCSACTLSTART() + "||");
+        result.append("SCSRESULT: " + getSCSRESULT() + "||");
+        result.append("SCSQUEUE: " + getSCSQUEUE() + "||");
+        result.append("SCSEND: " + getSCSEND() + "||");
+        result.append("SCSATTLEFT: " + getSCSATTLEFT() + "||");
+        result.append("SCSSEQUENCE: " + getSCSSEQUENCE() + "||");
+        result.append("SCSINSTRECOV: " + getSCSINSTRECOV() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

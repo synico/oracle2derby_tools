@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PX_CDUSAGE {
-    
+
 
     private java.math.BigDecimal PX_CDUSAGE_ID;
     
@@ -93,5 +90,18 @@ public class PX_CDUSAGE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PX_CDUSAGE_ID: " + getPX_CDUSAGE_ID() + "||");
+        result.append("PX_CDPOOL_ID: " + getPX_CDPOOL_ID() + "||");
+        result.append("OWNER_ID: " + getOWNER_ID() + "||");
+        result.append("ORDERS_ID: " + getORDERS_ID() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("VALIDFROM: " + getVALIDFROM() + "||");
+        result.append("VALIDUNTIL: " + getVALIDUNTIL() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class TRADEPOSCN {
-    
+
 
     private java.math.BigDecimal TRADEPOSCN_ID;
     
@@ -115,5 +112,20 @@ public class TRADEPOSCN {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("TRADEPOSCN_ID: " + getTRADEPOSCN_ID() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("PRODUCTSET_ID: " + getPRODUCTSET_ID() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("PRECEDENCE: " + getPRECEDENCE() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("TYPE: " + getTYPE() + "||");
+        result.append("FLAGS: " + getFLAGS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XINVLOG {
-    
+
 
     private java.lang.String SAPMATERIALID;
     
@@ -49,5 +46,14 @@ public class XINVLOG {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SAPMATERIALID: " + getSAPMATERIALID() + "||");
+        result.append("PROCESSED: " + getPROCESSED() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

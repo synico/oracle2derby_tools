@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ACRESGPDES {
-    
+
 
     private java.math.BigDecimal ACRESGRP_ID;
     
@@ -60,5 +57,15 @@ public class ACRESGPDES {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ACRESGRP_ID: " + getACRESGRP_ID() + "||");
+        result.append("DISPLAYNAME: " + getDISPLAYNAME() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

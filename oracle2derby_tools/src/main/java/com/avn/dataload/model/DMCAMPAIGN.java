@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DMCAMPAIGN {
-    
+
 
     private java.math.BigDecimal DMCAMPAIGN_ID;
     
@@ -214,5 +211,29 @@ public class DMCAMPAIGN {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("DMCAMPAIGN_ID: " + getDMCAMPAIGN_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("SEASON: " + getSEASON() + "||");
+        result.append("TYPE: " + getTYPE() + "||");
+        result.append("STARTDATE: " + getSTARTDATE() + "||");
+        result.append("ENDDATE: " + getENDDATE() + "||");
+        result.append("CREATED: " + getCREATED() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("LASTUPDATEDBY: " + getLASTUPDATEDBY() + "||");
+        result.append("OWNER: " + getOWNER() + "||");
+        result.append("OBJECTIVE: " + getOBJECTIVE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("FIELD4: " + getFIELD4() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

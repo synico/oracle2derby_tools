@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DSR_INVOICE_ADDRESS {
-    
+
 
     private java.lang.String INVOICE_NBR;
     
@@ -335,5 +332,40 @@ public class DSR_INVOICE_ADDRESS {
         return this.SHIPTO_CNTRY;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("INVOICE_NBR: " + getINVOICE_NBR() + "||");
+        result.append("CREATE_DT: " + getCREATE_DT() + "||");
+        result.append("UPDATE_DT: " + getUPDATE_DT() + "||");
+        result.append("DELETE_DT: " + getDELETE_DT() + "||");
+        result.append("UPDATE_ID: " + getUPDATE_ID() + "||");
+        result.append("LAST_UPDATE_ACTION: " + getLAST_UPDATE_ACTION() + "||");
+        result.append("AUDIT_LOG_KEY: " + getAUDIT_LOG_KEY() + "||");
+        result.append("SYSTEM_ID: " + getSYSTEM_ID() + "||");
+        result.append("SEG_RCVD_DT: " + getSEG_RCVD_DT() + "||");
+        result.append("DIVISION_ID: " + getDIVISION_ID() + "||");
+        result.append("INVOICE_COMPANY: " + getINVOICE_COMPANY() + "||");
+        result.append("INVOICE_SEQ_NBR: " + getINVOICE_SEQ_NBR() + "||");
+        result.append("BILLTO_CUST_NAME: " + getBILLTO_CUST_NAME() + "||");
+        result.append("BILLTO_ATTN_NAME: " + getBILLTO_ATTN_NAME() + "||");
+        result.append("BILLTO_ADDR1: " + getBILLTO_ADDR1() + "||");
+        result.append("BILLTO_ADDR2: " + getBILLTO_ADDR2() + "||");
+        result.append("BILLTO_ADDR3: " + getBILLTO_ADDR3() + "||");
+        result.append("BILLTO_CITY: " + getBILLTO_CITY() + "||");
+        result.append("BILLTO_STATE: " + getBILLTO_STATE() + "||");
+        result.append("BILLTO_POST_ZIP: " + getBILLTO_POST_ZIP() + "||");
+        result.append("BILLTO_CNTRY: " + getBILLTO_CNTRY() + "||");
+        result.append("SHIPTO_CUST_NAME: " + getSHIPTO_CUST_NAME() + "||");
+        result.append("SHIPTO_ATTN_NAME: " + getSHIPTO_ATTN_NAME() + "||");
+        result.append("SHIPTO_ADDR1: " + getSHIPTO_ADDR1() + "||");
+        result.append("SHIPTO_ADDR2: " + getSHIPTO_ADDR2() + "||");
+        result.append("SHIPTO_ADDR3: " + getSHIPTO_ADDR3() + "||");
+        result.append("SHIPTO_CITY: " + getSHIPTO_CITY() + "||");
+        result.append("SHIPTO_STATE: " + getSHIPTO_STATE() + "||");
+        result.append("SHIPTO_POST_ZIP: " + getSHIPTO_POST_ZIP() + "||");
+        result.append("SHIPTO_CNTRY: " + getSHIPTO_CNTRY() + "||");
+        return result.toString();
+    }
     
 }

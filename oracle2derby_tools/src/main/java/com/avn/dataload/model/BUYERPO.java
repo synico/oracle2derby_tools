@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class BUYERPO {
-    
+
 
     private java.math.BigDecimal BUYERPO_ID;
     
@@ -93,5 +90,18 @@ public class BUYERPO {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("BUYERPO_ID: " + getBUYERPO_ID() + "||");
+        result.append("SETCCURR: " + getSETCCURR() + "||");
+        result.append("ACCOUNT_ID: " + getACCOUNT_ID() + "||");
+        result.append("PONUMBER: " + getPONUMBER() + "||");
+        result.append("BUYERPOTYP_ID: " + getBUYERPOTYP_ID() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("AMOUNT: " + getAMOUNT() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

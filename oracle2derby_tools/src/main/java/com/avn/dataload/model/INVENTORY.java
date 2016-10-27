@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class INVENTORY {
-    
+
 
     private java.math.BigDecimal CATENTRY_ID;
     
@@ -82,5 +79,17 @@ public class INVENTORY {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATENTRY_ID: " + getCATENTRY_ID() + "||");
+        result.append("QUANTITY: " + getQUANTITY() + "||");
+        result.append("FFMCENTER_ID: " + getFFMCENTER_ID() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("QUANTITYMEASURE: " + getQUANTITYMEASURE() + "||");
+        result.append("INVENTORYFLAGS: " + getINVENTORYFLAGS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

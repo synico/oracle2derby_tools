@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ORDERHIST {
-    
+
 
     private java.math.BigDecimal ORDERS_ID;
     
@@ -93,5 +90,18 @@ public class ORDERHIST {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ORDERS_ID: " + getORDERS_ID() + "||");
+        result.append("ORDERVERSION: " + getORDERVERSION() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("ORDXML: " + getORDXML() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

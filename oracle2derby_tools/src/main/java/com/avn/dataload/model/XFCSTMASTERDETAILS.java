@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XFCSTMASTERDETAILS {
-    
+
 
     private java.math.BigDecimal FORECAST_ID;
     
@@ -280,5 +277,35 @@ public class XFCSTMASTERDETAILS {
         return this.CONSIGN_INV;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("FORECAST_ID: " + getFORECAST_ID() + "||");
+        result.append("FCST_PARTY: " + getFCST_PARTY() + "||");
+        result.append("CUST_MAT: " + getCUST_MAT() + "||");
+        result.append("MATERIAL_NBR: " + getMATERIAL_NBR() + "||");
+        result.append("MFR_PART_NBR: " + getMFR_PART_NBR() + "||");
+        result.append("MFR: " + getMFR() + "||");
+        result.append("FCST_FREQ: " + getFCST_FREQ() + "||");
+        result.append("NET_OF_BACKLOG: " + getNET_OF_BACKLOG() + "||");
+        result.append("NET_OF_QOH: " + getNET_OF_QOH() + "||");
+        result.append("CONSIGNMENT: " + getCONSIGNMENT() + "||");
+        result.append("RESERVING: " + getRESERVING() + "||");
+        result.append("CONSIGNMENT_FLAG: " + getCONSIGNMENT_FLAG() + "||");
+        result.append("W_INV: " + getW_INV() + "||");
+        result.append("INVENTORY: " + getINVENTORY() + "||");
+        result.append("CATENTRY_ID: " + getCATENTRY_ID() + "||");
+        result.append("LEAD_TIME: " + getLEAD_TIME() + "||");
+        result.append("COVERED_FLAG: " + getCOVERED_FLAG() + "||");
+        result.append("CONSTRAINED_FLAG: " + getCONSTRAINED_FLAG() + "||");
+        result.append("NO_FCST_QTY_FLAG: " + getNO_FCST_QTY_FLAG() + "||");
+        result.append("FORECAST_RCV_DATE: " + getFORECAST_RCV_DATE() + "||");
+        result.append("UPDATED_ON: " + getUPDATED_ON() + "||");
+        result.append("VMI: " + getVMI() + "||");
+        result.append("PLANT_INVENTORY: " + getPLANT_INVENTORY() + "||");
+        result.append("WERKS: " + getWERKS() + "||");
+        result.append("CONSIGN_INV: " + getCONSIGN_INV() + "||");
+        return result.toString();
+    }
     
 }

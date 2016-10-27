@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ATCHTGTDSC {
-    
+
 
     private java.math.BigDecimal ATCHTGTDSC_ID;
     
@@ -82,5 +79,17 @@ public class ATCHTGTDSC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ATCHTGTDSC_ID: " + getATCHTGTDSC_ID() + "||");
+        result.append("ATCHTGT_ID: " + getATCHTGT_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("SHORTDESCRIPTION: " + getSHORTDESCRIPTION() + "||");
+        result.append("LONGDESCRIPTION: " + getLONGDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

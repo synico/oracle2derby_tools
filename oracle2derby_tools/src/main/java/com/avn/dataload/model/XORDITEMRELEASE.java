@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XORDITEMRELEASE {
-    
+
 
     private java.math.BigDecimal XORDITEMRELEASE_ID;
     
@@ -82,5 +79,17 @@ public class XORDITEMRELEASE {
         return this.LASTUPDATE;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("XORDITEMRELEASE_ID: " + getXORDITEMRELEASE_ID() + "||");
+        result.append("ORDERITEMS_ID: " + getORDERITEMS_ID() + "||");
+        result.append("ORDRELEASENUM: " + getORDRELEASENUM() + "||");
+        result.append("QUANTITY: " + getQUANTITY() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        return result.toString();
+    }
     
 }

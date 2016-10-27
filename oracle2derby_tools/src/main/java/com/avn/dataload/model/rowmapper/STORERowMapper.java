@@ -3,24 +3,32 @@ package com.avn.dataload.model.rowmapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import org.springframework.jdbc.core.RowMapper;
 
 import com.avn.dataload.model.STORE;
 
 public class STORERowMapper<T> implements RowMapper<STORE> {
 
+    private static final Logger log = Logger.getLogger(STORERowMapper.class);
+
 	@Override
 	public STORE mapRow(ResultSet rs, int rowNum) throws SQLException {
 		STORE obj = new STORE();
 		
-		obj.setFIELD1(rs.getString("FIELD1"));
-		obj.setOPTCOUNTER(rs.getBigDecimal("OPTCOUNTER"));
-		obj.setSTORE_ID(rs.getBigDecimal("STORE_ID"));
 		obj.setFIELD2(rs.getString("FIELD2"));
 		obj.setSTATUS(rs.getBigDecimal("STATUS"));
+		obj.setOPTCOUNTER(rs.getBigDecimal("OPTCOUNTER"));
+		obj.setFIELD1(rs.getString("FIELD1"));
+		obj.setSTORE_ID(rs.getBigDecimal("STORE_ID"));
+		obj.setFFMCENTER_ID(rs.getBigDecimal("FFMCENTER_ID"));
 		obj.setLANGUAGE_ID(rs.getBigDecimal("LANGUAGE_ID"));
 		obj.setOID(rs.getString("OID"));
-		obj.setFFMCENTER_ID(rs.getBigDecimal("FFMCENTER_ID"));
+		obj.setSTORELEVEL(rs.getString("STORELEVEL"));
+		obj.setDIRECTORY(rs.getString("DIRECTORY"));
+		obj.setSTORETYPE(rs.getString("STORETYPE"));
+		obj.setRMAGOODFOR(rs.getBigDecimal("RMAGOODFOR"));
 		obj.setSTOREGRP_ID(rs.getBigDecimal("STOREGRP_ID"));
 		obj.setSTORECGRY_ID(rs.getBigDecimal("STORECGRY_ID"));
 		obj.setQUOTEGOODFOR(rs.getBigDecimal("QUOTEGOODFOR"));
@@ -43,10 +51,8 @@ public class STORERowMapper<T> implements RowMapper<STORE> {
 		obj.setPERSISTENTSESSION(rs.getBigDecimal("PERSISTENTSESSION"));
 		obj.setORDERHISTACTIVE(rs.getString("ORDERHISTACTIVE"));
 		obj.setINVENTORYSYSTEM(rs.getBigDecimal("INVENTORYSYSTEM"));
-		obj.setSTORELEVEL(rs.getString("STORELEVEL"));
-		obj.setDIRECTORY(rs.getString("DIRECTORY"));
-		obj.setSTORETYPE(rs.getString("STORETYPE"));
-		obj.setRMAGOODFOR(rs.getBigDecimal("RMAGOODFOR"));
+		
+		log.debug("Value of obj: " + obj.toString());
 		
 		return obj;
 	}

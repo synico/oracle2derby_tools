@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class TCSUBTYPE {
-    
+
 
     private java.lang.String TCSUBTYPE_ID;
     
@@ -60,5 +57,15 @@ public class TCSUBTYPE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("TCSUBTYPE_ID: " + getTCSUBTYPE_ID() + "||");
+        result.append("TCTYPE_ID: " + getTCTYPE_ID() + "||");
+        result.append("ACCESSBEANNAME: " + getACCESSBEANNAME() + "||");
+        result.append("DEPLOYCOMMAND: " + getDEPLOYCOMMAND() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

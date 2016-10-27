@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CATENTREL {
-    
+
 
     private java.math.BigDecimal CATENTRY_ID_PARENT;
     
@@ -137,5 +134,22 @@ public class CATENTREL {
         return this.MANDATORY;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATENTRY_ID_PARENT: " + getCATENTRY_ID_PARENT() + "||");
+        result.append("CATRELTYPE_ID: " + getCATRELTYPE_ID() + "||");
+        result.append("CATENTRY_ID_CHILD: " + getCATENTRY_ID_CHILD() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("QUANTITY: " + getQUANTITY() + "||");
+        result.append("GROUPNAME: " + getGROUPNAME() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("OID: " + getOID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("MANDATORY: " + getMANDATORY() + "||");
+        return result.toString();
+    }
     
 }

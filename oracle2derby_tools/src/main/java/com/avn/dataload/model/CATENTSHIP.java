@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CATENTSHIP {
-    
+
 
     private java.math.BigDecimal CATENTRY_ID;
     
@@ -126,5 +123,21 @@ public class CATENTSHIP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATENTRY_ID: " + getCATENTRY_ID() + "||");
+        result.append("WEIGHT: " + getWEIGHT() + "||");
+        result.append("WEIGHTMEASURE: " + getWEIGHTMEASURE() + "||");
+        result.append("LENGTH: " + getLENGTH() + "||");
+        result.append("WIDTH: " + getWIDTH() + "||");
+        result.append("HEIGHT: " + getHEIGHT() + "||");
+        result.append("SIZEMEASURE: " + getSIZEMEASURE() + "||");
+        result.append("NOMINALQUANTITY: " + getNOMINALQUANTITY() + "||");
+        result.append("QUANTITYMULTIPLE: " + getQUANTITYMULTIPLE() + "||");
+        result.append("QUANTITYMEASURE: " + getQUANTITYMEASURE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

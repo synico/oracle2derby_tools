@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PLWIDGETSLOT {
-    
+
 
     private java.math.BigDecimal PLWIDGETSLOT_ID;
     
@@ -93,5 +90,18 @@ public class PLWIDGETSLOT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PLWIDGETSLOT_ID: " + getPLWIDGETSLOT_ID() + "||");
+        result.append("PAGELAYOUT_ID: " + getPAGELAYOUT_ID() + "||");
+        result.append("PLWIDGET_ID: " + getPLWIDGET_ID() + "||");
+        result.append("ADMINNAME: " + getADMINNAME() + "||");
+        result.append("SLOTID: " + getSLOTID() + "||");
+        result.append("SLOTTYPE: " + getSLOTTYPE() + "||");
+        result.append("PROPERTIES: " + getPROPERTIES() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DMEXPTYPE {
-    
+
 
     private java.math.BigDecimal DMEXPTYPE_ID;
     
@@ -49,5 +46,14 @@ public class DMEXPTYPE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("DMEXPTYPE_ID: " + getDMEXPTYPE_ID() + "||");
+        result.append("TYPE: " + getTYPE() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

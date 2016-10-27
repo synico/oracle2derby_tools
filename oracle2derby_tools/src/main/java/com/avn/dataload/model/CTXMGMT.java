@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CTXMGMT {
-    
+
 
     private java.math.BigDecimal ACTIVITY_ID;
     
@@ -104,5 +101,19 @@ public class CTXMGMT {
         return this.LASTACCESSTIME;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ACTIVITY_ID: " + getACTIVITY_ID() + "||");
+        result.append("CALLER_ID: " + getCALLER_ID() + "||");
+        result.append("STARTTIME: " + getSTARTTIME() + "||");
+        result.append("ENDTIME: " + getENDTIME() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("RUNAS_ID: " + getRUNAS_ID() + "||");
+        result.append("LASTACCESSTIME: " + getLASTACCESSTIME() + "||");
+        return result.toString();
+    }
     
 }

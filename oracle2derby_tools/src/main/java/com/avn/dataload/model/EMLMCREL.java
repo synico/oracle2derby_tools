@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class EMLMCREL {
-    
+
 
     private java.math.BigDecimal EMLMSG_ID;
     
@@ -38,5 +35,13 @@ public class EMLMCREL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("EMLMSG_ID: " + getEMLMSG_ID() + "||");
+        result.append("EMLCONTENT_ID: " + getEMLCONTENT_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

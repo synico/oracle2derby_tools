@@ -3,25 +3,26 @@ package com.avn.dataload.model.rowmapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import org.springframework.jdbc.core.RowMapper;
 
 import com.avn.dataload.model.XCATENTRY;
 
 public class XCATENTRYRowMapper<T> implements RowMapper<XCATENTRY> {
 
+    private static final Logger log = Logger.getLogger(XCATENTRYRowMapper.class);
+
 	@Override
 	public XCATENTRY mapRow(ResultSet rs, int rowNum) throws SQLException {
 		XCATENTRY obj = new XCATENTRY();
 		
-		obj.setFIELD1(rs.getBigDecimal("FIELD1"));
-		obj.setOPTCOUNTER(rs.getBigDecimal("OPTCOUNTER"));
 		obj.setFIELD2(rs.getBigDecimal("FIELD2"));
 		obj.setFIELD3(rs.getBigDecimal("FIELD3"));
-		obj.setDISPLAYABLE(rs.getString("DISPLAYABLE"));
 		obj.setFIELD4(rs.getString("FIELD4"));
-		obj.setCATENTRY_ID(rs.getBigDecimal("CATENTRY_ID"));
-		obj.setFIELD5(rs.getString("FIELD5"));
-		obj.setBUYABLE(rs.getString("BUYABLE"));
+		obj.setOPTCOUNTER(rs.getBigDecimal("OPTCOUNTER"));
+		obj.setFIELD1(rs.getBigDecimal("FIELD1"));
+		obj.setSUPPLIERPARTNUMBER(rs.getString("SUPPLIERPARTNUMBER"));
 		obj.setSUPPLIERCODE(rs.getString("SUPPLIERCODE"));
 		obj.setDIVISIONCODE(rs.getString("DIVISIONCODE"));
 		obj.setAVNETPARTNUMBER(rs.getString("AVNETPARTNUMBER"));
@@ -37,7 +38,21 @@ public class XCATENTRYRowMapper<T> implements RowMapper<XCATENTRY> {
 		obj.setDEFAULTPLANT(rs.getString("DEFAULTPLANT"));
 		obj.setDESIGNWINFLAG(rs.getString("DESIGNWINFLAG"));
 		obj.setDISPLAYPART(rs.getString("DISPLAYPART"));
-		obj.setFIELD7(rs.getString("FIELD7"));
+		obj.setDOWNLOADFLAG(rs.getString("DOWNLOADFLAG"));
+		obj.setEXISTSINSAP(rs.getString("EXISTSINSAP"));
+		obj.setISASOFTWAREFLAG(rs.getString("ISASOFTWAREFLAG"));
+		obj.setMILITARYPRODUCTFLAG(rs.getString("MILITARYPRODUCTFLAG"));
+		obj.setOBSOLETEDATE(rs.getString("OBSOLETEDATE"));
+		obj.setOBSOLETEFLAG(rs.getString("OBSOLETEFLAG"));
+		obj.setPACKAGETYPECODE(rs.getString("PACKAGETYPECODE"));
+		obj.setROHSCOMPLIANCECODE(rs.getString("ROHSCOMPLIANCECODE"));
+		obj.setSCHEDULABLEFLAG(rs.getString("SCHEDULABLEFLAG"));
+		obj.setSCHEDULEBCODE(rs.getString("SCHEDULEBCODE"));
+		obj.setSUPPLIERSTOCKFLAG(rs.getString("SUPPLIERSTOCKFLAG"));
+		obj.setTOPSELLERFLAG(rs.getString("TOPSELLERFLAG"));
+		obj.setWEBONLYFLAG(rs.getString("WEBONLYFLAG"));
+		obj.setERPCOREPARTNUMBER(rs.getString("ERPCOREPARTNUMBER"));
+		obj.setDISPLAYINVENTORY(rs.getString("DISPLAYINVENTORY"));
 		obj.setMFCODE(rs.getString("MFCODE"));
 		obj.setABC_CD_01(rs.getString("ABC_CD_01"));
 		obj.setABC_CD_02(rs.getString("ABC_CD_02"));
@@ -56,24 +71,15 @@ public class XCATENTRYRowMapper<T> implements RowMapper<XCATENTRY> {
 		obj.setFIELD11(rs.getString("FIELD11"));
 		obj.setFIELD12(rs.getString("FIELD12"));
 		obj.setFIELD13(rs.getString("FIELD13"));
-		obj.setDOWNLOADFLAG(rs.getString("DOWNLOADFLAG"));
-		obj.setEXISTSINSAP(rs.getString("EXISTSINSAP"));
-		obj.setISASOFTWAREFLAG(rs.getString("ISASOFTWAREFLAG"));
-		obj.setMILITARYPRODUCTFLAG(rs.getString("MILITARYPRODUCTFLAG"));
-		obj.setOBSOLETEDATE(rs.getString("OBSOLETEDATE"));
-		obj.setOBSOLETEFLAG(rs.getString("OBSOLETEFLAG"));
-		obj.setPACKAGETYPECODE(rs.getString("PACKAGETYPECODE"));
-		obj.setROHSCOMPLIANCECODE(rs.getString("ROHSCOMPLIANCECODE"));
-		obj.setSCHEDULABLEFLAG(rs.getString("SCHEDULABLEFLAG"));
-		obj.setSCHEDULEBCODE(rs.getString("SCHEDULEBCODE"));
-		obj.setSUPPLIERSTOCKFLAG(rs.getString("SUPPLIERSTOCKFLAG"));
-		obj.setTOPSELLERFLAG(rs.getString("TOPSELLERFLAG"));
-		obj.setWEBONLYFLAG(rs.getString("WEBONLYFLAG"));
-		obj.setERPCOREPARTNUMBER(rs.getString("ERPCOREPARTNUMBER"));
-		obj.setDISPLAYINVENTORY(rs.getString("DISPLAYINVENTORY"));
-		obj.setSUPPLIERPARTNUMBER(rs.getString("SUPPLIERPARTNUMBER"));
+		obj.setFIELD5(rs.getString("FIELD5"));
+		obj.setBUYABLE(rs.getString("BUYABLE"));
+		obj.setDISPLAYABLE(rs.getString("DISPLAYABLE"));
+		obj.setCATENTRY_ID(rs.getBigDecimal("CATENTRY_ID"));
 		obj.setFIELD6(rs.getString("FIELD6"));
+		obj.setFIELD7(rs.getString("FIELD7"));
 		obj.setISSOFTWAREANDISDOWNLOADABLE(rs.getString("ISSOFTWAREANDISDOWNLOADABLE"));
+		
+		log.debug("Value of obj: " + obj.toString());
 		
 		return obj;
 	}

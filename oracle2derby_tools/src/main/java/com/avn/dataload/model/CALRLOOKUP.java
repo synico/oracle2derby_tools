@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CALRLOOKUP {
-    
+
 
     private java.math.BigDecimal CALRLOOKUP_ID;
     
@@ -60,5 +57,15 @@ public class CALRLOOKUP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CALRLOOKUP_ID: " + getCALRLOOKUP_ID() + "||");
+        result.append("SETCCURR: " + getSETCCURR() + "||");
+        result.append("CALRANGE_ID: " + getCALRANGE_ID() + "||");
+        result.append("VALUE: " + getVALUE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

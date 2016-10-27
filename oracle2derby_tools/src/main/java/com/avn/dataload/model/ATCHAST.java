@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ATCHAST {
-    
+
 
     private java.math.BigDecimal ATCHAST_ID;
     
@@ -137,5 +134,22 @@ public class ATCHAST {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ATCHAST_ID: " + getATCHAST_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("ATCHTGT_ID: " + getATCHTGT_ID() + "||");
+        result.append("ATCHASTPATH: " + getATCHASTPATH() + "||");
+        result.append("DIRECTORYPATH: " + getDIRECTORYPATH() + "||");
+        result.append("MIMETYPE: " + getMIMETYPE() + "||");
+        result.append("MIMETYPEENCODING: " + getMIMETYPEENCODING() + "||");
+        result.append("TIMECREATED: " + getTIMECREATED() + "||");
+        result.append("TIMEUPDATED: " + getTIMEUPDATED() + "||");
+        result.append("IMAGE1: " + getIMAGE1() + "||");
+        result.append("IMAGE2: " + getIMAGE2() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

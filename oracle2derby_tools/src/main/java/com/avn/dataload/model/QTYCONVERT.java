@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class QTYCONVERT {
-    
+
 
     private java.lang.String QTYUNIT_ID_TO;
     
@@ -82,5 +79,17 @@ public class QTYCONVERT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("QTYUNIT_ID_TO: " + getQTYUNIT_ID_TO() + "||");
+        result.append("QTYCONVERT_ID: " + getQTYCONVERT_ID() + "||");
+        result.append("QTYUNIT_ID_FROM: " + getQTYUNIT_ID_FROM() + "||");
+        result.append("FACTOR: " + getFACTOR() + "||");
+        result.append("MULTIPLYORDIVIDE: " + getMULTIPLYORDIVIDE() + "||");
+        result.append("UPDATABLE: " + getUPDATABLE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

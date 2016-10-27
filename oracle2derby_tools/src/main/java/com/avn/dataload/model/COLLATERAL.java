@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class COLLATERAL {
-    
+
 
     private java.math.BigDecimal COLLATERAL_ID;
     
@@ -137,5 +134,22 @@ public class COLLATERAL {
         return this.OVRMKTLIMIT;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("COLLATERAL_ID: " + getCOLLATERAL_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("COLLTYPE_ID: " + getCOLLTYPE_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("URL: " + getURL() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("BEHAVIOR: " + getBEHAVIOR() + "||");
+        result.append("UIDISPLAYABLE: " + getUIDISPLAYABLE() + "||");
+        result.append("MANAGINGTOOL: " + getMANAGINGTOOL() + "||");
+        result.append("OVRMKTLIMIT: " + getOVRMKTLIMIT() + "||");
+        return result.toString();
+    }
     
 }

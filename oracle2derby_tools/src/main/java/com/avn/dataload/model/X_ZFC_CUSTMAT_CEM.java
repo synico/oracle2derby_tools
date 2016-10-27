@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class X_ZFC_CUSTMAT_CEM {
-    
+
 
     private java.lang.String MANDT;
     
@@ -82,5 +79,17 @@ public class X_ZFC_CUSTMAT_CEM {
         return this.UPDATED_FLAG;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MANDT: " + getMANDT() + "||");
+        result.append("ZZFPA: " + getZZFPA() + "||");
+        result.append("VKORG: " + getVKORG() + "||");
+        result.append("VTWEG: " + getVTWEG() + "||");
+        result.append("ZZCMA: " + getZZCMA() + "||");
+        result.append("KUNNR_CEM: " + getKUNNR_CEM() + "||");
+        result.append("UPDATED_FLAG: " + getUPDATED_FLAG() + "||");
+        return result.toString();
+    }
     
 }

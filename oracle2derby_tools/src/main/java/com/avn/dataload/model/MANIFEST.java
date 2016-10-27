@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class MANIFEST {
-    
+
 
     private java.math.BigDecimal MANIFEST_ID;
     
@@ -181,5 +178,26 @@ public class MANIFEST {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MANIFEST_ID: " + getMANIFEST_ID() + "||");
+        result.append("ORDRELEASENUM: " + getORDRELEASENUM() + "||");
+        result.append("WEIGHTMEASURE: " + getWEIGHTMEASURE() + "||");
+        result.append("SETCCURR: " + getSETCCURR() + "||");
+        result.append("SHIPMODE_ID: " + getSHIPMODE_ID() + "||");
+        result.append("WEIGHT: " + getWEIGHT() + "||");
+        result.append("MANIFESTSTATUS: " + getMANIFESTSTATUS() + "||");
+        result.append("SHIPPINGCOSTS: " + getSHIPPINGCOSTS() + "||");
+        result.append("DATESHIPPED: " + getDATESHIPPED() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("PACKAGEID: " + getPACKAGEID() + "||");
+        result.append("TRACKINGID: " + getTRACKINGID() + "||");
+        result.append("PICKUPRECORDID: " + getPICKUPRECORDID() + "||");
+        result.append("ORDERS_ID: " + getORDERS_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

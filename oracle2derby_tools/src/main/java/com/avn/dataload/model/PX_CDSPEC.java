@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PX_CDSPEC {
-    
+
 
     private java.math.BigDecimal PX_PROMOTION_ID;
     
@@ -104,5 +101,19 @@ public class PX_CDSPEC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PX_PROMOTION_ID: " + getPX_PROMOTION_ID() + "||");
+        result.append("CODETYPE: " + getCODETYPE() + "||");
+        result.append("PATTERN: " + getPATTERN() + "||");
+        result.append("COUNT: " + getCOUNT() + "||");
+        result.append("CODESTATUS: " + getCODESTATUS() + "||");
+        result.append("TRANSFERABLE: " + getTRANSFERABLE() + "||");
+        result.append("VALIDFROM: " + getVALIDFROM() + "||");
+        result.append("VALIDUNTIL: " + getVALIDUNTIL() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -3,16 +3,55 @@ package com.avn.dataload.model.rowmapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import org.springframework.jdbc.core.RowMapper;
 
 import com.avn.dataload.model.DSR_SALES_ORDER;
 
 public class DSR_SALES_ORDERRowMapper<T> implements RowMapper<DSR_SALES_ORDER> {
 
+    private static final Logger log = Logger.getLogger(DSR_SALES_ORDERRowMapper.class);
+
 	@Override
 	public DSR_SALES_ORDER mapRow(ResultSet rs, int rowNum) throws SQLException {
 		DSR_SALES_ORDER obj = new DSR_SALES_ORDER();
 		
+		obj.setCUST_PO_ID(rs.getString("CUST_PO_ID"));
+		obj.setCLOSE_DT(rs.getTimestamp("CLOSE_DT"));
+		obj.setSTATUS_CD(rs.getString("STATUS_CD"));
+		obj.setREASON_CD(rs.getString("REASON_CD"));
+		obj.setBUYER_NAME(rs.getString("BUYER_NAME"));
+		obj.setSPEC_TXT(rs.getString("SPEC_TXT"));
+		obj.setPLN_FL(rs.getString("PLN_FL"));
+		obj.setFDS_PO_CNT(rs.getBigDecimal("FDS_PO_CNT"));
+		obj.setAPO_QT(rs.getBigDecimal("APO_QT"));
+		obj.setPAY_TERMS_CD(rs.getString("PAY_TERMS_CD"));
+		obj.setTRADE_TERMS_CD(rs.getString("TRADE_TERMS_CD"));
+		obj.setBILLTO_CUST_NBR(rs.getString("BILLTO_CUST_NBR"));
+		obj.setCOMPANY_ST_NO(rs.getString("COMPANY_ST_NO"));
+		obj.setCUST_ACCT_ST_NO(rs.getString("CUST_ACCT_ST_NO"));
+		obj.setCUST_LOC_ST_NO(rs.getString("CUST_LOC_ST_NO"));
+		obj.setFLAT_FREIGHT_AM(rs.getBigDecimal("FLAT_FREIGHT_AM"));
+		obj.setFLAT_FRT_CD(rs.getString("FLAT_FRT_CD"));
+		obj.setCREATE_DT(rs.getTimestamp("CREATE_DT"));
+		obj.setUPDATE_DT(rs.getTimestamp("UPDATE_DT"));
+		obj.setDELETE_DT(rs.getTimestamp("DELETE_DT"));
+		obj.setUPDATE_ID(rs.getString("UPDATE_ID"));
+		obj.setSYSTEM_ID(rs.getString("SYSTEM_ID"));
+		obj.setSCN(rs.getString("SCN"));
+		obj.setRELEASE_ID(rs.getString("RELEASE_ID"));
+		obj.setFOB_CD(rs.getString("FOB_CD"));
+		obj.setORDER_DT(rs.getTimestamp("ORDER_DT"));
+		obj.setCUST_ST_NO(rs.getString("CUST_ST_NO"));
+		obj.setLAST_UPDATE_ACTION(rs.getString("LAST_UPDATE_ACTION"));
+		obj.setAUDIT_LOG_KEY(rs.getBigDecimal("AUDIT_LOG_KEY"));
+		obj.setSEG_RCVD_DT(rs.getTimestamp("SEG_RCVD_DT"));
+		obj.setDIVISION_ID(rs.getString("DIVISION_ID"));
+		obj.setSHIPTO_CUST_NBR(rs.getString("SHIPTO_CUST_NBR"));
+		obj.setSHIP_FIRST_FL(rs.getString("SHIP_FIRST_FL"));
+		obj.setCUST_TAX_TYPE_CD(rs.getString("CUST_TAX_TYPE_CD"));
+		obj.setPAY_METHOD_CD(rs.getString("PAY_METHOD_CD"));
 		obj.setSALES_ORDER_COMPANY(rs.getString("SALES_ORDER_COMPANY"));
 		obj.setSCN_SEQ_NBR(rs.getString("SCN_SEQ_NBR"));
 		obj.setORDER_TYPE_CD(rs.getString("ORDER_TYPE_CD"));
@@ -71,41 +110,8 @@ public class DSR_SALES_ORDERRowMapper<T> implements RowMapper<DSR_SALES_ORDER> {
 		obj.setSERVICE_CONTRACT_ID(rs.getString("SERVICE_CONTRACT_ID"));
 		obj.setORDER_CUST_PO_AL_KEY(rs.getBigDecimal("ORDER_CUST_PO_AL_KEY"));
 		obj.setRESERVATION_ORDER_CD(rs.getString("RESERVATION_ORDER_CD"));
-		obj.setCREATE_DT(rs.getTimestamp("CREATE_DT"));
-		obj.setUPDATE_DT(rs.getTimestamp("UPDATE_DT"));
-		obj.setLAST_UPDATE_ACTION(rs.getString("LAST_UPDATE_ACTION"));
-		obj.setAUDIT_LOG_KEY(rs.getBigDecimal("AUDIT_LOG_KEY"));
-		obj.setSEG_RCVD_DT(rs.getTimestamp("SEG_RCVD_DT"));
-		obj.setDIVISION_ID(rs.getString("DIVISION_ID"));
-		obj.setSHIPTO_CUST_NBR(rs.getString("SHIPTO_CUST_NBR"));
-		obj.setSHIP_FIRST_FL(rs.getString("SHIP_FIRST_FL"));
-		obj.setDELETE_DT(rs.getTimestamp("DELETE_DT"));
-		obj.setUPDATE_ID(rs.getString("UPDATE_ID"));
-		obj.setSYSTEM_ID(rs.getString("SYSTEM_ID"));
-		obj.setSCN(rs.getString("SCN"));
-		obj.setRELEASE_ID(rs.getString("RELEASE_ID"));
-		obj.setFOB_CD(rs.getString("FOB_CD"));
-		obj.setORDER_DT(rs.getTimestamp("ORDER_DT"));
-		obj.setCUST_ST_NO(rs.getString("CUST_ST_NO"));
-		obj.setCUST_PO_ID(rs.getString("CUST_PO_ID"));
-		obj.setCLOSE_DT(rs.getTimestamp("CLOSE_DT"));
-		obj.setSTATUS_CD(rs.getString("STATUS_CD"));
-		obj.setREASON_CD(rs.getString("REASON_CD"));
-		obj.setBUYER_NAME(rs.getString("BUYER_NAME"));
-		obj.setSPEC_TXT(rs.getString("SPEC_TXT"));
-		obj.setPLN_FL(rs.getString("PLN_FL"));
-		obj.setFDS_PO_CNT(rs.getBigDecimal("FDS_PO_CNT"));
-		obj.setAPO_QT(rs.getBigDecimal("APO_QT"));
-		obj.setCUST_TAX_TYPE_CD(rs.getString("CUST_TAX_TYPE_CD"));
-		obj.setPAY_METHOD_CD(rs.getString("PAY_METHOD_CD"));
-		obj.setPAY_TERMS_CD(rs.getString("PAY_TERMS_CD"));
-		obj.setTRADE_TERMS_CD(rs.getString("TRADE_TERMS_CD"));
-		obj.setBILLTO_CUST_NBR(rs.getString("BILLTO_CUST_NBR"));
-		obj.setCOMPANY_ST_NO(rs.getString("COMPANY_ST_NO"));
-		obj.setCUST_ACCT_ST_NO(rs.getString("CUST_ACCT_ST_NO"));
-		obj.setCUST_LOC_ST_NO(rs.getString("CUST_LOC_ST_NO"));
-		obj.setFLAT_FREIGHT_AM(rs.getBigDecimal("FLAT_FREIGHT_AM"));
-		obj.setFLAT_FRT_CD(rs.getString("FLAT_FRT_CD"));
+		
+		log.debug("Value of obj: " + obj.toString());
 		
 		return obj;
 	}

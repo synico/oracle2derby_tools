@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class BLKRSNCODE {
-    
+
 
     private java.math.BigDecimal BLKRSNCODE_ID;
     
@@ -82,5 +79,17 @@ public class BLKRSNCODE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("BLKRSNCODE_ID: " + getBLKRSNCODE_ID() + "||");
+        result.append("BLOCKREASONTYPE: " + getBLOCKREASONTYPE() + "||");
+        result.append("MANUALBLOCK: " + getMANUALBLOCK() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

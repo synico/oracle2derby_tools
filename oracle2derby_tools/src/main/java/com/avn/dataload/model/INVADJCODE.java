@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class INVADJCODE {
-    
+
 
     private java.math.BigDecimal INVADJCODE_ID;
     
@@ -71,5 +68,16 @@ public class INVADJCODE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("INVADJCODE_ID: " + getINVADJCODE_ID() + "||");
+        result.append("ADJUSTCODE: " + getADJUSTCODE() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

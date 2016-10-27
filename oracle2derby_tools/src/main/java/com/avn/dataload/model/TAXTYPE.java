@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class TAXTYPE {
-    
+
 
     private java.math.BigDecimal TAXTYPE_ID;
     
@@ -49,5 +46,14 @@ public class TAXTYPE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("TAXTYPE_ID: " + getTAXTYPE_ID() + "||");
+        result.append("TXCDSCHEME_ID: " + getTXCDSCHEME_ID() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

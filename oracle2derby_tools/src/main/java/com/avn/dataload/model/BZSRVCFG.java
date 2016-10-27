@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class BZSRVCFG {
-    
+
 
     private java.math.BigDecimal BZSRVCFG_ID;
     
@@ -49,5 +46,14 @@ public class BZSRVCFG {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("BZSRVCFG_ID: " + getBZSRVCFG_ID() + "||");
+        result.append("SERVERNAME: " + getSERVERNAME() + "||");
+        result.append("ENABLED: " + getENABLED() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

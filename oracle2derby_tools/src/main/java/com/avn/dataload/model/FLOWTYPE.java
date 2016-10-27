@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class FLOWTYPE {
-    
+
 
     private java.math.BigDecimal FLOWTYPE_ID;
     
@@ -93,5 +90,18 @@ public class FLOWTYPE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("FLOWTYPE_ID: " + getFLOWTYPE_ID() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("FLOWDOMAIN_ID: " + getFLOWDOMAIN_ID() + "||");
+        result.append("BIZFLOWBEANCLASS: " + getBIZFLOWBEANCLASS() + "||");
+        result.append("ATTRIBUTE: " + getATTRIBUTE() + "||");
+        result.append("PRIORITY: " + getPRIORITY() + "||");
+        result.append("VIEWNAME: " + getVIEWNAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

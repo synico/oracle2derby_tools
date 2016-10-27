@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class BUSCHN {
-    
+
 
     private java.math.BigDecimal BUSCHN_ID;
     
@@ -49,5 +46,14 @@ public class BUSCHN {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("BUSCHN_ID: " + getBUSCHN_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

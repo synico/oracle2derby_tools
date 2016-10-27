@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PX_PROMOAUTH {
-    
+
 
     private java.math.BigDecimal PX_PROMOTION_ID;
     
@@ -170,5 +167,25 @@ public class PX_PROMOAUTH {
         return this.ADMINSTVENAME;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PX_PROMOTION_ID: " + getPX_PROMOTION_ID() + "||");
+        result.append("COMMENTS: " + getCOMMENTS() + "||");
+        result.append("PROMOTIONTYPE: " + getPROMOTIONTYPE() + "||");
+        result.append("DAILYSTARTTIME: " + getDAILYSTARTTIME() + "||");
+        result.append("DAILYENDTIME: " + getDAILYENDTIME() + "||");
+        result.append("WEEKDAY_SUN: " + getWEEKDAY_SUN() + "||");
+        result.append("WEEKDAY_MON: " + getWEEKDAY_MON() + "||");
+        result.append("WEEKDAY_TUE: " + getWEEKDAY_TUE() + "||");
+        result.append("WEEKDAY_WED: " + getWEEKDAY_WED() + "||");
+        result.append("WEEKDAY_THU: " + getWEEKDAY_THU() + "||");
+        result.append("WEEKDAY_FRI: " + getWEEKDAY_FRI() + "||");
+        result.append("WEEKDAY_SAT: " + getWEEKDAY_SAT() + "||");
+        result.append("CTLPARAM: " + getCTLPARAM() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("ADMINSTVENAME: " + getADMINSTVENAME() + "||");
+        return result.toString();
+    }
     
 }

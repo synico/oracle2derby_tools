@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class RFQRSP {
-    
+
 
     private java.math.BigDecimal RFQ_ID;
     
@@ -302,5 +299,37 @@ public class RFQRSP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("RFQ_ID: " + getRFQ_ID() + "||");
+        result.append("TFTRADENG_ID: " + getTFTRADENG_ID() + "||");
+        result.append("MAJORVERSION: " + getMAJORVERSION() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("MINORVERSION: " + getMINORVERSION() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("REJECTREASON: " + getREJECTREASON() + "||");
+        result.append("REMARKS: " + getREMARKS() + "||");
+        result.append("CREATETIME: " + getCREATETIME() + "||");
+        result.append("UPDATETIME: " + getUPDATETIME() + "||");
+        result.append("CANCELTIME: " + getCANCELTIME() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("RFQRSP_ID: " + getRFQRSP_ID() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("VERSIONFLAGS: " + getVERSIONFLAGS() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("PREVRSP: " + getPREVRSP() + "||");
+        result.append("ACCEPTACTION: " + getACCEPTACTION() + "||");
+        result.append("EXTRFQRESPONSENUM: " + getEXTRFQRESPONSENUM() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("FIELD4: " + getFIELD4() + "||");
+        result.append("FIELD5: " + getFIELD5() + "||");
+        result.append("FIELD6: " + getFIELD6() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

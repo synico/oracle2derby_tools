@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CONTRACT {
-    
+
 
     private java.math.BigDecimal CONTRACT_ID;
     
@@ -192,5 +189,27 @@ public class CONTRACT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CONTRACT_ID: " + getCONTRACT_ID() + "||");
+        result.append("MAJORVERSION: " + getMAJORVERSION() + "||");
+        result.append("MINORVERSION: " + getMINORVERSION() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("ORIGIN: " + getORIGIN() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("USAGE: " + getUSAGE() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("COMMENTS: " + getCOMMENTS() + "||");
+        result.append("TIMECREATED: " + getTIMECREATED() + "||");
+        result.append("TIMEUPDATED: " + getTIMEUPDATED() + "||");
+        result.append("TIMEAPPROVED: " + getTIMEAPPROVED() + "||");
+        result.append("TIMEACTIVATED: " + getTIMEACTIVATED() + "||");
+        result.append("TIMEDEPLOYED: " + getTIMEDEPLOYED() + "||");
+        result.append("FAMILY_ID: " + getFAMILY_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

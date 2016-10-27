@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ACRSCGDES {
-    
+
 
     private java.math.BigDecimal LANGUAGE_ID;
     
@@ -60,5 +57,15 @@ public class ACRSCGDES {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("ACRESCGRY_ID: " + getACRESCGRY_ID() + "||");
+        result.append("DISPLAYNAME: " + getDISPLAYNAME() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

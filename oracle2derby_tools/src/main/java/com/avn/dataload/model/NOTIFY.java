@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class NOTIFY {
-    
+
 
     private java.math.BigDecimal NOTIFY_ID;
     
@@ -82,5 +79,17 @@ public class NOTIFY {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("NOTIFY_ID: " + getNOTIFY_ID() + "||");
+        result.append("NOTIFICATIONID: " + getNOTIFICATIONID() + "||");
+        result.append("TRANSPORTATTNAME: " + getTRANSPORTATTNAME() + "||");
+        result.append("TRANSPORTATTVALUE: " + getTRANSPORTATTVALUE() + "||");
+        result.append("TRANSPORT_ID: " + getTRANSPORT_ID() + "||");
+        result.append("MSGTYPE_ID: " + getMSGTYPE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

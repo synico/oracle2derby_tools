@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class TAGDISPLAY {
-    
+
 
     private java.lang.String DISPLAYNAME;
     
@@ -60,5 +57,15 @@ public class TAGDISPLAY {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("DISPLAYNAME: " + getDISPLAYNAME() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("JSPPATH: " + getJSPPATH() + "||");
+        result.append("THUMBNAILPATH: " + getTHUMBNAILPATH() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

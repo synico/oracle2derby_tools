@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PROCMSGVW {
-    
+
 
     private java.math.BigDecimal ORGENTITY_ID;
     
@@ -71,5 +68,16 @@ public class PROCMSGVW {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ORGENTITY_ID: " + getORGENTITY_ID() + "||");
+        result.append("MSGNAME: " + getMSGNAME() + "||");
+        result.append("VIEWNAME: " + getVIEWNAME() + "||");
+        result.append("PROCPROTCL_ID: " + getPROCPROTCL_ID() + "||");
+        result.append("ERRORVIEW: " + getERRORVIEW() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

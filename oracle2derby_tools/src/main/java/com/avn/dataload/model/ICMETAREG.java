@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ICMETAREG {
-    
+
 
     private java.math.BigDecimal METAPHORTYPEID;
     
@@ -60,5 +57,15 @@ public class ICMETAREG {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("METAPHORTYPEID: " + getMETAPHORTYPEID() + "||");
+        result.append("CLASSNAME: " + getCLASSNAME() + "||");
+        result.append("BUILDERNAME: " + getBUILDERNAME() + "||");
+        result.append("EXPLSPCREQ: " + getEXPLSPCREQ() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

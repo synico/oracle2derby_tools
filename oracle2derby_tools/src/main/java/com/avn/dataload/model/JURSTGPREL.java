@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class JURSTGPREL {
-    
+
 
     private java.math.BigDecimal JURST_ID;
     
@@ -49,5 +46,14 @@ public class JURSTGPREL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("JURST_ID: " + getJURST_ID() + "||");
+        result.append("JURSTGROUP_ID: " + getJURSTGROUP_ID() + "||");
+        result.append("SUBCLASS: " + getSUBCLASS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

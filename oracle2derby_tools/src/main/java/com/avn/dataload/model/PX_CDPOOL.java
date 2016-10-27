@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PX_CDPOOL {
-    
+
 
     private java.math.BigDecimal PX_CDPOOL_ID;
     
@@ -148,5 +145,23 @@ public class PX_CDPOOL {
         return this.TASKGROUP;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PX_CDPOOL_ID: " + getPX_CDPOOL_ID() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("USAGETYPE: " + getUSAGETYPE() + "||");
+        result.append("CODE: " + getCODE() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("TRANSFERABLE: " + getTRANSFERABLE() + "||");
+        result.append("VALIDFROM: " + getVALIDFROM() + "||");
+        result.append("VALIDUNTIL: " + getVALIDUNTIL() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("REFERENCE_ID: " + getREFERENCE_ID() + "||");
+        result.append("INTERNAL_ID: " + getINTERNAL_ID() + "||");
+        result.append("WORKSPACE: " + getWORKSPACE() + "||");
+        result.append("TASKGROUP: " + getTASKGROUP() + "||");
+        return result.toString();
+    }
     
 }

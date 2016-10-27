@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class BUSPROF {
-    
+
 
     private java.math.BigDecimal USERS_ID;
     
@@ -126,5 +123,21 @@ public class BUSPROF {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("EMPLOYEEID: " + getEMPLOYEEID() + "||");
+        result.append("ORG_ID: " + getORG_ID() + "||");
+        result.append("ORGUNIT_ID: " + getORGUNIT_ID() + "||");
+        result.append("EMPLOYEETYPE: " + getEMPLOYEETYPE() + "||");
+        result.append("DEPARTMENTNUM: " + getDEPARTMENTNUM() + "||");
+        result.append("ALTERNATEID: " + getALTERNATEID() + "||");
+        result.append("MANAGER: " + getMANAGER() + "||");
+        result.append("SECRETARY: " + getSECRETARY() + "||");
+        result.append("REQUISITIONERID: " + getREQUISITIONERID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

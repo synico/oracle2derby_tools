@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SRCHPROPRELV {
-    
+
 
     private java.math.BigDecimal SRCHPROPRELV_ID;
     
@@ -82,5 +79,17 @@ public class SRCHPROPRELV {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SRCHPROPRELV_ID: " + getSRCHPROPRELV_ID() + "||");
+        result.append("CATALOG_ID: " + getCATALOG_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("CATGROUP_ID: " + getCATGROUP_ID() + "||");
+        result.append("RELVALUE: " + getRELVALUE() + "||");
+        result.append("INDEXFIELD: " + getINDEXFIELD() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

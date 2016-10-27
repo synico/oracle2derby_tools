@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SUBORDERS {
-    
+
 
     private java.math.BigDecimal ORDERS_ID;
     
@@ -159,5 +156,24 @@ public class SUBORDERS {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ORDERS_ID: " + getORDERS_ID() + "||");
+        result.append("SUBORDER_ID: " + getSUBORDER_ID() + "||");
+        result.append("ADDRESS_ID: " + getADDRESS_ID() + "||");
+        result.append("COUNTRY: " + getCOUNTRY() + "||");
+        result.append("TOTALPRODUCT: " + getTOTALPRODUCT() + "||");
+        result.append("TOTALTAX: " + getTOTALTAX() + "||");
+        result.append("TOTALSHIPPING: " + getTOTALSHIPPING() + "||");
+        result.append("TOTALTAXSHIPPING: " + getTOTALTAXSHIPPING() + "||");
+        result.append("CURRENCY: " + getCURRENCY() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("TOTALADJUSTMENT: " + getTOTALADJUSTMENT() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

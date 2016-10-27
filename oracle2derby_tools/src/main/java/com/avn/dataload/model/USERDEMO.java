@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class USERDEMO {
-    
+
 
     private java.math.BigDecimal USERS_ID;
     
@@ -236,5 +233,31 @@ public class USERDEMO {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("GENDER: " + getGENDER() + "||");
+        result.append("AGE: " + getAGE() + "||");
+        result.append("INCOME: " + getINCOME() + "||");
+        result.append("MARITALSTATUS: " + getMARITALSTATUS() + "||");
+        result.append("INCOMECURRENCY: " + getINCOMECURRENCY() + "||");
+        result.append("CHILDREN: " + getCHILDREN() + "||");
+        result.append("HOUSEHOLD: " + getHOUSEHOLD() + "||");
+        result.append("COMPANYNAME: " + getCOMPANYNAME() + "||");
+        result.append("HOBBIES: " + getHOBBIES() + "||");
+        result.append("ORDERBEFORE: " + getORDERBEFORE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("TIMEZONE: " + getTIMEZONE() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD7: " + getFIELD7() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("FIELD4: " + getFIELD4() + "||");
+        result.append("FIELD5: " + getFIELD5() + "||");
+        result.append("FIELD6: " + getFIELD6() + "||");
+        result.append("DATEOFBIRTH: " + getDATEOFBIRTH() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

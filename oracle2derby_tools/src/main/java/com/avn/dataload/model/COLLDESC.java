@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class COLLDESC {
-    
+
 
     private java.math.BigDecimal COLLATERAL_ID;
     
@@ -93,5 +90,18 @@ public class COLLDESC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("COLLATERAL_ID: " + getCOLLATERAL_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("LOCATION: " + getLOCATION() + "||");
+        result.append("MARKETINGTEXT: " + getMARKETINGTEXT() + "||");
+        result.append("LONGMKTGTEXT: " + getLONGMKTGTEXT() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

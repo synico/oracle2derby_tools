@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class RTNREASON {
-    
+
 
     private java.lang.String REASONTYPE;
     
@@ -71,5 +68,16 @@ public class RTNREASON {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("REASONTYPE: " + getREASONTYPE() + "||");
+        result.append("RTNREASON_ID: " + getRTNREASON_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("CODE: " + getCODE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

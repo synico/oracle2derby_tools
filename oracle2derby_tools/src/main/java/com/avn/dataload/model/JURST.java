@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class JURST {
-    
+
 
     private java.math.BigDecimal JURST_ID;
     
@@ -192,5 +189,27 @@ public class JURST {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("JURST_ID: " + getJURST_ID() + "||");
+        result.append("COUNTRY: " + getCOUNTRY() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("CODE: " + getCODE() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("SUBCLASS: " + getSUBCLASS() + "||");
+        result.append("CITY: " + getCITY() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("STATEABBR: " + getSTATEABBR() + "||");
+        result.append("COUNTRYABBR: " + getCOUNTRYABBR() + "||");
+        result.append("DISTRICT: " + getDISTRICT() + "||");
+        result.append("COUNTY: " + getCOUNTY() + "||");
+        result.append("ZIPCODESTART: " + getZIPCODESTART() + "||");
+        result.append("ZIPCODEEND: " + getZIPCODEEND() + "||");
+        result.append("GEOCODE: " + getGEOCODE() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class GRETDESC {
-    
+
 
     private java.math.BigDecimal EVENTTYPE_ID;
     
@@ -49,5 +46,14 @@ public class GRETDESC {
         return this.DESCRIPTION;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("EVENTTYPE_ID: " + getEVENTTYPE_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        return result.toString();
+    }
     
 }

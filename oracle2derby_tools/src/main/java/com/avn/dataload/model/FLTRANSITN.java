@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class FLTRANSITN {
-    
+
 
     private java.math.BigDecimal FLTRANSITN_ID;
     
@@ -159,5 +156,24 @@ public class FLTRANSITN {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("FLTRANSITN_ID: " + getFLTRANSITN_ID() + "||");
+        result.append("FLOW_ID: " + getFLOW_ID() + "||");
+        result.append("SOURCESTATE_ID: " + getSOURCESTATE_ID() + "||");
+        result.append("TARGETSTATE_ID: " + getTARGETSTATE_ID() + "||");
+        result.append("PRIORITY: " + getPRIORITY() + "||");
+        result.append("EVENTIDENTIFIER: " + getEVENTIDENTIFIER() + "||");
+        result.append("APPROVAL: " + getAPPROVAL() + "||");
+        result.append("ACTIONINTERFACE: " + getACTIONINTERFACE() + "||");
+        result.append("ACCESSCTRLGUARD: " + getACCESSCTRLGUARD() + "||");
+        result.append("BUSINESSLOGICGUARD: " + getBUSINESSLOGICGUARD() + "||");
+        result.append("SPAWNFLWTYPE_ID: " + getSPAWNFLWTYPE_ID() + "||");
+        result.append("SPAWNTYPE: " + getSPAWNTYPE() + "||");
+        result.append("RESPONSEVIEWNAME: " + getRESPONSEVIEWNAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XMANFOVERRIDE {
-    
+
 
     private java.math.BigDecimal CATGROUP_ID;
     
@@ -82,5 +79,17 @@ public class XMANFOVERRIDE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATGROUP_ID: " + getCATGROUP_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("OVERRIDE: " + getOVERRIDE() + "||");
+        result.append("LASTUPDATED: " + getLASTUPDATED() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

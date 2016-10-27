@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class X_SAP_SALESDOC_SCHED_LN {
-    
+
 
     private java.lang.String VBAK_VBELN;
     
@@ -115,5 +112,20 @@ public class X_SAP_SALESDOC_SCHED_LN {
         return this.UPDATED_FLAG;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("VBAK_VBELN: " + getVBAK_VBELN() + "||");
+        result.append("VBAP_POSNR: " + getVBAP_POSNR() + "||");
+        result.append("VBEP_ETENR: " + getVBEP_ETENR() + "||");
+        result.append("REQ_DATE: " + getREQ_DATE() + "||");
+        result.append("ATP_DATE: " + getATP_DATE() + "||");
+        result.append("VBEP_WMENG: " + getVBEP_WMENG() + "||");
+        result.append("VBEP_BMENG: " + getVBEP_BMENG() + "||");
+        result.append("U_ATP_QTY: " + getU_ATP_QTY() + "||");
+        result.append("U_UNSHIPPED_QTY: " + getU_UNSHIPPED_QTY() + "||");
+        result.append("UPDATED_FLAG: " + getUPDATED_FLAG() + "||");
+        return result.toString();
+    }
     
 }

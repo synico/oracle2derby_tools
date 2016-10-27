@@ -3,26 +3,21 @@ package com.avn.dataload.model.rowmapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import org.springframework.jdbc.core.RowMapper;
 
 import com.avn.dataload.model.STAGLOG;
 
 public class STAGLOGRowMapper<T> implements RowMapper<STAGLOG> {
 
+    private static final Logger log = Logger.getLogger(STAGLOGRowMapper.class);
+
 	@Override
 	public STAGLOG mapRow(ResultSet rs, int rowNum) throws SQLException {
 		STAGLOG obj = new STAGLOG();
 		
 		obj.setOPTCOUNTER(rs.getBigDecimal("OPTCOUNTER"));
-		obj.setSTGMENBRNAME(rs.getString("STGMENBRNAME"));
-		obj.setSTGPKEYNAME(rs.getString("STGPKEYNAME"));
-		obj.setSTGKEY1NAME(rs.getString("STGKEY1NAME"));
-		obj.setSTGKEY2NAME(rs.getString("STGKEY2NAME"));
-		obj.setSTGKEY3NAME(rs.getString("STGKEY3NAME"));
-		obj.setSTGKEY4NAME(rs.getString("STGKEY4NAME"));
-		obj.setSTGKEY5NAME(rs.getString("STGKEY5NAME"));
-		obj.setSTGPROCESSED(rs.getBigDecimal("STGPROCESSED"));
-		obj.setSTGRESERVED1(rs.getBigDecimal("STGRESERVED1"));
 		obj.setSTGRFNBR(rs.getBigDecimal("STGRFNBR"));
 		obj.setSTGSTMP(rs.getTimestamp("STGSTMP"));
 		obj.setSTGTABLE(rs.getString("STGTABLE"));
@@ -42,6 +37,17 @@ public class STAGLOGRowMapper<T> implements RowMapper<STAGLOG> {
 		obj.setSTGLDPTH(rs.getString("STGLDPTH"));
 		obj.setSTGLDCOLS(rs.getString("STGLDCOLS"));
 		obj.setSTGFILTER(rs.getBigDecimal("STGFILTER"));
+		obj.setSTGMENBRNAME(rs.getString("STGMENBRNAME"));
+		obj.setSTGPKEYNAME(rs.getString("STGPKEYNAME"));
+		obj.setSTGKEY1NAME(rs.getString("STGKEY1NAME"));
+		obj.setSTGKEY2NAME(rs.getString("STGKEY2NAME"));
+		obj.setSTGKEY3NAME(rs.getString("STGKEY3NAME"));
+		obj.setSTGKEY4NAME(rs.getString("STGKEY4NAME"));
+		obj.setSTGKEY5NAME(rs.getString("STGKEY5NAME"));
+		obj.setSTGPROCESSED(rs.getBigDecimal("STGPROCESSED"));
+		obj.setSTGRESERVED1(rs.getBigDecimal("STGRESERVED1"));
+		
+		log.debug("Value of obj: " + obj.toString());
 		
 		return obj;
 	}

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CMFTGCMT {
-    
+
 
     private java.math.BigDecimal CMFTGCMT_ID;
     
@@ -71,5 +68,16 @@ public class CMFTGCMT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CMFTGCMT_ID: " + getCMFTGCMT_ID() + "||");
+        result.append("CMFTASKGRP_ID: " + getCMFTASKGRP_ID() + "||");
+        result.append("POSTEDDATE: " + getPOSTEDDATE() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("COMMENTS: " + getCOMMENTS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

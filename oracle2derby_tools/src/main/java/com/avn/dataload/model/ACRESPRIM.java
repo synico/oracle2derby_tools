@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ACRESPRIM {
-    
+
 
     private java.math.BigDecimal ACRESCGRY_ID;
     
@@ -49,5 +46,14 @@ public class ACRESPRIM {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ACRESCGRY_ID: " + getACRESCGRY_ID() + "||");
+        result.append("RESPRIMARYCOL: " + getRESPRIMARYCOL() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

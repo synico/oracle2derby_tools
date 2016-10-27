@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ACATTR {
-    
+
 
     private java.math.BigDecimal ACATTR_ID;
     
@@ -60,5 +57,15 @@ public class ACATTR {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ACATTR_ID: " + getACATTR_ID() + "||");
+        result.append("ATTRNAME: " + getATTRNAME() + "||");
+        result.append("DATATYPE: " + getDATATYPE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XFORM_RESALE_ADDRESS {
-    
+
 
     private java.math.BigDecimal FORM_ID;
     
@@ -159,5 +156,24 @@ public class XFORM_RESALE_ADDRESS {
         return this.RESALE_POSTAL_CD;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("FORM_ID: " + getFORM_ID() + "||");
+        result.append("FORM_VERSION_ID: " + getFORM_VERSION_ID() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("FORM_QUESTION_ID: " + getFORM_QUESTION_ID() + "||");
+        result.append("FORM_RESALE_ADDRESS_ID: " + getFORM_RESALE_ADDRESS_ID() + "||");
+        result.append("FORM_RESPONSE_ID: " + getFORM_RESPONSE_ID() + "||");
+        result.append("RESALE_ADDRESS_TX_01: " + getRESALE_ADDRESS_TX_01() + "||");
+        result.append("RESALE_ADDRESS_TX_02: " + getRESALE_ADDRESS_TX_02() + "||");
+        result.append("RESALE_ADDRESS_TX_03: " + getRESALE_ADDRESS_TX_03() + "||");
+        result.append("RESALE_CITY_NM: " + getRESALE_CITY_NM() + "||");
+        result.append("RESALE_COMPANY_NM: " + getRESALE_COMPANY_NM() + "||");
+        result.append("RESALE_COUNTRY_NM: " + getRESALE_COUNTRY_NM() + "||");
+        result.append("RESALE_STATE_NM: " + getRESALE_STATE_NM() + "||");
+        result.append("RESALE_POSTAL_CD: " + getRESALE_POSTAL_CD() + "||");
+        return result.toString();
+    }
     
 }

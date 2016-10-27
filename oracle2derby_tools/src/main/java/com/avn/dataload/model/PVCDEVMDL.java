@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PVCDEVMDL {
-    
+
 
     private java.math.BigDecimal MODEL_ID;
     
@@ -82,5 +79,17 @@ public class PVCDEVMDL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MODEL_ID: " + getMODEL_ID() + "||");
+        result.append("MODELNAME: " + getMODELNAME() + "||");
+        result.append("SESSIONTYPE: " + getSESSIONTYPE() + "||");
+        result.append("VENDOR: " + getVENDOR() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("DEVMDLNAME: " + getDEVMDLNAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

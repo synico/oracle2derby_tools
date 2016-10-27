@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ACRELATION {
-    
+
 
     private java.math.BigDecimal ACRELATION_ID;
     
@@ -38,5 +35,13 @@ public class ACRELATION {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ACRELATION_ID: " + getACRELATION_ID() + "||");
+        result.append("RELATIONNAME: " + getRELATIONNAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

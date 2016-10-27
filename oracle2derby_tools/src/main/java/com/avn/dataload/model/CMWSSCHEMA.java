@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CMWSSCHEMA {
-    
+
 
     private java.math.BigDecimal CMWSSCHEMA_ID;
     
@@ -93,5 +90,18 @@ public class CMWSSCHEMA {
         return this.SYNCREQUIRED;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CMWSSCHEMA_ID: " + getCMWSSCHEMA_ID() + "||");
+        result.append("BASESCHEMA: " + getBASESCHEMA() + "||");
+        result.append("WRITESCHEMA: " + getWRITESCHEMA() + "||");
+        result.append("READSCHEMA: " + getREADSCHEMA() + "||");
+        result.append("WORKSPACE: " + getWORKSPACE() + "||");
+        result.append("ALLOCATED: " + getALLOCATED() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("SYNCREQUIRED: " + getSYNCREQUIRED() + "||");
+        return result.toString();
+    }
     
 }

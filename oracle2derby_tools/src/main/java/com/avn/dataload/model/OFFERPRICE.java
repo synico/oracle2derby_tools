@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class OFFERPRICE {
-    
+
 
     private java.math.BigDecimal OFFER_ID;
     
@@ -60,5 +57,15 @@ public class OFFERPRICE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("OFFER_ID: " + getOFFER_ID() + "||");
+        result.append("CURRENCY: " + getCURRENCY() + "||");
+        result.append("PRICE: " + getPRICE() + "||");
+        result.append("COMPAREPRICE: " + getCOMPAREPRICE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SRCHATTRPROP {
-    
+
 
     private java.math.BigDecimal SRCHATTR_ID;
     
@@ -49,5 +46,14 @@ public class SRCHATTRPROP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SRCHATTR_ID: " + getSRCHATTR_ID() + "||");
+        result.append("PROPERTYNAME: " + getPROPERTYNAME() + "||");
+        result.append("PROPERTYVALUE: " + getPROPERTYVALUE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

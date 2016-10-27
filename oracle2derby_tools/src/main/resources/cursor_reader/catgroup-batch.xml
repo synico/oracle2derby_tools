@@ -11,7 +11,8 @@
     
     <bean id="jdbcCursorItemReader4CATGROUP" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
     	<property name="dataSource" ref="oracleDS" />
-    	<property name="sql" value="SELECT CATGROUP_ID,MEMBER_ID,IDENTIFIER,MARKFORDELETE,LASTUPDATE,FIELD1,FIELD2,OID,RANK,OPTCOUNTER,DYNAMIC FROM EMDI.CATGROUP" />
+    	<property name="sql" value="SELECT CATGROUP_ID,MEMBER_ID,IDENTIFIER,MARKFORDELETE,LASTUPDATE,FIELD1,FIELD2,OID,RANK,OPTCOUNTER,DYNAMIC FROM EMDI.CATGROUP 
+    	   WHERE CATGROUP_ID != 0" />
     	<property name="rowMapper">
 			<bean class="com.avn.dataload.model.rowmapper.CATGROUPRowMapper" />
 		</property>

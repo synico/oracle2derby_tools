@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PROFNVSTRG {
-    
+
 
     private java.math.BigDecimal PROFNVSTRG_ID;
     
@@ -60,5 +57,15 @@ public class PROFNVSTRG {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PROFNVSTRG_ID: " + getPROFNVSTRG_ID() + "||");
+        result.append("PROFILE_ID: " + getPROFILE_ID() + "||");
+        result.append("PROFILEATTNAME: " + getPROFILEATTNAME() + "||");
+        result.append("PROFILEATTVALUE: " + getPROFILEATTVALUE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

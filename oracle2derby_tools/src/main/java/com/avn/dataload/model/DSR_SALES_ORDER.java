@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DSR_SALES_ORDER {
-    
+
 
     private java.lang.String SCN;
     
@@ -1028,5 +1025,103 @@ public class DSR_SALES_ORDER {
         return this.RESERVATION_ORDER_CD;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SCN: " + getSCN() + "||");
+        result.append("CREATE_DT: " + getCREATE_DT() + "||");
+        result.append("UPDATE_DT: " + getUPDATE_DT() + "||");
+        result.append("DELETE_DT: " + getDELETE_DT() + "||");
+        result.append("UPDATE_ID: " + getUPDATE_ID() + "||");
+        result.append("LAST_UPDATE_ACTION: " + getLAST_UPDATE_ACTION() + "||");
+        result.append("AUDIT_LOG_KEY: " + getAUDIT_LOG_KEY() + "||");
+        result.append("SYSTEM_ID: " + getSYSTEM_ID() + "||");
+        result.append("SEG_RCVD_DT: " + getSEG_RCVD_DT() + "||");
+        result.append("DIVISION_ID: " + getDIVISION_ID() + "||");
+        result.append("SALES_ORDER_COMPANY: " + getSALES_ORDER_COMPANY() + "||");
+        result.append("SCN_SEQ_NBR: " + getSCN_SEQ_NBR() + "||");
+        result.append("BILLTO_CUST_NBR: " + getBILLTO_CUST_NBR() + "||");
+        result.append("SHIPTO_CUST_NBR: " + getSHIPTO_CUST_NBR() + "||");
+        result.append("CUST_PO_ID: " + getCUST_PO_ID() + "||");
+        result.append("RELEASE_ID: " + getRELEASE_ID() + "||");
+        result.append("ORDER_DT: " + getORDER_DT() + "||");
+        result.append("CLOSE_DT: " + getCLOSE_DT() + "||");
+        result.append("ORDER_TYPE_CD: " + getORDER_TYPE_CD() + "||");
+        result.append("STATUS_CD: " + getSTATUS_CD() + "||");
+        result.append("GOVT_CONTRACT_ID: " + getGOVT_CONTRACT_ID() + "||");
+        result.append("REASON_CD: " + getREASON_CD() + "||");
+        result.append("AUTHORIZER_NAME: " + getAUTHORIZER_NAME() + "||");
+        result.append("SO_LINE_ITEM_CNT: " + getSO_LINE_ITEM_CNT() + "||");
+        result.append("FORECAST_ID: " + getFORECAST_ID() + "||");
+        result.append("PURGE_ORDER_FL: " + getPURGE_ORDER_FL() + "||");
+        result.append("LAST_UPDATE_ID: " + getLAST_UPDATE_ID() + "||");
+        result.append("BUYER_NAME: " + getBUYER_NAME() + "||");
+        result.append("BUYER_AREA_CODE_NBR: " + getBUYER_AREA_CODE_NBR() + "||");
+        result.append("BUYER_PHONE_NBR: " + getBUYER_PHONE_NBR() + "||");
+        result.append("BUYER_PHONE_EXT_NBR: " + getBUYER_PHONE_EXT_NBR() + "||");
+        result.append("SPEC_TXT: " + getSPEC_TXT() + "||");
+        result.append("SPEC_DRAWING_TXT: " + getSPEC_DRAWING_TXT() + "||");
+        result.append("SPCL_INST_TXT: " + getSPCL_INST_TXT() + "||");
+        result.append("INTERNAL_INST_TXT: " + getINTERNAL_INST_TXT() + "||");
+        result.append("COMMENT_TXT: " + getCOMMENT_TXT() + "||");
+        result.append("SLSMN_INSIDE_ID: " + getSLSMN_INSIDE_ID() + "||");
+        result.append("PAY_METHOD_CD: " + getPAY_METHOD_CD() + "||");
+        result.append("PAY_TERMS_CD: " + getPAY_TERMS_CD() + "||");
+        result.append("PRIORITY_CD: " + getPRIORITY_CD() + "||");
+        result.append("FRT_CHARGE_CD: " + getFRT_CHARGE_CD() + "||");
+        result.append("FOB_CD: " + getFOB_CD() + "||");
+        result.append("TOTAL_VALUE_AMT: " + getTOTAL_VALUE_AMT() + "||");
+        result.append("SHIP_COMPLETE_CD: " + getSHIP_COMPLETE_CD() + "||");
+        result.append("OVERRIDE_CUST_FL: " + getOVERRIDE_CUST_FL() + "||");
+        result.append("DW_ORDER_TYPE_CD: " + getDW_ORDER_TYPE_CD() + "||");
+        result.append("CUST_TAX_TYPE_CD: " + getCUST_TAX_TYPE_CD() + "||");
+        result.append("ORIG_CARRIER_CD: " + getORIG_CARRIER_CD() + "||");
+        result.append("CARRIER_BAL_CD: " + getCARRIER_BAL_CD() + "||");
+        result.append("CARRIER_ACCT_ID: " + getCARRIER_ACCT_ID() + "||");
+        result.append("AUTH_TERMS_CD: " + getAUTH_TERMS_CD() + "||");
+        result.append("AUTH_TERMS_ID: " + getAUTH_TERMS_ID() + "||");
+        result.append("AUTH_TRADE_TERMS_CD: " + getAUTH_TRADE_TERMS_CD() + "||");
+        result.append("AUTH_TRADE_TERMS_ID: " + getAUTH_TRADE_TERMS_ID() + "||");
+        result.append("TRADE_TERMS_CD: " + getTRADE_TERMS_CD() + "||");
+        result.append("CREDIT_HOLD_FL: " + getCREDIT_HOLD_FL() + "||");
+        result.append("CREDIT_CAT_CD: " + getCREDIT_CAT_CD() + "||");
+        result.append("WEB_ORDER_DIVISION: " + getWEB_ORDER_DIVISION() + "||");
+        result.append("WEB_ORDER_NBR: " + getWEB_ORDER_NBR() + "||");
+        result.append("WEB_USER_DIVISION: " + getWEB_USER_DIVISION() + "||");
+        result.append("WEB_USER_NBR: " + getWEB_USER_NBR() + "||");
+        result.append("WEB_FREIGHT_AMT: " + getWEB_FREIGHT_AMT() + "||");
+        result.append("WEB_HANDLING_AMT: " + getWEB_HANDLING_AMT() + "||");
+        result.append("WEB_EMAIL_ADDR_TXT: " + getWEB_EMAIL_ADDR_TXT() + "||");
+        result.append("PLN_FL: " + getPLN_FL() + "||");
+        result.append("RENEGOTIATE_FL: " + getRENEGOTIATE_FL() + "||");
+        result.append("SHIP_FIRST_FL: " + getSHIP_FIRST_FL() + "||");
+        result.append("HOT_SHIP_FL: " + getHOT_SHIP_FL() + "||");
+        result.append("FDS_PO_CNT: " + getFDS_PO_CNT() + "||");
+        result.append("B2B_IDENTIFIER_CD: " + getB2B_IDENTIFIER_CD() + "||");
+        result.append("MISC_EMAIL_FL: " + getMISC_EMAIL_FL() + "||");
+        result.append("LAST_ACCESSED_DT_TXT: " + getLAST_ACCESSED_DT_TXT() + "||");
+        result.append("LAST_ACCESSED_TM_TXT: " + getLAST_ACCESSED_TM_TXT() + "||");
+        result.append("DATE_STAMP_NBR: " + getDATE_STAMP_NBR() + "||");
+        result.append("TIME_STAMP_NBR: " + getTIME_STAMP_NBR() + "||");
+        result.append("ORDER_CHANGE_AUDIT_KEY: " + getORDER_CHANGE_AUDIT_KEY() + "||");
+        result.append("SHC_CNTL_CD: " + getSHC_CNTL_CD() + "||");
+        result.append("WEB_USER_ID: " + getWEB_USER_ID() + "||");
+        result.append("CUST_ST_NO: " + getCUST_ST_NO() + "||");
+        result.append("APO_QT: " + getAPO_QT() + "||");
+        result.append("FLAT_FREIGHT_AM: " + getFLAT_FREIGHT_AM() + "||");
+        result.append("FLAT_FRT_CD: " + getFLAT_FRT_CD() + "||");
+        result.append("CONTRACT_START_DT: " + getCONTRACT_START_DT() + "||");
+        result.append("CONTRACT_END_DT: " + getCONTRACT_END_DT() + "||");
+        result.append("INVOICE_OK_FL: " + getINVOICE_OK_FL() + "||");
+        result.append("ENTITLEMENT_FL: " + getENTITLEMENT_FL() + "||");
+        result.append("BILLING_FREQUENCY_TX: " + getBILLING_FREQUENCY_TX() + "||");
+        result.append("SERVICE_CONTRACT_ID: " + getSERVICE_CONTRACT_ID() + "||");
+        result.append("COMPANY_ST_NO: " + getCOMPANY_ST_NO() + "||");
+        result.append("CUST_ACCT_ST_NO: " + getCUST_ACCT_ST_NO() + "||");
+        result.append("CUST_LOC_ST_NO: " + getCUST_LOC_ST_NO() + "||");
+        result.append("ORDER_CUST_PO_AL_KEY: " + getORDER_CUST_PO_AL_KEY() + "||");
+        result.append("RESERVATION_ORDER_CD: " + getRESERVATION_ORDER_CD() + "||");
+        return result.toString();
+    }
     
 }

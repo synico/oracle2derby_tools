@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class POLICYTYPE {
-    
+
 
     private java.lang.String POLICYTYPE_ID;
     
@@ -27,5 +24,12 @@ public class POLICYTYPE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("POLICYTYPE_ID: " + getPOLICYTYPE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

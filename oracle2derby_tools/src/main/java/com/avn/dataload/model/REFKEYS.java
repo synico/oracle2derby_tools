@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class REFKEYS {
-    
+
 
     private java.lang.String TABLENAME;
     
@@ -49,5 +46,14 @@ public class REFKEYS {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("TABLENAME: " + getTABLENAME() + "||");
+        result.append("FKTABLE_NAME: " + getFKTABLE_NAME() + "||");
+        result.append("FKCOLUMN_NAME: " + getFKCOLUMN_NAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

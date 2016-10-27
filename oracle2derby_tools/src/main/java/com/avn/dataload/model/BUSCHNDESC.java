@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class BUSCHNDESC {
-    
+
 
     private java.math.BigDecimal BUSCHN_ID;
     
@@ -60,5 +57,15 @@ public class BUSCHNDESC {
         return this.DESCRIPTION;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("BUSCHN_ID: " + getBUSCHN_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("DISPLAYNAME: " + getDISPLAYNAME() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        return result.toString();
+    }
     
 }

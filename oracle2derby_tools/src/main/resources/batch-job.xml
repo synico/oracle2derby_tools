@@ -4,43 +4,24 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:beans="http://www.springframework.org/schema/beans"
     xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:context="http://www.springframework.org/schema/context"
     xsi:schemaLocation="
     http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd
     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd ">
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
     
     <beans:import resource="oracle-ds-config.xml" />
     <beans:import resource="derby-ds-config.xml" />
     
-    <beans:import resource="cursor_reader/*-batch.xml"/>
+    <beans:import resource="cursor_reader/CATENTRY-batch.xml"/>
     
     <job id="loadData">
-        <step id="loadCATENTDESC">
-            <tasklet>
-                <chunk reader="jdbcCursorItemReader4CATENTDESC" writer="jdbcBatchItemWriter4CATENTDESC" commit-interval="200"/>
-            </tasklet>
-            <!-- <next on ="*" to="loadCATENTDESC"/>
-            <next on="FAILED" to="loadCATENTDESC"/> -->
-        </step>
-        <!-- <step id="loadCATENTDESC">
-            <tasklet>
-                <chunk reader="jdbcCursorItemReader4CATENTDESC" writer="jdbcBatchItemWriter4CATENTDESC" commit-interval="100"/>
-            </tasklet>
-            <next on ="*" to="loadSTORECENT"/>
-            <next on="FAILED" to="loadSTORECENT"/>
-        </step>
-        <step id="loadSTORECENT">
-            <tasklet>
-                <chunk reader="jdbcCursorItemReader4STORECENT" writer="jdbcBatchItemWriter4STORECENT" commit-interval="100"/>
-            </tasklet>
-            <next on ="*" to="loadCATENTRY"/>
-            <next on="FAILED" to="loadCATENTRY"/>
-        </step>
-        <step id="loadCATENTRY">
+        <step id="loadTable">
             <tasklet>
                 <chunk reader="jdbcCursorItemReader4CATENTRY" writer="jdbcBatchItemWriter4CATENTRY" commit-interval="100"/>
             </tasklet>
-        </step> -->
+        </step>
     </job>
     
     <beans:bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">

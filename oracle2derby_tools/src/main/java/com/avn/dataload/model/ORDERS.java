@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ORDERS {
-    
+
 
     private java.math.BigDecimal ORDERS_ID;
     
@@ -401,5 +398,46 @@ public class ORDERS {
         return this.BUYERPO_ID;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ORDERS_ID: " + getORDERS_ID() + "||");
+        result.append("ORMORDER: " + getORMORDER() + "||");
+        result.append("ORGENTITY_ID: " + getORGENTITY_ID() + "||");
+        result.append("TOTALPRODUCT: " + getTOTALPRODUCT() + "||");
+        result.append("TOTALTAX: " + getTOTALTAX() + "||");
+        result.append("TOTALSHIPPING: " + getTOTALSHIPPING() + "||");
+        result.append("TOTALTAXSHIPPING: " + getTOTALTAXSHIPPING() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("CURRENCY: " + getCURRENCY() + "||");
+        result.append("LOCKED: " + getLOCKED() + "||");
+        result.append("TIMEPLACED: " + getTIMEPLACED() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("ADDRESS_ID: " + getADDRESS_ID() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("PROVIDERORDERNUM: " + getPROVIDERORDERNUM() + "||");
+        result.append("SHIPASCOMPLETE: " + getSHIPASCOMPLETE() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("TOTALADJUSTMENT: " + getTOTALADJUSTMENT() + "||");
+        result.append("ORDCHNLTYP_ID: " + getORDCHNLTYP_ID() + "||");
+        result.append("COMMENTS: " + getCOMMENTS() + "||");
+        result.append("NOTIFICATIONID: " + getNOTIFICATIONID() + "||");
+        result.append("TYPE: " + getTYPE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("EDITOR_ID: " + getEDITOR_ID() + "||");
+        result.append("BUSCHN_ID: " + getBUSCHN_ID() + "||");
+        result.append("SOURCEID: " + getSOURCEID() + "||");
+        result.append("EXPIREDATE: " + getEXPIREDATE() + "||");
+        result.append("BLOCKED: " + getBLOCKED() + "||");
+        result.append("OPSYSTEM_ID: " + getOPSYSTEM_ID() + "||");
+        result.append("TRANSFERSTATUS: " + getTRANSFERSTATUS() + "||");
+        result.append("BUYERPO_ID: " + getBUYERPO_ID() + "||");
+        return result.toString();
+    }
     
 }

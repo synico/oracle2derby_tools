@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ACACTGRP {
-    
+
 
     private java.math.BigDecimal ACACTGRP_ID;
     
@@ -60,5 +57,15 @@ public class ACACTGRP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ACACTGRP_ID: " + getACACTGRP_ID() + "||");
+        result.append("GROUPNAME: " + getGROUPNAME() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

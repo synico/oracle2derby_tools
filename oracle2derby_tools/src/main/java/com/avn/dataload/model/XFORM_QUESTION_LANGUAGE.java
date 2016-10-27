@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XFORM_QUESTION_LANGUAGE {
-    
+
 
     private java.math.BigDecimal FORM_ID;
     
@@ -60,5 +57,15 @@ public class XFORM_QUESTION_LANGUAGE {
         return this.FORM_QUESTION_TX;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("FORM_ID: " + getFORM_ID() + "||");
+        result.append("FORM_VERSION_ID: " + getFORM_VERSION_ID() + "||");
+        result.append("FORM_QUESTION_ID: " + getFORM_QUESTION_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("FORM_QUESTION_TX: " + getFORM_QUESTION_TX() + "||");
+        return result.toString();
+    }
     
 }

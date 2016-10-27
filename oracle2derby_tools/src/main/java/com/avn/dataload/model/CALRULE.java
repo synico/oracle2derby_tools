@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CALRULE {
-    
+
 
     private java.math.BigDecimal CALRULE_ID;
     
@@ -159,5 +156,24 @@ public class CALRULE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CALRULE_ID: " + getCALRULE_ID() + "||");
+        result.append("CALCODE_ID: " + getCALCODE_ID() + "||");
+        result.append("STARTDATE: " + getSTARTDATE() + "||");
+        result.append("TAXCGRY_ID: " + getTAXCGRY_ID() + "||");
+        result.append("ENDDATE: " + getENDDATE() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("COMBINATION: " + getCOMBINATION() + "||");
+        result.append("CALMETHOD_ID: " + getCALMETHOD_ID() + "||");
+        result.append("CALMETHOD_ID_QFY: " + getCALMETHOD_ID_QFY() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FLAGS: " + getFLAGS() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

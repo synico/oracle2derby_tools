@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ATTRVALDESC {
-    
+
 
     private java.math.BigDecimal ATTRVAL_ID;
     
@@ -181,5 +178,26 @@ public class ATTRVALDESC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ATTRVAL_ID: " + getATTRVAL_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("ATTR_ID: " + getATTR_ID() + "||");
+        result.append("VALUE: " + getVALUE() + "||");
+        result.append("VALUSAGE: " + getVALUSAGE() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("STRINGVALUE: " + getSTRINGVALUE() + "||");
+        result.append("INTEGERVALUE: " + getINTEGERVALUE() + "||");
+        result.append("FLOATVALUE: " + getFLOATVALUE() + "||");
+        result.append("QTYUNIT_ID: " + getQTYUNIT_ID() + "||");
+        result.append("IMAGE1: " + getIMAGE1() + "||");
+        result.append("IMAGE2: " + getIMAGE2() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

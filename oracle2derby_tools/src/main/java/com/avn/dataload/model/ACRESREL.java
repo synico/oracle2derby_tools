@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ACRESREL {
-    
+
 
     private java.math.BigDecimal ACRELATION_ID;
     
@@ -115,5 +112,20 @@ public class ACRESREL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ACRELATION_ID: " + getACRELATION_ID() + "||");
+        result.append("ACRESCGRY_ID: " + getACRESCGRY_ID() + "||");
+        result.append("RESRELTABLE: " + getRESRELTABLE() + "||");
+        result.append("RESRELMEMCOL: " + getRESRELMEMCOL() + "||");
+        result.append("RESRELKEYCOL: " + getRESRELKEYCOL() + "||");
+        result.append("RESRELCOL: " + getRESRELCOL() + "||");
+        result.append("RESJOINCOL: " + getRESJOINCOL() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("RESOURCETYPE: " + getRESOURCETYPE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

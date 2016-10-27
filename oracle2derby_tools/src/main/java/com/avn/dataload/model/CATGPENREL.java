@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CATGPENREL {
-    
+
 
     private java.math.BigDecimal CATGROUP_ID;
     
@@ -82,5 +79,17 @@ public class CATGPENREL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATGROUP_ID: " + getCATGROUP_ID() + "||");
+        result.append("CATALOG_ID: " + getCATALOG_ID() + "||");
+        result.append("CATENTRY_ID: " + getCATENTRY_ID() + "||");
+        result.append("RULE: " + getRULE() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

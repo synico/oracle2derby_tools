@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class STATEPROV {
-    
+
 
     private java.lang.String STATEPROVABBR;
     
@@ -60,5 +57,15 @@ public class STATEPROV {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("STATEPROVABBR: " + getSTATEPROVABBR() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("COUNTRYABBR: " + getCOUNTRYABBR() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

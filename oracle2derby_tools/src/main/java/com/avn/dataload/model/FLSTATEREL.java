@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class FLSTATEREL {
-    
+
 
     private java.math.BigDecimal FLSTATEDCT_ID;
     
@@ -71,5 +68,16 @@ public class FLSTATEREL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("FLSTATEDCT_ID: " + getFLSTATEDCT_ID() + "||");
+        result.append("FLOW_ID: " + getFLOW_ID() + "||");
+        result.append("ENTRYACTNINTERFACE: " + getENTRYACTNINTERFACE() + "||");
+        result.append("EXITACTNINTERFACE: " + getEXITACTNINTERFACE() + "||");
+        result.append("RESPONSEVIEWNAME: " + getRESPONSEVIEWNAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

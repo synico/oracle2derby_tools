@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CMFTASK {
-    
+
 
     private java.math.BigDecimal CMFTASK_ID;
     
@@ -104,5 +101,19 @@ public class CMFTASK {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CMFTASK_ID: " + getCMFTASK_ID() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("USAGE: " + getUSAGE() + "||");
+        result.append("DUEDATE: " + getDUEDATE() + "||");
+        result.append("COMPLETEDATE: " + getCOMPLETEDATE() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("TEMPLATETYPE: " + getTEMPLATETYPE() + "||");
+        result.append("TYPE: " + getTYPE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

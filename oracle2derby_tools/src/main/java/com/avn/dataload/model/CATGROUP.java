@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CATGROUP {
-    
+
 
     private java.math.BigDecimal CATGROUP_ID;
     
@@ -126,5 +123,21 @@ public class CATGROUP {
         return this.DYNAMIC;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATGROUP_ID: " + getCATGROUP_ID() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("OID: " + getOID() + "||");
+        result.append("RANK: " + getRANK() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("DYNAMIC: " + getDYNAMIC() + "||");
+        return result.toString();
+    }
     
 }

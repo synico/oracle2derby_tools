@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class TRDTYPE {
-    
+
 
     private java.math.BigDecimal TRDTYPE_ID;
     
@@ -27,5 +24,12 @@ public class TRDTYPE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("TRDTYPE_ID: " + getTRDTYPE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

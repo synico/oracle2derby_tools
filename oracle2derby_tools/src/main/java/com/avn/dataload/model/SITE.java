@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SITE {
-    
+
 
     private java.lang.String DATABASEVENDOR;
     
@@ -93,5 +90,18 @@ public class SITE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("DATABASEVENDOR: " + getDATABASEVENDOR() + "||");
+        result.append("EDITION: " + getEDITION() + "||");
+        result.append("VERSION: " + getVERSION() + "||");
+        result.append("RELEASE: " + getRELEASE() + "||");
+        result.append("MOD: " + getMOD() + "||");
+        result.append("FIXPACK: " + getFIXPACK() + "||");
+        result.append("COMPNAME: " + getCOMPNAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

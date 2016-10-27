@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CTXDATA {
-    
+
 
     private java.math.BigDecimal ACTIVITY_ID;
     
@@ -49,5 +46,14 @@ public class CTXDATA {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ACTIVITY_ID: " + getACTIVITY_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("SERVALUE: " + getSERVALUE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

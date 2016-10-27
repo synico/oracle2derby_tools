@@ -3,20 +3,20 @@ package com.avn.dataload.model.rowmapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import org.springframework.jdbc.core.RowMapper;
 
 import com.avn.dataload.model.ADDRESS;
 
 public class ADDRESSRowMapper<T> implements RowMapper<ADDRESS> {
 
+    private static final Logger log = Logger.getLogger(ADDRESSRowMapper.class);
+
 	@Override
 	public ADDRESS mapRow(ResultSet rs, int rowNum) throws SQLException {
 		ADDRESS obj = new ADDRESS();
 		
-		obj.setFIELD1(rs.getString("FIELD1"));
-		obj.setOPTCOUNTER(rs.getBigDecimal("OPTCOUNTER"));
-		obj.setMEMBER_ID(rs.getBigDecimal("MEMBER_ID"));
-		obj.setSTATE(rs.getString("STATE"));
 		obj.setFIELD2(rs.getString("FIELD2"));
 		obj.setADDRESS_ID(rs.getBigDecimal("ADDRESS_ID"));
 		obj.setFIELD3(rs.getString("FIELD3"));
@@ -59,6 +59,12 @@ public class ADDRESSRowMapper<T> implements RowMapper<ADDRESS> {
 		obj.setSHIPPINGGEOCODE(rs.getString("SHIPPINGGEOCODE"));
 		obj.setMOBILEPHONE1(rs.getString("MOBILEPHONE1"));
 		obj.setMOBILEPHONE1CNTRY(rs.getString("MOBILEPHONE1CNTRY"));
+		obj.setOPTCOUNTER(rs.getBigDecimal("OPTCOUNTER"));
+		obj.setFIELD1(rs.getString("FIELD1"));
+		obj.setMEMBER_ID(rs.getBigDecimal("MEMBER_ID"));
+		obj.setSTATE(rs.getString("STATE"));
+		
+		log.debug("Value of obj: " + obj.toString());
 		
 		return obj;
 	}

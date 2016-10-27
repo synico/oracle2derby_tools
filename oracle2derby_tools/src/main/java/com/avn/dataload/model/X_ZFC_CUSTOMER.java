@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class X_ZFC_CUSTOMER {
-    
+
 
     private java.lang.String MANDT;
     
@@ -137,5 +134,22 @@ public class X_ZFC_CUSTOMER {
         return this.VMI;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MANDT: " + getMANDT() + "||");
+        result.append("ZZFPA: " + getZZFPA() + "||");
+        result.append("VKORG: " + getVKORG() + "||");
+        result.append("VTWEG: " + getVTWEG() + "||");
+        result.append("WERKS: " + getWERKS() + "||");
+        result.append("FCPERIOD: " + getFCPERIOD() + "||");
+        result.append("NET: " + getNET() + "||");
+        result.append("NET_QOH: " + getNET_QOH() + "||");
+        result.append("CONSIGNMENT: " + getCONSIGNMENT() + "||");
+        result.append("ERZEIT: " + getERZEIT() + "||");
+        result.append("UPDATED_FLAG: " + getUPDATED_FLAG() + "||");
+        result.append("VMI: " + getVMI() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ACRESCGRY {
-    
+
 
     private java.math.BigDecimal ACRESCGRY_ID;
     
@@ -104,5 +101,19 @@ public class ACRESCGRY {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ACRESCGRY_ID: " + getACRESCGRY_ID() + "||");
+        result.append("RESPRIMARYTABLE: " + getRESPRIMARYTABLE() + "||");
+        result.append("RESOWNERTABLE: " + getRESOWNERTABLE() + "||");
+        result.append("RESOWNERCOL: " + getRESOWNERCOL() + "||");
+        result.append("RESKEYOWNCOL: " + getRESKEYOWNCOL() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("RESCLASSNAME: " + getRESCLASSNAME() + "||");
+        result.append("RESJOINKEY: " + getRESJOINKEY() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

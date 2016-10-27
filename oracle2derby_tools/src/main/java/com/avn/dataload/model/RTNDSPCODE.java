@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class RTNDSPCODE {
-    
+
 
     private java.math.BigDecimal RTNDSPCODE_ID;
     
@@ -71,5 +68,16 @@ public class RTNDSPCODE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("RTNDSPCODE_ID: " + getRTNDSPCODE_ID() + "||");
+        result.append("RETURNTOINVENTORY: " + getRETURNTOINVENTORY() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("CODE: " + getCODE() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

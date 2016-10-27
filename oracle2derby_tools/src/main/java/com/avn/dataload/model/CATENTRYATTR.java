@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CATENTRYATTR {
-    
+
 
     private java.math.BigDecimal CATENTRY_ID;
     
@@ -104,5 +101,19 @@ public class CATENTRYATTR {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATENTRY_ID: " + getCATENTRY_ID() + "||");
+        result.append("ATTR_ID: " + getATTR_ID() + "||");
+        result.append("ATTRVAL_ID: " + getATTRVAL_ID() + "||");
+        result.append("USAGE: " + getUSAGE() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

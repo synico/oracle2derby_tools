@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ACRELGRP {
-    
+
 
     private java.math.BigDecimal ACRELGRP_ID;
     
@@ -82,5 +79,17 @@ public class ACRELGRP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ACRELGRP_ID: " + getACRELGRP_ID() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("GRPNAME: " + getGRPNAME() + "||");
+        result.append("CONDITIONS: " + getCONDITIONS() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

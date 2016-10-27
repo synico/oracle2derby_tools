@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class STADDRESS {
-    
+
 
     private java.math.BigDecimal STADDRESS_ID;
     
@@ -313,5 +310,38 @@ public class STADDRESS {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("STADDRESS_ID: " + getSTADDRESS_ID() + "||");
+        result.append("ADDRESS1: " + getADDRESS1() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("ADDRESS2: " + getADDRESS2() + "||");
+        result.append("ADDRESS3: " + getADDRESS3() + "||");
+        result.append("CITY: " + getCITY() + "||");
+        result.append("COUNTRY: " + getCOUNTRY() + "||");
+        result.append("EMAIL1: " + getEMAIL1() + "||");
+        result.append("EMAIL2: " + getEMAIL2() + "||");
+        result.append("FAX1: " + getFAX1() + "||");
+        result.append("FAX2: " + getFAX2() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("PHONE1: " + getPHONE1() + "||");
+        result.append("PHONE2: " + getPHONE2() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("ZIPCODE: " + getZIPCODE() + "||");
+        result.append("FIRSTNAME: " + getFIRSTNAME() + "||");
+        result.append("LASTNAME: " + getLASTNAME() + "||");
+        result.append("MIDDLENAME: " + getMIDDLENAME() + "||");
+        result.append("PERSONTITLE: " + getPERSONTITLE() + "||");
+        result.append("BUSINESSTITLE: " + getBUSINESSTITLE() + "||");
+        result.append("NICKNAME: " + getNICKNAME() + "||");
+        result.append("SHIPPINGGEOCODE: " + getSHIPPINGGEOCODE() + "||");
+        result.append("TAXGEOCODE: " + getTAXGEOCODE() + "||");
+        result.append("URL: " + getURL() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

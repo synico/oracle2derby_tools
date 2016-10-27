@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SEOPAGEDEFOVR {
-    
+
 
     private java.math.BigDecimal SEOPAGEDEFOVR_ID;
     
@@ -71,5 +68,16 @@ public class SEOPAGEDEFOVR {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SEOPAGEDEFOVR_ID: " + getSEOPAGEDEFOVR_ID() + "||");
+        result.append("SEOPAGEDEF_ID: " + getSEOPAGEDEF_ID() + "||");
+        result.append("APPLY_TO_CHILD: " + getAPPLY_TO_CHILD() + "||");
+        result.append("OBJECTTYPE: " + getOBJECTTYPE() + "||");
+        result.append("OBJECT_ID: " + getOBJECT_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

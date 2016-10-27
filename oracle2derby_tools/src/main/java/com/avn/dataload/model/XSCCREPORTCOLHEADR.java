@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XSCCREPORTCOLHEADR {
-    
+
 
     private java.math.BigDecimal REPORTCOLHEADER_ID;
     
@@ -82,5 +79,17 @@ public class XSCCREPORTCOLHEADR {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("REPORTCOLHEADER_ID: " + getREPORTCOLHEADER_ID() + "||");
+        result.append("REPORT_ID: " + getREPORT_ID() + "||");
+        result.append("ACTUALNAME: " + getACTUALNAME() + "||");
+        result.append("DISPLAYNAME: " + getDISPLAYNAME() + "||");
+        result.append("USERSPECIFICNAME: " + getUSERSPECIFICNAME() + "||");
+        result.append("COLHEADERORDER: " + getCOLHEADERORDER() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

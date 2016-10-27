@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CACHEIVL {
-    
+
 
     private java.lang.String TEMPLATE;
     
@@ -49,5 +46,14 @@ public class CACHEIVL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("TEMPLATE: " + getTEMPLATE() + "||");
+        result.append("DATAID: " + getDATAID() + "||");
+        result.append("INSERTTIME: " + getINSERTTIME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

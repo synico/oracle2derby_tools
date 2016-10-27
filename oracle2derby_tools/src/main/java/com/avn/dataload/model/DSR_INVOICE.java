@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DSR_INVOICE {
-    
+
 
     private java.lang.String INVOICE_NBR;
     
@@ -1259,5 +1256,124 @@ public class DSR_INVOICE {
         return this.AUDIT_LOG_DT;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("INVOICE_NBR: " + getINVOICE_NBR() + "||");
+        result.append("CREATE_DT: " + getCREATE_DT() + "||");
+        result.append("UPDATE_DT: " + getUPDATE_DT() + "||");
+        result.append("DELETE_DT: " + getDELETE_DT() + "||");
+        result.append("UPDATE_ID: " + getUPDATE_ID() + "||");
+        result.append("LAST_UPDATE_ACTION: " + getLAST_UPDATE_ACTION() + "||");
+        result.append("AUDIT_LOG_KEY: " + getAUDIT_LOG_KEY() + "||");
+        result.append("SYSTEM_ID: " + getSYSTEM_ID() + "||");
+        result.append("SEG_RCVD_DT: " + getSEG_RCVD_DT() + "||");
+        result.append("DIVISION_ID: " + getDIVISION_ID() + "||");
+        result.append("INVOICE_COMPANY: " + getINVOICE_COMPANY() + "||");
+        result.append("INVOICE_SEQ_NBR: " + getINVOICE_SEQ_NBR() + "||");
+        result.append("INV_LINE_ITEM_CNT: " + getINV_LINE_ITEM_CNT() + "||");
+        result.append("SCN: " + getSCN() + "||");
+        result.append("SHIPTO_CUST_NBR: " + getSHIPTO_CUST_NBR() + "||");
+        result.append("CUST_INVOICE_NBR: " + getCUST_INVOICE_NBR() + "||");
+        result.append("CUSTOMER_PO_NBR: " + getCUSTOMER_PO_NBR() + "||");
+        result.append("INVOICE_AMT: " + getINVOICE_AMT() + "||");
+        result.append("INVOICE_TAX_AMT: " + getINVOICE_TAX_AMT() + "||");
+        result.append("MISC_CHARGE_AMT: " + getMISC_CHARGE_AMT() + "||");
+        result.append("PART_TOTAL_AMT: " + getPART_TOTAL_AMT() + "||");
+        result.append("RESTOCK_CHARGE_AMT: " + getRESTOCK_CHARGE_AMT() + "||");
+        result.append("COMMISSION_PCT: " + getCOMMISSION_PCT() + "||");
+        result.append("RELEASE_ID: " + getRELEASE_ID() + "||");
+        result.append("INSIDE_SLSMN_ID: " + getINSIDE_SLSMN_ID() + "||");
+        result.append("SLSMN_FIELD: " + getSLSMN_FIELD() + "||");
+        result.append("SLSMN_CSM: " + getSLSMN_CSM() + "||");
+        result.append("SLSMN_ASM: " + getSLSMN_ASM() + "||");
+        result.append("SLSMN_CSR: " + getSLSMN_CSR() + "||");
+        result.append("SLSMN_PSS: " + getSLSMN_PSS() + "||");
+        result.append("SLSMN_TAE: " + getSLSMN_TAE() + "||");
+        result.append("SLSMN_MISC1: " + getSLSMN_MISC1() + "||");
+        result.append("SLSMN_MISC2: " + getSLSMN_MISC2() + "||");
+        result.append("SLSMN_MISC3: " + getSLSMN_MISC3() + "||");
+        result.append("SLSMN_MISC4: " + getSLSMN_MISC4() + "||");
+        result.append("SLSMN_MISC5: " + getSLSMN_MISC5() + "||");
+        result.append("SLSMN_MISC6: " + getSLSMN_MISC6() + "||");
+        result.append("SLSMN_MISC7: " + getSLSMN_MISC7() + "||");
+        result.append("SLSMN_MISC8: " + getSLSMN_MISC8() + "||");
+        result.append("SLSMN_MISC9: " + getSLSMN_MISC9() + "||");
+        result.append("ACTUAL_CARRIER_CD: " + getACTUAL_CARRIER_CD() + "||");
+        result.append("CARRIER_OVERRIDE_TXT: " + getCARRIER_OVERRIDE_TXT() + "||");
+        result.append("CARRIER_OVRRD_RSN_CD: " + getCARRIER_OVRRD_RSN_CD() + "||");
+        result.append("COD_AMT: " + getCOD_AMT() + "||");
+        result.append("FOB_CD: " + getFOB_CD() + "||");
+        result.append("FREIGHT_AMT: " + getFREIGHT_AMT() + "||");
+        result.append("FREIGHT_CHARGE_CD: " + getFREIGHT_CHARGE_CD() + "||");
+        result.append("FREIGHT_PROCESSED_FL: " + getFREIGHT_PROCESSED_FL() + "||");
+        result.append("MAIL_FL: " + getMAIL_FL() + "||");
+        result.append("PACKAGE_QTY: " + getPACKAGE_QTY() + "||");
+        result.append("QID_PACKER_CD: " + getQID_PACKER_CD() + "||");
+        result.append("SHIP_VIA_CD: " + getSHIP_VIA_CD() + "||");
+        result.append("SHIP_VIA_OVERRIDE_CD: " + getSHIP_VIA_OVERRIDE_CD() + "||");
+        result.append("SHIP_VIA_OVRRD_RSN_CD: " + getSHIP_VIA_OVRRD_RSN_CD() + "||");
+        result.append("SHIP_VIA_OVRRD_RSN_TXT: " + getSHIP_VIA_OVRRD_RSN_TXT() + "||");
+        result.append("WEIGHT_LBS: " + getWEIGHT_LBS() + "||");
+        result.append("FACILITY_STATUS_DS: " + getFACILITY_STATUS_DS() + "||");
+        result.append("INVENTORY_LOC_CD: " + getINVENTORY_LOC_CD() + "||");
+        result.append("ORDER_DT: " + getORDER_DT() + "||");
+        result.append("SHIP_DT: " + getSHIP_DT() + "||");
+        result.append("SHIP_FIRST_FL: " + getSHIP_FIRST_FL() + "||");
+        result.append("SHIPPER_CREATE_DT: " + getSHIPPER_CREATE_DT() + "||");
+        result.append("WAYBILL_ID: " + getWAYBILL_ID() + "||");
+        result.append("WRHS_LOC_CD: " + getWRHS_LOC_CD() + "||");
+        result.append("CREDIT_DEBIT_CD: " + getCREDIT_DEBIT_CD() + "||");
+        result.append("CUST_TAX_TYPE_CD: " + getCUST_TAX_TYPE_CD() + "||");
+        result.append("PAY_METHOD_CD: " + getPAY_METHOD_CD() + "||");
+        result.append("PAY_TERMS_CD: " + getPAY_TERMS_CD() + "||");
+        result.append("TRADE_TERMS_CD: " + getTRADE_TERMS_CD() + "||");
+        result.append("LOCAL_TAX_PCT: " + getLOCAL_TAX_PCT() + "||");
+        result.append("STATE_TAX_PCT: " + getSTATE_TAX_PCT() + "||");
+        result.append("TAX_CREDIT_FL: " + getTAX_CREDIT_FL() + "||");
+        result.append("ICST_PO_ID: " + getICST_PO_ID() + "||");
+        result.append("ICST_TYPE_CD: " + getICST_TYPE_CD() + "||");
+        result.append("STATUS_CUTBACK_CNT: " + getSTATUS_CUTBACK_CNT() + "||");
+        result.append("STATUS_INSP_CNT: " + getSTATUS_INSP_CNT() + "||");
+        result.append("STATUS_INSP_DBL_CNT: " + getSTATUS_INSP_DBL_CNT() + "||");
+        result.append("STATUS_INSP_TDSK_CNT: " + getSTATUS_INSP_TDSK_CNT() + "||");
+        result.append("STATUS_LARGE_ORDER_CNT: " + getSTATUS_LARGE_ORDER_CNT() + "||");
+        result.append("STATUS_PACK_CNT: " + getSTATUS_PACK_CNT() + "||");
+        result.append("STATUS_PACK_DE_CNT: " + getSTATUS_PACK_DE_CNT() + "||");
+        result.append("STATUS_PRODUCTION_CNT: " + getSTATUS_PRODUCTION_CNT() + "||");
+        result.append("STATUS_WRHS_TDSK_CNT: " + getSTATUS_WRHS_TDSK_CNT() + "||");
+        result.append("TAX_RATE_GEO_STATE_CD: " + getTAX_RATE_GEO_STATE_CD() + "||");
+        result.append("TAX_RATE_GEO_COUNTY_CD: " + getTAX_RATE_GEO_COUNTY_CD() + "||");
+        result.append("TAX_RATE_GEO_CITY_CD: " + getTAX_RATE_GEO_CITY_CD() + "||");
+        result.append("QID_INSPECTOR1_CD: " + getQID_INSPECTOR1_CD() + "||");
+        result.append("QID_INSPECTOR2_CD: " + getQID_INSPECTOR2_CD() + "||");
+        result.append("QID_INSPECTOR3_CD: " + getQID_INSPECTOR3_CD() + "||");
+        result.append("QID_LAST_UPDATE: " + getQID_LAST_UPDATE() + "||");
+        result.append("ASRS_LAST_PRINT: " + getASRS_LAST_PRINT() + "||");
+        result.append("COMPLETE_2006_FL: " + getCOMPLETE_2006_FL() + "||");
+        result.append("COMPLETE_RELEASE_FL: " + getCOMPLETE_RELEASE_FL() + "||");
+        result.append("CONFIRM_PURGE_FL: " + getCONFIRM_PURGE_FL() + "||");
+        result.append("MAG_PRINT_ID: " + getMAG_PRINT_ID() + "||");
+        result.append("PROM_FL: " + getPROM_FL() + "||");
+        result.append("WMS_CD: " + getWMS_CD() + "||");
+        result.append("SEGMENT_CREATE_CD: " + getSEGMENT_CREATE_CD() + "||");
+        result.append("INVOICE_CHANGE_AUDIT_KEY: " + getINVOICE_CHANGE_AUDIT_KEY() + "||");
+        result.append("BILLTO_CUST_NBR: " + getBILLTO_CUST_NBR() + "||");
+        result.append("CUST_ST_NO: " + getCUST_ST_NO() + "||");
+        result.append("COMPANY_ST_NO: " + getCOMPANY_ST_NO() + "||");
+        result.append("CUST_ACCT_ST_NO: " + getCUST_ACCT_ST_NO() + "||");
+        result.append("CUST_LOC_ST_NO: " + getCUST_LOC_ST_NO() + "||");
+        result.append("FLAT_FREIGHT_AM: " + getFLAT_FREIGHT_AM() + "||");
+        result.append("FLAT_FRT_CD: " + getFLAT_FRT_CD() + "||");
+        result.append("IVC_ORIGINAL_NO: " + getIVC_ORIGINAL_NO() + "||");
+        result.append("FRT_INSUR_AM: " + getFRT_INSUR_AM() + "||");
+        result.append("FRT_CUST_PARTIAL_AM: " + getFRT_CUST_PARTIAL_AM() + "||");
+        result.append("STD_HANDLING_AM: " + getSTD_HANDLING_AM() + "||");
+        result.append("SPLIT_PREV_INVOICE_NBR: " + getSPLIT_PREV_INVOICE_NBR() + "||");
+        result.append("SPLIT_INVOICE_CD: " + getSPLIT_INVOICE_CD() + "||");
+        result.append("EMAIL_FL: " + getEMAIL_FL() + "||");
+        result.append("AUDIT_LOG_DT: " + getAUDIT_LOG_DT() + "||");
+        return result.toString();
+    }
     
 }

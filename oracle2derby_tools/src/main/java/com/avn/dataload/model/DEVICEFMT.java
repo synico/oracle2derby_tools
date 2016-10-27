@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DEVICEFMT {
-    
+
 
     private java.lang.String DEVICETYPE_ID;
     
@@ -49,5 +46,14 @@ public class DEVICEFMT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("DEVICETYPE_ID: " + getDEVICETYPE_ID() + "||");
+        result.append("DEVICEFMT_ID: " + getDEVICEFMT_ID() + "||");
+        result.append("DISPLAYNAME: " + getDISPLAYNAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

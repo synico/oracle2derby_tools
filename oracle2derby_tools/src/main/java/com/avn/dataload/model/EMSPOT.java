@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class EMSPOT {
-    
+
 
     private java.math.BigDecimal EMSPOT_ID;
     
@@ -137,5 +134,22 @@ public class EMSPOT {
         return this.MANAGINGTOOL;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("EMSPOT_ID: " + getEMSPOT_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("SUPPORTEDTYPES: " + getSUPPORTEDTYPES() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("LASTUPDATEDBY: " + getLASTUPDATEDBY() + "||");
+        result.append("DEFAULTRULE: " + getDEFAULTRULE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("USAGETYPE: " + getUSAGETYPE() + "||");
+        result.append("UIDISPLAYABLE: " + getUIDISPLAYABLE() + "||");
+        result.append("MANAGINGTOOL: " + getMANAGINGTOOL() + "||");
+        return result.toString();
+    }
     
 }

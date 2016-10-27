@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class X_SAP_SALESDOC_HDR {
-    
+
 
     private java.lang.String VBAK_VBELN;
     
@@ -60,5 +57,15 @@ public class X_SAP_SALESDOC_HDR {
         return this.UPDATED_FLAG;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("VBAK_VBELN: " + getVBAK_VBELN() + "||");
+        result.append("SOLD_TO: " + getSOLD_TO() + "||");
+        result.append("VBAK_AUART: " + getVBAK_AUART() + "||");
+        result.append("VBKD_BSTDK: " + getVBKD_BSTDK() + "||");
+        result.append("UPDATED_FLAG: " + getUPDATED_FLAG() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class STOREPLTYPES {
-    
+
 
     private java.lang.String PAGELAYOUTTYPE_ID;
     
@@ -49,5 +46,14 @@ public class STOREPLTYPES {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PAGELAYOUTTYPE_ID: " + getPAGELAYOUTTYPE_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("VIEWNAME: " + getVIEWNAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

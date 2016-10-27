@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class USERPROF {
-    
+
 
     private java.math.BigDecimal USERS_ID;
     
@@ -137,5 +134,22 @@ public class USERPROF {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("PHOTO: " + getPHOTO() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("DISPLAYNAME: " + getDISPLAYNAME() + "||");
+        result.append("PREFERREDCOMM: " + getPREFERREDCOMM() + "||");
+        result.append("PREFERREDDELIVERY: " + getPREFERREDDELIVERY() + "||");
+        result.append("PREFERREDMEASURE: " + getPREFERREDMEASURE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("TAXPAYERID: " + getTAXPAYERID() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("RCVSMSNOTIFICATION: " + getRCVSMSNOTIFICATION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

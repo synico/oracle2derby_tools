@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class STRELTYP {
-    
+
 
     private java.lang.String NAME;
     
@@ -38,5 +35,13 @@ public class STRELTYP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("NAME: " + getNAME() + "||");
+        result.append("STRELTYP_ID: " + getSTRELTYP_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

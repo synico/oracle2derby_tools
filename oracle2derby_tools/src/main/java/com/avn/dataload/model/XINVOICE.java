@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XINVOICE {
-    
+
 
     private java.math.BigDecimal XINVOICE_ID;
     
@@ -170,5 +167,25 @@ public class XINVOICE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("XINVOICE_ID: " + getXINVOICE_ID() + "||");
+        result.append("XINVOICE_DATE: " + getXINVOICE_DATE() + "||");
+        result.append("XINVOICE_AMT: " + getXINVOICE_AMT() + "||");
+        result.append("ORDERS_ID: " + getORDERS_ID() + "||");
+        result.append("ORDRELEASENUM: " + getORDRELEASENUM() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("FIELD4: " + getFIELD4() + "||");
+        result.append("FIELD5: " + getFIELD5() + "||");
+        result.append("FIELD6: " + getFIELD6() + "||");
+        result.append("EMAIL_FLAG: " + getEMAIL_FLAG() + "||");
+        result.append("EMAIL_SENT_TIME: " + getEMAIL_SENT_TIME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

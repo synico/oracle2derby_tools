@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SCHCONFIG {
-    
+
 
     private java.math.BigDecimal SCCJOBREFNUM;
     
@@ -181,5 +178,26 @@ public class SCHCONFIG {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SCCJOBREFNUM: " + getSCCJOBREFNUM() + "||");
+        result.append("SCCHOST: " + getSCCHOST() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("SCCRECDELAY: " + getSCCRECDELAY() + "||");
+        result.append("SCCRECATT: " + getSCCRECATT() + "||");
+        result.append("SCCPATHINFO: " + getSCCPATHINFO() + "||");
+        result.append("SCCQUERY: " + getSCCQUERY() + "||");
+        result.append("SCCSTART: " + getSCCSTART() + "||");
+        result.append("SCCINTERVAL: " + getSCCINTERVAL() + "||");
+        result.append("SCCPRIORITY: " + getSCCPRIORITY() + "||");
+        result.append("SCCSEQUENCE: " + getSCCSEQUENCE() + "||");
+        result.append("SCCACTIVE: " + getSCCACTIVE() + "||");
+        result.append("SCCAPPTYPE: " + getSCCAPPTYPE() + "||");
+        result.append("INTERFACENAME: " + getINTERFACENAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

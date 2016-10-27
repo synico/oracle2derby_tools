@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class MASSOCCECE {
-    
+
 
     private java.math.BigDecimal MASSOCCECE_ID;
     
@@ -181,5 +178,26 @@ public class MASSOCCECE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MASSOCCECE_ID: " + getMASSOCCECE_ID() + "||");
+        result.append("MASSOCTYPE_ID: " + getMASSOCTYPE_ID() + "||");
+        result.append("CATENTRY_ID_FROM: " + getCATENTRY_ID_FROM() + "||");
+        result.append("RANK: " + getRANK() + "||");
+        result.append("CATENTRY_ID_TO: " + getCATENTRY_ID_TO() + "||");
+        result.append("MASSOC_ID: " + getMASSOC_ID() + "||");
+        result.append("QUANTITY: " + getQUANTITY() + "||");
+        result.append("RULE: " + getRULE() + "||");
+        result.append("GROUPNAME: " + getGROUPNAME() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("OID: " + getOID() + "||");
+        result.append("DATE1: " + getDATE1() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

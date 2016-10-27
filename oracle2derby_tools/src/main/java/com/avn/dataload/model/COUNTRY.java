@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class COUNTRY {
-    
+
 
     private java.lang.String COUNTRYABBR;
     
@@ -60,5 +57,15 @@ public class COUNTRY {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("COUNTRYABBR: " + getCOUNTRYABBR() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("CALLINGCODE: " + getCALLINGCODE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

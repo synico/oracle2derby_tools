@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XJOBCONFIG {
-    
+
 
     private java.math.BigDecimal STOREENT_ID;
     
@@ -60,5 +57,15 @@ public class XJOBCONFIG {
         return this.STRINGVALUE;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("JOBIDENTIFIER: " + getJOBIDENTIFIER() + "||");
+        result.append("CONFIGNAME: " + getCONFIGNAME() + "||");
+        result.append("DATEVALUE: " + getDATEVALUE() + "||");
+        result.append("STRINGVALUE: " + getSTRINGVALUE() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class STGMERTAB {
-    
+
 
     private java.math.BigDecimal TABNBR;
     
@@ -49,5 +46,14 @@ public class STGMERTAB {
         return this.UPDATABLE_UK_COL;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("TABNBR: " + getTABNBR() + "||");
+        result.append("TABNAME: " + getTABNAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("UPDATABLE_UK_COL: " + getUPDATABLE_UK_COL() + "||");
+        return result.toString();
+    }
     
 }

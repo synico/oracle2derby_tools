@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class STLOC {
-    
+
 
     private java.math.BigDecimal STLOC_ID;
     
@@ -192,5 +189,27 @@ public class STLOC {
         return this.STOREENT_ID;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("STLOC_ID: " + getSTLOC_ID() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("PHONE: " + getPHONE() + "||");
+        result.append("FAX: " + getFAX() + "||");
+        result.append("ADDRESS1: " + getADDRESS1() + "||");
+        result.append("ADDRESS2: " + getADDRESS2() + "||");
+        result.append("ADDRESS3: " + getADDRESS3() + "||");
+        result.append("CITY: " + getCITY() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("COUNTRY: " + getCOUNTRY() + "||");
+        result.append("ZIPCODE: " + getZIPCODE() + "||");
+        result.append("ACTIVE: " + getACTIVE() + "||");
+        result.append("LATITUDE: " + getLATITUDE() + "||");
+        result.append("LONGITUDE: " + getLONGITUDE() + "||");
+        result.append("GEONODE_ID: " + getGEONODE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        return result.toString();
+    }
     
 }

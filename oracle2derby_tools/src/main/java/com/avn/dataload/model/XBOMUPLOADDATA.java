@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XBOMUPLOADDATA {
-    
+
 
     private java.math.BigDecimal XBOMUPLOADDATAID;
     
@@ -115,5 +112,20 @@ public class XBOMUPLOADDATA {
         return this.CUSTOMERPARTNUMBER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("XBOMUPLOADDATAID: " + getXBOMUPLOADDATAID() + "||");
+        result.append("XBOMUPLOADID: " + getXBOMUPLOADID() + "||");
+        result.append("PARTNUMBER: " + getPARTNUMBER() + "||");
+        result.append("MFNAME: " + getMFNAME() + "||");
+        result.append("QUANTITY: " + getQUANTITY() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("ROWCOUNTER: " + getROWCOUNTER() + "||");
+        result.append("CREATEDDATE: " + getCREATEDDATE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("CUSTOMERPARTNUMBER: " + getCUSTOMERPARTNUMBER() + "||");
+        return result.toString();
+    }
     
 }

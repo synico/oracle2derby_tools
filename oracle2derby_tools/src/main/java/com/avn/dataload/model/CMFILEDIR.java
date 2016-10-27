@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CMFILEDIR {
-    
+
 
     private java.math.BigDecimal CMFILEDIR_ID;
     
@@ -60,5 +57,15 @@ public class CMFILEDIR {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CMFILEDIR_ID: " + getCMFILEDIR_ID() + "||");
+        result.append("CMFILEDIR_PARENT: " + getCMFILEDIR_PARENT() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("DISPLAYNAME: " + getDISPLAYNAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

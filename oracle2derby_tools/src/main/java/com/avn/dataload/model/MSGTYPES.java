@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class MSGTYPES {
-    
+
 
     private java.math.BigDecimal MSGTYPE_ID;
     
@@ -71,5 +68,16 @@ public class MSGTYPES {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MSGTYPE_ID: " + getMSGTYPE_ID() + "||");
+        result.append("MSGTDIR: " + getMSGTDIR() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("VIEWNAME: " + getVIEWNAME() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

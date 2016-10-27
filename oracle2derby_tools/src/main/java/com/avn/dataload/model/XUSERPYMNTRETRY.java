@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XUSERPYMNTRETRY {
-    
+
 
     private java.math.BigDecimal XUSERPYMNTRETRY_ID;
     
@@ -60,5 +57,15 @@ public class XUSERPYMNTRETRY {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("XUSERPYMNTRETRY_ID: " + getXUSERPYMNTRETRY_ID() + "||");
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("FAILURE_COUNTER: " + getFAILURE_COUNTER() + "||");
+        result.append("CVVINVALID: " + getCVVINVALID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

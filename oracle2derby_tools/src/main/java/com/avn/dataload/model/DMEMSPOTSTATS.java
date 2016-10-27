@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DMEMSPOTSTATS {
-    
+
 
     private java.math.BigDecimal DMACTIVITY_ID;
     
@@ -71,5 +68,16 @@ public class DMEMSPOTSTATS {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("DMACTIVITY_ID: " + getDMACTIVITY_ID() + "||");
+        result.append("EMSPOT_ID: " + getEMSPOT_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("VIEWS: " + getVIEWS() + "||");
+        result.append("CLICKS: " + getCLICKS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

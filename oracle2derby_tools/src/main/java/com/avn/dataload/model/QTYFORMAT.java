@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class QTYFORMAT {
-    
+
 
     private java.math.BigDecimal STOREENT_ID;
     
@@ -82,5 +79,17 @@ public class QTYFORMAT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("QTYUNIT_ID: " + getQTYUNIT_ID() + "||");
+        result.append("ROUNDINGMULTIPLE: " + getROUNDINGMULTIPLE() + "||");
+        result.append("NUMBRUSG_ID: " + getNUMBRUSG_ID() + "||");
+        result.append("ROUNDINGMETHOD: " + getROUNDINGMETHOD() + "||");
+        result.append("DECIMALPLACES: " + getDECIMALPLACES() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PREQENTRYTYPE {
-    
+
 
     private java.math.BigDecimal PREQENTRYTYPE_ID;
     
@@ -60,5 +57,15 @@ public class PREQENTRYTYPE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PREQENTRYTYPE_ID: " + getPREQENTRYTYPE_ID() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("PROPERTIES: " + getPROPERTIES() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SCHACTIVE {
-    
+
 
     private java.math.BigDecimal SCSINSTREFNUM;
     
@@ -148,5 +145,23 @@ public class SCHACTIVE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SCSINSTREFNUM: " + getSCSINSTREFNUM() + "||");
+        result.append("SCSJOBNBR: " + getSCSJOBNBR() + "||");
+        result.append("SCSACTLSTART: " + getSCSACTLSTART() + "||");
+        result.append("SCSATTLEFT: " + getSCSATTLEFT() + "||");
+        result.append("SCSEND: " + getSCSEND() + "||");
+        result.append("SCSINSTRECOV: " + getSCSINSTRECOV() + "||");
+        result.append("SCSPREFSTART: " + getSCSPREFSTART() + "||");
+        result.append("SCSQUEUE: " + getSCSQUEUE() + "||");
+        result.append("SCSRESULT: " + getSCSRESULT() + "||");
+        result.append("SCSSEQUENCE: " + getSCSSEQUENCE() + "||");
+        result.append("SCSSTATE: " + getSCSSTATE() + "||");
+        result.append("SCSPRIORITY: " + getSCSPRIORITY() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

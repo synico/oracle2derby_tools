@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class X_ZFC_UPLOAD_LOG {
-    
+
 
     private java.lang.String MANDT;
     
@@ -126,5 +123,21 @@ public class X_ZFC_UPLOAD_LOG {
         return this.UPDATED_FLAG;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MANDT: " + getMANDT() + "||");
+        result.append("ZZFPA: " + getZZFPA() + "||");
+        result.append("VKORG: " + getVKORG() + "||");
+        result.append("VTWEG: " + getVTWEG() + "||");
+        result.append("ZZCMA: " + getZZCMA() + "||");
+        result.append("MATNR: " + getMATNR() + "||");
+        result.append("FCASTWEEK: " + getFCASTWEEK() + "||");
+        result.append("FCASTRECVDDATE: " + getFCASTRECVDDATE() + "||");
+        result.append("FCASTRAW: " + getFCASTRAW() + "||");
+        result.append("FCASTAMENDED: " + getFCASTAMENDED() + "||");
+        result.append("UPDATED_FLAG: " + getUPDATED_FLAG() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XROLEREQUEST {
-    
+
 
     private java.math.BigDecimal USERS_ID;
     
@@ -82,5 +79,17 @@ public class XROLEREQUEST {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("ORGANIZATION_ID: " + getORGANIZATION_ID() + "||");
+        result.append("APPROVER_ID: " + getAPPROVER_ID() + "||");
+        result.append("ROLE_ID: " + getROLE_ID() + "||");
+        result.append("MBRGRP_ID: " + getMBRGRP_ID() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

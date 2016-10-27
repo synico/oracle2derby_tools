@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PVCDEVSPEC {
-    
+
 
     private java.math.BigDecimal SPEC_ID;
     
@@ -181,5 +178,26 @@ public class PVCDEVSPEC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SPEC_ID: " + getSPEC_ID() + "||");
+        result.append("SPECNAME: " + getSPECNAME() + "||");
+        result.append("SESSIONTYPE: " + getSESSIONTYPE() + "||");
+        result.append("MAXCONTENTLENGTH: " + getMAXCONTENTLENGTH() + "||");
+        result.append("MAXURLLENGTH: " + getMAXURLLENGTH() + "||");
+        result.append("LCDWIDTH: " + getLCDWIDTH() + "||");
+        result.append("LCDHEIGHT: " + getLCDHEIGHT() + "||");
+        result.append("LCDCOLORS: " + getLCDCOLORS() + "||");
+        result.append("LCDMONOCHROME: " + getLCDMONOCHROME() + "||");
+        result.append("IMAGEFORMAT: " + getIMAGEFORMAT() + "||");
+        result.append("SOUNDFORMAT: " + getSOUNDFORMAT() + "||");
+        result.append("DOCUMENTFORMAT: " + getDOCUMENTFORMAT() + "||");
+        result.append("DOCUMENTVERSION: " + getDOCUMENTVERSION() + "||");
+        result.append("CONTENTDIR: " + getCONTENTDIR() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CATGRPREL {
-    
+
 
     private java.math.BigDecimal CATGROUP_ID_PARENT;
     
@@ -93,5 +90,18 @@ public class CATGRPREL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATGROUP_ID_PARENT: " + getCATGROUP_ID_PARENT() + "||");
+        result.append("CATGROUP_ID_CHILD: " + getCATGROUP_ID_CHILD() + "||");
+        result.append("CATALOG_ID: " + getCATALOG_ID() + "||");
+        result.append("RULE: " + getRULE() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("CATALOG_ID_LINK: " + getCATALOG_ID_LINK() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

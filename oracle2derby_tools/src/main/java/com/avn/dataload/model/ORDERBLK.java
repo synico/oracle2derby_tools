@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ORDERBLK {
-    
+
 
     private java.math.BigDecimal ORDERBLK_ID;
     
@@ -104,5 +101,19 @@ public class ORDERBLK {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ORDERBLK_ID: " + getORDERBLK_ID() + "||");
+        result.append("ORDERS_ID: " + getORDERS_ID() + "||");
+        result.append("BLKRSNCODE_ID: " + getBLKRSNCODE_ID() + "||");
+        result.append("TIMEBLOCKED: " + getTIMEBLOCKED() + "||");
+        result.append("RESOLVED: " + getRESOLVED() + "||");
+        result.append("BLKCOMMENT: " + getBLKCOMMENT() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

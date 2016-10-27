@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class POLICYCMD {
-    
+
 
     private java.math.BigDecimal POLICY_ID;
     
@@ -49,5 +46,14 @@ public class POLICYCMD {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("POLICY_ID: " + getPOLICY_ID() + "||");
+        result.append("BUSINESSCMDCLASS: " + getBUSINESSCMDCLASS() + "||");
+        result.append("PROPERTIES: " + getPROPERTIES() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

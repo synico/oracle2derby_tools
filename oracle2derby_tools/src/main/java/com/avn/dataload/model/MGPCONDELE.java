@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class MGPCONDELE {
-    
+
 
     private java.math.BigDecimal MGPCONDELE_ID;
     
@@ -137,5 +134,22 @@ public class MGPCONDELE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MGPCONDELE_ID: " + getMGPCONDELE_ID() + "||");
+        result.append("MBRGRP_ID: " + getMBRGRP_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("TYPE: " + getTYPE() + "||");
+        result.append("PARENT: " + getPARENT() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("VARIABLE: " + getVARIABLE() + "||");
+        result.append("OPERATOR: " + getOPERATOR() + "||");
+        result.append("VALUE: " + getVALUE() + "||");
+        result.append("CONDNAME: " + getCONDNAME() + "||");
+        result.append("NEGATE: " + getNEGATE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

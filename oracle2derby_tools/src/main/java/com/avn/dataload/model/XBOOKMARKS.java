@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XBOOKMARKS {
-    
+
 
     private java.math.BigDecimal BOOKMARK_ID;
     
@@ -93,5 +90,18 @@ public class XBOOKMARKS {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("BOOKMARK_ID: " + getBOOKMARK_ID() + "||");
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("ORGANIZATION_ID: " + getORGANIZATION_ID() + "||");
+        result.append("URL: " + getURL() + "||");
+        result.append("BOOKMARK_TYPE: " + getBOOKMARK_TYPE() + "||");
+        result.append("TITLE: " + getTITLE() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

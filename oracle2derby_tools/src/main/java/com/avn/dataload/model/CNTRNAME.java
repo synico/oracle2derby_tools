@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CNTRNAME {
-    
+
 
     private java.lang.String NAME;
     
@@ -49,5 +46,14 @@ public class CNTRNAME {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("NAME: " + getNAME() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("ORIGIN: " + getORIGIN() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

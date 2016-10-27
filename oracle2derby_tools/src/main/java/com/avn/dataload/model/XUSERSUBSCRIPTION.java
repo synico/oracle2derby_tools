@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XUSERSUBSCRIPTION {
-    
+
 
     private java.lang.String LOGON_ID;
     
@@ -159,5 +156,24 @@ public class XUSERSUBSCRIPTION {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("LOGON_ID: " + getLOGON_ID() + "||");
+        result.append("SUBSCRIPTION_ID: " + getSUBSCRIPTION_ID() + "||");
+        result.append("SUBSCRIBED: " + getSUBSCRIBED() + "||");
+        result.append("SYNCSTATUS: " + getSYNCSTATUS() + "||");
+        result.append("TIME_CREATED: " + getTIME_CREATED() + "||");
+        result.append("TIME_SUBSCRIBED: " + getTIME_SUBSCRIBED() + "||");
+        result.append("TIME_UNSUBSCRIBED: " + getTIME_UNSUBSCRIBED() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("LASTUPDATED: " + getLASTUPDATED() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("FIELD4: " + getFIELD4() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

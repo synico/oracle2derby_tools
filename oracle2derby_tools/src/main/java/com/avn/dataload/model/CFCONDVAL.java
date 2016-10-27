@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CFCONDVAL {
-    
+
 
     private java.math.BigDecimal CFCONDVAL_ID;
     
@@ -148,5 +145,23 @@ public class CFCONDVAL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CFCONDVAL_ID: " + getCFCONDVAL_ID() + "||");
+        result.append("CFCOND_ID: " + getCFCOND_ID() + "||");
+        result.append("ATTRVAL_ID: " + getATTRVAL_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("STRINGVALUE: " + getSTRINGVALUE() + "||");
+        result.append("INTEGERVALUE: " + getINTEGERVALUE() + "||");
+        result.append("FLOATVALUE: " + getFLOATVALUE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("FIELD4: " + getFIELD4() + "||");
+        result.append("FIELD5: " + getFIELD5() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

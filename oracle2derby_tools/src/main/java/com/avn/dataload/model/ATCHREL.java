@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ATCHREL {
-    
+
 
     private java.math.BigDecimal ATCHREL_ID;
     
@@ -104,5 +101,19 @@ public class ATCHREL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ATCHREL_ID: " + getATCHREL_ID() + "||");
+        result.append("OBJECT_ID: " + getOBJECT_ID() + "||");
+        result.append("ATCHOBJTYP_ID: " + getATCHOBJTYP_ID() + "||");
+        result.append("ATCHTGT_ID: " + getATCHTGT_ID() + "||");
+        result.append("ATCHRLUS_ID: " + getATCHRLUS_ID() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("BIGINTOBJECT_ID: " + getBIGINTOBJECT_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

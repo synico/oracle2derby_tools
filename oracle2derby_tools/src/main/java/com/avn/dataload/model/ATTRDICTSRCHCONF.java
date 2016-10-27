@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ATTRDICTSRCHCONF {
-    
+
 
     private java.math.BigDecimal ATTRDICTSRCHCNF_ID;
     
@@ -93,5 +90,18 @@ public class ATTRDICTSRCHCONF {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ATTRDICTSRCHCNF_ID: " + getATTRDICTSRCHCNF_ID() + "||");
+        result.append("MASTERCATALOG_ID: " + getMASTERCATALOG_ID() + "||");
+        result.append("SRCHFIELDNAME: " + getSRCHFIELDNAME() + "||");
+        result.append("ATTR_ID: " + getATTR_ID() + "||");
+        result.append("ATTRTYPE_ID: " + getATTRTYPE_ID() + "||");
+        result.append("TEMPTABLEPFIX: " + getTEMPTABLEPFIX() + "||");
+        result.append("SEPARATOR: " + getSEPARATOR() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

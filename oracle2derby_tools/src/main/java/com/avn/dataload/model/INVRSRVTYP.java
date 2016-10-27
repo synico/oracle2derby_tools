@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class INVRSRVTYP {
-    
+
 
     private java.math.BigDecimal INVRSRVTYP_ID;
     
@@ -27,5 +24,12 @@ public class INVRSRVTYP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("INVRSRVTYP_ID: " + getINVRSRVTYP_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

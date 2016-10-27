@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PLWIDGETDEF {
-    
+
 
     private java.math.BigDecimal PLWIDGETDEF_ID;
     
@@ -137,5 +134,22 @@ public class PLWIDGETDEF {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PLWIDGETDEF_ID: " + getPLWIDGETDEF_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("UI_OBJECT_NAME: " + getUI_OBJECT_NAME() + "||");
+        result.append("VENDOR: " + getVENDOR() + "||");
+        result.append("WIDGETTYPE: " + getWIDGETTYPE() + "||");
+        result.append("JSPPATH: " + getJSPPATH() + "||");
+        result.append("DEFINITIONXML: " + getDEFINITIONXML() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("CREATEDATE: " + getCREATEDATE() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

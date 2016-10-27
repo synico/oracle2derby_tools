@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class MBRREL {
-    
+
 
     private java.math.BigDecimal DESCENDANT_ID;
     
@@ -49,5 +46,14 @@ public class MBRREL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("DESCENDANT_ID: " + getDESCENDANT_ID() + "||");
+        result.append("ANCESTOR_ID: " + getANCESTOR_ID() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

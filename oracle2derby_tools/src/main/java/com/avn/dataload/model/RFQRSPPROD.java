@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class RFQRSPPROD {
-    
+
 
     private java.math.BigDecimal CATENTRY_ID;
     
@@ -181,5 +178,26 @@ public class RFQRSPPROD {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATENTRY_ID: " + getCATENTRY_ID() + "||");
+        result.append("RFQRSP_ID: " + getRFQRSP_ID() + "||");
+        result.append("QUANTITY: " + getQUANTITY() + "||");
+        result.append("CURRENCY: " + getCURRENCY() + "||");
+        result.append("PRICE: " + getPRICE() + "||");
+        result.append("QTYUNIT_ID: " + getQTYUNIT_ID() + "||");
+        result.append("RFQCATENTRYID: " + getRFQCATENTRYID() + "||");
+        result.append("RFQRSPPROD_ID: " + getRFQRSPPROD_ID() + "||");
+        result.append("RFQPROD_ID: " + getRFQPROD_ID() + "||");
+        result.append("SKUGENFLAG: " + getSKUGENFLAG() + "||");
+        result.append("PRICEADJUSTMENT: " + getPRICEADJUSTMENT() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("FIELD4: " + getFIELD4() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DMUSERBHVR {
-    
+
 
     private java.lang.String PERSONALIZATIONID;
     
@@ -82,5 +79,17 @@ public class DMUSERBHVR {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PERSONALIZATIONID: " + getPERSONALIZATIONID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("BEHAVIOR: " + getBEHAVIOR() + "||");
+        result.append("ACTION: " + getACTION() + "||");
+        result.append("EVENT: " + getEVENT() + "||");
+        result.append("LASTUPDATED: " + getLASTUPDATED() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

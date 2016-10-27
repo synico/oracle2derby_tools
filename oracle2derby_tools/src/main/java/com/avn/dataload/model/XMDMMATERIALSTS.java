@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XMDMMATERIALSTS {
-    
+
 
     private java.lang.String MDMMATERIALNUMBER;
     
@@ -49,5 +46,14 @@ public class XMDMMATERIALSTS {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MDMMATERIALNUMBER: " + getMDMMATERIALNUMBER() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

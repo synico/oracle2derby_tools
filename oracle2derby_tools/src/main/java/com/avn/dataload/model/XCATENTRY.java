@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XCATENTRY {
-    
+
 
     private java.math.BigDecimal CATENTRY_ID;
     
@@ -676,5 +673,71 @@ public class XCATENTRY {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATENTRY_ID: " + getCATENTRY_ID() + "||");
+        result.append("MFCODE: " + getMFCODE() + "||");
+        result.append("SUPPLIERCODE: " + getSUPPLIERCODE() + "||");
+        result.append("DIVISIONCODE: " + getDIVISIONCODE() + "||");
+        result.append("SUPPLIERPARTNUMBER: " + getSUPPLIERPARTNUMBER() + "||");
+        result.append("AVNETPARTNUMBER: " + getAVNETPARTNUMBER() + "||");
+        result.append("ERPPARTNUMBER: " + getERPPARTNUMBER() + "||");
+        result.append("ERP_TAXONOMY_LEVEL_1_NM: " + getERP_TAXONOMY_LEVEL_1_NM() + "||");
+        result.append("ERP_TAXONOMY_LEVEL_2_NM: " + getERP_TAXONOMY_LEVEL_2_NM() + "||");
+        result.append("ERP_TAXONOMY_LEVEL_3_NM: " + getERP_TAXONOMY_LEVEL_3_NM() + "||");
+        result.append("ERP_TAXONOMY_LEVEL_4_NM: " + getERP_TAXONOMY_LEVEL_4_NM() + "||");
+        result.append("SAPMATGROUP: " + getSAPMATGROUP() + "||");
+        result.append("ABC_CD_01: " + getABC_CD_01() + "||");
+        result.append("ABC_CD_02: " + getABC_CD_02() + "||");
+        result.append("ABC_CD_03: " + getABC_CD_03() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("FIELD4: " + getFIELD4() + "||");
+        result.append("FIELD5: " + getFIELD5() + "||");
+        result.append("FIELD6: " + getFIELD6() + "||");
+        result.append("FIELD7: " + getFIELD7() + "||");
+        result.append("FIELD8: " + getFIELD8() + "||");
+        result.append("MDMMATERIALNUMBER: " + getMDMMATERIALNUMBER() + "||");
+        result.append("ACTIVEDATE: " + getACTIVEDATE() + "||");
+        result.append("ALLOCATIONFLAG: " + getALLOCATIONFLAG() + "||");
+        result.append("BUYABLE: " + getBUYABLE() + "||");
+        result.append("CUSTOMREELFLAG: " + getCUSTOMREELFLAG() + "||");
+        result.append("DEFAULTPLANT: " + getDEFAULTPLANT() + "||");
+        result.append("DESIGNWINFLAG: " + getDESIGNWINFLAG() + "||");
+        result.append("DISPLAYPART: " + getDISPLAYPART() + "||");
+        result.append("DOWNLOADFLAG: " + getDOWNLOADFLAG() + "||");
+        result.append("ECCNCODE: " + getECCNCODE() + "||");
+        result.append("ENDOFLIFE: " + getENDOFLIFE() + "||");
+        result.append("EXISTSINSAP: " + getEXISTSINSAP() + "||");
+        result.append("HTSCODE: " + getHTSCODE() + "||");
+        result.append("ISASOFTWAREFLAG: " + getISASOFTWAREFLAG() + "||");
+        result.append("ISSOFTWAREANDISDOWNLOADABLE: " + getISSOFTWAREANDISDOWNLOADABLE() + "||");
+        result.append("MILITARYPRODUCTFLAG: " + getMILITARYPRODUCTFLAG() + "||");
+        result.append("NCNRFLAG: " + getNCNRFLAG() + "||");
+        result.append("OBSOLETEDATE: " + getOBSOLETEDATE() + "||");
+        result.append("OBSOLETEFLAG: " + getOBSOLETEFLAG() + "||");
+        result.append("PACKAGETYPECODE: " + getPACKAGETYPECODE() + "||");
+        result.append("ROHSCOMPLIANCECODE: " + getROHSCOMPLIANCECODE() + "||");
+        result.append("SALESORG: " + getSALESORG() + "||");
+        result.append("SCHEDULABLEFLAG: " + getSCHEDULABLEFLAG() + "||");
+        result.append("SCHEDULEBCODE: " + getSCHEDULEBCODE() + "||");
+        result.append("SUPPLIERSTOCKFLAG: " + getSUPPLIERSTOCKFLAG() + "||");
+        result.append("TOPSELLERFLAG: " + getTOPSELLERFLAG() + "||");
+        result.append("WEBONLYFLAG: " + getWEBONLYFLAG() + "||");
+        result.append("REDTAGFLAG: " + getREDTAGFLAG() + "||");
+        result.append("DISPLAYABLE: " + getDISPLAYABLE() + "||");
+        result.append("WEBBUYABLE: " + getWEBBUYABLE() + "||");
+        result.append("ERPCOREPARTNUMBER: " + getERPCOREPARTNUMBER() + "||");
+        result.append("DISPLAYINVENTORY: " + getDISPLAYINVENTORY() + "||");
+        result.append("FIELD9: " + getFIELD9() + "||");
+        result.append("FIELD10: " + getFIELD10() + "||");
+        result.append("FIELD11: " + getFIELD11() + "||");
+        result.append("FIELD12: " + getFIELD12() + "||");
+        result.append("FIELD13: " + getFIELD13() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

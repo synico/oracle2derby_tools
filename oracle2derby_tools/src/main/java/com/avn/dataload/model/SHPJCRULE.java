@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SHPJCRULE {
-    
+
 
     private java.math.BigDecimal CALRULE_ID;
     
@@ -82,5 +79,17 @@ public class SHPJCRULE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CALRULE_ID: " + getCALRULE_ID() + "||");
+        result.append("SHPJCRULE_ID: " + getSHPJCRULE_ID() + "||");
+        result.append("FFMCENTER_ID: " + getFFMCENTER_ID() + "||");
+        result.append("JURSTGROUP_ID: " + getJURSTGROUP_ID() + "||");
+        result.append("PRECEDENCE: " + getPRECEDENCE() + "||");
+        result.append("SHIPMODE_ID: " + getSHIPMODE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

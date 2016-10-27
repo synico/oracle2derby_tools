@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XMSG {
-    
+
 
     private java.math.BigDecimal XMSG_ID;
     
@@ -137,5 +134,22 @@ public class XMSG {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("XMSG_ID: " + getXMSG_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("ENTITY_ID: " + getENTITY_ID() + "||");
+        result.append("ENTITY_TYPE: " + getENTITY_TYPE() + "||");
+        result.append("REQUEST: " + getREQUEST() + "||");
+        result.append("RESPONSE: " + getRESPONSE() + "||");
+        result.append("LAST_UPDATE: " + getLAST_UPDATE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("FIELD4: " + getFIELD4() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

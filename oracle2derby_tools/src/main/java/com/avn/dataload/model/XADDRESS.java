@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XADDRESS {
-    
+
 
     private java.math.BigDecimal ADDRESS_ID;
     
@@ -203,5 +200,28 @@ public class XADDRESS {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ADDRESS_ID: " + getADDRESS_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("ADDRESSTYPE: " + getADDRESSTYPE() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("SELFADDRESS: " + getSELFADDRESS() + "||");
+        result.append("FIRSTNAME: " + getFIRSTNAME() + "||");
+        result.append("LASTNAME: " + getLASTNAME() + "||");
+        result.append("ADDRESS1: " + getADDRESS1() + "||");
+        result.append("ADDRESS2: " + getADDRESS2() + "||");
+        result.append("ADDRESS3: " + getADDRESS3() + "||");
+        result.append("CITY: " + getCITY() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("COUNTRY: " + getCOUNTRY() + "||");
+        result.append("ZIPCODE: " + getZIPCODE() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

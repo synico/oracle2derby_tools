@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class FLOW {
-    
+
 
     private java.math.BigDecimal FLOW_ID;
     
@@ -82,5 +79,17 @@ public class FLOW {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("FLOW_ID: " + getFLOW_ID() + "||");
+        result.append("FLOWTYPE_ID: " + getFLOWTYPE_ID() + "||");
+        result.append("COMPOSITEFLOW: " + getCOMPOSITEFLOW() + "||");
+        result.append("ATTRIBUTE: " + getATTRIBUTE() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("PRIORITY: " + getPRIORITY() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

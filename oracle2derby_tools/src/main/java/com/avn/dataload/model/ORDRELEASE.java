@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ORDRELEASE {
-    
+
 
     private java.math.BigDecimal ORDRELEASENUM;
     
@@ -247,5 +244,32 @@ public class ORDRELEASE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ORDRELEASENUM: " + getORDRELEASENUM() + "||");
+        result.append("ORDERS_ID: " + getORDERS_ID() + "||");
+        result.append("FFMACKNOWLEDGEMENT: " + getFFMACKNOWLEDGEMENT() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("CUSTOMERCONFIRM: " + getCUSTOMERCONFIRM() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("PICKBATCH_ID: " + getPICKBATCH_ID() + "||");
+        result.append("TIMEPLACED: " + getTIMEPLACED() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("PACKSLIPXML: " + getPACKSLIPXML() + "||");
+        result.append("CAPTUREDATE: " + getCAPTUREDATE() + "||");
+        result.append("EXTORDNUM: " + getEXTORDNUM() + "||");
+        result.append("EXTREF: " + getEXTREF() + "||");
+        result.append("FFMCENTER_ID: " + getFFMCENTER_ID() + "||");
+        result.append("ISEXPEDITED: " + getISEXPEDITED() + "||");
+        result.append("SHIPMODE_ID: " + getSHIPMODE_ID() + "||");
+        result.append("ADDRESS_ID: " + getADDRESS_ID() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

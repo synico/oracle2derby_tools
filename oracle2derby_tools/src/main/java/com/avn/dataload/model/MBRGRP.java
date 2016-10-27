@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class MBRGRP {
-    
+
 
     private java.math.BigDecimal MBRGRP_ID;
     
@@ -137,5 +134,22 @@ public class MBRGRP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MBRGRP_ID: " + getMBRGRP_ID() + "||");
+        result.append("OWNER_ID: " + getOWNER_ID() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("DN: " + getDN() + "||");
+        result.append("MBRGRPNAME: " + getMBRGRPNAME() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("OID: " + getOID() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("LASTUPDATEDBY: " + getLASTUPDATEDBY() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

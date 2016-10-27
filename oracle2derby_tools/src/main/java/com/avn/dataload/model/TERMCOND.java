@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class TERMCOND {
-    
+
 
     private java.math.BigDecimal TERMCOND_ID;
     
@@ -302,5 +299,37 @@ public class TERMCOND {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("TERMCOND_ID: " + getTERMCOND_ID() + "||");
+        result.append("TCSUBTYPE_ID: " + getTCSUBTYPE_ID() + "||");
+        result.append("TRADING_ID: " + getTRADING_ID() + "||");
+        result.append("MANDATORY: " + getMANDATORY() + "||");
+        result.append("CHANGEABLE: " + getCHANGEABLE() + "||");
+        result.append("TIMECREATED: " + getTIMECREATED() + "||");
+        result.append("TIMEUPDATED: " + getTIMEUPDATED() + "||");
+        result.append("STRINGFIELD1: " + getSTRINGFIELD1() + "||");
+        result.append("STRINGFIELD2: " + getSTRINGFIELD2() + "||");
+        result.append("STRINGFIELD3: " + getSTRINGFIELD3() + "||");
+        result.append("INTEGERFIELD1: " + getINTEGERFIELD1() + "||");
+        result.append("INTEGERFIELD2: " + getINTEGERFIELD2() + "||");
+        result.append("INTEGERFIELD3: " + getINTEGERFIELD3() + "||");
+        result.append("BIGINTFIELD1: " + getBIGINTFIELD1() + "||");
+        result.append("BIGINTFIELD2: " + getBIGINTFIELD2() + "||");
+        result.append("BIGINTFIELD3: " + getBIGINTFIELD3() + "||");
+        result.append("FLOATFIELD1: " + getFLOATFIELD1() + "||");
+        result.append("FLOATFIELD2: " + getFLOATFIELD2() + "||");
+        result.append("FLOATFIELD3: " + getFLOATFIELD3() + "||");
+        result.append("TIMEFIELD1: " + getTIMEFIELD1() + "||");
+        result.append("TIMEFIELD2: " + getTIMEFIELD2() + "||");
+        result.append("DECIMALFIELD1: " + getDECIMALFIELD1() + "||");
+        result.append("DECIMALFIELD2: " + getDECIMALFIELD2() + "||");
+        result.append("TIMEFIELD3: " + getTIMEFIELD3() + "||");
+        result.append("DECIMALFIELD3: " + getDECIMALFIELD3() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class EDPPAYHIST {
-    
+
 
     private java.math.BigDecimal EDPPAYHIST_ID;
     
@@ -203,5 +200,28 @@ public class EDPPAYHIST {
         return this.FIELD3;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("EDPPAYHIST_ID: " + getEDPPAYHIST_ID() + "||");
+        result.append("ORDER_ID: " + getORDER_ID() + "||");
+        result.append("RMA_ID: " + getRMA_ID() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("HISTTIMESTAMP: " + getHISTTIMESTAMP() + "||");
+        result.append("AMOUNT: " + getAMOUNT() + "||");
+        result.append("OPERATIONNAME: " + getOPERATIONNAME() + "||");
+        result.append("OPERATIONRESULT: " + getOPERATIONRESULT() + "||");
+        result.append("READABLESTATUS: " + getREADABLESTATUS() + "||");
+        result.append("RECORDTYPE: " + getRECORDTYPE() + "||");
+        result.append("BACKENDPIID: " + getBACKENDPIID() + "||");
+        result.append("BACKENDPAYMENTID: " + getBACKENDPAYMENTID() + "||");
+        result.append("ACCOUNT: " + getACCOUNT() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("EDPPAYINST_ID: " + getEDPPAYINST_ID() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        return result.toString();
+    }
     
 }

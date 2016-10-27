@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DSR_SALES_ORDER_SUBSET1 {
-    
+
 
     private java.lang.String SCN;
     
@@ -269,5 +266,34 @@ public class DSR_SALES_ORDER_SUBSET1 {
         return this.WCS_ORDER_ID;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SCN: " + getSCN() + "||");
+        result.append("LINE_ITEM_NBR: " + getLINE_ITEM_NBR() + "||");
+        result.append("CREATE_DT: " + getCREATE_DT() + "||");
+        result.append("UPDATE_DT: " + getUPDATE_DT() + "||");
+        result.append("LAST_UPDATE_ACTION: " + getLAST_UPDATE_ACTION() + "||");
+        result.append("BUYER_NAME: " + getBUYER_NAME() + "||");
+        result.append("CONDITION_CD: " + getCONDITION_CD() + "||");
+        result.append("CUST_PART_NBR: " + getCUST_PART_NBR() + "||");
+        result.append("CUST_PO_ID: " + getCUST_PO_ID() + "||");
+        result.append("MFG_CD: " + getMFG_CD() + "||");
+        result.append("ORDER_DT: " + getORDER_DT() + "||");
+        result.append("PART_NBR: " + getPART_NBR() + "||");
+        result.append("RELEASE_ID: " + getRELEASE_ID() + "||");
+        result.append("REQD_DELV_DT: " + getREQD_DELV_DT() + "||");
+        result.append("SHIPPER_PROG_NBR: " + getSHIPPER_PROG_NBR() + "||");
+        result.append("SHIPTO_CUST_NBR: " + getSHIPTO_CUST_NBR() + "||");
+        result.append("STATUS_CD: " + getSTATUS_CD() + "||");
+        result.append("SUPPLIER_ID: " + getSUPPLIER_ID() + "||");
+        result.append("SUPPLIER_PART_NBR: " + getSUPPLIER_PART_NBR() + "||");
+        result.append("SUPPLIER_SHORT_NM: " + getSUPPLIER_SHORT_NM() + "||");
+        result.append("STATUS_TX: " + getSTATUS_TX() + "||");
+        result.append("AVNET_ERP_NM: " + getAVNET_ERP_NM() + "||");
+        result.append("PROMISED_DELV_DT: " + getPROMISED_DELV_DT() + "||");
+        result.append("WCS_ORDER_ID: " + getWCS_ORDER_ID() + "||");
+        return result.toString();
+    }
     
 }

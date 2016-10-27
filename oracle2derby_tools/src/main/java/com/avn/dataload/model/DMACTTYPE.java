@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DMACTTYPE {
-    
+
 
     private java.math.BigDecimal DMACTTYPE_ID;
     
@@ -49,5 +46,14 @@ public class DMACTTYPE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("DMACTTYPE_ID: " + getDMACTTYPE_ID() + "||");
+        result.append("TYPE: " + getTYPE() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CLSATTRSRCHCONF {
-    
+
 
     private java.math.BigDecimal CLSATTRSRCHCONF_ID;
     
@@ -104,5 +101,19 @@ public class CLSATTRSRCHCONF {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CLSATTRSRCHCONF_ID: " + getCLSATTRSRCHCONF_ID() + "||");
+        result.append("MASTERCATALOG_ID: " + getMASTERCATALOG_ID() + "||");
+        result.append("SRCHFIELDNAME: " + getSRCHFIELDNAME() + "||");
+        result.append("ATTRNAME: " + getATTRNAME() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("ATTRTYPE_ID: " + getATTRTYPE_ID() + "||");
+        result.append("TEMPTABLEPFIX: " + getTEMPTABLEPFIX() + "||");
+        result.append("SEPARATOR: " + getSEPARATOR() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

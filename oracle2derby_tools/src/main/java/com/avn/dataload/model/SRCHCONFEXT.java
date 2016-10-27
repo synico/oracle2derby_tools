@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SRCHCONFEXT {
-    
+
 
     private java.math.BigDecimal SRCHCONFEXT_ID;
     
@@ -82,5 +79,17 @@ public class SRCHCONFEXT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SRCHCONFEXT_ID: " + getSRCHCONFEXT_ID() + "||");
+        result.append("INDEXTYPE: " + getINDEXTYPE() + "||");
+        result.append("INDEXSCOPE: " + getINDEXSCOPE() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("INDEXSUBTYPE: " + getINDEXSUBTYPE() + "||");
+        result.append("CONFIG: " + getCONFIG() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class POLICYTC {
-    
+
 
     private java.math.BigDecimal TERMCOND_ID;
     
@@ -38,5 +35,13 @@ public class POLICYTC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("TERMCOND_ID: " + getTERMCOND_ID() + "||");
+        result.append("POLICY_ID: " + getPOLICY_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

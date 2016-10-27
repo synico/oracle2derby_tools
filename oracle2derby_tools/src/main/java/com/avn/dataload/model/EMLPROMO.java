@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class EMLPROMO {
-    
+
 
     private java.math.BigDecimal EMLPROMO_ID;
     
@@ -126,5 +123,21 @@ public class EMLPROMO {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("EMLPROMO_ID: " + getEMLPROMO_ID() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("MODIFIEDBY: " + getMODIFIEDBY() + "||");
+        result.append("MODDATE: " + getMODDATE() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("EMLMSG_ID: " + getEMLMSG_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("SCCJOBREFNUM: " + getSCCJOBREFNUM() + "||");
+        result.append("REPLYTO: " + getREPLYTO() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

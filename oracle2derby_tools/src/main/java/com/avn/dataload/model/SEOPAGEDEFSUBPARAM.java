@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SEOPAGEDEFSUBPARAM {
-    
+
 
     private java.lang.String SUBPARAMNAME;
     
@@ -60,5 +57,15 @@ public class SEOPAGEDEFSUBPARAM {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SUBPARAMNAME: " + getSUBPARAMNAME() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("ADMINDESC: " + getADMINDESC() + "||");
+        result.append("CLASSNAME: " + getCLASSNAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

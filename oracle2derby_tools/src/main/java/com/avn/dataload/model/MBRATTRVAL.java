@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class MBRATTRVAL {
-    
+
 
     private java.math.BigDecimal MBRATTRVAL_ID;
     
@@ -115,5 +112,20 @@ public class MBRATTRVAL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MBRATTRVAL_ID: " + getMBRATTRVAL_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("ATTRTYPE_ID: " + getATTRTYPE_ID() + "||");
+        result.append("MBRATTR_ID: " + getMBRATTR_ID() + "||");
+        result.append("FLOATVALUE: " + getFLOATVALUE() + "||");
+        result.append("INTEGERVALUE: " + getINTEGERVALUE() + "||");
+        result.append("STRINGVALUE: " + getSTRINGVALUE() + "||");
+        result.append("DATETIMEVALUE: " + getDATETIMEVALUE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

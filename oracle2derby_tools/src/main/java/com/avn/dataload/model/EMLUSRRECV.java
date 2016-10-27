@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class EMLUSRRECV {
-    
+
 
     private java.math.BigDecimal USERS_ID;
     
@@ -60,5 +57,15 @@ public class EMLUSRRECV {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("RECEIVEEML: " + getRECEIVEEML() + "||");
+        result.append("RECEIVESMS: " + getRECEIVESMS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

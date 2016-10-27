@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CATENTDESC {
-    
+
 
     private java.math.BigDecimal CATENTRY_ID;
     
@@ -170,5 +167,25 @@ public class CATENTDESC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATENTRY_ID: " + getCATENTRY_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("SHORTDESCRIPTION: " + getSHORTDESCRIPTION() + "||");
+        result.append("LONGDESCRIPTION: " + getLONGDESCRIPTION() + "||");
+        result.append("THUMBNAIL: " + getTHUMBNAIL() + "||");
+        result.append("AUXDESCRIPTION1: " + getAUXDESCRIPTION1() + "||");
+        result.append("FULLIMAGE: " + getFULLIMAGE() + "||");
+        result.append("AUXDESCRIPTION2: " + getAUXDESCRIPTION2() + "||");
+        result.append("XMLDETAIL: " + getXMLDETAIL() + "||");
+        result.append("AVAILABLE: " + getAVAILABLE() + "||");
+        result.append("PUBLISHED: " + getPUBLISHED() + "||");
+        result.append("AVAILABILITYDATE: " + getAVAILABILITYDATE() + "||");
+        result.append("KEYWORD: " + getKEYWORD() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

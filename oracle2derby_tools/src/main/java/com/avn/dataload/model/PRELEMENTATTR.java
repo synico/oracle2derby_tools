@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PRELEMENTATTR {
-    
+
 
     private java.math.BigDecimal PRELEMENT_ID;
     
@@ -71,5 +68,16 @@ public class PRELEMENTATTR {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PRELEMENT_ID: " + getPRELEMENT_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("VALUE: " + getVALUE() + "||");
+        result.append("PROPERTIES: " + getPROPERTIES() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

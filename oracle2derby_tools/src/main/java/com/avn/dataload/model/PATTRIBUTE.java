@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PATTRIBUTE {
-    
+
 
     private java.math.BigDecimal PATTRIBUTE_ID;
     
@@ -82,5 +79,17 @@ public class PATTRIBUTE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PATTRIBUTE_ID: " + getPATTRIBUTE_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("ATTRTYPE_ID: " + getATTRTYPE_ID() + "||");
+        result.append("ACCESSBEANNAME: " + getACCESSBEANNAME() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("ENCRYPTFLAG: " + getENCRYPTFLAG() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

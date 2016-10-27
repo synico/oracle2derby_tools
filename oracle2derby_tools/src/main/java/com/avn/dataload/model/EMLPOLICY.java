@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class EMLPOLICY {
-    
+
 
     private java.math.BigDecimal EMLPOLICY_ID;
     
@@ -49,5 +46,14 @@ public class EMLPOLICY {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("EMLPOLICY_ID: " + getEMLPOLICY_ID() + "||");
+        result.append("NUMRETRIES: " + getNUMRETRIES() + "||");
+        result.append("INTERVAL: " + getINTERVAL() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -3,18 +3,20 @@ package com.avn.dataload.model.rowmapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import org.springframework.jdbc.core.RowMapper;
 
 import com.avn.dataload.model.STLOC;
 
 public class STLOCRowMapper<T> implements RowMapper<STLOC> {
 
+    private static final Logger log = Logger.getLogger(STLOCRowMapper.class);
+
 	@Override
 	public STLOC mapRow(ResultSet rs, int rowNum) throws SQLException {
 		STLOC obj = new STLOC();
 		
-		obj.setOPTCOUNTER(rs.getBigDecimal("OPTCOUNTER"));
-		obj.setSTATE(rs.getString("STATE"));
 		obj.setADDRESS1(rs.getString("ADDRESS1"));
 		obj.setADDRESS2(rs.getString("ADDRESS2"));
 		obj.setADDRESS3(rs.getString("ADDRESS3"));
@@ -23,6 +25,8 @@ public class STLOCRowMapper<T> implements RowMapper<STLOC> {
 		obj.setZIPCODE(rs.getString("ZIPCODE"));
 		obj.setIDENTIFIER(rs.getString("IDENTIFIER"));
 		obj.setSTOREENT_ID(rs.getBigDecimal("STOREENT_ID"));
+		obj.setOPTCOUNTER(rs.getBigDecimal("OPTCOUNTER"));
+		obj.setSTATE(rs.getString("STATE"));
 		obj.setSTLOC_ID(rs.getBigDecimal("STLOC_ID"));
 		obj.setPHONE(rs.getString("PHONE"));
 		obj.setFAX(rs.getString("FAX"));
@@ -30,6 +34,8 @@ public class STLOCRowMapper<T> implements RowMapper<STLOC> {
 		obj.setLATITUDE(rs.getBigDecimal("LATITUDE"));
 		obj.setLONGITUDE(rs.getBigDecimal("LONGITUDE"));
 		obj.setGEONODE_ID(rs.getBigDecimal("GEONODE_ID"));
+		
+		log.debug("Value of obj: " + obj.toString());
 		
 		return obj;
 	}

@@ -110,8 +110,8 @@ public class DerbyTools {
     }
 
     public static void main(String[] args) {
-//        dropIdxTempTable();
-        compressTables();
+        dropIdxTempTable();
+//        compressTables();
     }
 
 }

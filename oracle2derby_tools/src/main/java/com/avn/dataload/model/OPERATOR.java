@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class OPERATOR {
-    
+
 
     private java.math.BigDecimal OPERATOR_ID;
     
@@ -49,5 +46,14 @@ public class OPERATOR {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("OPERATOR_ID: " + getOPERATOR_ID() + "||");
+        result.append("OPERATOR: " + getOPERATOR() + "||");
+        result.append("OPERATORTYPE: " + getOPERATORTYPE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

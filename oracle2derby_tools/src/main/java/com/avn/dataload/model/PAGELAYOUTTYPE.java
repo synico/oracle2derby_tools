@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PAGELAYOUTTYPE {
-    
+
 
     private java.lang.String PAGELAYOUTTYPE_ID;
     
@@ -38,5 +35,13 @@ public class PAGELAYOUTTYPE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PAGELAYOUTTYPE_ID: " + getPAGELAYOUTTYPE_ID() + "||");
+        result.append("ISSTATIC: " + getISSTATIC() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

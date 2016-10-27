@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class STOREENTDS {
-    
+
 
     private java.math.BigDecimal LANGUAGE_ID;
     
@@ -82,5 +79,17 @@ public class STOREENTDS {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("DISPLAYNAME: " + getDISPLAYNAME() + "||");
+        result.append("STADDRESS_ID_LOC: " + getSTADDRESS_ID_LOC() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("STADDRESS_ID_CONT: " + getSTADDRESS_ID_CONT() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

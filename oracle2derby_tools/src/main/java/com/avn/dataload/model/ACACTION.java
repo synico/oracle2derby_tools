@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ACACTION {
-    
+
 
     private java.math.BigDecimal ACACTION_ID;
     
@@ -38,5 +35,13 @@ public class ACACTION {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ACACTION_ID: " + getACACTION_ID() + "||");
+        result.append("ACTION: " + getACTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

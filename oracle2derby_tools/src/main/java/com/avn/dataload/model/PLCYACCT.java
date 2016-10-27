@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PLCYACCT {
-    
+
 
     private java.math.BigDecimal PLCYACCT_ID;
     
@@ -49,5 +46,14 @@ public class PLCYACCT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PLCYACCT_ID: " + getPLCYACCT_ID() + "||");
+        result.append("PLCYACCLCK_ID: " + getPLCYACCLCK_ID() + "||");
+        result.append("PLCYPASSWD_ID: " + getPLCYPASSWD_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

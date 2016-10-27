@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ORDERITEMS {
-    
+
 
     private java.math.BigDecimal ORDERITEMS_ID;
     
@@ -643,5 +640,68 @@ public class ORDERITEMS {
         return this.TIECODE;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ORDERITEMS_ID: " + getORDERITEMS_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("ORDERS_ID: " + getORDERS_ID() + "||");
+        result.append("TERMCOND_ID: " + getTERMCOND_ID() + "||");
+        result.append("TRADING_ID: " + getTRADING_ID() + "||");
+        result.append("ITEMSPC_ID: " + getITEMSPC_ID() + "||");
+        result.append("CATENTRY_ID: " + getCATENTRY_ID() + "||");
+        result.append("PARTNUM: " + getPARTNUM() + "||");
+        result.append("SHIPMODE_ID: " + getSHIPMODE_ID() + "||");
+        result.append("FFMCENTER_ID: " + getFFMCENTER_ID() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("ADDRESS_ID: " + getADDRESS_ID() + "||");
+        result.append("ALLOCADDRESS_ID: " + getALLOCADDRESS_ID() + "||");
+        result.append("PRICE: " + getPRICE() + "||");
+        result.append("LINEITEMTYPE: " + getLINEITEMTYPE() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("OUTPUTQ_ID: " + getOUTPUTQ_ID() + "||");
+        result.append("INVENTORYSTATUS: " + getINVENTORYSTATUS() + "||");
+        result.append("LASTCREATE: " + getLASTCREATE() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("FULFILLMENTSTATUS: " + getFULFILLMENTSTATUS() + "||");
+        result.append("LASTALLOCUPDATE: " + getLASTALLOCUPDATE() + "||");
+        result.append("OFFER_ID: " + getOFFER_ID() + "||");
+        result.append("TIMERELEASED: " + getTIMERELEASED() + "||");
+        result.append("TIMESHIPPED: " + getTIMESHIPPED() + "||");
+        result.append("CURRENCY: " + getCURRENCY() + "||");
+        result.append("COMMENTS: " + getCOMMENTS() + "||");
+        result.append("TOTALPRODUCT: " + getTOTALPRODUCT() + "||");
+        result.append("QUANTITY: " + getQUANTITY() + "||");
+        result.append("TAXAMOUNT: " + getTAXAMOUNT() + "||");
+        result.append("TOTALADJUSTMENT: " + getTOTALADJUSTMENT() + "||");
+        result.append("SHIPTAXAMOUNT: " + getSHIPTAXAMOUNT() + "||");
+        result.append("ESTAVAILTIME: " + getESTAVAILTIME() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("ALLOCATIONGROUP: " + getALLOCATIONGROUP() + "||");
+        result.append("SHIPCHARGE: " + getSHIPCHARGE() + "||");
+        result.append("BASEPRICE: " + getBASEPRICE() + "||");
+        result.append("BASECURRENCY: " + getBASECURRENCY() + "||");
+        result.append("TRACKNUMBER: " + getTRACKNUMBER() + "||");
+        result.append("TRACKDATE: " + getTRACKDATE() + "||");
+        result.append("PREPAREFLAGS: " + getPREPAREFLAGS() + "||");
+        result.append("CORRELATIONGROUP: " + getCORRELATIONGROUP() + "||");
+        result.append("PROMISEDAVAILTIME: " + getPROMISEDAVAILTIME() + "||");
+        result.append("SHIPPINGOFFSET: " + getSHIPPINGOFFSET() + "||");
+        result.append("NEEDEDQUANTITY: " + getNEEDEDQUANTITY() + "||");
+        result.append("ALLOCQUANTITY: " + getALLOCQUANTITY() + "||");
+        result.append("ALLOCFFMC_ID: " + getALLOCFFMC_ID() + "||");
+        result.append("ORDRELEASENUM: " + getORDRELEASENUM() + "||");
+        result.append("CONFIGURATIONID: " + getCONFIGURATIONID() + "||");
+        result.append("SUPPLIERDATA: " + getSUPPLIERDATA() + "||");
+        result.append("SUPPLIERPARTNUMBER: " + getSUPPLIERPARTNUMBER() + "||");
+        result.append("AVAILQUANTITY: " + getAVAILQUANTITY() + "||");
+        result.append("ISEXPEDITED: " + getISEXPEDITED() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("REQUESTEDSHIPDATE: " + getREQUESTEDSHIPDATE() + "||");
+        result.append("TIECODE: " + getTIECODE() + "||");
+        return result.toString();
+    }
     
 }

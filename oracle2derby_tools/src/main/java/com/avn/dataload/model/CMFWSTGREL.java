@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CMFWSTGREL {
-    
+
 
     private java.math.BigDecimal CMFWKSPC_ID;
     
@@ -38,5 +35,13 @@ public class CMFWSTGREL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CMFWKSPC_ID: " + getCMFWKSPC_ID() + "||");
+        result.append("CMFTASKGRP_ID: " + getCMFTASKGRP_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

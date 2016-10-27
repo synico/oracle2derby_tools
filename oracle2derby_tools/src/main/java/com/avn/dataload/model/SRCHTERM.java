@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SRCHTERM {
-    
+
 
     private java.math.BigDecimal SRCHTERMASSOC_ID;
     
@@ -49,5 +46,14 @@ public class SRCHTERM {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SRCHTERMASSOC_ID: " + getSRCHTERMASSOC_ID() + "||");
+        result.append("TYPE: " + getTYPE() + "||");
+        result.append("TERM: " + getTERM() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

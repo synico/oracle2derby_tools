@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CMFTASKGRP {
-    
+
 
     private java.math.BigDecimal CMFTASKGRP_ID;
     
@@ -126,5 +123,21 @@ public class CMFTASKGRP {
         return this.COMMITDATE;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CMFTASKGRP_ID: " + getCMFTASKGRP_ID() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("APPROVEDATE: " + getAPPROVEDATE() + "||");
+        result.append("DUEDATE: " + getDUEDATE() + "||");
+        result.append("PROMOTIONDATE: " + getPROMOTIONDATE() + "||");
+        result.append("PERSISTENTYPE: " + getPERSISTENTYPE() + "||");
+        result.append("TEMPLATETYPE: " + getTEMPLATETYPE() + "||");
+        result.append("QUICKPUBLISHTYPE: " + getQUICKPUBLISHTYPE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("COMMITDATE: " + getCOMMITDATE() + "||");
+        return result.toString();
+    }
     
 }

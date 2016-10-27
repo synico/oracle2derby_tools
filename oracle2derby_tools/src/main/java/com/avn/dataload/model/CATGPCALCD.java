@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CATGPCALCD {
-    
+
 
     private java.math.BigDecimal STORE_ID;
     
@@ -82,5 +79,17 @@ public class CATGPCALCD {
         return this.CALFLAGS;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("CATGPCALCD_ID: " + getCATGPCALCD_ID() + "||");
+        result.append("TRADING_ID: " + getTRADING_ID() + "||");
+        result.append("CATGROUP_ID: " + getCATGROUP_ID() + "||");
+        result.append("CALCODE_ID: " + getCALCODE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("CALFLAGS: " + getCALFLAGS() + "||");
+        return result.toString();
+    }
     
 }

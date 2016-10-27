@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PX_COUPON {
-    
+
 
     private java.math.BigDecimal PX_COUPON_ID;
     
@@ -137,5 +134,22 @@ public class PX_COUPON {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PX_COUPON_ID: " + getPX_COUPON_ID() + "||");
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("VERSION: " + getVERSION() + "||");
+        result.append("EFFECTIVE: " + getEFFECTIVE() + "||");
+        result.append("EXPIRE: " + getEXPIRE() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("ORDERS_ID: " + getORDERS_ID() + "||");
+        result.append("GUESTID: " + getGUESTID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("CODE: " + getCODE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

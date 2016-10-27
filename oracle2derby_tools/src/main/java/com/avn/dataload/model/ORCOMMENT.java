@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ORCOMMENT {
-    
+
 
     private java.math.BigDecimal ORCOMMENT_ID;
     
@@ -137,5 +134,22 @@ public class ORCOMMENT {
         return this.FIELD3;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ORCOMMENT_ID: " + getORCOMMENT_ID() + "||");
+        result.append("ORDERS_ID: " + getORDERS_ID() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("COMMENTS: " + getCOMMENTS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("ORDCHGRSN_ID: " + getORDCHGRSN_ID() + "||");
+        result.append("SERVICEREP_ID: " + getSERVICEREP_ID() + "||");
+        result.append("BUSCHN_ID: " + getBUSCHN_ID() + "||");
+        result.append("ORDERVERSION: " + getORDERVERSION() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        return result.toString();
+    }
     
 }

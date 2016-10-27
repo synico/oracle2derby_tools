@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PATTRVALUE {
-    
+
 
     private java.math.BigDecimal PATTRVALUE_ID;
     
@@ -236,5 +233,31 @@ public class PATTRVALUE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PATTRVALUE_ID: " + getPATTRVALUE_ID() + "||");
+        result.append("PATTRIBUTE_ID: " + getPATTRIBUTE_ID() + "||");
+        result.append("ATTRTYPE_ID: " + getATTRTYPE_ID() + "||");
+        result.append("OPERATOR_ID: " + getOPERATOR_ID() + "||");
+        result.append("TERMCOND_ID: " + getTERMCOND_ID() + "||");
+        result.append("QTYUNIT_ID: " + getQTYUNIT_ID() + "||");
+        result.append("INTEGERVALUE: " + getINTEGERVALUE() + "||");
+        result.append("FLOATVALUE: " + getFLOATVALUE() + "||");
+        result.append("STRINGVALUE: " + getSTRINGVALUE() + "||");
+        result.append("DATEVALUE: " + getDATEVALUE() + "||");
+        result.append("BIGINTVALUE: " + getBIGINTVALUE() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("ENCRYPTFLAG: " + getENCRYPTFLAG() + "||");
+        result.append("ORDERITEMS_ID: " + getORDERITEMS_ID() + "||");
+        result.append("MANDATORY: " + getMANDATORY() + "||");
+        result.append("ATTACHMENT_ID: " + getATTACHMENT_ID() + "||");
+        result.append("CHANGEABLE: " + getCHANGEABLE() + "||");
+        result.append("RFQPROD_ID: " + getRFQPROD_ID() + "||");
+        result.append("RFQRSPPROD_ID: " + getRFQRSPPROD_ID() + "||");
+        result.append("CORRELATIONGROUP: " + getCORRELATIONGROUP() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PRICERULE {
-    
+
 
     private java.math.BigDecimal PRICERULE_ID;
     
@@ -192,5 +189,27 @@ public class PRICERULE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PRICERULE_ID: " + getPRICERULE_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("VERSION: " + getVERSION() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("CREATETIME: " + getCREATETIME() + "||");
+        result.append("LASTUPDATETIME: " + getLASTUPDATETIME() + "||");
+        result.append("DEPENDENT: " + getDEPENDENT() + "||");
+        result.append("TYPE: " + getTYPE() + "||");
+        result.append("STARTTIME: " + getSTARTTIME() + "||");
+        result.append("ENDTIME: " + getENDTIME() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

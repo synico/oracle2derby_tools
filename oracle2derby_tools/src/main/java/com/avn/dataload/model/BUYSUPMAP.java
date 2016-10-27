@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class BUYSUPMAP {
-    
+
 
     private java.math.BigDecimal SUPORG_ID;
     
@@ -115,5 +112,20 @@ public class BUYSUPMAP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SUPORG_ID: " + getSUPORG_ID() + "||");
+        result.append("BUYORGUNIT_ID: " + getBUYORGUNIT_ID() + "||");
+        result.append("CATALOG_ID: " + getCATALOG_ID() + "||");
+        result.append("PROCPROTCL_ID: " + getPROCPROTCL_ID() + "||");
+        result.append("CONTRACT_ID: " + getCONTRACT_ID() + "||");
+        result.append("MBRGRP_ID: " + getMBRGRP_ID() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

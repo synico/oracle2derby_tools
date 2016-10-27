@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class EMLMSG {
-    
+
 
     private java.math.BigDecimal EMLMSG_ID;
     
@@ -104,5 +101,19 @@ public class EMLMSG {
         return this.EMLBODYTYPE;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("EMLMSG_ID: " + getEMLMSG_ID() + "||");
+        result.append("JSPPATH: " + getJSPPATH() + "||");
+        result.append("PROPERTYFILE: " + getPROPERTYFILE() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("EMLBODYTYPE: " + getEMLBODYTYPE() + "||");
+        return result.toString();
+    }
     
 }

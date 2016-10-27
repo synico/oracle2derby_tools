@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XSCCREPORTSTATUS {
-    
+
 
     private java.math.BigDecimal REPORT_ID;
     
@@ -82,5 +79,17 @@ public class XSCCREPORTSTATUS {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("REPORT_ID: " + getREPORT_ID() + "||");
+        result.append("LASTREPORTSENDTIME: " + getLASTREPORTSENDTIME() + "||");
+        result.append("REPORTSENDSTATUS: " + getREPORTSENDSTATUS() + "||");
+        result.append("LASTREPORTGENERATEDTIME: " + getLASTREPORTGENERATEDTIME() + "||");
+        result.append("REPORTNAME: " + getREPORTNAME() + "||");
+        result.append("REPORTLOC: " + getREPORTLOC() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

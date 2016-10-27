@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SCHBRDCST {
-    
+
 
     private java.math.BigDecimal JOBREFNUM;
     
@@ -104,5 +101,19 @@ public class SCHBRDCST {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("JOBREFNUM: " + getJOBREFNUM() + "||");
+        result.append("JOBSTATE: " + getJOBSTATE() + "||");
+        result.append("PREFSTARTTIME: " + getPREFSTARTTIME() + "||");
+        result.append("ACTLSTARTTIME: " + getACTLSTARTTIME() + "||");
+        result.append("ENDTIME: " + getENDTIME() + "||");
+        result.append("RESULT: " + getRESULT() + "||");
+        result.append("EXCEPTIONCODE: " + getEXCEPTIONCODE() + "||");
+        result.append("CLONEID: " + getCLONEID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

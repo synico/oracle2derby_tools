@@ -3,11 +3,15 @@ package com.avn.dataload.model.rowmapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import org.springframework.jdbc.core.RowMapper;
 
 import com.avn.dataload.model.BRANCH_ZIP;
 
 public class BRANCH_ZIPRowMapper<T> implements RowMapper<BRANCH_ZIP> {
+
+    private static final Logger log = Logger.getLogger(BRANCH_ZIPRowMapper.class);
 
 	@Override
 	public BRANCH_ZIP mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -21,6 +25,8 @@ public class BRANCH_ZIPRowMapper<T> implements RowMapper<BRANCH_ZIP> {
 		obj.setCOUNTRY_CD(rs.getString("COUNTRY_CD"));
 		obj.setDISPLAY_FL(rs.getString("DISPLAY_FL"));
 		obj.setSALES_ORG(rs.getString("SALES_ORG"));
+		
+		log.debug("Value of obj: " + obj.toString());
 		
 		return obj;
 	}

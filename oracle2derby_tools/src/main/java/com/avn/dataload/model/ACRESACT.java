@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ACRESACT {
-    
+
 
     private java.math.BigDecimal ACRESCGRY_ID;
     
@@ -38,5 +35,13 @@ public class ACRESACT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ACRESCGRY_ID: " + getACRESCGRY_ID() + "||");
+        result.append("ACACTION_ID: " + getACACTION_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

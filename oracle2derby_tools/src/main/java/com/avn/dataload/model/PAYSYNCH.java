@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PAYSYNCH {
-    
+
 
     private java.math.BigDecimal PAYSRFNBR;
     
@@ -60,5 +57,15 @@ public class PAYSYNCH {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PAYSRFNBR: " + getPAYSRFNBR() + "||");
+        result.append("PAYSSTMP1: " + getPAYSSTMP1() + "||");
+        result.append("PAYSSTMP2: " + getPAYSSTMP2() + "||");
+        result.append("PAYSSTMP3: " + getPAYSSTMP3() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

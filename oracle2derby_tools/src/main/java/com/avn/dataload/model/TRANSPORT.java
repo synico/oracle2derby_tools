@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class TRANSPORT {
-    
+
 
     private java.math.BigDecimal TRANSPORT_ID;
     
@@ -93,5 +90,18 @@ public class TRANSPORT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("TRANSPORT_ID: " + getTRANSPORT_ID() + "||");
+        result.append("TIMEOUT: " + getTIMEOUT() + "||");
+        result.append("IMPLEMENTED: " + getIMPLEMENTED() + "||");
+        result.append("ADDRESSABLE: " + getADDRESSABLE() + "||");
+        result.append("CODE: " + getCODE() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class STENCALUSG {
-    
+
 
     private java.math.BigDecimal STOREENT_ID;
     
@@ -137,5 +134,22 @@ public class STENCALUSG {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("CALUSAGE_ID: " + getCALUSAGE_ID() + "||");
+        result.append("ACTCC_CALMETHOD_ID: " + getACTCC_CALMETHOD_ID() + "||");
+        result.append("ACTRC_CALMETHOD_ID: " + getACTRC_CALMETHOD_ID() + "||");
+        result.append("CALCODE_ID: " + getCALCODE_ID() + "||");
+        result.append("CALMETHOD_ID_APP: " + getCALMETHOD_ID_APP() + "||");
+        result.append("CALMETHOD_ID_SUM: " + getCALMETHOD_ID_SUM() + "||");
+        result.append("CALMETHOD_ID_FIN: " + getCALMETHOD_ID_FIN() + "||");
+        result.append("USAGEFLAGS: " + getUSAGEFLAGS() + "||");
+        result.append("CALMETHOD_ID_INI: " + getCALMETHOD_ID_INI() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

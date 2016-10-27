@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SRCHCONF {
-    
+
 
     private java.lang.String INDEXTYPE;
     
@@ -60,5 +57,15 @@ public class SRCHCONF {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("INDEXTYPE: " + getINDEXTYPE() + "||");
+        result.append("INDEXSCOPE: " + getINDEXSCOPE() + "||");
+        result.append("LANGUAGES: " + getLANGUAGES() + "||");
+        result.append("CONFIG: " + getCONFIG() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

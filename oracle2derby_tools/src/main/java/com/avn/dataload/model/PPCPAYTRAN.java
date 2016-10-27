@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PPCPAYTRAN {
-    
+
 
     private java.math.BigDecimal PPCPAYTRAN_ID;
     
@@ -181,5 +178,26 @@ public class PPCPAYTRAN {
         return this.PPCBATCH_ID;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PPCPAYTRAN_ID: " + getPPCPAYTRAN_ID() + "||");
+        result.append("PPCPAYMENT_ID: " + getPPCPAYMENT_ID() + "||");
+        result.append("PPCCREDIT_ID: " + getPPCCREDIT_ID() + "||");
+        result.append("TRANSACTIONTYPE: " + getTRANSACTIONTYPE() + "||");
+        result.append("REQUESTEDAMOUNT: " + getREQUESTEDAMOUNT() + "||");
+        result.append("PROCESSEDAMOUNT: " + getPROCESSEDAMOUNT() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("TIMECREATED: " + getTIMECREATED() + "||");
+        result.append("TIMEUPDATED: " + getTIMEUPDATED() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("RESPONSECODE: " + getRESPONSECODE() + "||");
+        result.append("REASONCODE: " + getREASONCODE() + "||");
+        result.append("REFERENCENUMBER: " + getREFERENCENUMBER() + "||");
+        result.append("TRACKINGID: " + getTRACKINGID() + "||");
+        result.append("PPCBATCH_ID: " + getPPCBATCH_ID() + "||");
+        return result.toString();
+    }
     
 }

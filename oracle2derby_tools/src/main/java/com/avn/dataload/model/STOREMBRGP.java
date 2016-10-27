@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class STOREMBRGP {
-    
+
 
     private java.math.BigDecimal MBRGRP_ID;
     
@@ -38,5 +35,13 @@ public class STOREMBRGP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MBRGRP_ID: " + getMBRGRP_ID() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

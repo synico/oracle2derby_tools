@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class EMLRPTEVTS {
-    
+
 
     private java.math.BigDecimal USERS_ID;
     
@@ -71,5 +68,16 @@ public class EMLRPTEVTS {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("EMLPROMO_ID: " + getEMLPROMO_ID() + "||");
+        result.append("OPENED: " + getOPENED() + "||");
+        result.append("CLICKED: " + getCLICKED() + "||");
+        result.append("BOUNCED: " + getBOUNCED() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

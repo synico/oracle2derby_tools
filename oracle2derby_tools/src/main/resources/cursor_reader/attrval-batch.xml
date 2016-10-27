@@ -12,7 +12,7 @@
     <bean id="jdbcCursorItemReader4ATTRVAL" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
     	<property name="dataSource" ref="oracleDS" />
     	<property name="sql" value="SELECT ATTRVAL_ID,ATTR_ID,IDENTIFIER,VALUSAGE,STOREENT_ID,FIELD1,FIELD2,FIELD3,OPTCOUNTER FROM EMDI.ATTRVAL 
-    	WHERE ATTRVAL_ID IN (SELECT ATTRVAL_ID FROM EMDI.CATENTRYATTR WHERE CATENTRY_ID IN (SELECT SELECTED_ID FROM TMP_CATENTRYIDS))" />
+    	WHERE ATTRVAL_ID IN (SELECT ATTRVAL_ID FROM EMDI.CATENTRYATTR WHERE CATENTRY_ID IN (SELECT SELECTED_ID FROM TMP_CATENTRYIDS)) AND ATTRVAL_ID !=0 " />
     	<property name="rowMapper">
 			<bean class="com.avn.dataload.model.rowmapper.ATTRVALRowMapper" />
 		</property>

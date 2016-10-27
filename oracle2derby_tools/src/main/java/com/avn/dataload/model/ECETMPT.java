@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ECETMPT {
-    
+
 
     private java.math.BigDecimal ECRFNBR;
     
@@ -82,5 +79,17 @@ public class ECETMPT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ECRFNBR: " + getECRFNBR() + "||");
+        result.append("ECDOCTYP: " + getECDOCTYP() + "||");
+        result.append("ECDOCVER: " + getECDOCVER() + "||");
+        result.append("ECRECTYP: " + getECRECTYP() + "||");
+        result.append("ECRECVER: " + getECRECVER() + "||");
+        result.append("ECCOMMANDNAME: " + getECCOMMANDNAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

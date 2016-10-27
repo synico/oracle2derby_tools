@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class OFFER {
-    
+
 
     private java.math.BigDecimal OFFER_ID;
     
@@ -192,5 +189,27 @@ public class OFFER {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("OFFER_ID: " + getOFFER_ID() + "||");
+        result.append("STARTDATE: " + getSTARTDATE() + "||");
+        result.append("TRADEPOSCN_ID: " + getTRADEPOSCN_ID() + "||");
+        result.append("CATENTRY_ID: " + getCATENTRY_ID() + "||");
+        result.append("ENDDATE: " + getENDDATE() + "||");
+        result.append("PRECEDENCE: " + getPRECEDENCE() + "||");
+        result.append("PUBLISHED: " + getPUBLISHED() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("MINIMUMQUANTITY: " + getMINIMUMQUANTITY() + "||");
+        result.append("QTYUNIT_ID: " + getQTYUNIT_ID() + "||");
+        result.append("MAXIMUMQUANTITY: " + getMAXIMUMQUANTITY() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FLAGS: " + getFLAGS() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("OID: " + getOID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

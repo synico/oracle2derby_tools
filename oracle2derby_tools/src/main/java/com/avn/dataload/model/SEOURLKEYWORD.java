@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SEOURLKEYWORD {
-    
+
 
     private java.math.BigDecimal SEOURLKEYWORD_ID;
     
@@ -93,5 +90,18 @@ public class SEOURLKEYWORD {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SEOURLKEYWORD_ID: " + getSEOURLKEYWORD_ID() + "||");
+        result.append("SEOURL_ID: " + getSEOURL_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("URLKEYWORD: " + getURLKEYWORD() + "||");
+        result.append("MOBILEURLKEYWORD: " + getMOBILEURLKEYWORD() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

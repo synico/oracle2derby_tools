@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CHKARRANG {
-    
+
 
     private java.math.BigDecimal CHKCMD_ID;
     
@@ -38,5 +35,13 @@ public class CHKARRANG {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CHKCMD_ID: " + getCHKCMD_ID() + "||");
+        result.append("SCHCMD_ID: " + getSCHCMD_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

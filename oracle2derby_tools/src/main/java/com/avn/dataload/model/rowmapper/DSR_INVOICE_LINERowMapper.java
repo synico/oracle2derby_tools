@@ -3,27 +3,24 @@ package com.avn.dataload.model.rowmapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import org.springframework.jdbc.core.RowMapper;
 
 import com.avn.dataload.model.DSR_INVOICE_LINE;
 
 public class DSR_INVOICE_LINERowMapper<T> implements RowMapper<DSR_INVOICE_LINE> {
 
+    private static final Logger log = Logger.getLogger(DSR_INVOICE_LINERowMapper.class);
+
 	@Override
 	public DSR_INVOICE_LINE mapRow(ResultSet rs, int rowNum) throws SQLException {
 		DSR_INVOICE_LINE obj = new DSR_INVOICE_LINE();
 		
+		obj.setINVOICE_LINE_CHANGE_AUDIT_KEY(rs.getBigDecimal("INVOICE_LINE_CHANGE_AUDIT_KEY"));
+		obj.setCONFIRM_PURGE_FL(rs.getString("CONFIRM_PURGE_FL"));
 		obj.setCREATE_DT(rs.getTimestamp("CREATE_DT"));
 		obj.setUPDATE_DT(rs.getTimestamp("UPDATE_DT"));
-		obj.setINVOICE_NBR(rs.getString("INVOICE_NBR"));
-		obj.setLAST_UPDATE_ACTION(rs.getString("LAST_UPDATE_ACTION"));
-		obj.setAUDIT_LOG_KEY(rs.getBigDecimal("AUDIT_LOG_KEY"));
-		obj.setSEG_RCVD_DT(rs.getTimestamp("SEG_RCVD_DT"));
-		obj.setDIVISION_ID(rs.getString("DIVISION_ID"));
-		obj.setINVOICE_COMPANY(rs.getString("INVOICE_COMPANY"));
-		obj.setINVOICE_SEQ_NBR(rs.getString("INVOICE_SEQ_NBR"));
-		obj.setMISC_CHARGE_AMT(rs.getBigDecimal("MISC_CHARGE_AMT"));
-		obj.setINVOICE_LINE_CHANGE_AUDIT_KEY(rs.getBigDecimal("INVOICE_LINE_CHANGE_AUDIT_KEY"));
 		obj.setDELETE_DT(rs.getTimestamp("DELETE_DT"));
 		obj.setUPDATE_ID(rs.getString("UPDATE_ID"));
 		obj.setSYSTEM_ID(rs.getString("SYSTEM_ID"));
@@ -44,8 +41,15 @@ public class DSR_INVOICE_LINERowMapper<T> implements RowMapper<DSR_INVOICE_LINE>
 		obj.setERROR4_CD(rs.getString("ERROR4_CD"));
 		obj.setERROR5_CD(rs.getString("ERROR5_CD"));
 		obj.setDW_REG_NO(rs.getString("DW_REG_NO"));
+		obj.setINVOICE_NBR(rs.getString("INVOICE_NBR"));
+		obj.setLAST_UPDATE_ACTION(rs.getString("LAST_UPDATE_ACTION"));
+		obj.setAUDIT_LOG_KEY(rs.getBigDecimal("AUDIT_LOG_KEY"));
+		obj.setSEG_RCVD_DT(rs.getTimestamp("SEG_RCVD_DT"));
+		obj.setDIVISION_ID(rs.getString("DIVISION_ID"));
+		obj.setINVOICE_COMPANY(rs.getString("INVOICE_COMPANY"));
+		obj.setINVOICE_SEQ_NBR(rs.getString("INVOICE_SEQ_NBR"));
+		obj.setMISC_CHARGE_AMT(rs.getBigDecimal("MISC_CHARGE_AMT"));
 		obj.setWRHS_LOC_CD(rs.getString("WRHS_LOC_CD"));
-		obj.setCONFIRM_PURGE_FL(rs.getString("CONFIRM_PURGE_FL"));
 		obj.setLINE_ITEM_NBR(rs.getString("LINE_ITEM_NBR"));
 		obj.setLINE_ITEM_LAST_UPDATE_DT(rs.getTimestamp("LINE_ITEM_LAST_UPDATE_DT"));
 		obj.setLINE_ITEM_SHIP_QTY(rs.getBigDecimal("LINE_ITEM_SHIP_QTY"));
@@ -117,6 +121,8 @@ public class DSR_INVOICE_LINERowMapper<T> implements RowMapper<DSR_INVOICE_LINE>
 		obj.setMARKET_COST_OVERRIDE_FL(rs.getString("MARKET_COST_OVERRIDE_FL"));
 		obj.setAFA_REPLENISH_CD(rs.getString("AFA_REPLENISH_CD"));
 		obj.setSPEC_DRAWING_TX(rs.getString("SPEC_DRAWING_TX"));
+		
+		log.debug("Value of obj: " + obj.toString());
 		
 		return obj;
 	}

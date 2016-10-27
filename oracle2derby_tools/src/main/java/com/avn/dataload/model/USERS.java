@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class USERS {
-    
+
 
     private java.math.BigDecimal USERS_ID;
     
@@ -192,5 +189,27 @@ public class USERS {
         return this.PERSONALIZATIONID;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("DN: " + getDN() + "||");
+        result.append("REGISTERTYPE: " + getREGISTERTYPE() + "||");
+        result.append("PROFILETYPE: " + getPROFILETYPE() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("SETCCURR: " + getSETCCURR() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("LASTORDER: " + getLASTORDER() + "||");
+        result.append("REGISTRATION: " + getREGISTRATION() + "||");
+        result.append("LASTSESSION: " + getLASTSESSION() + "||");
+        result.append("REGISTRATIONUPDATE: " + getREGISTRATIONUPDATE() + "||");
+        result.append("REGISTRATIONCANCEL: " + getREGISTRATIONCANCEL() + "||");
+        result.append("PREVLASTSESSION: " + getPREVLASTSESSION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("PERSONALIZATIONID: " + getPERSONALIZATIONID() + "||");
+        return result.toString();
+    }
     
 }

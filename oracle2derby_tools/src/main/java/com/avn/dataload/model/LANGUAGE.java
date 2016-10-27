@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class LANGUAGE {
-    
+
 
     private java.math.BigDecimal LANGUAGE_ID;
     
@@ -93,5 +90,18 @@ public class LANGUAGE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("LOCALENAME: " + getLOCALENAME() + "||");
+        result.append("LANGUAGE: " + getLANGUAGE() + "||");
+        result.append("COUNTRY: " + getCOUNTRY() + "||");
+        result.append("VARIANT: " + getVARIANT() + "||");
+        result.append("ENCODING: " + getENCODING() + "||");
+        result.append("MIMECHARSET: " + getMIMECHARSET() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

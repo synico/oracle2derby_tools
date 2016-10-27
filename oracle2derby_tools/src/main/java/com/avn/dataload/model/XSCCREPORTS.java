@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XSCCREPORTS {
-    
+
 
     private java.math.BigDecimal REPORT_ID;
     
@@ -203,5 +200,28 @@ public class XSCCREPORTS {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("REPORT_ID: " + getREPORT_ID() + "||");
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("ORGENTITY_ID: " + getORGENTITY_ID() + "||");
+        result.append("REPORTTYPE: " + getREPORTTYPE() + "||");
+        result.append("REPORTNAME: " + getREPORTNAME() + "||");
+        result.append("REPORTFREQUENCY: " + getREPORTFREQUENCY() + "||");
+        result.append("REPORTSCHEDULEDTIME: " + getREPORTSCHEDULEDTIME() + "||");
+        result.append("REPORTSCHEDULEDDATE: " + getREPORTSCHEDULEDDATE() + "||");
+        result.append("REPORTSCHEDULEDDAY: " + getREPORTSCHEDULEDDAY() + "||");
+        result.append("REPORTCREATEDDATE: " + getREPORTCREATEDDATE() + "||");
+        result.append("REPORTFILTERS: " + getREPORTFILTERS() + "||");
+        result.append("REPORTLASTUPDATEDDATE: " + getREPORTLASTUPDATEDDATE() + "||");
+        result.append("SENDREPORTEMAILIDS: " + getSENDREPORTEMAILIDS() + "||");
+        result.append("REPORTCOMMENTS: " + getREPORTCOMMENTS() + "||");
+        result.append("NEXTINVOCATIONTIME: " + getNEXTINVOCATIONTIME() + "||");
+        result.append("REPORTSTATUS: " + getREPORTSTATUS() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

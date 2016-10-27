@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class BASEITEM {
-    
+
 
     private java.math.BigDecimal BASEITEM_ID;
     
@@ -104,5 +101,19 @@ public class BASEITEM {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("BASEITEM_ID: " + getBASEITEM_ID() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("ITEMTYPE_ID: " + getITEMTYPE_ID() + "||");
+        result.append("QUANTITYMEASURE: " + getQUANTITYMEASURE() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("PARTNUMBER: " + getPARTNUMBER() + "||");
+        result.append("QUANTITYMULTIPLE: " + getQUANTITYMULTIPLE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

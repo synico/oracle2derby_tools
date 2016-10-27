@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PX_DESCRIPTION {
-    
+
 
     private java.math.BigDecimal PX_PROMOTION_ID;
     
@@ -126,5 +123,21 @@ public class PX_DESCRIPTION {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PX_PROMOTION_ID: " + getPX_PROMOTION_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("ADMINDESC: " + getADMINDESC() + "||");
+        result.append("SHORTDESC: " + getSHORTDESC() + "||");
+        result.append("LONGDESC: " + getLONGDESC() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("FIELD4: " + getFIELD4() + "||");
+        result.append("FIELD5: " + getFIELD5() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

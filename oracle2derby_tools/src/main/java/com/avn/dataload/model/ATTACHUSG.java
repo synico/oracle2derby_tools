@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ATTACHUSG {
-    
+
 
     private java.lang.String ATTACHUSG_ID;
     
@@ -27,5 +24,12 @@ public class ATTACHUSG {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ATTACHUSG_ID: " + getATTACHUSG_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

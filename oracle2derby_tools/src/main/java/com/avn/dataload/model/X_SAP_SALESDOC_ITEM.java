@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class X_SAP_SALESDOC_ITEM {
-    
+
 
     private java.lang.String VBAK_VBELN;
     
@@ -148,5 +145,23 @@ public class X_SAP_SALESDOC_ITEM {
         return this.UPDATED_FLAG;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("VBAK_VBELN: " + getVBAK_VBELN() + "||");
+        result.append("VBAP_POSNR: " + getVBAP_POSNR() + "||");
+        result.append("VBAP_PSTYV: " + getVBAP_PSTYV() + "||");
+        result.append("VBAP_WERKS: " + getVBAP_WERKS() + "||");
+        result.append("VBAP_KDMAT: " + getVBAP_KDMAT() + "||");
+        result.append("VBAP_MATNR: " + getVBAP_MATNR() + "||");
+        result.append("VBAP_KWMENG: " + getVBAP_KWMENG() + "||");
+        result.append("VBSTT_ABSTA_BEZ: " + getVBSTT_ABSTA_BEZ() + "||");
+        result.append("MARA_MFRNR: " + getMARA_MFRNR() + "||");
+        result.append("ZZ_DATWSTA: " + getZZ_DATWSTA() + "||");
+        result.append("LIPSD_G_LFIMG: " + getLIPSD_G_LFIMG() + "||");
+        result.append("VBAP_ZZ_CBLK: " + getVBAP_ZZ_CBLK() + "||");
+        result.append("UPDATED_FLAG: " + getUPDATED_FLAG() + "||");
+        return result.toString();
+    }
     
 }

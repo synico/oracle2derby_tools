@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class FLSTATEGP {
-    
+
 
     private java.math.BigDecimal FLSTATEGP_ID;
     
@@ -60,5 +57,15 @@ public class FLSTATEGP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("FLSTATEGP_ID: " + getFLSTATEGP_ID() + "||");
+        result.append("IDENTIFIER: " + getIDENTIFIER() + "||");
+        result.append("FLOWTYPE_ID: " + getFLOWTYPE_ID() + "||");
+        result.append("MANDATORYSTATEGP: " + getMANDATORYSTATEGP() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

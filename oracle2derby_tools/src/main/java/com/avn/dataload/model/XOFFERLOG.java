@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XOFFERLOG {
-    
+
 
     private java.lang.String PRICELISTNAME;
     
@@ -159,5 +156,24 @@ public class XOFFERLOG {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PRICELISTNAME: " + getPRICELISTNAME() + "||");
+        result.append("CUSTOMERID: " + getCUSTOMERID() + "||");
+        result.append("CATENTRYPARTNUMBER: " + getCATENTRYPARTNUMBER() + "||");
+        result.append("STARTDATE: " + getSTARTDATE() + "||");
+        result.append("ENDDATE: " + getENDDATE() + "||");
+        result.append("MINQUANTITY: " + getMINQUANTITY() + "||");
+        result.append("MAXQUANTITY: " + getMAXQUANTITY() + "||");
+        result.append("PRICE: " + getPRICE() + "||");
+        result.append("QUANTITY: " + getQUANTITY() + "||");
+        result.append("PRICEPERQUANTITY: " + getPRICEPERQUANTITY() + "||");
+        result.append("UOM: " + getUOM() + "||");
+        result.append("CURRENCY: " + getCURRENCY() + "||");
+        result.append("PROCESSED: " + getPROCESSED() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

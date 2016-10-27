@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PPCEXTDATA {
-    
+
 
     private java.math.BigDecimal PPCEXTDATA_ID;
     
@@ -126,5 +123,21 @@ public class PPCEXTDATA {
         return this.PPCBATCH_ID;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PPCEXTDATA_ID: " + getPPCEXTDATA_ID() + "||");
+        result.append("PPCPAYINST_ID: " + getPPCPAYINST_ID() + "||");
+        result.append("PPCPAYTRAN_ID: " + getPPCPAYTRAN_ID() + "||");
+        result.append("ATTRIBUTETYPE: " + getATTRIBUTETYPE() + "||");
+        result.append("ENCRYPTED: " + getENCRYPTED() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("ATTRIBUTENAME: " + getATTRIBUTENAME() + "||");
+        result.append("SEARCHVALUE: " + getSEARCHVALUE() + "||");
+        result.append("DATAVALUE: " + getDATAVALUE() + "||");
+        result.append("PPCBATCH_ID: " + getPPCBATCH_ID() + "||");
+        return result.toString();
+    }
     
 }

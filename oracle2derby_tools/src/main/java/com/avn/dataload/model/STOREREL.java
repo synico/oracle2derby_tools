@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class STOREREL {
-    
+
 
     private java.math.BigDecimal STRELTYP_ID;
     
@@ -71,5 +68,16 @@ public class STOREREL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("STRELTYP_ID: " + getSTRELTYP_ID() + "||");
+        result.append("RELATEDSTORE_ID: " + getRELATEDSTORE_ID() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

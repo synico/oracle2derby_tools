@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class BUYERPOTYP {
-    
+
 
     private java.math.BigDecimal BUYERPOTYP_ID;
     
@@ -27,5 +24,12 @@ public class BUYERPOTYP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("BUYERPOTYP_ID: " + getBUYERPOTYP_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

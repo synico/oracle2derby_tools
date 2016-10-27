@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class COLLTYPE {
-    
+
 
     private java.math.BigDecimal COLLTYPE_ID;
     
@@ -38,5 +35,13 @@ public class COLLTYPE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("COLLTYPE_ID: " + getCOLLTYPE_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

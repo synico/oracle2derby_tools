@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CLEANCONF {
-    
+
 
     private java.lang.String OBJECTNAME;
     
@@ -93,5 +90,18 @@ public class CLEANCONF {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("OBJECTNAME: " + getOBJECTNAME() + "||");
+        result.append("TYPE: " + getTYPE() + "||");
+        result.append("STATEMENT: " + getSTATEMENT() + "||");
+        result.append("NAMEARG: " + getNAMEARG() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("DAYSARG: " + getDAYSARG() + "||");
+        result.append("STATEMENTTYPE: " + getSTATEMENTTYPE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

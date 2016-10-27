@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SEOURL {
-    
+
 
     private java.math.BigDecimal SEOURL_ID;
     
@@ -93,5 +90,18 @@ public class SEOURL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SEOURL_ID: " + getSEOURL_ID() + "||");
+        result.append("TOKENNAME: " + getTOKENNAME() + "||");
+        result.append("TOKENVALUE: " + getTOKENVALUE() + "||");
+        result.append("PRIORITY: " + getPRIORITY() + "||");
+        result.append("CHANGE_FREQUENCY: " + getCHANGE_FREQUENCY() + "||");
+        result.append("MOBILE_PRIORITY: " + getMOBILE_PRIORITY() + "||");
+        result.append("MOBILE_CHG_FREQ: " + getMOBILE_CHG_FREQ() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

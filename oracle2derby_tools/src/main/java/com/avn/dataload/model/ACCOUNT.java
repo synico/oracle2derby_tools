@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ACCOUNT {
-    
+
 
     private java.math.BigDecimal ACCOUNT_ID;
     
@@ -181,5 +178,26 @@ public class ACCOUNT {
         return this.USEPRCPLCYPREF;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ACCOUNT_ID: " + getACCOUNT_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("CURRENCY: " + getCURRENCY() + "||");
+        result.append("DEFAULTCONTRACT: " + getDEFAULTCONTRACT() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("COMMENTS: " + getCOMMENTS() + "||");
+        result.append("TIMECREATED: " + getTIMECREATED() + "||");
+        result.append("TIMEUPDATED: " + getTIMEUPDATED() + "||");
+        result.append("TIMEAPPROVED: " + getTIMEAPPROVED() + "||");
+        result.append("TIMEACTIVATED: " + getTIMEACTIVATED() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("PRCPLCYPREF: " + getPRCPLCYPREF() + "||");
+        result.append("USEPRCPLCYPREF: " + getUSEPRCPLCYPREF() + "||");
+        return result.toString();
+    }
     
 }

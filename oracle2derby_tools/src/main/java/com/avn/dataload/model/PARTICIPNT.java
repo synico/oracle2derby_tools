@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PARTICIPNT {
-    
+
 
     private java.math.BigDecimal PARTICIPNT_ID;
     
@@ -104,5 +101,19 @@ public class PARTICIPNT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PARTICIPNT_ID: " + getPARTICIPNT_ID() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("PARTROLE_ID: " + getPARTROLE_ID() + "||");
+        result.append("TRADING_ID: " + getTRADING_ID() + "||");
+        result.append("TERMCOND_ID: " + getTERMCOND_ID() + "||");
+        result.append("INFORMATION: " + getINFORMATION() + "||");
+        result.append("TIMECREATED: " + getTIMECREATED() + "||");
+        result.append("TIMEUPDATED: " + getTIMEUPDATED() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

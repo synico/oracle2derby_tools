@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class COUNTCODE {
-    
+
 
     private java.lang.String PRODUCTVENDOR;
     
@@ -49,5 +46,14 @@ public class COUNTCODE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PRODUCTVENDOR: " + getPRODUCTVENDOR() + "||");
+        result.append("COUNTRYABBR: " + getCOUNTRYABBR() + "||");
+        result.append("COUNTRYCODE: " + getCOUNTRYCODE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

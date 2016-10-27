@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PX_PROMOTION {
-    
+
 
     private java.math.BigDecimal PX_PROMOTION_ID;
     
@@ -335,5 +332,40 @@ public class PX_PROMOTION {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PX_PROMOTION_ID: " + getPX_PROMOTION_ID() + "||");
+        result.append("PRIORITY: " + getPRIORITY() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("EXCLSVE: " + getEXCLSVE() + "||");
+        result.append("TYPE: " + getTYPE() + "||");
+        result.append("PERORDLMT: " + getPERORDLMT() + "||");
+        result.append("PERSHOPPERLMT: " + getPERSHOPPERLMT() + "||");
+        result.append("TOTALLMT: " + getTOTALLMT() + "||");
+        result.append("RSV_INT: " + getRSV_INT() + "||");
+        result.append("PX_GROUP_ID: " + getPX_GROUP_ID() + "||");
+        result.append("CAMPAIGN_ID: " + getCAMPAIGN_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("VERSION: " + getVERSION() + "||");
+        result.append("REVISION: " + getREVISION() + "||");
+        result.append("EFFECTIVE: " + getEFFECTIVE() + "||");
+        result.append("TRANSFER: " + getTRANSFER() + "||");
+        result.append("CDREQUIRED: " + getCDREQUIRED() + "||");
+        result.append("EXPIRE: " + getEXPIRE() + "||");
+        result.append("LASTUPDATEBY: " + getLASTUPDATEBY() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("STARTDATE: " + getSTARTDATE() + "||");
+        result.append("ENDDATE: " + getENDDATE() + "||");
+        result.append("RSV_TIME: " + getRSV_TIME() + "||");
+        result.append("RSV_REAL: " + getRSV_REAL() + "||");
+        result.append("TGTSALES: " + getTGTSALES() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("CODE: " + getCODE() + "||");
+        result.append("RSV_VCH: " + getRSV_VCH() + "||");
+        result.append("XMLPARAM: " + getXMLPARAM() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

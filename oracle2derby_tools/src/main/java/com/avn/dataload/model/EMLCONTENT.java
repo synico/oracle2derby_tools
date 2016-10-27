@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class EMLCONTENT {
-    
+
 
     private java.math.BigDecimal EMLCONTENT_ID;
     
@@ -71,5 +68,16 @@ public class EMLCONTENT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("EMLCONTENT_ID: " + getEMLCONTENT_ID() + "||");
+        result.append("LASTMODIFY: " + getLASTMODIFY() + "||");
+        result.append("RECORDOPEN: " + getRECORDOPEN() + "||");
+        result.append("EMLSUBJECT: " + getEMLSUBJECT() + "||");
+        result.append("EMLBODY: " + getEMLBODY() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

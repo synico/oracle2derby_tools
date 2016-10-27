@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PLWIDGETNVP {
-    
+
 
     private java.math.BigDecimal PLWIDGETNVP_ID;
     
@@ -82,5 +79,17 @@ public class PLWIDGETNVP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PLWIDGETNVP_ID: " + getPLWIDGETNVP_ID() + "||");
+        result.append("PLWIDGET_ID: " + getPLWIDGET_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("VALUE: " + getVALUE() + "||");
+        result.append("PROPERTIES: " + getPROPERTIES() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

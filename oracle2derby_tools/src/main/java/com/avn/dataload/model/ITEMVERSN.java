@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ITEMVERSN {
-    
+
 
     private java.math.BigDecimal ITEMVERSN_ID;
     
@@ -71,5 +68,16 @@ public class ITEMVERSN {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ITEMVERSN_ID: " + getITEMVERSN_ID() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("BASEITEM_ID: " + getBASEITEM_ID() + "||");
+        result.append("EXPIRATIONDATE: " + getEXPIRATIONDATE() + "||");
+        result.append("VERSIONNAME: " + getVERSIONNAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

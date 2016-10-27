@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DSR_INVOICE_LINE {
-    
+
 
     private java.lang.String INVOICE_NBR;
     
@@ -1149,5 +1146,114 @@ public class DSR_INVOICE_LINE {
         return this.SPEC_DRAWING_TX;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("INVOICE_NBR: " + getINVOICE_NBR() + "||");
+        result.append("LINE_ITEM_NBR: " + getLINE_ITEM_NBR() + "||");
+        result.append("CREATE_DT: " + getCREATE_DT() + "||");
+        result.append("UPDATE_DT: " + getUPDATE_DT() + "||");
+        result.append("DELETE_DT: " + getDELETE_DT() + "||");
+        result.append("UPDATE_ID: " + getUPDATE_ID() + "||");
+        result.append("LAST_UPDATE_ACTION: " + getLAST_UPDATE_ACTION() + "||");
+        result.append("AUDIT_LOG_KEY: " + getAUDIT_LOG_KEY() + "||");
+        result.append("SYSTEM_ID: " + getSYSTEM_ID() + "||");
+        result.append("SEG_RCVD_DT: " + getSEG_RCVD_DT() + "||");
+        result.append("DIVISION_ID: " + getDIVISION_ID() + "||");
+        result.append("INVOICE_COMPANY: " + getINVOICE_COMPANY() + "||");
+        result.append("INVOICE_SEQ_NBR: " + getINVOICE_SEQ_NBR() + "||");
+        result.append("LINE_ITEM_LAST_UPDATE_DT: " + getLINE_ITEM_LAST_UPDATE_DT() + "||");
+        result.append("LINE_ITEM_SHIP_QTY: " + getLINE_ITEM_SHIP_QTY() + "||");
+        result.append("MFG_CD: " + getMFG_CD() + "||");
+        result.append("PART_NBR: " + getPART_NBR() + "||");
+        result.append("PART_CLASS_CD: " + getPART_CLASS_CD() + "||");
+        result.append("CUST_REF_ID_1: " + getCUST_REF_ID_1() + "||");
+        result.append("CUST_REF_ID_2: " + getCUST_REF_ID_2() + "||");
+        result.append("CUST_PART_NBR: " + getCUST_PART_NBR() + "||");
+        result.append("ADJUSTED_COST_AMT: " + getADJUSTED_COST_AMT() + "||");
+        result.append("AVG_POOL_COST_AMT: " + getAVG_POOL_COST_AMT() + "||");
+        result.append("MISC_CHARGE_AMT: " + getMISC_CHARGE_AMT() + "||");
+        result.append("ORIG_COST_AMT: " + getORIG_COST_AMT() + "||");
+        result.append("PROGRAM_CHARGE_AMT: " + getPROGRAM_CHARGE_AMT() + "||");
+        result.append("RESALE_PRICE_AMT: " + getRESALE_PRICE_AMT() + "||");
+        result.append("TARGET_COST_AMT: " + getTARGET_COST_AMT() + "||");
+        result.append("UNIT_COST_AMT: " + getUNIT_COST_AMT() + "||");
+        result.append("US_RESALE_PRICE_AMT: " + getUS_RESALE_PRICE_AMT() + "||");
+        result.append("CURRENCY_RATE_PCT: " + getCURRENCY_RATE_PCT() + "||");
+        result.append("DUTY_RATE_PCT: " + getDUTY_RATE_PCT() + "||");
+        result.append("REQUIRED_DT: " + getREQUIRED_DT() + "||");
+        result.append("SCHED_DT: " + getSCHED_DT() + "||");
+        result.append("BACK_ORDER_QTY: " + getBACK_ORDER_QTY() + "||");
+        result.append("CUMULATIVE_PICK_QTY: " + getCUMULATIVE_PICK_QTY() + "||");
+        result.append("ORDER_QTY: " + getORDER_QTY() + "||");
+        result.append("ORIG_SHIPPER_QTY: " + getORIG_SHIPPER_QTY() + "||");
+        result.append("REMAINING_DEMAND_QTY: " + getREMAINING_DEMAND_QTY() + "||");
+        result.append("SCHED_LATE_DEL_QTY: " + getSCHED_LATE_DEL_QTY() + "||");
+        result.append("SCHED_ON_TIME_DEL_QTY: " + getSCHED_ON_TIME_DEL_QTY() + "||");
+        result.append("SHIP_DE_QTY: " + getSHIP_DE_QTY() + "||");
+        result.append("TARGET_COST_QTY: " + getTARGET_COST_QTY() + "||");
+        result.append("DW_MATCH_CD: " + getDW_MATCH_CD() + "||");
+        result.append("DW_REG_NBR: " + getDW_REG_NBR() + "||");
+        result.append("DW_SUPPORT_IND_ID: " + getDW_SUPPORT_IND_ID() + "||");
+        result.append("LOI_AUTH_ID: " + getLOI_AUTH_ID() + "||");
+        result.append("LOI_DEBIT_CREATE_FL: " + getLOI_DEBIT_CREATE_FL() + "||");
+        result.append("LOI_EXPIRE_DT: " + getLOI_EXPIRE_DT() + "||");
+        result.append("LOI_FL: " + getLOI_FL() + "||");
+        result.append("LOI_SUPPL_QUOTE_ID: " + getLOI_SUPPL_QUOTE_ID() + "||");
+        result.append("ASSIGNED_COST_CD: " + getASSIGNED_COST_CD() + "||");
+        result.append("CONDITION_CD: " + getCONDITION_CD() + "||");
+        result.append("CURRENCY_TYPE_CD: " + getCURRENCY_TYPE_CD() + "||");
+        result.append("INVOICE_TYPE_CD: " + getINVOICE_TYPE_CD() + "||");
+        result.append("ORDER_STATUS_MOVE_CD: " + getORDER_STATUS_MOVE_CD() + "||");
+        result.append("RETURN_REASON_CD: " + getRETURN_REASON_CD() + "||");
+        result.append("WMS_CD: " + getWMS_CD() + "||");
+        result.append("WRHS_LOC_CD: " + getWRHS_LOC_CD() + "||");
+        result.append("EXPERT_SELLER_NBR: " + getEXPERT_SELLER_NBR() + "||");
+        result.append("PO_LINE_ITEM_NBR: " + getPO_LINE_ITEM_NBR() + "||");
+        result.append("SHOP_TICKET_NBR: " + getSHOP_TICKET_NBR() + "||");
+        result.append("CUST_MFG_ID: " + getCUST_MFG_ID() + "||");
+        result.append("ICST_PO_ID: " + getICST_PO_ID() + "||");
+        result.append("POURSIT_ID: " + getPOURSIT_ID() + "||");
+        result.append("QID_INSPECTOR_ID: " + getQID_INSPECTOR_ID() + "||");
+        result.append("QID_PULLER_ID: " + getQID_PULLER_ID() + "||");
+        result.append("QID_SHIP_ID: " + getQID_SHIP_ID() + "||");
+        result.append("USER_ID: " + getUSER_ID() + "||");
+        result.append("ADD_CHG_FL: " + getADD_CHG_FL() + "||");
+        result.append("COMPLETE_INTG_FL: " + getCOMPLETE_INTG_FL() + "||");
+        result.append("CONFIRM_PURGE_FL: " + getCONFIRM_PURGE_FL() + "||");
+        result.append("RED_COST_FL: " + getRED_COST_FL() + "||");
+        result.append("MISC_CHARGE_DESC: " + getMISC_CHARGE_DESC() + "||");
+        result.append("FIRST_CHG_ADD_COST_AMT: " + getFIRST_CHG_ADD_COST_AMT() + "||");
+        result.append("FIRST_CHG_ADD_AMT: " + getFIRST_CHG_ADD_AMT() + "||");
+        result.append("FIRST_CHG_ADD_REASON_CD: " + getFIRST_CHG_ADD_REASON_CD() + "||");
+        result.append("SECOND_CHG_ADD_COST_AMT: " + getSECOND_CHG_ADD_COST_AMT() + "||");
+        result.append("SECOND_CHG_ADD_AMT: " + getSECOND_CHG_ADD_AMT() + "||");
+        result.append("SECOND_CHG_ADD_REASON_CD: " + getSECOND_CHG_ADD_REASON_CD() + "||");
+        result.append("ADD_COST_UNIT_AMT: " + getADD_COST_UNIT_AMT() + "||");
+        result.append("ADD_U_COST_REASON_CD: " + getADD_U_COST_REASON_CD() + "||");
+        result.append("US_FIRST_CHG_ADD_AMT: " + getUS_FIRST_CHG_ADD_AMT() + "||");
+        result.append("US_SECOND_CHG_ADD_AMT: " + getUS_SECOND_CHG_ADD_AMT() + "||");
+        result.append("FIRST_CHG_ADD_TAX_FL: " + getFIRST_CHG_ADD_TAX_FL() + "||");
+        result.append("SECOND_CHG_ADD_TAX_FL: " + getSECOND_CHG_ADD_TAX_FL() + "||");
+        result.append("ERROR1_CD: " + getERROR1_CD() + "||");
+        result.append("ERROR2_CD: " + getERROR2_CD() + "||");
+        result.append("ERROR3_CD: " + getERROR3_CD() + "||");
+        result.append("ERROR4_CD: " + getERROR4_CD() + "||");
+        result.append("ERROR5_CD: " + getERROR5_CD() + "||");
+        result.append("MKT_COST_MULT: " + getMKT_COST_MULT() + "||");
+        result.append("MKT_UNIT_COST_AMT: " + getMKT_UNIT_COST_AMT() + "||");
+        result.append("MKT_ADJ_UNIT_COST_AMT: " + getMKT_ADJ_UNIT_COST_AMT() + "||");
+        result.append("MKT_ORIG_COST_AMT: " + getMKT_ORIG_COST_AMT() + "||");
+        result.append("INVOICE_LINE_CHANGE_AUDIT_KEY: " + getINVOICE_LINE_CHANGE_AUDIT_KEY() + "||");
+        result.append("DW_REG_NO: " + getDW_REG_NO() + "||");
+        result.append("ORIG_CUST_HAZMAT_PREF_CD: " + getORIG_CUST_HAZMAT_PREF_CD() + "||");
+        result.append("ORIG_LEAD_FREE_FL: " + getORIG_LEAD_FREE_FL() + "||");
+        result.append("ORIG_ROHS_COMPLIANT_FL: " + getORIG_ROHS_COMPLIANT_FL() + "||");
+        result.append("ORIG_GREEN_COMPLIANT_FL: " + getORIG_GREEN_COMPLIANT_FL() + "||");
+        result.append("MARKET_COST_OVERRIDE_FL: " + getMARKET_COST_OVERRIDE_FL() + "||");
+        result.append("AFA_REPLENISH_CD: " + getAFA_REPLENISH_CD() + "||");
+        result.append("SPEC_DRAWING_TX: " + getSPEC_DRAWING_TX() + "||");
+        return result.toString();
+    }
     
 }

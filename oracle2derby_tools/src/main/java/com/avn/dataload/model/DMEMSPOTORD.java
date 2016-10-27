@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DMEMSPOTORD {
-    
+
 
     private java.math.BigDecimal DMEMSPOTORD_ID;
     
@@ -60,5 +57,15 @@ public class DMEMSPOTORD {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("DMEMSPOTORD_ID: " + getDMEMSPOTORD_ID() + "||");
+        result.append("CONTENTTYPE: " + getCONTENTTYPE() + "||");
+        result.append("ORDERINGNAME: " + getORDERINGNAME() + "||");
+        result.append("INTERFACENAME: " + getINTERFACENAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

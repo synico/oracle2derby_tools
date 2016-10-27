@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CMFILE {
-    
+
 
     private java.math.BigDecimal CMFILE_ID;
     
@@ -126,5 +123,21 @@ public class CMFILE {
         return this.PUBLISHED;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CMFILE_ID: " + getCMFILE_ID() + "||");
+        result.append("CMFILEPATH: " + getCMFILEPATH() + "||");
+        result.append("PROMOTE_FS: " + getPROMOTE_FS() + "||");
+        result.append("UPLOAD_TIMESTAMP: " + getUPLOAD_TIMESTAMP() + "||");
+        result.append("PROMOTE_TIMESTAMP: " + getPROMOTE_TIMESTAMP() + "||");
+        result.append("ASSOCIATED: " + getASSOCIATED() + "||");
+        result.append("STORAGE_TYPE: " + getSTORAGE_TYPE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("CMFILEDIR_ID: " + getCMFILEDIR_ID() + "||");
+        result.append("FILESIZE: " + getFILESIZE() + "||");
+        result.append("PUBLISHED: " + getPUBLISHED() + "||");
+        return result.toString();
+    }
     
 }

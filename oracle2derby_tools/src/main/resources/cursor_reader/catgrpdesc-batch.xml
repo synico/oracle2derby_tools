@@ -11,7 +11,7 @@
     
     <bean id="jdbcCursorItemReader4CATGRPDESC" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
     	<property name="dataSource" ref="oracleDS" />
-    	<property name="sql" value="SELECT LANGUAGE_ID,CATGROUP_ID,NAME,SHORTDESCRIPTION,LONGDESCRIPTION,THUMBNAIL,FULLIMAGE,PUBLISHED,DISPLAY,KEYWORD,NOTE,OPTCOUNTER FROM EMDI.CATGRPDESC" />
+    	<property name="sql" value="SELECT LANGUAGE_ID,CATGROUP_ID,NAME,SHORTDESCRIPTION,LONGDESCRIPTION,THUMBNAIL,FULLIMAGE,PUBLISHED,DISPLAY,KEYWORD,NOTE,OPTCOUNTER FROM EMDI.CATGRPDESC order by catgroup_id" />
     	<property name="rowMapper">
 			<bean class="com.avn.dataload.model.rowmapper.CATGRPDESCRowMapper" />
 		</property>

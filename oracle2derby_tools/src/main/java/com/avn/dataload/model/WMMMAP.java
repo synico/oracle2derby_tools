@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class WMMMAP {
-    
+
 
     private java.math.BigDecimal MEMBER_ID;
     
@@ -49,5 +46,14 @@ public class WMMMAP {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("MEMBER_UNIQUE_ID: " + getMEMBER_UNIQUE_ID() + "||");
+        result.append("LASTSYNC: " + getLASTSYNC() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class TAGCLASS {
-    
+
 
     private java.lang.String TAGNAME;
     
@@ -49,5 +46,14 @@ public class TAGCLASS {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("TAGNAME: " + getTAGNAME() + "||");
+        result.append("TAGCLASSNAME: " + getTAGCLASSNAME() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ICDEWIDREG {
-    
+
 
     private java.lang.String CLASSNAME;
     
@@ -49,5 +46,14 @@ public class ICDEWIDREG {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CLASSNAME: " + getCLASSNAME() + "||");
+        result.append("DISPLAYNAME: " + getDISPLAYNAME() + "||");
+        result.append("ORDERSEQ: " + getORDERSEQ() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

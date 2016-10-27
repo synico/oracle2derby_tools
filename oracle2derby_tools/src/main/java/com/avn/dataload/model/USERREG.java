@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class USERREG {
-    
+
 
     private java.math.BigDecimal USERS_ID;
     
@@ -159,5 +156,24 @@ public class USERREG {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("STATUS: " + getSTATUS() + "||");
+        result.append("PLCYACCT_ID: " + getPLCYACCT_ID() + "||");
+        result.append("LOGONID: " + getLOGONID() + "||");
+        result.append("LOGONPASSWORD: " + getLOGONPASSWORD() + "||");
+        result.append("PASSWORDEXPIRED: " + getPASSWORDEXPIRED() + "||");
+        result.append("CHALLENGEQUESTION: " + getCHALLENGEQUESTION() + "||");
+        result.append("CHALLENGEANSWER: " + getCHALLENGEANSWER() + "||");
+        result.append("TIMEOUT: " + getTIMEOUT() + "||");
+        result.append("PASSWORDRETRIES: " + getPASSWORDRETRIES() + "||");
+        result.append("SALT: " + getSALT() + "||");
+        result.append("PASSWORDCREATION: " + getPASSWORDCREATION() + "||");
+        result.append("PASSWORDINVALID: " + getPASSWORDINVALID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

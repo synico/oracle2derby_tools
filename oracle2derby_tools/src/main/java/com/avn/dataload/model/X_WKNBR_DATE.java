@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class X_WKNBR_DATE {
-    
+
 
     private java.lang.String WEEK_NBR;
     
@@ -27,5 +24,12 @@ public class X_WKNBR_DATE {
         return this.WEEK_BEGIN_DATE;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("WEEK_NBR: " + getWEEK_NBR() + "||");
+        result.append("WEEK_BEGIN_DATE: " + getWEEK_BEGIN_DATE() + "||");
+        return result.toString();
+    }
     
 }

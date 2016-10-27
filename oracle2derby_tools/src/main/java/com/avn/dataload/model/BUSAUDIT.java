@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class BUSAUDIT {
-    
+
 
     private java.math.BigDecimal BUSAUDIT_ID;
     
@@ -247,5 +244,32 @@ public class BUSAUDIT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("BUSAUDIT_ID: " + getBUSAUDIT_ID() + "||");
+        result.append("SESSION_ID: " + getSESSION_ID() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("FOR_USER_ID: " + getFOR_USER_ID() + "||");
+        result.append("AUDIT_TIMESTAMP: " + getAUDIT_TIMESTAMP() + "||");
+        result.append("EVENT_TYPE: " + getEVENT_TYPE() + "||");
+        result.append("SIGNATURE: " + getSIGNATURE() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("OCCURENCE: " + getOCCURENCE() + "||");
+        result.append("COMMAND_NAME: " + getCOMMAND_NAME() + "||");
+        result.append("SEARCH_FIELD1: " + getSEARCH_FIELD1() + "||");
+        result.append("SEARCH_FIELD2: " + getSEARCH_FIELD2() + "||");
+        result.append("SEARCH_FIELD3: " + getSEARCH_FIELD3() + "||");
+        result.append("SEARCH_FIELD4: " + getSEARCH_FIELD4() + "||");
+        result.append("SEARCH_FIELD5: " + getSEARCH_FIELD5() + "||");
+        result.append("PARAMETERS: " + getPARAMETERS() + "||");
+        result.append("WORKSPACE: " + getWORKSPACE() + "||");
+        result.append("TASKGRP: " + getTASKGRP() + "||");
+        result.append("TASK: " + getTASK() + "||");
+        result.append("ACTION: " + getACTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

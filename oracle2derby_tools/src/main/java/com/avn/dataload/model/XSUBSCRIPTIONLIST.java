@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class XSUBSCRIPTIONLIST {
-    
+
 
     private java.math.BigDecimal SUBSCRIPTION_ID;
     
@@ -93,5 +90,18 @@ public class XSUBSCRIPTIONLIST {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SUBSCRIPTION_ID: " + getSUBSCRIPTION_ID() + "||");
+        result.append("SUBSCRIPTION_NAME: " + getSUBSCRIPTION_NAME() + "||");
+        result.append("SOURCE_ID: " + getSOURCE_ID() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("FIELD4: " + getFIELD4() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

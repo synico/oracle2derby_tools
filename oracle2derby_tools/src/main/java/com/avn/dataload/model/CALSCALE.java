@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CALSCALE {
-    
+
 
     private java.math.BigDecimal CALSCALE_ID;
     
@@ -115,5 +112,20 @@ public class CALSCALE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CALSCALE_ID: " + getCALSCALE_ID() + "||");
+        result.append("QTYUNIT_ID: " + getQTYUNIT_ID() + "||");
+        result.append("CODE: " + getCODE() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("CALUSAGE_ID: " + getCALUSAGE_ID() + "||");
+        result.append("SETCCURR: " + getSETCCURR() + "||");
+        result.append("CALMETHOD_ID: " + getCALMETHOD_ID() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

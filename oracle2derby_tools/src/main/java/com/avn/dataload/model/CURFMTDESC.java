@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CURFMTDESC {
-    
+
 
     private java.math.BigDecimal STOREENT_ID;
     
@@ -181,5 +178,26 @@ public class CURFMTDESC {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("NUMBRUSG_ID: " + getNUMBRUSG_ID() + "||");
+        result.append("SETCCURR: " + getSETCCURR() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("CURRENCYSYMBOL: " + getCURRENCYSYMBOL() + "||");
+        result.append("CUSTOMIZEDCURRSTR: " + getCUSTOMIZEDCURRSTR() + "||");
+        result.append("CURRENCYPREFIXPOS: " + getCURRENCYPREFIXPOS() + "||");
+        result.append("CURRENCYSUFFIXPOS: " + getCURRENCYSUFFIXPOS() + "||");
+        result.append("DISPLAYLOCALE: " + getDISPLAYLOCALE() + "||");
+        result.append("CURRENCYPREFIXNEG: " + getCURRENCYPREFIXNEG() + "||");
+        result.append("CURRENCYSUFFIXNEG: " + getCURRENCYSUFFIXNEG() + "||");
+        result.append("RADIXPOINT: " + getRADIXPOINT() + "||");
+        result.append("GROUPINGCHAR: " + getGROUPINGCHAR() + "||");
+        result.append("NUMBERPATTERN: " + getNUMBERPATTERN() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

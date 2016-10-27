@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class UPLOADFILE {
-    
+
 
     private java.math.BigDecimal UPLOADFILE_ID;
     
@@ -148,5 +145,23 @@ public class UPLOADFILE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("UPLOADFILE_ID: " + getUPLOADFILE_ID() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("OBJECTID: " + getOBJECTID() + "||");
+        result.append("UPLOADTYPE: " + getUPLOADTYPE() + "||");
+        result.append("PROPERTIES: " + getPROPERTIES() + "||");
+        result.append("UPLOADTIME: " + getUPLOADTIME() + "||");
+        result.append("FILEPATH: " + getFILEPATH() + "||");
+        result.append("FILENAME: " + getFILENAME() + "||");
+        result.append("FILESIZE: " + getFILESIZE() + "||");
+        result.append("FILEENCODING: " + getFILEENCODING() + "||");
+        result.append("FILECONTENT: " + getFILECONTENT() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

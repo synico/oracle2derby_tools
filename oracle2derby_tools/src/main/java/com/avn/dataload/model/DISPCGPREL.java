@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class DISPCGPREL {
-    
+
 
     private java.math.BigDecimal CATGROUP_ID;
     
@@ -148,5 +145,23 @@ public class DISPCGPREL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CATGROUP_ID: " + getCATGROUP_ID() + "||");
+        result.append("DISPCGPREL_ID: " + getDISPCGPREL_ID() + "||");
+        result.append("LANGUAGE_ID: " + getLANGUAGE_ID() + "||");
+        result.append("DEVICEFMT_ID: " + getDEVICEFMT_ID() + "||");
+        result.append("PAGENAME: " + getPAGENAME() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("MBRGRP_ID: " + getMBRGRP_ID() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("RANK: " + getRANK() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("OID: " + getOID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

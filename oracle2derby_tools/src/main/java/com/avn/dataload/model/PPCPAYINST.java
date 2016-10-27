@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PPCPAYINST {
-    
+
 
     private java.math.BigDecimal PPCPAYINST_ID;
     
@@ -269,5 +266,34 @@ public class PPCPAYINST {
         return this.PAYCONFIGID;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PPCPAYINST_ID: " + getPPCPAYINST_ID() + "||");
+        result.append("ORDER_ID: " + getORDER_ID() + "||");
+        result.append("RMA_ID: " + getRMA_ID() + "||");
+        result.append("STORE_ID: " + getSTORE_ID() + "||");
+        result.append("AMOUNT: " + getAMOUNT() + "||");
+        result.append("APPROVINGAMOUNT: " + getAPPROVINGAMOUNT() + "||");
+        result.append("APPROVEDAMOUNT: " + getAPPROVEDAMOUNT() + "||");
+        result.append("CREDITINGAMOUNT: " + getCREDITINGAMOUNT() + "||");
+        result.append("CREDITEDAMOUNT: " + getCREDITEDAMOUNT() + "||");
+        result.append("DEPOSITINGAMOUNT: " + getDEPOSITINGAMOUNT() + "||");
+        result.append("DEPOSITEDAMOUNT: " + getDEPOSITEDAMOUNT() + "||");
+        result.append("RVRSNGAPRVEDAMNT: " + getRVRSNGAPRVEDAMNT() + "||");
+        result.append("RVRSNGDPSTEDAMNT: " + getRVRSNGDPSTEDAMNT() + "||");
+        result.append("RVRSNGCRDTEDAMNT: " + getRVRSNGCRDTEDAMNT() + "||");
+        result.append("TIMECREATED: " + getTIMECREATED() + "||");
+        result.append("TIMEUPDATED: " + getTIMEUPDATED() + "||");
+        result.append("CURRENCY: " + getCURRENCY() + "||");
+        result.append("STATE: " + getSTATE() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("PLUGINNAME: " + getPLUGINNAME() + "||");
+        result.append("PAYMENTSYSTEMNAME: " + getPAYMENTSYSTEMNAME() + "||");
+        result.append("ACCOUNTNUMBER: " + getACCOUNTNUMBER() + "||");
+        result.append("PAYCONFIGID: " + getPAYCONFIGID() + "||");
+        return result.toString();
+    }
     
 }

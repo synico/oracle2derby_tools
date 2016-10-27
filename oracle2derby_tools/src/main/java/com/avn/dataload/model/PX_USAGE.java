@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PX_USAGE {
-    
+
 
     private java.math.BigDecimal PX_USAGE_ID;
     
@@ -93,5 +90,18 @@ public class PX_USAGE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PX_USAGE_ID: " + getPX_USAGE_ID() + "||");
+        result.append("ORDERS_ID: " + getORDERS_ID() + "||");
+        result.append("USERS_ID: " + getUSERS_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("VERSION: " + getVERSION() + "||");
+        result.append("GUESTID: " + getGUESTID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

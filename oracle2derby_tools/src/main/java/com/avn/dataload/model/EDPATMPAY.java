@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class EDPATMPAY {
-    
+
 
     private java.math.BigDecimal EDPATMPAY_ID;
     
@@ -170,5 +167,25 @@ public class EDPATMPAY {
         return this.FIELD3;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("EDPATMPAY_ID: " + getEDPATMPAY_ID() + "||");
+        result.append("EDPPAYINST_ID: " + getEDPPAYINST_ID() + "||");
+        result.append("TOTALAMOUNT: " + getTOTALAMOUNT() + "||");
+        result.append("VALIDATIONAMOUNT: " + getVALIDATIONAMOUNT() + "||");
+        result.append("RESERVATIONAMOUNT: " + getRESERVATIONAMOUNT() + "||");
+        result.append("FINALIZATIONAMOUNT: " + getFINALIZATIONAMOUNT() + "||");
+        result.append("VALIDATINGAMOUNT: " + getVALIDATINGAMOUNT() + "||");
+        result.append("RESERVINGAMOUNT: " + getRESERVINGAMOUNT() + "||");
+        result.append("FINALIZINGAMOUNT: " + getFINALIZINGAMOUNT() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("BACKENDPAYMENTID: " + getBACKENDPAYMENTID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        return result.toString();
+    }
     
 }

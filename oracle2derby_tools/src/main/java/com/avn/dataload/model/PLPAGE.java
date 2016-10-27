@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PLPAGE {
-    
+
 
     private java.math.BigDecimal PLPAGE_ID;
     
@@ -137,5 +134,22 @@ public class PLPAGE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PLPAGE_ID: " + getPLPAGE_ID() + "||");
+        result.append("ADMINNAME: " + getADMINNAME() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("PAGELAYOUTTYPE_ID: " + getPAGELAYOUTTYPE_ID() + "||");
+        result.append("DELETABLE: " + getDELETABLE() + "||");
+        result.append("ADMINNAMEEDITABLE: " + getADMINNAMEEDITABLE() + "||");
+        result.append("URLCONFIGURABLE: " + getURLCONFIGURABLE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

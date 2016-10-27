@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PX_ELEMENT {
-    
+
 
     private java.math.BigDecimal PX_ELEMENT_ID;
     
@@ -93,5 +90,18 @@ public class PX_ELEMENT {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PX_ELEMENT_ID: " + getPX_ELEMENT_ID() + "||");
+        result.append("PX_PROMOTION_ID: " + getPX_PROMOTION_ID() + "||");
+        result.append("NAME: " + getNAME() + "||");
+        result.append("TYPE: " + getTYPE() + "||");
+        result.append("SUBTYPE: " + getSUBTYPE() + "||");
+        result.append("PARENT: " + getPARENT() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

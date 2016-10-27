@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ORDIMEEXTN {
-    
+
 
     private java.math.BigDecimal ORDERITEMS_ID;
     
@@ -104,5 +101,19 @@ public class ORDIMEEXTN {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("ORDERITEMS_ID: " + getORDERITEMS_ID() + "||");
+        result.append("REQUESTEDSHIPTIME: " + getREQUESTEDSHIPTIME() + "||");
+        result.append("SHIPASCOMPLETE: " + getSHIPASCOMPLETE() + "||");
+        result.append("COMMENTS1: " + getCOMMENTS1() + "||");
+        result.append("COMMENTS2: " + getCOMMENTS2() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

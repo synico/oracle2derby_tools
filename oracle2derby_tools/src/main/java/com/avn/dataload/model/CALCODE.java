@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CALCODE {
-    
+
 
     private java.math.BigDecimal CALCODE_ID;
     
@@ -236,5 +233,31 @@ public class CALCODE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CALCODE_ID: " + getCALCODE_ID() + "||");
+        result.append("CODE: " + getCODE() + "||");
+        result.append("CALUSAGE_ID: " + getCALUSAGE_ID() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("GROUPBY: " + getGROUPBY() + "||");
+        result.append("TXCDCLASS_ID: " + getTXCDCLASS_ID() + "||");
+        result.append("PUBLISHED: " + getPUBLISHED() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("COMBINATION: " + getCOMBINATION() + "||");
+        result.append("LASTUPDATE: " + getLASTUPDATE() + "||");
+        result.append("CALMETHOD_ID: " + getCALMETHOD_ID() + "||");
+        result.append("CALMETHOD_ID_APP: " + getCALMETHOD_ID_APP() + "||");
+        result.append("CALMETHOD_ID_QFY: " + getCALMETHOD_ID_QFY() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("DESCRIPTION: " + getDESCRIPTION() + "||");
+        result.append("DISPLAYLEVEL: " + getDISPLAYLEVEL() + "||");
+        result.append("STARTDATE: " + getSTARTDATE() + "||");
+        result.append("ENDDATE: " + getENDDATE() + "||");
+        result.append("FLAGS: " + getFLAGS() + "||");
+        result.append("PRECEDENCE: " + getPRECEDENCE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

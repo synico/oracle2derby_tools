@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CALRANGE {
-    
+
 
     private java.math.BigDecimal CALRANGE_ID;
     
@@ -115,5 +112,20 @@ public class CALRANGE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CALRANGE_ID: " + getCALRANGE_ID() + "||");
+        result.append("CALSCALE_ID: " + getCALSCALE_ID() + "||");
+        result.append("CALMETHOD_ID: " + getCALMETHOD_ID() + "||");
+        result.append("RANGESTART: " + getRANGESTART() + "||");
+        result.append("CUMULATIVE: " + getCUMULATIVE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

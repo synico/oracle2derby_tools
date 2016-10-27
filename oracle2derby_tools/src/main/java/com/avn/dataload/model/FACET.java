@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class FACET {
-    
+
 
     private java.math.BigDecimal FACET_ID;
     
@@ -170,5 +167,25 @@ public class FACET {
         return this.GROUP_ID;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("FACET_ID: " + getFACET_ID() + "||");
+        result.append("ATTR_ID: " + getATTR_ID() + "||");
+        result.append("SRCHATTR_ID: " + getSRCHATTR_ID() + "||");
+        result.append("SELECTION: " + getSELECTION() + "||");
+        result.append("SORT_ORDER: " + getSORT_ORDER() + "||");
+        result.append("KEYWORD_SEARCH: " + getKEYWORD_SEARCH() + "||");
+        result.append("ZERO_DISPLAY: " + getZERO_DISPLAY() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("MAX_DISPLAY: " + getMAX_DISPLAY() + "||");
+        result.append("SEQUENCE: " + getSEQUENCE() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("FIELD3: " + getFIELD3() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("GROUP_ID: " + getGROUP_ID() + "||");
+        return result.toString();
+    }
     
 }

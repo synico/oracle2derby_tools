@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class PLTEMPLATEREL {
-    
+
 
     private java.math.BigDecimal PAGELAYOUT_ID;
     
@@ -38,5 +35,13 @@ public class PLTEMPLATEREL {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("PAGELAYOUT_ID: " + getPAGELAYOUT_ID() + "||");
+        result.append("TEMPLATE_ID: " + getTEMPLATE_ID() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }

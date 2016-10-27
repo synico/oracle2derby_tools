@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class CMMETADATA {
-    
+
 
     private java.math.BigDecimal CMCONTAINER_ID;
     
@@ -148,5 +145,23 @@ public class CMMETADATA {
         return this.MEMBER_ID;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("CMCONTAINER_ID: " + getCMCONTAINER_ID() + "||");
+        result.append("CMRESMGR_ID: " + getCMRESMGR_ID() + "||");
+        result.append("BOKEY1: " + getBOKEY1() + "||");
+        result.append("BOKEY2: " + getBOKEY2() + "||");
+        result.append("BOKEY3: " + getBOKEY3() + "||");
+        result.append("BOKEY4: " + getBOKEY4() + "||");
+        result.append("ACTION: " + getACTION() + "||");
+        result.append("CMTIMESTAMP: " + getCMTIMESTAMP() + "||");
+        result.append("WORKSPACE: " + getWORKSPACE() + "||");
+        result.append("TASKGRP: " + getTASKGRP() + "||");
+        result.append("TASK: " + getTASK() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        result.append("MEMBER_ID: " + getMEMBER_ID() + "||");
+        return result.toString();
+    }
     
 }

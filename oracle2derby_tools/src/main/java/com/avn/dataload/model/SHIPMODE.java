@@ -1,10 +1,7 @@
 package com.avn.dataload.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class SHIPMODE {
-    
+
 
     private java.math.BigDecimal SHIPMODE_ID;
     
@@ -159,5 +156,24 @@ public class SHIPMODE {
         return this.OPTCOUNTER;
     }
       
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("SHIPMODE_ID: " + getSHIPMODE_ID() + "||");
+        result.append("FIELD1: " + getFIELD1() + "||");
+        result.append("STOREENT_ID: " + getSTOREENT_ID() + "||");
+        result.append("FIELD2: " + getFIELD2() + "||");
+        result.append("CODE: " + getCODE() + "||");
+        result.append("CARRIER: " + getCARRIER() + "||");
+        result.append("TRACKINGNAME: " + getTRACKINGNAME() + "||");
+        result.append("TRACKINGURL: " + getTRACKINGURL() + "||");
+        result.append("TRACKINGHOST: " + getTRACKINGHOST() + "||");
+        result.append("TRACKINGPORT: " + getTRACKINGPORT() + "||");
+        result.append("TRACKINGICON: " + getTRACKINGICON() + "||");
+        result.append("TRACKINGTYPE: " + getTRACKINGTYPE() + "||");
+        result.append("MARKFORDELETE: " + getMARKFORDELETE() + "||");
+        result.append("OPTCOUNTER: " + getOPTCOUNTER() + "||");
+        return result.toString();
+    }
     
 }
