@@ -14,12 +14,12 @@
     <beans:import resource="oracle-ds-config.xml" />
     <beans:import resource="derby-ds-config.xml" />
     
-    <beans:import resource="cursor_reader/CATENTRY-batch.xml"/>
+    <beans:import resource="cursor_reader/SEOURLKEYWORD-batch.xml"/>
     
     <job id="loadData">
         <step id="loadTable">
             <tasklet>
-                <chunk reader="jdbcCursorItemReader4CATENTRY" writer="jdbcBatchItemWriter4CATENTRY" commit-interval="100"/>
+                <chunk reader="jdbcCursorItemReader4SEOURLKEYWORD" writer="jdbcBatchItemWriter4SEOURLKEYWORD" commit-interval="100"/>
             </tasklet>
         </step>
     </job>

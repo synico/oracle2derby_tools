@@ -19,7 +19,28 @@ public class ATCHASTRowMapper<T> implements RowMapper<ATCHAST> {
 		
 		obj.setATCHAST_ID(rs.getBigDecimal("ATCHAST_ID"));
 		obj.setATCHTGT_ID(rs.getBigDecimal("ATCHTGT_ID"));
+		String ATCHASTPATH = rs.getString("ATCHASTPATH");
 		obj.setMIMETYPE(rs.getString("MIMETYPE"));
+		if(ATCHASTPATH != null) {
+			if(ATCHASTPATH.contains("pdf")) {
+				obj.setMIMETYPE("pdf");
+			}
+			if(ATCHASTPATH.endsWith("jpeg")) {
+				obj.setMIMETYPE("image/jpeg");
+			}
+			if(ATCHASTPATH.endsWith("png")) {
+				obj.setMIMETYPE("image/png");
+			}
+			if(ATCHASTPATH.endsWith("jpg")) {
+				obj.setMIMETYPE("image/jpg");
+			}
+			if(ATCHASTPATH.endsWith("aspx")) {
+				obj.setMIMETYPE("aspx");
+			}
+			if(ATCHASTPATH.endsWith("doc")) {
+				obj.setMIMETYPE("doc");
+			}
+		}
 		obj.setIMAGE1(rs.getString("IMAGE1"));
 		obj.setIMAGE2(rs.getString("IMAGE2"));
 		obj.setTIMECREATED(rs.getTimestamp("TIMECREATED"));

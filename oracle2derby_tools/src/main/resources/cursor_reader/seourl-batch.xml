@@ -12,7 +12,7 @@
     <bean id="jdbcCursorItemReader4SEOURL" class="org.springframework.batch.item.database.JdbcCursorItemReader" scope="step">
     	<property name="dataSource" ref="oracleDS" />
     	<property name="sql" value="SELECT SEOURL_ID,TOKENNAME,TOKENVALUE,PRIORITY,CHANGE_FREQUENCY,MOBILE_PRIORITY,MOBILE_CHG_FREQ,OPTCOUNTER FROM EMDI.SEOURL 
-    	WHERE TOKENVALUE IN (SELECT to_char(SELECTED_ID) FROM TMP_CATENTRYIDS)" />
+    	WHERE TOKENVALUE IN (SELECT to_char(SELECTED_ID) FROM TMP_CATENTRYIDS UNION SELECT TO_CHAR(CATGROUP_ID) FROM CATGROUP)" />
     	<property name="rowMapper">
 			<bean class="com.avn.dataload.model.rowmapper.SEOURLRowMapper" />
 		</property>

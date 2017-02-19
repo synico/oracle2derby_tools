@@ -42,7 +42,7 @@ public class GeneratorUtils {
     
     private static final String FTL_DIR = "E:\\scm\\git\\oracle2derby_tools\\oracle2derby_tools\\src\\main\\resources\\freemarker\\";
     
-    private static final String SCHEMA_ORACLE_SQL = "select table_name from all_tables where tablespace_name='USERS' and num_rows>1 and table_name not like 'TI_%' and table_name not like '%_TMP' and table_name not like '%_BACKUP' and num_rows>0 order by num_rows desc";
+    private static final String SCHEMA_ORACLE_SQL = "select table_name from all_tables where tablespace_name='USERS' and num_rows>0 and table_name not like 'TI_%' and table_name not like '%_TMP' and table_name not like '%_BACKUP' and num_rows>0 order by num_rows desc";
     
     private static final String SCHEMA_DERBY_SQL = "select tablename from sys.systables where tabletype='T' order by tablename asc";
 
@@ -331,8 +331,6 @@ public class GeneratorUtils {
     public static void buildBatchJobConfig(String type) {
         List<String> tableNames = readTableInfo(SCHEMA_ORACLE_SQL);
         List<String> unselectedTables = new ArrayList<String>();
-        unselectedTables.add("SEOURLKEYWORD");
-        unselectedTables.add("SEOURL");
         unselectedTables.add("CACHEIVL");
         unselectedTables.add("SEOREDIRECT");
         unselectedTables.add("X_FCST_QTY_CALC");
@@ -436,10 +434,10 @@ public class GeneratorUtils {
     public static void main(String[] args) {
 //        buildGeneratorConfig();
 //        createModels();
-        generateRowMappers();
+//        generateRowMappers();
 //        genPagingItemReaderAndWriters();
 //        genCursorItemReaderAndWriters();
-//        buildBatchJobConfig("cursor");
+        buildBatchJobConfig("cursor");
 //        compareSchemas();
     }
 

@@ -17,7 +17,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry excluding="wcs/" kind="src" path="src/test/resources"/>
+	<classpathentry excluding="wcs/|schema/fep1/|schema/fep1/cloudscape/|schema/fep1/db2/|schema/fep1/oracle/|schema/fep1/os400/|schema/fep2/|schema/fep2/cloudscape/|schema/fep2/db2/|schema/fep2/oracle/|schema/fep2/os400/|schema/fep3/|schema/fep3/cloudscape/|schema/fep3/db2/|schema/fep3/oracle/|schema/fep3/os400/|schema/fep4/|schema/fep4/cloudscape/|schema/fep4/db2/|schema/fep4/oracle/|schema/fep4/os400/|schema/fep5/|schema/fep5/cloudscape/|schema/fep5/db2/|schema/fep5/oracle/|schema/fep5/os400/|schema/fep6/|schema/fep6/cloudscape/|schema/fep6/db2/|schema/fep6/oracle/|schema/fep6/os400/|schema/fep7/|schema/fep7/cloudscape/|schema/fep7/db2/|schema/fep7/oracle/|schema/fep7/os400/|schema/fep8/|schema/fep8/cloudscape/|schema/fep8/db2/|schema/fep8/oracle/|schema/fep8/os400/|schema/xml/custom/" kind="src" path="src/test/resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
